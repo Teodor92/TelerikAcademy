@@ -1,0 +1,48 @@
+body, p, section, article, img {
+	margin 0;
+	padding 0;
+}
+body, html {
+	width: 100%;
+}
+article {
+	padding: 1%;
+	width: 30%;
+	background-color: #EEE;
+}
+section:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+section {
+	width: 90%;
+	margin: 5%;
+	background-color: #FFF;
+	border: 1px solid #B5B5B5;
+}
+	section img {
+		border: 1px solid #ADAEAB;
+		margin: 5%;
+		float: left;
+	}
+	section .right-content {
+		float: left;
+		width: 50%;
+	}
+	section button {
+		float: right;
+		margin-bottom: 7%;
+		margin-right: 1%;
+		background-color: #CC0000;
+		color: #fff;
+		border: 1px solid #8A0000;
+		border-left: 20px solid #8A0000;
+	}
+	section p {
+		margin-top: 5%;
+		margin-right: 5%;
+	}
+	section button:nth-last-child(2) {
+		margin-right: 5%;
+	}

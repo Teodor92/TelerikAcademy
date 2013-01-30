@@ -1,0 +1,65 @@
+/* main components*/
+body
+{
+	background-color: #A9A9A9;
+}
+	header
+	{
+		text-align: center;
+	}
+	h1
+	{
+		color: #FAFAD2;
+	}
+	footer
+	{
+		text-align: center;
+	}
+
+/* navigation */
+ul li
+{
+	list-style-type: none;
+}
+	.current 
+	{
+		background-color: #D3D3D3;
+	}
+
+/* links */
+a
+{
+	text-decoration: none;
+	color: #000;
+}
+li a:link
+{
+	text-decoration: none;
+	color: #FFF;
+	font-weight: bold;
+}
+li a:visited
+{
+	text-decoration: none;
+	color: #FFF;
+	font-weight: bold;
+}
+li:last-child
+{
+	color: #FFF;
+	text-decoration: underline;
+}
+/* posts */
+section footer
+{
+	text-align: left;
+	font-size: 12px;
+}
+section header
+{
+	text-align: left;
+}
+article:nth-child(3)
+{
+	display: none;
+}

@@ -1,0 +1,7 @@
+four 7
+One 3
+two 3
+cat 3
+dog 3
+snake 3
+three 2

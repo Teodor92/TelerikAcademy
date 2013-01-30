@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>WinCalc</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Teodor" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+	
+	<body>
+		<div id="outerWrapper">
+			<img src="img/CalcIcon.png" alt="CalcIcon" />
+			<span>Calculator</span>
+			<div id="innerWrapper">
+				<ul id="topMenu">
+					<li>View</li>
+					<li>Edit</li>
+					<li>Help</li>
+				</ul>
+				<div id="innerElements">
+					<input type="text" value="0" dir="rtl"/>
+					<!-- Binary Digits -->
+					<div id="binSystem">
+						<div class="binRow">
+							<ul>
+								<li class="firstElem">0000</li>
+								<li>0000</li>
+								<li>0000</li>
+								<li>0000</li>
+							</ul>
+							<ul>
+								<li class="firstElem">63</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul>
+						</div>
+						<div class="binRow">
+							
+							<ul>
+								<li>0000</li>
+								<li>0000</li>
+								<li>0000</li>
+								<li>0000</li>
+							</ul>
+							<ul>
+								<li>47</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li>32</li>
+							</ul>
+						</div>
+						<div class="binRow">
+							<ul>
+								<li class="firstElem">0000</li>
+								<li>0000</li>
+								<li>0000</li>
+								<li>0000</li>
+							</ul>
+							<ul>
+								<li class="firstElem">31</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+								<li>&nbsp;</li>
+							</ul>
+						</div>
+						<div class="binRow">
+							<ul>
+								<li>0000</li>
+								<li>0000</li>
+								<li>0000</li>
+								<li>0000</li>
+							</ul>
+							<ul>
+								<li>15</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li>0</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Numeral System Secial cases -->
+					<div class="specialButtons">
+						<div class="numSystemRow">
+							<div>
+								<ul>
+									<li>
+										<input type="radio" name="first" id="hex"/>
+										<label for="hex">Hex</label>
+									</li>
+									<li>
+										<input type="radio" name="first" id="dec"/>
+										<label for="dec">Dec</label>
+									</li>
+									<li>
+										<input type="radio" name="first" id="oct"/>
+										<label for="oct">Oct</label>
+									</li>
+									<li>
+										<input type="radio" name="first" id="bin"/>
+										<label for="bin">Bin</label>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<ul>
+									<li>
+										<input type="radio" name="second" id="qword"/>
+										<label for="qword">Qword</label>
+									</li>
+									<li>
+										<input type="radio" name="second" id="dword"/>
+										<label for="dword">Dword</label>
+									</li>
+									<li>
+										<input type="radio" name="second" id="word"/>
+										<label for="word">Word</label>
+									</li>
+									<li>
+										<input type="radio" name="second" id="byte"/>
+										<label for="byte">Byte</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="buttonRow">
+							<button>&nbsp;</button>
+							<button class="normal">(</button>
+							<button class="normal">RoL</button>
+							<button class="normal">Or</button>
+							<button class="normal">Lsh</button>
+							<button class="normal">Not</button>
+						</div>
+						<div class="buttonRow">
+							<button class="normal">Mod</button>
+							<button class="normal">)</button>
+							<button class="normal">RoR</button>
+							<button class="normal">Xor</button>
+							<button class="normal">Rsh</button>
+							<button class="normal">And</button>
+						</div>
+						<div class="buttonRow">
+							<button disabled="disabled">A</button>
+							<button disabled="disabled">B</button>
+							<button disabled="disabled">C</button>
+							<button disabled="disabled">D</button>
+							<button disabled="disabled">E</button>
+							<button disabled="disabled">F</button>
+						</div>
+						<div class="buttonRow">
+							<button class="special">MC</button>
+							<button class="normal">&larr;</button>
+							<button class="numButtons">7</button>
+							<button class="numButtons">8</button>
+							<button class="numButtons">9</button>
+							<button class="ZeroBigger numButtons">0</button>
+						</div>
+						<div class="buttonRow" id="zeroSpecial">
+							<button class="special">MR</button>
+							<button class="normal">CE</button>
+							<button class="numButtons">8</button>
+							<button class="numButtons">5</button>
+							<button class="numButtons">2</button>
+						</div>
+						<div class="buttonRow">
+							<button class="special">MS</button>
+							<button class="normal">C</button>
+							<button class="numButtons">9</button>
+							<button class="numButtons">6</button>
+							<button class="numButtons">3</button>
+							<button disabled="disabled">,</button>
+						</div>
+						<div class="buttonRow">
+							<button class="special">M+</button>
+							<button class="normal">&#177;</button>
+							<button class="normal">/</button>
+							<button class="normal">*</button>
+							<button class="normal">-</button>
+							<button class="normal">+</button>
+						</div>
+						<div class="buttonRow" id="lastCol">
+							<button class="special">M-</button>
+							<button disabled="disabled">&#8730;</button>
+							<button disabled="disabled">%</button>
+							<button disabled="disabled">1/x</button>
+							<button class="equalCase normal">=</button>
+						</div>
+					</div>
+
+				</div>
+				
+				
+			</div>
+		</div>
+	</body>
+</html>

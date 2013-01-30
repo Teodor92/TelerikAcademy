@@ -1,0 +1,78 @@
+/* reseter */
+header, ul, li, aside, section, legend {
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	height: 100%;
+	font-family: Calibri;
+}
+#wrapper {
+	width: 55%;
+	line-height: 40px;
+	vertical-align: middle;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+}
+/* top navigation */
+header {
+	border-bottom: 1px solid #393939;
+	width: 100%;
+	font-size: 1.5em;
+}
+	#topNav {
+		margin-left:auto;
+		margin-right:auto;
+		width: 50%;
+		list-style-type: none;
+		padding: 1% 0 1% 0;
+	}
+		#topNav li {
+			display: inline-block;
+		}
+			#topNav li a {
+			color: #00ACF0;
+			font-weight: bold;
+		}
+
+/* main content */
+section, aside {
+	float: left;
+}
+/* -> laptop menu */
+section{
+	width: 65%;
+	margin: 1%; 
+	padding: 0 0 1% 1%;
+}
+	section fieldset {
+		width: 43%;
+		float: left;
+	}
+		section fieldset ul {
+			list-style-type: none;
+			display: inline-block;
+		}
+		section fieldset legend {
+			position: relative;
+			left: 50%;
+		}
+/* -> slider menu */		
+aside {
+	padding-top: 100px;
+	width: 26%; 
+	
+}
+	aside ul {
+		list-style-type: none;
+		margin-left:auto;
+		margin-right:auto;
+		width: 65%;
+	}
+	aside ul li input {
+		width: 100%;
+	}

@@ -1,0 +1,60 @@
+/* reset */
+th,tr,td,table,div,p,body,div
+{
+	margin: 0;
+	padding: 0;
+}
+/* fonts */
+body
+{
+    font-family: sans-serif;
+}
+thead tr th
+{
+	font-size: 25px;
+}
+/* wrapepr */
+#wrapper
+{
+	margin: 20px;
+	background-color: #595959; 
+	width: 350px;
+}
+/* table styles */
+td, th, p
+{
+	padding: 0 10px 10px 10px;
+	vertical-align: top;
+}
+/* text colors and styles */
+.grey_text
+{
+	color: #948e86;
+	font-weight: normal;
+	text-align: left;
+	
+}
+.white_text
+{
+	color: #f3efe7;
+	font-style: italic;
+}
+.red_text
+{
+	color: #e60e0c;
+}
+.orange_text
+{
+	color: #e06d25;
+}
+/* links */
+a:link
+{
+	color: #e1c48a;
+	text-decoration: none;
+}
+a:visited
+{
+	color: #e1c48a;
+	text-decoration: none;
+}

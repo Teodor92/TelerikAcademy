@@ -1,0 +1,19 @@
+body {
+	background-color: #ccecff;
+}
+nav > a
+{
+	margin-left: 100px;
+}
+#first
+{
+	margin: 0;
+}
+.page_title
+{
+	font-style: italic;
+}
+.italic_text
+{
+	font-style: italic;
+}

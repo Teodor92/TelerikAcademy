@@ -1,0 +1,71 @@
+/* reset */
+th,tr,td,table,div,p, body 
+{
+	margin: 0;
+	padding: 0;
+}
+/* table styles */
+table, td, th
+{
+	border-collapse: collapse;
+	padding: 5px 30px 5px 5px;
+	margin: 10px;
+}
+/* table head borders */
+th
+{
+	background-color: #56b906;
+	color: #FFF;
+	font-weight: normal;
+	text-align: left;
+	border: 1px solid #1a4b04;
+	border-top: none;
+}
+th:nth-child(1)
+{
+	border-left: none;
+}
+th:nth-child(4)
+{
+	border-right: none;
+}
+tr:nth-child(2n)
+{
+	background-color: #ececd8;
+}
+/* table cell borders */
+td
+{
+	border-left: 1px solid #595959;
+	border-right: 1px solid #595959;
+}
+td:nth-child(1)
+{
+	border-left: none;
+}
+td:nth-child(4)
+{
+	border-right: none;
+}
+/* flags */
+.flagGermany
+{
+	background-image:url('../img/de.png');
+	background-repeat: no-repeat;
+	background-position: 8px 10px;
+	padding-left: 30px;
+}
+.flagMexico
+{
+	background-image:url('../img/mx.png');
+	background-repeat: no-repeat;
+	background-position: 8px 10px;
+	padding-left: 30px;
+}
+.flagUK
+{
+	background-image:url('../img/gb.png');
+	background-repeat: no-repeat;
+	background-position: 8px 10px;
+	padding-left: 30px;
+}

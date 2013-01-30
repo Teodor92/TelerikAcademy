@@ -1,0 +1,9 @@
+article {
+	width: 900px;
+	font-family: Consolas;
+	color: #0094ff;
+}
+h4:first-letter {
+	font-family: Edwardian Script ITC;
+	font-size: 40px;
+}

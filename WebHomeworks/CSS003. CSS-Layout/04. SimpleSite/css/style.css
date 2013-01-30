@@ -1,0 +1,83 @@
+/* reset */
+aside, section, article, ul, li, a, h4, h3 {
+	padding: 0;
+	margin: 0;
+}
+/* main body */
+html, body {
+	background-color: #F1F1F1;
+	width: 100%;
+	font-family: verdana,helvetica,arial,sans-serif;
+}
+/* floats */
+aside, section {
+	float: left;
+}
+#wrapper:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+}
+/* first col */
+aside {
+	width: 15%;
+	border: 1px solid #000;
+}
+	aside ul {
+		list-style-type: none;
+	}
+	aside h4 {
+		color: #891010;
+		margin-top: 10px;
+	}
+	aside a {
+		color: #000;
+		text-decoration: none;
+	}
+	aside a:hover {
+		text-decoration: underline;
+	}
+/* middle col */
+section {
+	padding: 4px;
+	border: 1px solid #000;
+	width: 60%;
+	margin-left: 2px;
+	margin-right: 2px;
+	background-color: #fff;
+}
+	section a {
+		color: #911313;
+	}
+	section h4 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		color: #FFF;
+		background-color: #808080;
+	}
+	section img {
+		padding-right: 10px; 
+		float: left;
+	}
+	section #boldPara {
+		font-weight: bold;
+	}
+/* last col */
+#secondCol div {
+	margin: 3px;
+	padding-bottom: 3px;
+	border: 1px solid #000;
+	text-align: center;
+	background-color: #fff;
+}
+	#secondCol div a {
+		color: #9D2D2C;
+		text-decoration: underline;
+	}
+	#secondCol div p {
+		margin: 0;
+		margin-bottom: 10px;
+		color: #FFF;
+		background-color: #808080;
+	}

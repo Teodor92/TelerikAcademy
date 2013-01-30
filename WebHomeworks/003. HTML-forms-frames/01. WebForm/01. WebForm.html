@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>01. WebForm</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Teodor" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" type="text/css" />
+	</head>
+
+	<body>
+		<form action="" method="post">
+			<table border="1">
+				<tbody>
+					<tr>
+						<td class="right"><label for="lname">Last Name</label></td>
+						<td colspan="3">
+						<input type="text" id="lname" placeholder="Kurtev"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="right"><label for="fname">First Name</label></td>
+						<td colspan="3">
+						<input type="text" id="fname" placeholder="Teodor"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="right"><label for="addres">Addres</label></td>
+						<td colspan="3">						<textarea id="addres" cols="30" rows="5" placeholder="Some addres here"></textarea></td>
+					</tr>
+					<tr>
+						<td class="right"><label for="city">City</label></td>
+						<td>
+						<input type="text" id="city" placeholder="Sofia"/>
+						</td>
+						<td class="right"><label for="state">State</label></td>
+						<td>
+						<input type="text" id="state" size="3"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="right"><label for="zipCode">Zip/Postal Code</label></td>
+						<td colspan="3">
+						<input type="text" id="zipCode" placeholder="123456"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="right"><label for="country">Country</label></td>
+						<td colspan="3">
+						<select name="country" id="country">
+							<option value="Bulgaria" selected="selected">Bulgaira</option>
+							<option value="Macedonia">Macedonia</option>
+							<option value="USA">USA</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td class="right"><label for="phone">Phone (country code, area code, number)</label></td>
+						<td colspan="3">
+						<p>
+							(+
+							<input type="text" id="phone" size="3" placeholder="359"/>
+							)
+							<input type="text" placeholder="88" size="3"/>
+							-
+							<input type="number" placeholder="8334343"/>
+						</p></td>
+					</tr>
+					<tr>
+						<td class="right"><label for="mail">E-mail</label></td>
+						<td colspan="3">
+						<input type="email" id="mail" placeholder="mymail@somethin.com"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="right"><label for="month">Birth date</label></td>
+						<td colspan="3" class="right"><label for="month">Month</label>
+						<input type="text" id="month" placeholder="06" size="2"/>
+						<label for="day" class="right">Day</label>
+						<input type="text" id="day" placeholder="14" size="2"/>
+						<label for="year" class="right">Year (4 digit)</label>
+						<input type="text" id="year" placeholder="1980" size="4" maxlength="4">
+						</td>
+					</tr>
+					<td class="right"><label for="gender">Gender</label></td>
+					<td colspan="3">
+					<select name="gender" id="gender">
+						<option value="male" selected="selected">Male</option>
+						<option value="female">Female</option>
+					</select></td>
+					<tr>
+						<td class="right"><label for="opt1">Starting date</label></td>
+						<td colspan="3">
+						<input id="opt1" type="radio" value="spr06" name="opt1"/>
+						<label for="opt1">Spring 2006</label>
+						<input id="opt2" type="radio" value="sum06" name="opt2"/>
+						<label for="opt2">Summer 2006</label></td>
+					</tr>
+					<tr>
+						<td class="right"><label for="info">Comments/Questions</label></td>
+						<td colspan="3">						<textarea id="info" rows="5" cols="30" placeholder="Please, send me information about the lodging.">
+					</textarea></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr class="blue_back">
+						<td colspan="4" class="center" >
+						<input type="submit" value="Submit" name="submit"/>
+						<input type="reset" value="Clear This Form" name="reset"/>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</body>
+</html>

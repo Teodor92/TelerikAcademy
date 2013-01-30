@@ -1,0 +1,13 @@
+.center
+{
+	text-align: center;
+}
+.right
+{
+	text-align: right;
+}
+.bottom_right
+{
+	text-align: right;
+	vertical-align: bottom;
+}
