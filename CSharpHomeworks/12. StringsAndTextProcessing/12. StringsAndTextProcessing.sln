@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15. UrlToAnchor", "15. UrlT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. SentenceExtractor", "08. SentenceExtractor\08. SentenceExtractor.csproj", "{B4E316BE-C2C5-4433-A1C3-8DFBFFB25359}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.1. BracketCheckerWithStack", "03.1. BracketCheckerWithStack\03.1. BracketCheckerWithStack.csproj", "{7D701B00-9071-4E94-B475-1601B76C0FA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{B4E316BE-C2C5-4433-A1C3-8DFBFFB25359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E316BE-C2C5-4433-A1C3-8DFBFFB25359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4E316BE-C2C5-4433-A1C3-8DFBFFB25359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D701B00-9071-4E94-B475-1601B76C0FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D701B00-9071-4E94-B475-1601B76C0FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D701B00-9071-4E94-B475-1601B76C0FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D701B00-9071-4E94-B475-1601B76C0FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
