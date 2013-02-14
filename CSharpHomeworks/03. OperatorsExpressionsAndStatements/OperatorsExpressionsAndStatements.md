@@ -1,4 +1,4 @@
-# Introduction to Programming
+# Operators and Expressions
 
 ## Tasks discriptions:
 
