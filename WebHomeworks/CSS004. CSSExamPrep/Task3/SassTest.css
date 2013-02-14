@@ -1,0 +1,57 @@
+#wrapper {
+  margin-left: 18px; 
+}
+
+.invisible {
+  display: none; 
+}
+
+a {
+  text-decoration: none;
+  color: #000; 
+}
+a img {
+  width: 25px; 
+}
+a .current {
+  font-weight: bold; 
+}
+
+ul {
+  list-style-type: none; 
+}
+ul li {
+  border-top: 1px solid black;
+  width: 100px;
+  padding: 6px;
+  position: relative; 
+}
+ul li:first-child {
+  margin-top: 15px; 
+}
+ul li:last-child {
+  border-bottom: 1px solid black; 
+}
+ul li fieldset {
+  position: absolute;
+  top: 0;
+  left: 120px; 
+}
+ul li fieldset legend {
+  font-weight: bold;
+  font-size: 20px; 
+}
+
+.btn-popup-close {
+  position: absolute;
+  left: 302px;
+  top: 0;
+  margin-top: 15px;
+  border: 1px solid black;
+  padding: 2px;
+  border-radius: 5px;
+  z-index: 9999; 
+}
+.btn-popup-close:hover {
+  text-decoration: underline; 
+}

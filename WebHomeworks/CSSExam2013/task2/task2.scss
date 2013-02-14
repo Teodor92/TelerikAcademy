@@ -1,0 +1,123 @@
+@import "../_mixins.scss";
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+div, a, ul, li, table, td, th {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+	font-size: 16px;
+}
+
+#wrapper {
+	border: 1px solid black;
+	width: 345px;
+	height: 230px;
+}
+
+.tab-strip {
+
+	> li {
+		margin: 0;
+		display: inline-block;
+		position: relative;
+		border-right: 1px solid black;
+		font-size: 20px;
+		padding: 10px 17px;
+		border: 1px solid black;
+		border-radius: 5px;
+
+		background: #ededed; /* Old browsers */
+		background: -moz-linear-gradient(top,  #ededed 0%, #ababab 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#ababab)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #ededed 0%,#ababab 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ededed 0%,#ababab 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ededed 0%,#ababab 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #ededed 0%,#ababab 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ababab',GradientType=0 ); /* IE6-9 */
+	}
+
+	> li:hover {
+		background: #eee;
+	}
+	table, th, td  {
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+
+	th {
+		background: #ababab; /* Old browsers */
+		background: -moz-linear-gradient(top,  #ababab 0%, #eeeeee 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ababab), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #ababab 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ababab 0%,#eeeeee 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ababab 0%,#eeeeee 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #ababab 0%,#eeeeee 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+
+	}
+
+	td {
+		background: #eee;
+	}
+
+	td, th {
+		padding: 0 10px;
+	}
+
+	table{
+		table-layout: fixed;
+		width: 200px;
+	}
+
+	th, td {
+		border: 1px solid black;
+		overflow: hidden;
+		width: 80px;
+	}
+}
+
+.tab-btn + li:hover {
+	background: #EEEEEE;
+}
+
+.tab-content {
+	display: none;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	font-size: 16px;
+
+	li {
+		list-style-type: disc;
+		width: 150px;
+		margin-left: 20px;
+		ul{
+			li {
+				list-style-type: lower-latin;
+				margin-left: 20px;
+			}
+		} 
+		
+	}
+
+}
+
+li.current {
+	border: none;
+	background: #fff;
+	text-align: left;
+
+	a {
+		font-weight: bold;
+	}
+
+	> div {
+		display: block;
+	}
+}

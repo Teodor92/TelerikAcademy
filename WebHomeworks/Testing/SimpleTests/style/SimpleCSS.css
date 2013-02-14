@@ -1,19 +1,22 @@
-#relBox {
-	border: 3px solid black;
+li {
+	position: relative;
+	display: inline-block;
+	background-color: #f00;
 	width: 100px;
 	height: 100px;
-	background-color: #f00;
-	position:absolute;
-	top: 100px;
-	left: 100px;
 }
 
-#absBox {
-	border: 3px solid black;
+div {
+	display: none;
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	background-color: #00f;
 	width: 100px;
 	height: 100px;
-	background-color: #00f;
-	position:relative;
-	top: 50px;
-	left: 50px;
 }
+
+li:hover div {
+	display: block;
+}
+
