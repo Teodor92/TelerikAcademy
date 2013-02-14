@@ -10,7 +10,7 @@
 6. Declare a boolean variable called isFemale and assign an appropriate value corresponding to your gender.
 7. Declare two string variables and assign them with “Hello” and “World”. Declare an object variable and assign it with the concatenation of the first two variables (mind adding an interval). Declare a third string variable and initialize it with the value of the object variable (you should perform type casting).
 8. Declare two string variables and assign them with following value:
-** The "use" of quotations causes difficulties. **
+__ The "use" of quotations causes difficulties. __
 Do the above in two different ways: with and without using quoted strings.
 9. Write a program that prints an isosceles triangle of 9 copyright symbols ©. Use Windows Character Map to find the Unicode code of the © symbol. Note: the © symbol may be displayed incorrectly.
 10. A marketing firm wants to keep record of its employees. Each record would have the following characteristics – first name, family name, age, gender (m or f), ID number, unique employee number (27560000 to 27569999). Declare the variables needed to keep the information for a single employee using appropriate data types and descriptive names.
