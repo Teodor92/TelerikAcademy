@@ -13,5 +13,5 @@
 9. Write a program to print the first 100 members of the sequence of Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, …
 10. Write a program to calculate the sum (with accuracy of 0.001): 1 + 1/2 - 1/3 + 1/4 - 1/5 + ...
 
-![alt text](https://github.com/Teodor92/MyTelerikProjectsAndHomeworks/blob/master/CSharpHomeworks/04.%20ConsoleInputOutput/TaskImgs/FallingRoksTask.png "Logo Title Text 1")
+11. ![Falling rocks](https://github.com/Teodor92/MyTelerikProjectsAndHomeworks/blob/master/CSharpHomeworks/04.%20ConsoleInputOutput/TaskImgs/FallingRoksTask.png "Logo Title Text 1")
 
