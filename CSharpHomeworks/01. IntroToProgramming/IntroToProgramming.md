@@ -1,6 +1,6 @@
 # Introduction to Programming
 
-## Task discriptions:
+## Tasks discriptions:
 
 2. Create, compile and run a “Hello C#” console application.
 3. Modify the application to print your name.
