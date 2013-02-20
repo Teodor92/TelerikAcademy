@@ -14,8 +14,9 @@ public class Program
     static void Main()
     {
         Display testDisplay = new Display(12, 13);
-        Battery testBattery = new Battery(BatteryType.Type1);
-        GSM myPhone = new GSM("test", "test", 12, "Bai Ivan", testBattery, testDisplay);
+        Battery testBattery = new Battery(BatteryType.Type1, 10, 10);
+
+        GSM myPhone = new GSM("test", "test", 12, "", testBattery, testDisplay);
         Console.WriteLine(myPhone);
     }
 }

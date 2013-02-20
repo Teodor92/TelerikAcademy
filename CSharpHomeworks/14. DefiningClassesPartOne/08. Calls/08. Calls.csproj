@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EABEC8F1-685D-45B7-B633-FD51F7AE46FC}</ProjectGuid>
+    <ProjectGuid>{CF5FBF85-0849-4A57-BABF-A0EEFD7631CC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_04.DisplayAllInformation</RootNamespace>
-    <AssemblyName>_04.DisplayAllInformation</AssemblyName>
+    <RootNamespace>_08.Calls</RootNamespace>
+    <AssemblyName>_08.Calls</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,9 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battery.cs" />
+    <Compile Include="Call.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="GSM.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="GSMTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

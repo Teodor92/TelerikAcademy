@@ -3,8 +3,8 @@ using System.Text;
 
 public class GSM
 {
-    public Battery Battery = new Battery(BatteryType.Type1, 0, 0);
-    public Display Display = new Display(0, 0);
+    public Battery Battery = new Battery(BatteryType.Type1, null, null);
+    public Display Display = new Display(0, null);
 
     private string model;
     private string manufacturer;
@@ -23,10 +23,10 @@ public class GSM
 
     public GSM(string model, string manufacturer, int? price, string owner, Battery battery, Display display)
     {
-        this.model = model;
-        this.manufacturer = manufacturer;
-        this.price = price;
-        this.owner = owner;
+        this.Model = model;
+        this.Manufacturer = manufacturer;
+        this.Price = price;
+        this.Owner = owner;
         this.Battery.BatteryModel = battery.BatteryModel;
         this.Battery.HoursIdle = battery.HoursIdle;
         this.Battery.HoursTalked = battery.HoursTalked;
@@ -34,30 +34,86 @@ public class GSM
         this.Display.NumberOfColors = display.NumberOfColors;
     }
 
+    // properties
+
     public string Model
     {
-        get { return this.model; }
-        set { this.model = value; }
+        get 
+        { 
+            return this.model; 
+        }
+        set 
+        {
+            if (value.Length >= 0 || value == null)
+            {
+                this.model = value;
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+        }
     }
 
     public string Manufacturer
     {
-        get { return this.manufacturer; }
-        set { this.manufacturer = value; }
+        get 
+        { 
+            return this.manufacturer; 
+        }
+        set 
+        {
+            if (value.Length >= 0 || value == null)
+            {
+                this.manufacturer = value;
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+        }
     }
 
     public int? Price
     {
-        get { return this.price; }
-        set { this.price = value; }
+        get 
+        { 
+            return this.price; 
+        }
+        set 
+        {
+            if (value >= 0 || value == null)
+            {
+                this.price = value;
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+        }
     }
 
     public string Owner
     {
-        get { return this.owner; }
-        set { this.owner = value; }
+        get 
+        { 
+            return this.owner; 
+        }
+        set 
+        {
+            if (value.Length >= 0 || value == null)
+            {
+                this.owner = value; 
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+        }
     }
 
+
+    // methods
     public override string ToString()
     {
         StringBuilder endText = new StringBuilder();
