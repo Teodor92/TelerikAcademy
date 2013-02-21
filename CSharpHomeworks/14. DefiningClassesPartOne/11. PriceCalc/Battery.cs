@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Linq;
+using System.Text;
 
 public enum BatteryType
 {
@@ -78,5 +78,15 @@ public class Battery
                 throw new ArgumentException();
             }
         }
+    }
+
+    public override string ToString()
+    {
+        StringBuilder endText = new StringBuilder();
+        endText.AppendLine("---------Battery --------");
+        endText.AppendLine(this.batteryModel.ToString());
+        endText.AppendLine(this.hoursIdle.ToString());
+        endText.AppendLine(this.hoursTalked.ToString());
+        return endText.ToString();
     }
 }

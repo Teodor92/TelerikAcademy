@@ -33,16 +33,22 @@ public class GSM
         this.Manufacturer = manufacturer;
         this.Price = price;
         this.Owner = owner;
-        this.Battery.BatteryModel = battery.BatteryModel;
-        this.Battery.HoursIdle = battery.HoursIdle;
-        this.Battery.HoursTalked = battery.HoursTalked;
-        this.Display.Size = display.Size;
-        this.Display.NumberOfColors = display.NumberOfColors;
+        this.Battery= battery;
+        this.Display = display;
     }
 
     // properties
 
-    List<Call> callHistory = new List<Call>();
+    private List<Call> callHistory = new List<Call>();
+
+
+    public List<Call> CallHistory
+    {
+        get
+        {
+            return this.callHistory;
+        }
+    }
 
     public string Model
     {
@@ -52,7 +58,7 @@ public class GSM
         }
         set 
         {
-            if (value.Length >= 0 || value == null)
+            if (value.Length >= 0)
             {
                 this.model = value;
             }
@@ -71,7 +77,7 @@ public class GSM
         }
         set 
         {
-            if (value.Length >= 0 || value == null)
+            if (value.Length >= 0)
             {
                 this.manufacturer = value;
             }
@@ -90,7 +96,7 @@ public class GSM
         }
         set 
         {
-            if (value >= 0 || value == null)
+            if (value == null || value >= 0 )
             {
                 this.price = value;
             }
@@ -109,7 +115,7 @@ public class GSM
         }
         set 
         {
-            if (value.Length >= 0 || value == null)
+            if (value == null || value.Length >= 0)
             {
                 this.owner = value; 
             }
@@ -155,6 +161,7 @@ public class GSM
             if (callHistory[i].DialedNumber == number)
             {
                 callHistory.RemoveAt(i);
+                i--;
             }
         }
     }
@@ -179,15 +186,13 @@ public class GSM
     public override string ToString()
     {
         StringBuilder endText = new StringBuilder();
+        endText.AppendLine("----------GSM ------------");
         endText.AppendLine(this.model);
         endText.AppendLine(this.manufacturer);
         endText.AppendLine(this.price.ToString());
         endText.AppendLine(this.owner);
-        endText.AppendLine(this.Battery.BatteryModel.ToString());
-        endText.AppendLine(this.Battery.HoursIdle.ToString());
-        endText.AppendLine(this.Battery.HoursTalked.ToString());
-        endText.AppendLine(this.Display.Size.ToString());
-        endText.AppendLine(this.Display.NumberOfColors.ToString());
+        endText.AppendLine(this.Battery.ToString());
+        endText.AppendLine(this.Display.ToString());
         string result = endText.ToString();
         return result;
     }

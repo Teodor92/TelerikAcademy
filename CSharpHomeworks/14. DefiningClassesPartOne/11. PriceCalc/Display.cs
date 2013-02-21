@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 public class Display
 {
@@ -57,6 +58,17 @@ public class Display
                 throw new ArgumentException();
             }
         }
+    }
+
+    // methods
+
+    public override string ToString()
+    {
+        StringBuilder endText = new StringBuilder();
+        endText.AppendLine("---------Display --------");
+        endText.AppendLine(this.size.ToString());
+        endText.AppendLine(this.numberOfColors.ToString());
+        return endText.ToString();
     }
 }
 
