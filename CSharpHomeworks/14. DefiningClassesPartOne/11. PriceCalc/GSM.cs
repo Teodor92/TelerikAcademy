@@ -13,18 +13,21 @@ public class GSM
     private string owner;
 
     // The static filed
-    static private bool isIphone;
+    static private GSM iphone = new GSM("IPhone","Apple",999);
 
-    // constructors
+    // constructors 
 
     public GSM(string model, string manufacturer) : this(model, manufacturer, null , null, null, null)
     {
-
     }
 
     public GSM(string model, string manufacturer, int price) : this(model, manufacturer, price, null, null, null)
     {
         
+    }
+
+    public GSM(string model, string manufacturer, int? price, string owner) : this(model, manufacturer, price, owner, null, null)
+    {
     }
 
     public GSM(string model, string manufacturer, int? price, string owner, Battery battery, Display display)
@@ -41,6 +44,14 @@ public class GSM
 
     private List<Call> callHistory = new List<Call>();
 
+
+    public static GSM Iphone
+    {
+        get
+        {
+            return iphone;
+        }
+    }
 
     public List<Call> CallHistory
     {
@@ -125,27 +136,6 @@ public class GSM
             }
         }
     }
-
-    public static bool IPhone4S
-    {
-        get
-        {
-            return isIphone;
-        }
-
-        set
-        {
-            if (value == true || value == false)
-            {
-                isIphone = value;
-            }
-            else
-            {
-                throw new ArgumentException();
-            }
-        }
-    }
-
 
     // methods
     public void AddCall(DateTime now, int number, int duration)

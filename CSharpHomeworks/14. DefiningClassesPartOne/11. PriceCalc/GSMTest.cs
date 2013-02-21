@@ -31,5 +31,8 @@ public class GSMTest
         {
             Console.WriteLine(test[i]);
         }
+
+        Console.WriteLine(GSM.Iphone.Model);
+        Console.WriteLine(GSM.Iphone.Manufacturer);
     }
 }
