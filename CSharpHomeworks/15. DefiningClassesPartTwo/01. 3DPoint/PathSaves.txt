@@ -1,0 +1,12 @@
+Point X: 3
+Point Y: 4
+Point Z: 5 
+-
+Point X: 1
+Point Y: 2
+Point Z: 3 
+-
+Point X: 3
+Point Y: 4
+Point Z: 5 
+-
