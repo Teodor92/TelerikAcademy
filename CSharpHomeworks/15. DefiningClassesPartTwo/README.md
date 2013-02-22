@@ -1,4 +1,4 @@
-# Defining Classes Part One
+# Defining Classes Part Two
 
 ## Tasks discriptions:
 
