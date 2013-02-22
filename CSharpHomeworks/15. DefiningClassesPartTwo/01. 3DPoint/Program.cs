@@ -18,8 +18,8 @@ public class Program
         firstPath.AddPoint(point);
         firstPath.AddPoint(pointTwo);
 
-        PathStorage.PathSave(firstPath);
-        List<Path> pathList = PathStorage.PathLoad();
+        PathStorage.SavePath(firstPath);
+        List<Path> pathList = PathStorage.LoadPath();
         foreach (var path in pathList)
         {
             Console.WriteLine("-----Path Start-------");

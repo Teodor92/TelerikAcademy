@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        GenericList<int> listTesting = new GenericList<int>(5);
+        GenericList<int> listTesting = new GenericList<int>(1);
         listTesting.AddElement(2);
         listTesting.AddElement(3);
         listTesting.AddElement(4);

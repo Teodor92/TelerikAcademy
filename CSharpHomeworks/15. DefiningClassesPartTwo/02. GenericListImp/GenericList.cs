@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-public class GenericList<T> //where T:
+public class GenericList<T> where T: IComparable
 {
     private T[] list;
     private int position;
@@ -26,11 +26,21 @@ public class GenericList<T> //where T:
 
     // methods
 
+    public 
+
     public void AddElement(T element)
     {
         if (position >= list.Length)
         {
-            Console.WriteLine("Out of bounds");
+            // autogrow
+            T[] newList = new T[list.Length * 2];
+            for (int i = 0; i < list.Length; i++)
+            {
+                newList[i] = list[i];
+            }
+            position++;
+            newList[list.Length] = element;
+            list = newList;
         }
         else
         {

@@ -4,7 +4,7 @@ using System.IO;
 
 public static class PathStorage
 {
-    public static void PathSave(Path path)
+    public static void SavePath(Path path)
     {
         using (StreamWriter writer = new StreamWriter(@"../../PathSaves.txt"))
         {
@@ -15,7 +15,7 @@ public static class PathStorage
         }
     }
 
-    public static List<Path> PathLoad()
+    public static List<Path> LoadPath()
     {
         Path loadPath = new Path();
         List<Path> pathsLoaded = new List<Path>();
