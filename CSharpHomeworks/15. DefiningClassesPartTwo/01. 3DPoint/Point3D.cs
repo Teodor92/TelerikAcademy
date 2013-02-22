@@ -7,23 +7,15 @@ public struct Point3D
     public int pointY { get; set; }
     public int pointZ { get; set; }
 
-    static private Point3D zero = new Point3D(0, 0, 0);
+    static public readonly Point3D zero = new Point3D(0, 0, 0);
 
-    public Point3D(int pointX, int pointY, int pointZ)
-        : this()
+    public Point3D(int pointX, int pointY, int pointZ) : this()
     {
         this.pointX = pointX;
         this.pointY = pointY;
         this.pointZ = pointZ;
     }
 
-    public static Point3D Zero
-    {
-        get
-        {
-            return zero;
-        }
-    }
 
     public override string ToString()
     {

@@ -11,6 +11,7 @@ public class Program
         //Console.WriteLine(Distance3D.DistanceCalc(point, pointTwo));
         //Console.WriteLine(point);
         //Console.WriteLine(Point3D.Zero);
+        Console.WriteLine(Point3D.zero);
 
         Path firstPath = new Path();
         firstPath.AddPoint(pointTwo);
