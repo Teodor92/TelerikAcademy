@@ -26,7 +26,31 @@ public class GenericList<T> where T: IComparable
 
     // methods
 
-    public 
+    public T Max()
+    {
+        dynamic maxElem = int.MinValue;
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] > maxElem)
+            {
+                maxElem = list[i];
+            }
+        }
+        return maxElem;
+    }
+
+    public T Min()
+    {
+        dynamic minElem = int.MaxValue;
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] < minElem)
+            {
+                minElem = list[i];
+            }
+        }
+        return minElem;
+    }
 
     public void AddElement(T element)
     {

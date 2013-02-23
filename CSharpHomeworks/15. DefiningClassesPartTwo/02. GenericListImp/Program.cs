@@ -10,6 +10,7 @@ class Program
         listTesting.AddElement(4);
         listTesting.AddElement(5);
         listTesting.AddElement(6);
+        listTesting.AddElement(-1000);
 
         Console.WriteLine(listTesting);
 
@@ -22,6 +23,10 @@ class Program
         Console.WriteLine(listTesting);
 
         Console.WriteLine(listTesting.FindElemByValue(123));
+
+
+        Console.WriteLine(listTesting.Max());
+        Console.WriteLine(listTesting.Min());
 
         listTesting.ClearList();
 
