@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 public static class StringBuilderSubString
@@ -7,7 +7,7 @@ public static class StringBuilderSubString
     {
         StringBuilder subString = new StringBuilder();
 
-        if (index + length >= input.Length - 1)
+        if (index + length >= input.Length + 1)
         {
             throw new ArgumentOutOfRangeException("Out of range");
         }
@@ -22,4 +22,3 @@ public static class StringBuilderSubString
         return subString;
     }
 }
-
