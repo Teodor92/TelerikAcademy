@@ -24,7 +24,7 @@ class Program
 
         var sortedClass =
             from student in myClass
-            orderby student.firstName, student.secondName
+            orderby student.firstName, student.secondName descending
             select student;
 
         foreach (var student in sortedClass)

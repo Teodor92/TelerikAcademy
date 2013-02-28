@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public static class IEnumerableExtends
 {
-    public static T Sum<T>(this IEnumerable<T> input)
+    public static T Sum<T>(this IEnumerable<T> input) where T : IComparable
     {
         dynamic sum = 0;
 
@@ -15,7 +15,7 @@ public static class IEnumerableExtends
         return sum;
     }
 
-    public static T Product<T>(this IEnumerable<T> input)
+    public static T Product<T>(this IEnumerable<T> input) where T : IComparable
     {
         dynamic product = 1;
 
