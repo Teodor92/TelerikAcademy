@@ -4,7 +4,7 @@ using System.Linq;
 public class Call
 {
     private DateTime dateAndTime;
-    private int dialedNumber;
+    private string dialedNumber;
     private int duration;
 
     // constructors
@@ -13,7 +13,7 @@ public class Call
 
     // properties
 
-    public Call(DateTime dateAndTime, int dialedNumber, int duration)
+    public Call(DateTime dateAndTime, string dialedNumber, int duration)
     {
         this.dateAndTime = dateAndTime;
         this.dialedNumber = dialedNumber;
@@ -33,7 +33,7 @@ public class Call
         }
     }
 
-    public int DialedNumber
+    public string DialedNumber
     {
         get 
         {

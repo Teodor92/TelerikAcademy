@@ -13,10 +13,11 @@ public class GSMTest
 {
     static void Main()
     {
+        // GSMTest
         GSM[] test = new GSM[3];
 
         Display testDisplay = new Display(12, 13);
-        Battery testBattery = new Battery(BatteryType.Type1, 10, 10);
+        Battery testBattery = new Battery(BatteryType.LiIon, 10, 10);
 
         GSM firstPhone = new GSM("test", "test", 12, "Bai Ivan", testBattery, testDisplay);
         test[0] = firstPhone;
@@ -34,5 +35,34 @@ public class GSMTest
 
         Console.WriteLine(GSM.Iphone.Model);
         Console.WriteLine(GSM.Iphone.Manufacturer);
+        Console.WriteLine(firstPhone.Battery.BatteryModel);
+
+        Console.WriteLine("---------------------------------");
+        Console.WriteLine("GSMCallHistoryTest");
+        Console.WriteLine("---------------------------------");
+
+        //GSMCallHistoryTest
+        GSM myPhone = new GSM("Nokia", "Nokia Corp", 1, "Ivan", testBattery, testDisplay);
+
+
+        myPhone.AddCall(DateTime.Now, "088888888", 236);
+        myPhone.AddCall(DateTime.Now, "077777777", 333);
+        myPhone.AddCall(DateTime.Now, "066666666", 123);
+        myPhone.AddCall(DateTime.Now, "055555555", 11);
+        myPhone.AddCall(DateTime.Now, "044444444", 23);
+
+        myPhone.DisplayCallHistory();
+
+        Console.WriteLine(myPhone.CalcPrice(0.37));
+
+        myPhone.RemoveCallByDuration(333);
+
+        myPhone.DisplayCallHistory();
+        Console.WriteLine(myPhone.CalcPrice(0.37));
+
+        myPhone.ClearHistory();
+        myPhone.DisplayCallHistory();
+
+
     }
 }

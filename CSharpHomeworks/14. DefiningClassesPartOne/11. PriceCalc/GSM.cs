@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GSM
 {
-    public Battery Battery = new Battery(BatteryType.Type1, null, null);
+    public Battery Battery = new Battery(BatteryType.LiIon, null, null);
     public Display Display = new Display(0, null);
 
     private string model;
@@ -50,14 +50,6 @@ public class GSM
         get
         {
             return iphone;
-        }
-    }
-
-    public List<Call> CallHistory
-    {
-        get
-        {
-            return this.callHistory;
         }
     }
 
@@ -138,17 +130,17 @@ public class GSM
     }
 
     // methods
-    public void AddCall(DateTime now, int number, int duration)
+    public void AddCall(DateTime now, string number, int duration)
     {
         Call myCall = new Call(now, number, duration);
         callHistory.Add(myCall);
     }
 
-    public void RemoveCall(int number)
+    public void RemoveCallByDuration(int duration)
     {
         for (int i = 0; i < callHistory.Count; i++)
         {
-            if (callHistory[i].DialedNumber == number)
+            if (callHistory[i].Duration == duration)
             {
                 callHistory.RemoveAt(i);
                 i--;
@@ -161,6 +153,21 @@ public class GSM
         callHistory.Clear();
     }
 
+    public void DisplayCallHistory()
+    {
+        StringBuilder callHist = new StringBuilder();
+        callHist.AppendLine("CALL HISTORY:");
+        Console.WriteLine("---------------------------------");
+        foreach (var call in callHistory)
+        {
+            callHist.AppendFormat("Number: {0},  Date: {1},  Duration: {2} \n", call.DialedNumber, call.DateAndTime, call.Duration);
+        }
+
+        Console.WriteLine("---------------------------------");
+
+        Console.WriteLine(callHist.ToString());
+    }
+
     public double CalcPrice(double pricePerMin)
     {
         double wholeTime = 0;
@@ -169,7 +176,7 @@ public class GSM
             wholeTime = wholeTime + callHistory[i].Duration;
         }
 
-        double price = pricePerMin * (wholeTime / 60);
+        double price = pricePerMin * (Math.Ceiling(wholeTime / 60));
         return price;
     }
 

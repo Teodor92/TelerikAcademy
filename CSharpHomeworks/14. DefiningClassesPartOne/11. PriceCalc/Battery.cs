@@ -3,7 +3,7 @@ using System.Text;
 
 public enum BatteryType
 {
-    Type1, Type2, Type3
+    LiIon, NiMH, NiCd
 }
 
 public class Battery
@@ -17,13 +17,11 @@ public class Battery
     public Battery(BatteryType baterryModel)
         : this(baterryModel, null, null)
     {
-
     }
 
     public Battery(BatteryType baterryModel, int? hoursIdle)
         : this(baterryModel, hoursIdle, null)
     {
-
     }
 
     public Battery(BatteryType baterryModel, int? hoursIdle, int? hoursTalked)
