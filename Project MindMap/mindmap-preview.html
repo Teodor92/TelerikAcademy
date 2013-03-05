@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Mind Map Preview</title>
+	<link href="css/mindmap-preview.css" rel="stylesheet" />
+</head>
+<body onload="ChangeImage()">
+	<nav>
+		<header>
+			<ul>
+				<li><label id="txtTitle" /></li>
+				<li><button onclick="GoToBookMenu()" title="Go to book menu">Home</button></li>
+				<li><button onclick="Zoom(1.1)" title="Increase the mind map">Zoom In</button></li>
+				<li><button onclick="Zoom(0.9)" title="Decrease the mind map">Zoom Out</button></li>
+				<li><button onclick="ResetImage()" title="Dispaly original mind map">Reset</button></li>
+			</ul>
+		</header>
+	</nav>
+	<div id="wrapper">
+		<img id="imgMindMap" src="#" alt="mind map preview" />
+	</div>
+	<script src="js/mindmap-preview.js"></script>
+</body>
+</html>
