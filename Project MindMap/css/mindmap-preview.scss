@@ -17,6 +17,7 @@ body {
 
   nav {
     position: fixed;
+    z-index: 9999;
     background-image: url('../img/bg.jpg');
     float: left;
     width: 100px;
