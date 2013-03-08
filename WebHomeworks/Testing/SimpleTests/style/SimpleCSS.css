@@ -1,22 +1,11 @@
-li {
-	position: relative;
-	display: inline-block;
-	background-color: #f00;
-	width: 100px;
-	height: 100px;
+@media screen and (max-width: 2000px){
+ body{
+  background-color: red;
+ }
 }
 
-div {
-	display: none;
-	position: absolute;
-	top: 50px;
-	left: 10px;
-	background-color: #00f;
-	width: 100px;
-	height: 100px;
+@media screen and (max-width: 960px){
+ body{
+  background-color: green;
+ }
 }
-
-li:hover div {
-	display: block;
-}
-

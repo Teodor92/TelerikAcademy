@@ -13,7 +13,7 @@
 
 </head>
 
-<body>
+<body onload="SetLinks()">
 	<div id="wrapper">
 		<header>
 			<h1>Mind Map Presentation Project</h1>
@@ -23,6 +23,9 @@
 			<ul class='etabs'>
 				<li class='tab current'>
 					<a href="#tabs1-home" class="tab-link">Home</a>
+				</li>
+				<li class='tab'>
+					<a href="#tabs1-tree" class="tab-link">Map Tree</a>
 				</li>
 				<li class='tab'>
 					<a href="#tabs1-cSharpOne" class="tab-link">C# Part One</a>
@@ -38,6 +41,9 @@
 				</ul>	
 				<!-- MindMap Tree start -->
 				<div id="tabs1-home" class="content">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit repellendus odio iure quidem consequatur laboriosam quis voluptate officia quas esse. Natus pariatur accusantium hic repudiandae omnis animi eligendi. Deserunt ullam?
+				</div>
+				<div id="tabs1-tree" class="content">
 					<img src="img/Fixed2.png" alt="mainMindMap">
 
 					<a href="mindmap-preview.html?image=DUMMYLINK&title=Arrays Map 1" id="arrays1">
@@ -59,7 +65,7 @@
 					<a href="mindmap-preview.html?image=team_58_chapter_19_DataStructs.jpg&title=Data Str. and Alg. Complex. Map 2" id="algo2">
 						<div class="element">View Map 2</div>
 					</a>
-					<a href="mindmap-preview.html?image=DUMMYLINK&title=Chapter 01" id="preface">
+					<a href="mindmap-preview.html?image=DUMMYLINK&title=Chapter 01" id="preface" name="preface">
 						<div class="element">View Map</div>
 					</a>
 					<a href="mindmap-preview.html?image=DUMMYLINK&title=Chapter 01" id="introProgramming1">
@@ -74,7 +80,7 @@
 					<a href="mindmap-preview.html?image=DUMMYLINK&title=Chapter 01" id="strings2">
 						<div class="element">View Map 2</div>
 					</a>
-					<a href="mindmap-preview.html?image=DUMMYLINK&title=Chapter 01" id="dictionaries1">
+					<a href="mindmap-preview.html?image=k&title=Chapter 01" id="dictionaries1">
 						<div class="element">View Map 1</div>
 					</a>
 					<a href="mindmap-preview.html?image=DUMMYLINK&title=Chapter 01" id="dictionaries2">
@@ -224,7 +230,7 @@
 					<a href="mindmap-preview.html?image=DUMMYTEXT&title=Chapter 01" id="loops1">
 						<div class="element">View Map 1</div>
 					</a>
-					<a href="mindmap-preview.html?image=DUMMYTEXT&title=Chapter 01" id="loops2">
+					<a href="mindmap-preview.html?image=DUMMYTEXT&title=Chapter 01" id="loops2" >
 						<div class="element">View Map 2</div>
 					</a>
 				</div>
@@ -232,7 +238,7 @@
 
 				<!-- Tabs with chapters start -->
 				<div id="tabs1-cSharpOne" class="content">
-					<a href=""><div class="chapters blue">
+					<a href="" name="preface"><div class="chapters blue">
 						Preface
 					</div></a>
 					<a href=""><div class="chapters lightGreen">
@@ -421,5 +427,6 @@
 			</footer>
 		</div>
 		<script src="js/script.js" type="text/javascript" ></script>
+		<script src="js/linkScript.js" type="text/javascript"></script>
 	</body>
 	</html>

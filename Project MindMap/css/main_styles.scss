@@ -52,15 +52,14 @@ body {
 		}
 
 		li:nth-child(1) {
-			@include blue();
+			@include red();
 
-			border: 1px solid #1F5BA1;
+			border: 1px solid #9A1F21;
 			border-radius: 5px;
 		}
 
 		li:nth-child(2) {
 			@include green();
-
 
 			border: 1px solid #1F5714;
 			border-radius: 5px;
@@ -69,23 +68,29 @@ body {
 		li:nth-child(3) {
 			@include orange();
 
-
 			border: 1px solid #A06A0A;
 			border-radius: 5px;
 		}
 
 		li:nth-child(4) {
-			@include red();
+			@include blue();
 
-			border: 1px solid #9A1F21;
+			border: 1px solid #1F5BA1;
 			border-radius: 5px;
 		}
 
 		li:nth-child(5) {
-			@include blue;
+			@include red;
+			
+			border: 1px solid #9A1F21;
+			border-radius: 5px;
+		}
+
+		li:nth-child(6) {
+			@include green;
 			
 			float: right;
-			border: 1px solid #1F5BA1;
+			border: 1px solid #1F5714;
 			border-radius: 5px;
 		}
 
