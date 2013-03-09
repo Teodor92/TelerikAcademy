@@ -27,7 +27,7 @@ public static class IEnumerableExtends
         return product;
     }
 
-    public static T Min<T>(this IEnumerable<T> input) where T : IComparable    
+    public static T Min<T>(this IEnumerable<T> input) where T : IComparable
     {
         dynamic min = int.MaxValue;
 
@@ -68,6 +68,6 @@ public static class IEnumerableExtends
             counter++;
         }
 
-        return sum/counter;
+        return sum / counter;
     }
 }

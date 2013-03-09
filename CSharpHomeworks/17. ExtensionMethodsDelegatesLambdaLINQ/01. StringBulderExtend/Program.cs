@@ -3,7 +3,7 @@ using System.Text;
 
 public class Program
 {
-    static void Main()
+    public static void Main()
     {
         StringBuilder testing = new StringBuilder();
         testing.AppendLine("SOME words");

@@ -9,13 +9,13 @@ public class Program
 
     public static void Main()
     {
-        //Timer obj = new Timer();
-        //Ticker Timer = new Ticker(obj.TickerPross);
+        Timer obj = new Timer();
+        Ticker timer = new Ticker(obj.TickerPross);
 
-        //while (true)
-        //{
-        //    Thread.Sleep(1000);
-        //    Timer(0);
-        //}
+        while (true)
+        {
+            Thread.Sleep(1000);
+            timer(0);
+        }
     }
 }

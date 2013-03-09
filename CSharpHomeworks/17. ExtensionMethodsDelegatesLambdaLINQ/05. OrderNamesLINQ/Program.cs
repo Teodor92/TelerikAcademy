@@ -5,31 +5,22 @@ class Program
 {
     static void Main()
     {
-        Student[] myClass = new Student[3];
-
-        Student firstStudent = new Student();
-        firstStudent.firstName = "Ivan";
-        firstStudent.secondName = "Zabunov";
-        myClass[0] = firstStudent;
-
-        Student secondStudent = new Student();
-        secondStudent.firstName = "Teodor";
-        secondStudent.secondName = "Andonov";
-        myClass[1] = secondStudent;
-
-        Student thirdStudent = new Student();
-        thirdStudent.firstName = "Pesho";
-        thirdStudent.secondName = "Olov";
-        myClass[2] = thirdStudent;
+        Student[] myClass = 
+        {
+               new Student("Ivan", "Mihailov"),  
+               new Student("Ivan", "Ivanov"),
+               new Student("Ivan", "Dimitrov"),
+               new Student("Ivan", "Stoianov")
+        };
 
         var sortedClass =
             from student in myClass
-            orderby student.firstName descending, student.secondName descending
+            orderby student.FirstName descending, student.SecondName descending
             select student;
 
         foreach (var student in sortedClass)
         {
-            Console.WriteLine("{0} {1}", student.firstName, student.secondName);
+            Console.WriteLine("{0} {1}", student.FirstName, student.SecondName);
         }
     }
 }

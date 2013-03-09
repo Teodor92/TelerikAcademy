@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
         int[] numbers = new int[100];
         for (int i = 0; i < numbers.Length; i++)

@@ -1,32 +1,23 @@
 ﻿using System;
 using System.Linq;
 
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
-        Student[] myClass = new Student[3];
+        Student[] myClass = 
+        {
+               new Student("Ivan", "Mihailov"),  
+               new Student("Ivan", "Ivanov"),
+               new Student("Ivan", "Dimitrov"),
+               new Student("Ivan", "Stoianov")
+        };
 
-        Student firstStudent = new Student();
-        firstStudent.firstName = "Ivan";
-        firstStudent.secondName = "Zabunov";
-        myClass[0] = firstStudent;
-
-        Student secondStudent = new Student();
-        secondStudent.firstName = "Teodor";
-        secondStudent.secondName = "Andonov";
-        myClass[1] = secondStudent;
-
-        Student thirdStudent = new Student();
-        thirdStudent.firstName = "Pesho";
-        thirdStudent.secondName = "Olov";
-        myClass[2] = thirdStudent;
-
-        var sortedClass = myClass.OrderByDescending(x => x.firstName).ThenByDescending(x => x.secondName);
+        var sortedClass = myClass.OrderByDescending(x => x.FirstName).ThenByDescending(x => x.SecondName);
 
         foreach (var student in sortedClass)
         {
-            Console.WriteLine("{0} {1}", student.firstName, student.secondName);
+            Console.WriteLine("{0} {1}", student.FirstName, student.SecondName);
         }
     }
 }

@@ -1,7 +1,14 @@
 ﻿using System;
 
-class Student
+public class Student
 {
-    public string firstName { get; set; }
-    public string secondName { get; set; }
+    public Student(string firstName, string secondName)
+    {
+        this.FirstName = firstName;
+        this.SecondName = secondName;
+    }
+
+    public string FirstName { get; set; }
+
+    public string SecondName { get; set; }
 }

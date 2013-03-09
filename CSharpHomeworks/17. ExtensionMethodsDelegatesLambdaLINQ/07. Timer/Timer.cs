@@ -4,11 +4,11 @@ public delegate void Ticker(int start);
 
 public class Timer
 {
-    public int nums { get; set; }
+    public int Nums { get; set; }
+
     public void TickerPross(int start)
     {
-        Console.WriteLine(this.nums);
-        this.nums++;
+        Console.WriteLine(this.Nums);
+        this.Nums++;
     }
 }
-
