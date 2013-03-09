@@ -3,28 +3,30 @@ using System.Text;
 
 public struct Point3D
 {
-    public int pointX { get; set; }
-    public int pointY { get; set; }
-    public int pointZ { get; set; }
+    public static readonly Point3D Zero = new Point3D(0, 0, 0);
 
-    static public readonly Point3D zero = new Point3D(0, 0, 0);
-
-    public Point3D(int pointX, int pointY, int pointZ) : this()
+    public Point3D(int pointX, int pointY, int pointZ)
+        : this()
     {
-        this.pointX = pointX;
-        this.pointY = pointY;
-        this.pointZ = pointZ;
+        this.PointX = pointX;
+        this.PointY = pointY;
+        this.PointZ = pointZ;
     }
 
+    public int PointX { get; set; }
+
+    public int PointY { get; set; }
+
+    public int PointZ { get; set; }
 
     public override string ToString()
     {
         StringBuilder endText = new StringBuilder();
-        endText.AppendFormat("Point X: {0}", this.pointX.ToString());
+        endText.AppendFormat("Point X: {0}", this.PointX.ToString());
         endText.AppendLine();
-        endText.AppendFormat("Point Y: {0}", this.pointY.ToString());
+        endText.AppendFormat("Point Y: {0}", this.PointY.ToString());
         endText.AppendLine();
-        endText.AppendFormat("Point Z: {0} \n-", this.pointZ.ToString());
+        endText.AppendFormat("Point Z: {0} \n-", this.PointZ.ToString());
         return endText.ToString();
     }
 }

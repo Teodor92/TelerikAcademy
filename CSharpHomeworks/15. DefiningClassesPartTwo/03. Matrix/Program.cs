@@ -1,15 +1,15 @@
 ﻿using System;
 
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
-        Matrix<int> matrixTesting = new Matrix<int>(20,20);
+        Matrix<int> matrixTesting = new Matrix<int>(10, 10);
         Matrix<int> matrixTestingTwo = new Matrix<int>(10, 10);
-        Console.WriteLine(matrixTesting.cols);
+        Console.WriteLine(matrixTesting.Cols);
 
-        matrixTesting[10, 10] = 200;
-        matrixTesting[9, 9] = 3;
-        Console.WriteLine(matrixTesting * matrixTestingTwo);
+        matrixTesting[0, 0] = 200;
+        matrixTestingTwo[0, 0] = 3;
+        Console.WriteLine(matrixTesting + matrixTestingTwo);
     }
 }

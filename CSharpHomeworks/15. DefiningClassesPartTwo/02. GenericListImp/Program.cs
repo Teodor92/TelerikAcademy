@@ -1,8 +1,8 @@
 ﻿using System;
 
-class Program
+public class Program
 {
-    static void Main()
+    public static void Main()
     {
         GenericList<int> listTesting = new GenericList<int>(1);
         listTesting.AddElement(2);
@@ -24,7 +24,6 @@ class Program
 
         Console.WriteLine(listTesting.FindElemByValue(123));
 
-
         Console.WriteLine(listTesting.Max());
         Console.WriteLine(listTesting.Min());
 
@@ -32,6 +31,4 @@ class Program
 
         Console.WriteLine(listTesting);
     }
-
-
 }

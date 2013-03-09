@@ -8,7 +8,7 @@ public static class PathStorage
     {
         using (StreamWriter writer = new StreamWriter(@"../../PathSaves.txt"))
         {
-            foreach (var point in path.Paths)
+            foreach (var point in path.AllPoints)
             {
                 writer.WriteLine(point);
             }
@@ -28,9 +28,9 @@ public static class PathStorage
                 {
                     Point3D point = new Point3D();
                     string[] points = line.Split(',');
-                    point.pointX = int.Parse(points[0]);
-                    point.pointY = int.Parse(points[1]);
-                    point.pointZ = int.Parse(points[2]);
+                    point.PointX = int.Parse(points[0]);
+                    point.PointY = int.Parse(points[1]);
+                    point.PointZ = int.Parse(points[2]);
                     loadPath.AddPoint(point);
                 }
                 else
@@ -38,9 +38,11 @@ public static class PathStorage
                     pathsLoaded.Add(loadPath);
                     loadPath = new Path();
                 }
+
                 line = reader.ReadLine();
             }
         }
+
         return pathsLoaded;
     }
 }

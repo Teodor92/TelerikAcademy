@@ -1,85 +1,94 @@
 ﻿using System;
 using System.Text;
 
-public class GenericList<T> where T: IComparable
+public class GenericList<T> where T : IComparable
 {
+    private const int DefCap = 10;
     private T[] list;
     private int position;
 
+    public GenericList()
+        : this(DefCap)
+    {
+    }
+
     public GenericList(int cap)
     {
-        list = new T[cap];
+        this.list = new T[cap];
     }
 
     public T this[int index]
     {
         get
         {
-            return list[index];
+            return this.list[index];
         }
 
         set
         {
-            list[index] = value;
+            this.list[index] = value;
         }
     }
 
     // methods
-
     public T Max()
     {
         dynamic maxElem = int.MinValue;
-        for (int i = 0; i < list.Length; i++)
+        for (int i = 0; i < this.list.Length; i++)
         {
-            if (list[i] > maxElem)
+            if (this.list[i] > maxElem)
             {
-                maxElem = list[i];
+                maxElem = this.list[i];
             }
         }
+
         return maxElem;
     }
 
     public T Min()
     {
         dynamic minElem = int.MaxValue;
-        for (int i = 0; i < list.Length; i++)
+        for (int i = 0; i < this.list.Length; i++)
         {
-            if (list[i] < minElem)
+            if (this.list[i] < minElem)
             {
-                minElem = list[i];
+                minElem = this.list[i];
             }
         }
+
         return minElem;
     }
 
     public void AddElement(T element)
     {
-        if (position >= list.Length)
+        if (this.position >= this.list.Length)
         {
             // autogrow
-            T[] newList = new T[list.Length * 2];
-            for (int i = 0; i < list.Length; i++)
+            T[] newList = new T[this.list.Length * 2];
+            for (int i = 0; i < this.list.Length; i++)
             {
-                newList[i] = list[i];
+                newList[i] = this.list[i];
             }
-            position++;
-            newList[list.Length] = element;
-            list = newList;
+
+            this.position++;
+            newList[this.list.Length] = element;
+            this.list = newList;
         }
         else
         {
-            list[position] = element;
-            position++;
+            this.list[this.position] = element;
+            this.position++;
         }
     }
+
     public void RemoveElemAtIndex(int index)
-    { 
-        if (index < list.Length)
+    {
+        if (index < this.list.Length)
         {
-            T[] newList = new T[list.Length - 1];
+            T[] newList = new T[this.list.Length - 1];
             bool beforeRem = true;
 
-            for (int i = 0; i < list.Length - 1; i++)
+            for (int i = 0; i < this.list.Length - 1; i++)
             {
                 if (i == index)
                 {
@@ -88,15 +97,15 @@ public class GenericList<T> where T: IComparable
 
                 if (beforeRem)
                 {
-                    newList[i] = list[i];
+                    newList[i] = this.list[i];
                 }
                 else
                 {
-                    newList[i] = list[i + 1];
+                    newList[i] = this.list[i + 1];
                 }
             }
 
-            list = newList;
+            this.list = newList;
         }
         else
         {
@@ -106,12 +115,12 @@ public class GenericList<T> where T: IComparable
 
     public void InsertElemAtIndex(int index, T element)
     {
-        if (index < list.Length)
+        if (index < this.list.Length)
         {
-            T[] newList = new T[list.Length + 1];
+            T[] newList = new T[this.list.Length + 1];
             bool beforeRem = true;
 
-            for (int i = 0; i < list.Length + 1; i++)
+            for (int i = 0; i < this.list.Length + 1; i++)
             {
                 if (i == index)
                 {
@@ -122,15 +131,15 @@ public class GenericList<T> where T: IComparable
 
                 if (beforeRem)
                 {
-                    newList[i] = list[i];
+                    newList[i] = this.list[i];
                 }
                 else
                 {
-                    newList[i] = list[i - 1];
+                    newList[i] = this.list[i - 1];
                 }
             }
 
-            list = newList;
+            this.list = newList;
         }
         else
         {
@@ -138,19 +147,23 @@ public class GenericList<T> where T: IComparable
         }
     }
 
+    public int Length()
+    {
+        return this.list.Length;
+    }
+
     public void ClearList()
     {
-        list = new T[list.Length];
+        this.list = new T[1];
     }
 
     public int FindElemByValue(T value)
     {
         int indexFound = -1;
 
-        for (int i = 0; i < list.Length; i++)
+        for (int i = 0; i < this.list.Length; i++)
         {
-
-            if (list[i].Equals(value))
+            if (this.list[i].Equals(value))
             {
                 indexFound = i;
                 break;
@@ -163,10 +176,11 @@ public class GenericList<T> where T: IComparable
     public override string ToString()
     {
         StringBuilder endText = new StringBuilder();
-        foreach (var item in list)
+        foreach (var item in this.list)
         {
             endText.AppendFormat("{0} ", item);
         }
+
         return endText.ToString().Trim();
     }
 }
