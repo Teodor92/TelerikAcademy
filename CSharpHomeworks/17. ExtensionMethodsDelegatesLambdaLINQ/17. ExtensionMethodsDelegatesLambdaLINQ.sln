@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. ToTitleCase", "07. ToTi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Timer", "07. Timer\07. Timer.csproj", "{4F38DCDD-FDA1-4FF2-B356-A4F3A9C0EBD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Events", "08. Events\08. Events.csproj", "{3A457B1B-B6DC-418B-94D9-DBA260B6EA4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{4F38DCDD-FDA1-4FF2-B356-A4F3A9C0EBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F38DCDD-FDA1-4FF2-B356-A4F3A9C0EBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F38DCDD-FDA1-4FF2-B356-A4F3A9C0EBD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A457B1B-B6DC-418B-94D9-DBA260B6EA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A457B1B-B6DC-418B-94D9-DBA260B6EA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A457B1B-B6DC-418B-94D9-DBA260B6EA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A457B1B-B6DC-418B-94D9-DBA260B6EA4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

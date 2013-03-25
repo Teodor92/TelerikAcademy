@@ -13,11 +13,7 @@ public class Program
                new Student("Ivan", "Stoianov")
         };
 
-        var sortedClass = myClass.OrderByDescending(x => x.FirstName).ThenByDescending(x => x.SecondName);
-
-        foreach (var student in sortedClass)
-        {
-            Console.WriteLine("{0} {1}", student.FirstName, student.SecondName);
-        }
+        ClassSorter mySorter = new ClassSorter(myClass);
+        mySorter.ShowSortedClass();
     }
 }

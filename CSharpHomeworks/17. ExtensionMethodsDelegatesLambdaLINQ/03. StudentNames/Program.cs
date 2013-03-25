@@ -13,14 +13,7 @@ public class Program
                new Student("Ivan", "Stoianov")
         };
 
-        var sortedClass =
-            from student in myClass
-            where student.FirstName.CompareTo(student.SecondName) == -1
-            select student;
-
-        foreach (var student in sortedClass)
-        {
-            Console.WriteLine("{0} {1}", student.FirstName, student.SecondName);
-        }
+        ClassNameFilter myFilter = new ClassNameFilter(myClass);
+        myFilter.ShowFilterdClass();
     }
 }

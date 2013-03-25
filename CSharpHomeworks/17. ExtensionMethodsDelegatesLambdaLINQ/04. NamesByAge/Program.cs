@@ -13,14 +13,7 @@ public class Program
                new Student("Ivan", "Stoianov", 36)
         };
 
-        var sortedClass =
-            from student in myClass
-            where student.Age >= 18 && student.Age <= 24
-            select student;
-
-        foreach (var student in sortedClass)
-        {
-            Console.WriteLine("{0} {1} {2}", student.FirstName, student.SecondName, student.Age);
-        }
+        AgeFilter myFilter = new AgeFilter(myClass);
+        myFilter.ShowFilterdClass();
     }
 }
