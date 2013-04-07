@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
+    </h3>
+
+    <label for="tb-first">Input a Url: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        // Gets the user input
+        function getInput() {
+            var text = document.getElementById('tb-first').value;
+            return text;
+        }
+
+        // Check if palindrom
+        function isPallindrom(str) {
+
+            for (var i = 0; i < str.length / 2; i++) {
+                if (str[i] != str[str.length - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // get all the palindroms in the text
+        function getPalindroms(text) {
+            text = text + "";
+            var words = text.split(" ");
+            var palindroms = [];
+            for (var i = 0; i < words.length; i++) {
+                if (isPallindrom(words[i])) {
+                    palindroms.push(words[i]);
+                }
+            }
+
+            return palindroms;
+        }
+
+        //run program
+        function runProgram() {
+            var text = getInput();
+            jsConsole.writeLine(getPalindroms(text));
+        }
+    </script>
+</body>
+</html>

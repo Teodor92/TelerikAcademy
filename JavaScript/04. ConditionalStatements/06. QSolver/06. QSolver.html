@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input A: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-second">Input B: </label>
+		<input type="text" id="tb-second"/>
+		<label for="tb-third">Input C: </label>
+		<input type="text" id="tb-third"/>
+		<br />
+		<a href="#" onclick="QSolver()">Solve !</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function QSolver() {
+		var a = jsConsole.readInteger("#tb-first");
+		var b = jsConsole.readInteger("#tb-second");
+		var c = jsConsole.readInteger("#tb-third");
+
+		var discriminant = b * b - 4 * a * c;
+        if (a === 0)
+        {
+            jsConsole.writeLine("There is one real root - x1: " + (-c/b));
+        }
+        else if (discriminant > 0)
+        {
+            var xOne = (-b + Math.sqrt(discriminant)) / 2 * a;
+            var xTwo = (-b - Math.sqrt(discriminant)) / 2 * a;
+            jsConsole.writeLine("There are two real roots - x1: " + xOne + " and x2: " + xTwo);
+        }
+        else if (discriminant == 0)
+        {
+            var xOne = -(b / 2 * a);
+            jsConsole.writeLine("There is one real root - x1: " + xOne);
+        }
+        else
+        {
+            jsConsole.writeLine("There are no real roots");
+        }
+	}
+
+
+	</script>
+</body>
+</html>

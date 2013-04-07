@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css">
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <h3>
+            Write a function that checks if the element at given position in given array of integers is bigger than its two neighbors (when such exist).
+        </h3>
+        <br />
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // test values
+        var myArray = [1, 123, 34, 5, 6, 7, 1, 2, 3, 4, 5, , 7, 0];
+        var pos = 2;
+
+
+        function getIfBigger(positon, array) {
+            if (positon === 0) {
+                if (array[positon] > array[positon + 1]) {
+                    jsConsole.writeLine(true);
+                }
+                else {
+                    jsConsole.writeLine(false);
+                }
+            }
+            else if (positon === array.length - 1) {
+                if (array[positon] > array[positon - 1]) {
+                    jsConsole.writeLine(true);
+                }
+                else {
+                    jsConsole.writeLine(false);
+                }
+            }
+            else {
+                if (array[positon] > array[positon - 1] &&
+                    array[positon] > array[positon + 1]) {
+                    jsConsole.writeLine(true);
+                }
+                else {
+                    jsConsole.writeLine(false);
+                }
+            }
+        }
+
+        // func test
+        getIfBigger(pos, myArray);
+
+	</script>
+</body>
+</html>

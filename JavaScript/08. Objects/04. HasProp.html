@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        function hasProp(obj, prop) {
+            for (var i in obj) {
+                if (i == prop) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        var test = {
+            cat: "test",
+            dog: "test",
+            fnc: "test"
+        }
+        
+        jsConsole.writeLine(hasProp(test, "cat"));
+        jsConsole.writeLine(hasProp(test, "dog"));
+        jsConsole.writeLine(hasProp(test, "ggg"));
+        jsConsole.writeLine(hasProp(test, "func"));
+        jsConsole.writeLine(hasProp(test, "fnc"));
+	</script>
+</body>
+</html>

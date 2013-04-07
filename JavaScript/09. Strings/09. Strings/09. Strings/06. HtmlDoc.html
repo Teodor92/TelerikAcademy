@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
+</h3>
+    <label for="tb-first">Input text: </label>
+    <input type="text" id="tb-second" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // Gets the user input
+
+        function getText() {
+            var text = document.getElementById('tb-second').value;
+            return text;
+        }
+
+        // Bracket checker
+        function extractText(html) {
+            
+            var outText = html.match(/<([\w]+)[^>]*>(.*?)<\/\1>/);
+
+            return outText;
+        }
+
+        //run program
+        function runProgram() {
+            var text = getText();
+            jsConsole.writeLine(extractText(text));
+        }
+	</script>
+</body>
+</html>

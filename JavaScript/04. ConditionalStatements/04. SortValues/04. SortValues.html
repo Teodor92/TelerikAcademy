@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input the first number: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-second">Input the second number: </label>
+		<input type="text" id="tb-second"/>
+		<label for="tb-third">Input the third number: </label>
+		<input type="text" id="tb-third"/>
+		<br />
+		<a href="#" onclick="OrderDescending()">Order !</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function OrderDescending() {
+		var firstNum = jsConsole.readInteger("#tb-first");
+		var secondNum = jsConsole.readInteger("#tb-second");
+		var thirdNum = jsConsole.readInteger("#tb-third");
+
+		var temp = 0;
+
+		if (secondNum > firstNum)
+        {
+            temp = firstNum;
+            firstNum = secondNum;
+            secondNum = temp;
+            if (thirdNum > secondNum)
+            {
+                temp = thirdNum;
+                thirdNum = secondNum;
+                secondNum = temp;
+            }
+            if (secondNum > firstNum)
+            {
+                temp = firstNum;
+                firstNum = secondNum;
+                secondNum = temp;
+            }
+        }
+        if (thirdNum > secondNum)
+        {
+            temp = thirdNum;
+            thirdNum = secondNum;
+            secondNum = temp;
+            if (secondNum > firstNum)
+            {
+                temp = firstNum;
+                firstNum = secondNum;
+                secondNum = temp;
+            }
+        }
+
+        jsConsole.writeLine(firstNum + " " + secondNum + " " + thirdNum);
+	}
+
+
+
+	</script>
+</body>
+</html>

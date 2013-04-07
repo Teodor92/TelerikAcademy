@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input end digit: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<label for="tb-second">Input number: </label>
+		<input type="text" id="tb-second"/>
+		<br />
+		<a href="#" onclick="ThirdDigit()">What is the third digit equal to the given?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function ThirdDigit() {
+		var digit = jsConsole.readInteger("#tb-first");
+		var number = jsConsole.readInteger("#tb-second");
+		if (number % 10 === digit) {
+			jsConsole.writeLine(true);
+		}
+		else{
+			jsConsole.writeLine(false);
+		};
+	}
+
+	</script>
+</body>
+</html>

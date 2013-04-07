@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input the first number: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-second">Input the second number: </label>
+		<input type="text" id="tb-second"/>
+		<label for="tb-third">Input the third number: </label>
+		<input type="text" id="tb-third"/>
+		<label for="tb-third">Input the fourth number: </label>
+		<input type="text" id="tb-fourth"/>
+		<label for="tb-third">Input the fifth number: </label>
+		<input type="text" id="tb-fifth"/>
+		<br />
+		<a href="#" onclick="Greatest()">Greatest ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function Greatest() {
+		var firstInt = jsConsole.readInteger("#tb-first");
+		var secondInt = jsConsole.readInteger("#tb-second");
+		var thirdInt = jsConsole.readInteger("#tb-third"); 
+		var fourthInt = jsConsole.readInteger("#tb-fourth"); 
+		var fifthInt = jsConsole.readInteger("#tb-fifth"); 
+		var biggest = 0;
+
+		if (firstInt > secondInt) {
+			biggest = firstInt;
+			if (biggest > thirdInt) {
+				if (biggest > fourthInt) {
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+				else {
+					biggest = fourthInt;
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+			}
+			else {
+				biggest = thirdInt;
+				if (biggest > fourthInt) {
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+				else {
+					biggest = fourthInt;
+					if (biggest>fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+			}
+		}
+		else {
+			biggest = secondInt;
+			if (biggest > thirdInt) {
+				if (biggest > fourthInt) {
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+				else {
+					biggest = fourthInt;
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+			}
+			else {
+				biggest = thirdInt;
+				if (biggest > fourthInt) {
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+				else {
+					biggest = fourthInt;
+					if (biggest > fifthInt) {
+						jsConsole.writeLine(biggest);
+					}
+					else {
+						jsConsole.writeLine(fifthInt);
+					}
+				}
+			}
+		}
+	}
+
+	</script>
+</body>
+</html>

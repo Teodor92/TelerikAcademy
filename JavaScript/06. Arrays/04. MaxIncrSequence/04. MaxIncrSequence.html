@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<a href="#" onclick="MaxIncrSeq()">Best incr sequence ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	var myArray = new Array(3, 2, 3, 4, 5, 6, 7, 8, 2, 2, 4);
+	var len = 1;
+	var bestLen = 0;
+	var indexer = 0;
+	var endIndex;
+
+	function MaxIncrSeq() {
+		for (var indexer = 0; indexer < myArray.length - 1; indexer++) {
+			if (myArray[indexer] < myArray[indexer + 1]) {
+				len++;
+			}
+			else {
+				if (len > bestLen) {
+					bestLen = len;
+					endIndex = indexer;
+				};
+
+				len = 1;
+			};
+		};
+
+		if (len > bestLen)
+        {
+            bestLen = len;
+            endIndex = myArray.length - 1;
+        }
+
+		for (var i = endIndex; i >= endIndex - bestLen + 1; i--) {
+			jsConsole.write(myArray[i] + " ")
+		};
+	}
+
+	</script>
+</body>
+</html>

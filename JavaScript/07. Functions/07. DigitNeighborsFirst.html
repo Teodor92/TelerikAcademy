@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css">
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <h3>
+            Write a Function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.
+Use the function from the previous exercise.
+        </h3>
+        <br />
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        var myArray = [1, 123, 34, 5, 6, 7, 1, 2, 3, 4, 5, , 7, 0];
+        var pos = 2;
+
+        function getIfBigger(positon, array) {
+            if (positon === 0) {
+                if (array[positon] > array[positon + 1]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else if (positon === array.length - 1) {
+                if (array[positon] > array[positon - 1]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                if (array[positon] > array[positon - 1] &&
+                    array[positon] > array[positon + 1]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        function getFirstBigger(array) {
+            for (var i = 0; i < array.length; i++) {
+                if (getIfBigger(i, array)) {
+                    return myArray[i];
+                }
+            }
+
+            return -1;
+        }
+
+        jsConsole.writeLine(getFirstBigger(myArray));
+
+	</script>
+</body>
+</html>

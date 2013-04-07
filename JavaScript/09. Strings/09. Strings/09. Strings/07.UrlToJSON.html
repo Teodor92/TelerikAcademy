@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a script that parses an URL address given in the format.
+ </h3>
+
+    <label for="tb-first">Input a Url: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // Gets the user input
+        function getInput() {
+            var url = document.getElementById('tb-first').value;
+            return url;
+        }
+
+        // Convert the url
+        function convertUrl(url) {
+            url = url + "";
+            var pattern = /(.*):\/\/(.*?)(\/.*)/g;
+            var fragments = pattern.exec(url);
+
+            var urlObj = {
+                portocol: fragments[1],
+                server: fragments[2],
+                resource: fragments[3]
+            };
+
+            return urlObj;
+        }
+
+        //run program
+        function runProgram() {
+            var text = getInput();
+            var frag = convertUrl(text);
+            for (var i in frag) {
+                jsConsole.writeLine(frag[i]);
+            }
+        }
+	</script>
+</body>
+</html>

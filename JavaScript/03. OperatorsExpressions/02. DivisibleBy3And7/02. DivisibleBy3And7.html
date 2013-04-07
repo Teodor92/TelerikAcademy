@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input a integer number: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="DivBySevenOrThree()">Divisible By 7 and 3 ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function DivBySevenOrThree() {
+		var number = jsConsole.readInteger("#tb-first");
+		if (number % 21 === 0) {
+			jsConsole.writeLine("The number is divisible By 7 and 3!");
+		}
+		else{
+			jsConsole.writeLine("The number is NOT Divisible By 7 and 3!");
+		};
+	}
+
+	</script>
+</body>
+</html>

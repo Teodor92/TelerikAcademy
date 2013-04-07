@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Enter x: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-first">Enter y: </label>
+		<input type="text" id="tb-second"/>
+		<br />
+		<a href="#" onclick="EvenOrOdd()"> Where is the point at ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function EvenOrOdd() {
+		var x = jsConsole.readInteger("#tb-first");
+		var y = jsConsole.readInteger("#tb-second");
+		
+		var newX = Math.abs(x - 1);
+		var newY = Math.abs(y - 1);
+
+		var distance = Math.sqrt(newX*newX + newY*newY);
+
+		if (y <= 1 && y >= 3 && x <= -1 && x >= 5 && distance <= 3) {
+			jsConsole.writeLine("In the circle and out of the rectangle!");
+		}
+		else {
+			jsConsole.writeLine("Not where it shoudl be!");
+		};
+	}
+
+	</script>
+</body>
+</html>

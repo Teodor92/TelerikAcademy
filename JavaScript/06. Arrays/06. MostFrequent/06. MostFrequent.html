@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<a href="#" onclick="FindFreqElement()">Most frequent element ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	var myArray = new Array(4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3, 3, 3, 3);
+	var indexerOne;
+	var indexerTwo;
+	var bestElem;
+	var times = 1;
+	var bestTimes = 0;
+
+
+	function FindFreqElement() {
+		for (indexerOne = 0; indexerOne < myArray.length - 1; indexerOne++) {
+
+			for (indexerTwo = 1; indexerTwo < myArray.length; indexerTwo++) {
+				if (myArray[indexerTwo] == myArray[indexerOne]) {
+					times++;
+				};
+			};
+
+			if (times >= bestTimes) {
+				bestTimes = times;
+				bestElem = myArray[indexerOne];
+			};
+
+			times = 0;
+		};
+
+		jsConsole.writeLine("Most frequent element is " + bestElem + " " + bestTimes + " times.");
+	}
+
+	</script>
+</body>
+</html>

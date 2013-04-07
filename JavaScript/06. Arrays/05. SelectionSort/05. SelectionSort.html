@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<a href="#" onclick="SelectionSort()">Sort da numbas!</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	var myArray = new Array(9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 132, 45, -2, 333);
+	var indexerOne = 0;
+	var indexerTwo = 0;
+	var swapIndex = 0;
+
+	function SelectionSort() {
+
+		for(var element in myArray) {
+			jsConsole.write(myArray[element] + " ");
+		}
+
+		jsConsole.writeLine(" ");
+
+		for (indexerOne = 0; indexerOne < myArray.length - 1; indexerOne++) {
+			swapIndex = indexerOne;
+			for (indexerTwo = 1; indexerTwo < myArray.length; indexerTwo++) {
+				if (myArray[indexerOne] > myArray[indexerTwo]) {
+					swapIndex = indexerTwo;
+				};
+			};
+
+			//swap
+			if (swapIndex != indexerOne) {
+				var temp = myArray[indexerOne];
+				myArray[indexerOne] = myArray[swapIndex];
+				myArray[swapIndex] = temp;
+			};
+		};
+
+		for(var element in myArray) {
+			jsConsole.write(myArray[element] + " ");
+		}
+	}
+
+	</script>
+</body>
+</html>

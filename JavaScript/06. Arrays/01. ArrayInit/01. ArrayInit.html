@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<br />
+		<a href="#" onclick="InitArray()">Gimme numbars!</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+
+	var myArray = new Array(20);
+	var index;
+	function InitArray() {
+		for (index = 0; index < myArray.length; index++) {
+			myArray[index] = index * 5;
+		};
+
+		for(var element in myArray) {
+			jsConsole.writeLine(myArray[element]);
+		}
+		
+	}
+
+	</script>
+</body>
+</html>

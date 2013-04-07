@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write functions for working with shapes in  standard Planar coordinate system</h3>
+    <ul>
+        <li>
+            Points are represented by coordinates P(X, Y)
+        </li>
+        <li>
+            Lines are represented by two points, marking their beginning and ending L(P1(X1,Y1),P2(X2,Y2))
+        </li>
+        <li>
+            Calculate the distance between two points
+        </li>
+        <li>
+            Check if three segment lines can form a triangle
+        </li>
+    </ul>
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        function makePoint(x, y) {
+            return {
+                x: x,
+                y: y,
+                ShowPoint: function() {
+                    return "Point X is " + x + " and Y is " + y;
+                }
+            };
+        }
+
+        function makeLine(pointA, pointB) {
+            return {
+                pointA: pointA,
+                pointB: pointB,
+                ShowLine: function() {
+                    return "The line consists of Point A with coords(" + pointA.x + "," + pointA.y +
+                        ") and point B with coords(" + pointB.x + "," + pointB.y + ")";
+                }
+            };
+        }
+
+        function calcDistanece(pointA, pointB) {
+            var distance = Math.sqrt((pointA.x - pointB.x) + (pointA.y - pointB.y));
+        }
+
+        function canBeATriangle(lineA, lineB, lineC) {
+            var a = calcDistanece(lineA.pointA, lineA.pointB);
+            var b = calcDistanece(lineB.pointA, lineB.pointB);
+            var c = calcDistanece(lineC.pointA, lineC.pointB);
+
+            if ((a + b > c) && (a + c > b) && (c + b > a)) {
+                jsConsole.writeLine("It can be a triangle");
+            }
+            else {
+                jsConsole.writeLine("It cant be a triangle");
+            }
+        }
+
+        var myTestPoint = makePoint(11, 12);
+        var myTestPointTwo = makePoint(22, 23);
+        var myTestLine = makeLine(myTestPoint, myTestPointTwo);
+        var myTestLineTwo = makeLine(myTestPoint, myTestPointTwo);
+        var myTestLineThree = makeLine(myTestPoint, myTestPointTwo);
+
+        // triabgle test
+        canBeATriangle(myTestLine, myTestLineTwo, myTestLineThree);
+
+        // point show test
+        jsConsole.writeLine(myTestPoint.ShowPoint());
+
+        // line show test
+        jsConsole.writeLine(myTestLine.ShowLine());
+
+
+    </script>
+</body>
+</html>

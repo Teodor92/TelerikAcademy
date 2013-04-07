@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Enter wanted element: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="BinSearch()">Bin Search it!</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	// NOTE: You need to refresh the page for the search to work properly more the once. 
+
+	var myArray = new Array(4, 3, 1, 4, 2, 5, 8, 21, 13, 180);
+	var key = jsConsole.readInteger("#tb-first"); 
+	var iMax;
+	var iMin;
+	var iMidpoint;
+	var notFound = true;
+
+	function orderBy(a,b){
+		return (a == b) ? 0 : (a>b) ? 1 : -1
+	};
+	myArray.sort(orderBy);
+
+	function BinSearch() {	
+		jsConsole.writeLine(myArray.join(", "));
+		iMax = myArray.length - 1;
+		iMin = 0;
+
+
+		while (iMax >= iMin)
+		{
+			iMidpoint = parseInt((iMin + iMax) / 2);
+			
+			if (myArray[iMidpoint] < key)
+			{
+				iMin = iMidpoint + 1;
+			}
+			else if (myArray[iMidpoint] > key)
+			{
+				iMax = iMidpoint - 1;
+			}
+			else
+			{
+				jsConsole.writeLine(iMidpoint);
+				notFound = false;
+				break;
+			}
+		}
+
+		if (notFound) {
+			jsConsole.writeLine(-1);
+		};
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<a href="#" onclick="Comapre()">Are the arrays lexi equal ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	var firstCharArray = new Array("a","b","v","a","b","v","a","b","v");
+	var secondCharArray = new Array("a","c","v","a","b","v","a","b","v");
+	var index;
+	var areSame = true;
+
+	function Comapre() {
+		if (firstCharArray.length != secondCharArray.length) {
+			areSame = false;
+		}
+		else {
+			for (index = 0; index < firstCharArray.length; index++) {
+				if (firstCharArray[index] != secondCharArray[index]) {
+					areSame = false;
+					break;
+				}
+			};
+		};
+
+		if (areSame) {
+			jsConsole.writeLine("Arrays are equal!");
+		}
+		else {
+			jsConsole.writeLine("Arrays are different!");
+		};
+	}
+
+	</script>
+</body>
+</html>

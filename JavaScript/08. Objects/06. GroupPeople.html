@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        function groupPeople(arr, criteria) {
+
+            var endArr = [];
+
+            var groupedArr = [];
+
+            if (criteria == "age") {
+
+                var uniqeKeys = new Array();
+
+                for (var i = 0; i < arr.length; i++) {
+
+                    var repeated = false;
+
+                    for (var j = 0; j < uniqeKeys.length; j++) {
+                        if (arr[i].age === arr[j].age) {
+                            repeated = true;
+                            break;
+                        }
+                    }
+
+                    if (!repeated) {
+                        uniqeKeys.push(arr[i]);
+                    }
+                }
+
+
+                for (var i = 0; i < uniqeKeys.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < arr.length; j++) {
+                        if (uniqeKeys[i].age == arr[j].age) {
+                            tempArr.push(arr[j]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    endArr.push({ Key: groupedArr[i][0].age, Value: groupedArr[i] });
+                }
+            }
+            else if (criteria == "firstname") {
+                var uniqeKeys = new Array();
+
+                for (var i = 0; i < arr.length; i++) {
+
+                    var repeated = false;
+
+                    for (var j = 0; j < uniqeKeys.length; j++) {
+                        if (arr[i].firstname === arr[j].firstname) {
+                            repeated = true;
+                            break;
+                        }
+                    }
+
+                    if (!repeated) {
+                        uniqeKeys.push(arr[i]);
+                    }
+                }
+
+
+                for (var i = 0; i < uniqeKeys.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < arr.length; j++) {
+                        if (uniqeKeys[i].firstname == arr[j].firstname) {
+                            tempArr.push(arr[j]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    endArr.push({ Key: groupedArr[i][0].firstname, Value: groupedArr[i] });
+                }
+            }
+            else if (criteria == "lastname") {
+                var uniqeKeys = new Array();
+
+                for (var i = 0; i < arr.length; i++) {
+
+                    var repeated = false;
+
+                    for (var j = 0; j < uniqeKeys.length; j++) {
+                        if (arr[i].lastname === arr[j].lastname) {
+                            repeated = true;
+                            break;
+                        }
+                    }
+
+                    if (!repeated) {
+                        uniqeKeys.push(arr[i]);
+                    }
+                }
+
+
+                for (var i = 0; i < uniqeKeys.length; i++) {
+                    var tempArr = [];
+
+                    for (var j = 0; j < arr.length; j++) {
+                        if (uniqeKeys[i].lastname == arr[j].lastname) {
+                            tempArr.push(arr[j]);
+                        }
+                    }
+                    groupedArr.push(tempArr);
+                }
+
+                for (var i = 0; i < groupedArr.length; i++) {
+                    endArr.push({ Key: groupedArr[i][0].lastname, Value: groupedArr[i] });
+                }
+            }
+            else {
+                return "Wrong criteria";
+            }
+
+            return endArr;
+        }
+
+
+
+        var persons = [
+            { firstname: "Ivan", lastname: "Iavnov", age: 32 },
+            { firstname: "Ivan", lastname: "Iavnov", age: 12 },
+            { firstname: "Ivan", lastname: "Iavnov", age: 80 },
+            { firstname: "Lolo", lastname: "Iavnov", age: 33 },
+            { firstname: "11", lastname: "223", age: 32 },
+            { firstname: "Ivan", lastname: "Fusov", age: 32 },
+            { firstname: "Iliq", lastname: "Senior", age: 1 }
+        ];
+
+
+        var a = groupPeople(persons, "age");
+
+        for (var i in a) {
+            jsConsole.writeLine(a[i].Key);
+        }
+
+        var b = groupPeople(persons, "lastname");
+
+        for (var i in b) {
+            jsConsole.writeLine(b[i].Key);
+        }
+
+        var c = groupPeople(persons, "firstname");
+
+        for (var i in c) {
+            jsConsole.writeLine(c[i].Key);
+        }
+
+    </script>
+</body>
+</html>

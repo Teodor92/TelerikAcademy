@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input a height: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<label for="tb-second">Input a width: </label>
+		<input type="text" id="tb-second"/>
+		<br />
+		<a href="#" onclick="CalcArea()">Calc Area.</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function CalcArea() {
+		var height = jsConsole.readInteger("#tb-first");
+		var width = jsConsole.readInteger("#tb-second");
+		var area = height * width;
+		jsConsole.writeLine(area);
+	}
+
+	</script>
+</body>
+</html>

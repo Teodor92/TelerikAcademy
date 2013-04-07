@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input a integer number: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="ZeroOrOne()">Is Zero or One ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function ZeroOrOne() {
+		var number = jsConsole.readInteger("#tb-first")
+		var test = number & (1 << 3);
+		if (test !== 0) {
+			jsConsole.writeLine("The bit is One!");
+		}
+		else
+		{
+			jsConsole.writeLine("The bit is Zero!");
+		};
+
+	}
+
+	</script>
+</body>
+</html>

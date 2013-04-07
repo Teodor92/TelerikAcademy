@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        function getYoungestPerson(arr) {
+            var bestPos = 0;
+            var bestAge = 1000;
+
+            for (var i in arr) {
+                if (arr[i].age < bestAge) {
+                    bestAge = arr[i].age;
+                    bestPos = i;
+                }
+            }
+
+            var outText = "First Name: " + arr[bestPos].fname + " Second Name: " + arr[bestPos].sname + " Age: " + arr[bestPos].age;
+
+            return outText;
+        }
+
+        function buildPerson(fname, sname, age) {
+            return {
+                fname: fname,
+                sname: sname,
+                age: age
+            }
+        }
+
+
+        var people = [
+            buildPerson("Ivan", "Petkov", 12),
+            buildPerson("Ilian", "Iliev", 22),
+            buildPerson("Ilian", "Iliev", 23),
+        ]
+
+        jsConsole.writeLine(getYoungestPerson(people));
+    </script>
+</body>
+</html>

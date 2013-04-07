@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Enter a: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-first">Enter b: </label>
+		<input type="text" id="tb-second"/>
+		<label for="tb-first">Enter h: </label>
+		<input type="text" id="tb-third"/>
+		<br />
+		<a href="#" onclick="CalcArea()">Calc Area</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function CalcArea() {
+		var a = jsConsole.readInteger("#tb-first");
+		var b = jsConsole.readInteger("#tb-second");
+		var h = jsConsole.readInteger("#tb-third");
+		
+		var area = ((a + b) * h ) / 2;
+		jsConsole.writeLine(area);
+	}
+
+	</script>
+</body>
+</html>

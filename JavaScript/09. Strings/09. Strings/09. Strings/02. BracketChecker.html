@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a JavaScript function to check if in a given expression the brackets are put correctly.
+Example of correct expression: ((a+b)/5-d).
+Example of incorrect expression: )(a+b)).
+ </h3>
+
+    <label for="tb-first">Input a bracket expression: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // Gets the user input
+        function getInput() {
+            var number = document.getElementById('tb-first').value;
+            return number;
+        }
+
+        // Bracket checker
+        function checkBrackets(expresion) {
+            expresion = String(expresion);
+            var bracketStack = [];
+            for (var i = 0; i < expresion.length; i++) {
+                if (expresion[i] == "(") {
+                    bracketStack.push("(");
+                }
+                else if (expresion[i] == ")") {
+                    if (bracketStack.length == 0) {
+                        return "Brackets are positioned INCORRECTLY!";
+                    }
+                    else {
+                        bracketStack.pop();
+                    }
+                }
+            }
+
+            if (bracketStack.length != 0) {
+                return "Brackets are positioned INCORRECTLY!";
+            }
+            else {
+                return "Brackets are positioned CORRECTLY!";
+            }
+        }
+
+        //run program
+        function runProgram() {
+            var number = getInput();
+            jsConsole.writeLine(checkBrackets(number));
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="Console/styles/main-styles.css" />
+	<link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+        <h3>
+            Write a function that finds all the occurrences of word in a text.
+The search can case sensitive or case insensitive.
+Use function overloading.
+        </h3>
+		<br />
+		<a href="#" onclick="InitArray()">Gimme numbars!</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="Console/scripts/js-console.js">	  
+	</script>		  
+	<script>
+
+	    function textSearch(text, wordToSearch, caseSen) {
+	        var counter = 0;
+	        var position = 0;
+
+	        if (caseSen === true) {
+	            while (text.indexOf(wordToSearch, position) > -1) {
+	                counter++;
+	                position = text.indexOf(wordToSearch, position);
+	                position++;
+	            }
+
+	            jsConsole.write(counter);
+	        }
+	        else {
+	            var test = text.toLowerCase();
+
+	            while (test.indexOf(wordToSearch, position) > -1) {
+	                counter++;
+	                position = text.toLowerCase().indexOf(wordToSearch, position);
+	                position++;
+	            }
+
+	            jsConsole.write(counter);
+	        }
+	    }
+
+	    textSearch("Text text text text text", "text", false);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input a integer number: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-first">Input a integer number: </label>
+		<input type="text" id="tb-second"/>
+		<br />
+		<a href="#" onclick="IsGreater()">Exchange ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function IsGreater() {
+		var firstNum = jsConsole.readInteger("#tb-first");
+		var secondNum = jsConsole.readInteger("#tb-second");
+		if (firstNum > secondNum) {
+
+			var temp = firstNum;
+			firstNum = secondNum;
+			secondNum = temp;
+			
+			jsConsole.writeLine("The first num is " + firstNum);
+			jsConsole.writeLine("The secondNum num is " + secondNum);
+		}
+		else {
+			jsConsole.writeLine("The first num is " + firstNum);
+			jsConsole.writeLine("The secondNum num is " + secondNum);	
+		};
+	}
+
+	
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a function that formats a string using placeholders
+    </h3>
+
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        // Placeholder realization
+        function formatString() {
+            var output = arguments[0];
+
+            for (var i = 1; i < arguments.length; i++)
+                output = output.replace(new RegExp('\\{' + (i - 1) + '\\}', "gi"), arguments[i]);
+
+            return output;
+        }
+
+        //run program
+        function runProgram() {
+            jsConsole.writeLine(formatString("{0} lol {1} {2}", "text", "test", "Dammm this works:D!"));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<a href="#" onclick="MaxSeq()">Max sequence ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	var myArray = new Array(2, 2, 2, 2, 2, 2, 1, 1, 2, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1);
+	var indexer = 0;
+	var sequence = 1;
+	var maxSequence = 0;
+	var bestElement = 0;
+
+	function MaxSeq() {
+		for (indexer = 0; indexer < myArray.length - 1; indexer++) {
+			if (myArray[indexer] == myArray[indexer + 1]) {
+				sequence++;
+			}
+			else {
+				if (sequence >= maxSequence) {
+					maxSequence = sequence;
+					bestElement = myArray[indexer];
+				};
+				sequence = 1;
+			};
+		};
+
+		// special case!
+		if (sequence >= maxSequence) {
+			maxSequence = sequence;
+			bestElement = myArray[indexer];
+		};
+
+		jsConsole.writeLine("The best element is " + bestElement + ". It repeats " + maxSequence + " times!");
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).
+ </h3>
+
+    <label for="tb-first">Input search word: </label>
+    <input type="text" id="tb-first" />
+    <label for="tb-first">Input text to search in: </label>
+    <input type="text" id="tb-second" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // Gets the user input
+        function getSearchWord() {
+            var word = document.getElementById('tb-first').value;
+            return word;
+        }
+
+        function getTextForSearch() {
+            var text = document.getElementById('tb-second').value;
+            return text;
+        }
+
+        // Bracket checker
+        function searchInText(word, text) {
+            word = String(word);
+            text = String(text).toLowerCase();
+
+            var counter = 0;
+            var startIndex = text.indexOf(word, 0);
+
+            while (startIndex > 0) {
+                startIndex = text.indexOf(word, startIndex) + 1;
+                if (startIndex == 0) {
+                    break;
+                }
+                counter++;
+                
+            }
+
+            return counter;
+        }
+
+        //run program
+        function runProgram() {
+            var word = getSearchWord();
+            var text = getTextForSearch();
+            jsConsole.writeLine(searchInText(word, text));
+        }
+	</script>
+</body>
+</html>

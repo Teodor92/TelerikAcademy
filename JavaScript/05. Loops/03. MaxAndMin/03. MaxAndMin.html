@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<br />
+		<a href="#" onclick="MinAndMax()">Gimme MAX and MIN !</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	var myNumbers = [1,123123,-1,3123,-3333,22];
+
+	function MinAndMax() {
+		var max = -9007199254740992;
+		var min = 9007199254740992;
+		for (var i = 0; i < myNumbers.length; i++) {
+			if (myNumbers[i] > max) {
+				max = myNumbers[i];
+			};
+			if (myNumbers[i] < min) {
+				min = myNumbers[i];
+			};
+		};
+
+		jsConsole.writeLine(max);
+		jsConsole.writeLine(min);
+	}
+
+	</script>
+</body>
+</html>

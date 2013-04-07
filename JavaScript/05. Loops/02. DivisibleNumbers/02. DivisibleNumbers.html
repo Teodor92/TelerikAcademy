@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Enter N: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="DivisibleNumbers()">Divisible Numbers ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function DivisibleNumbers() {
+		var endNumber = jsConsole.readInteger("#tb-first");
+		for (var i = 0; i < endNumber; i++) {
+			if (i % 3 === 0 && i % 7 === 0) {
+				jsConsole.writeLine(i);
+			};
+		};
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a function that returns the last digit of given integer as an English word. Examples: 512 ? "two", 1024 ? "four", 12309 ? "nine"
+ </h3>
+
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // Gets the user input
+        function getInput() {
+            var number = jsConsole.readInteger('#tb-first');
+            return number;
+        }
+
+        // Gets a digit form a number
+        function getDigit(number) {
+            return number % 10;
+        }
+
+        // Prints the digit on the console
+        function printDigit(myDigit) {
+            if (myDigit >= 0 && myDigit < 10) {
+                switch (myDigit) {
+                    case 1: jsConsole.writeLine("One");
+                        break;
+                    case 2: jsConsole.writeLine("Two");
+                        break;
+                    case 3: jsConsole.writeLine("Three");
+                        break;
+                    case 4: jsConsole.writeLine("Four");
+                        break;
+                    case 5: jsConsole.writeLine("Five");
+                        break;
+                    case 6: jsConsole.writeLine("Six");
+                        break;
+                    case 7: jsConsole.writeLine("Seven");
+                        break;
+                    case 8: jsConsole.writeLine("Eight");
+                        break;
+                    case 9: jsConsole.writeLine("Nine");
+                        break;
+                    case 0: jsConsole.writeLine("Zero");
+                        break;
+                    default: jsConsole.writeLine("Huston we have a problem !");
+                        break;
+                }
+            }
+        }
+
+        // Runs the program
+        function runProgram() {
+            var number = getInput();
+            var digit = getDigit(number);
+            printDigit(digit);
+        }
+
+	</script>
+</body>
+</html>

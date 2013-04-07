@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input a integer number: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="IsPrime()">Is prime ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function IsPrime() {
+		var number = jsConsole.readInteger("#tb-first")
+		if (number >= 0 && number < 101) {
+			if (number === 2 || number === 3 || number === 5 || number === 7 ) {
+					jsConsole.writeLine("Number is Prime");
+			}
+			else if(
+				number % 2 !== 0 
+				&& number % 3 !== 0 
+				&& number % 5 !== 0 
+				&& number % 7 !== 0) {
+				jsConsole.writeLine("Number is Prime");	
+			}
+			else {
+				jsConsole.writeLine("Number is NOT Prime");
+			};
+		}
+		else {
+			jsConsole.writeLine("Out of range");
+		};
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Enter N: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="PrintNumbers()">Show me da numbars !</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function PrintNumbers() {
+		var endNumber = jsConsole.readInteger("#tb-first");
+		for (var i = 0; i <= endNumber; i++) {
+			jsConsole.writeLine(i);
+		};
+		
+	}
+
+	</script>
+</body>
+</html>

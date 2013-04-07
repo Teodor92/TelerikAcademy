@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        function Solve(args) {
+            var firstElement = parseInt(args[0]);
+            var secondElement = parseInt(args[1]);
+            var thirdElement = parseInt(args[2]);
+            var n = parseInt(args[3]);
+            var sum = 0;
+
+            if (n == 1) {
+                return firstElement;
+            }
+            else if (n == 2) {
+                return secondElement;
+            }
+            else if (n == 3) {
+                return thirdElement;
+            }
+            else {
+                for (var i = 0; i < n - 3; i++) {
+                    sum = firstElement + secondElement + thirdElement;
+                    firstElement = secondElement;
+                    secondElement = thirdElement;
+                    thirdElement = sum;
+                }
+
+                return sum;
+            }
+        }
+        //var arrayIn = [9684, 37463, 238428, 3];
+        var arrayIn = [1, 1, 1, 1337];
+
+        var out = Solve(arrayIn);
+        jsConsole.writeLine(out);
+	</script>
+</body>
+</html>

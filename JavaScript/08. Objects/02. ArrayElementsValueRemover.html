@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a function that removes all elements with a given value</h3>
+    <ul>
+        <li>Attach it to the array class
+        </li>
+        <li>Read about prototype and how to attach methods.
+        </li>
+    </ul>
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+        (function () {
+            if (!Array.prototype.remove) {
+                Array.prototype.remove = function (elem) {
+                    var arr = [];
+                    for (var i in this) {
+                        if (this[i] != elem) {
+                            arr.push(this[i]);
+                        }
+                    }
+
+                    return arr;
+                }
+            }
+
+            var arr = [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"];
+            var finalArr = arr.remove(1); //arr = [2,4,3,4,111,3,2,"1"];
+
+            for (var i in finalArr) {
+                jsConsole.write(finalArr[i] + " ")
+            }
+        })();
+
+    </script>
+</body>
+</html>

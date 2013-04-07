@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a JavaScript function that replaces in a HTML document given as string all the tags for anchors with corresponding tags [URL=…]…/URL]. Sample HTML fragment:
+ </h3>
+
+    <label for="tb-first">Input a Url: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // Gets the user input
+        function getInput() {
+            var text = document.getElementById('tb-first').value;
+            return text;
+        }
+
+        // Transform tags
+        function transformTags(text) {
+            text = text.replace(/<a href=\"/gi, "[URL=");
+            text = text.replace(/">/gi, ']');
+            text = text.replace(/<\/a>/gi, "[/URL]");
+
+            return text;
+        }
+
+        //run program
+        function runProgram() {
+            var myText = getInput();
+            jsConsole.writeLine(transformTags(myText));
+        }
+	</script>
+</body>
+</html>

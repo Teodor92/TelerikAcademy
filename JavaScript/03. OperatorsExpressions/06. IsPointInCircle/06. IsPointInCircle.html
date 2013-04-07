@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Enter X: </label>
+		<input type="text" id="tb-first"/>
+		<label for="tb-first">Enter Y: </label>
+		<input type="text" id="tb-second"/>
+		<label for="tb-first">Enter Radius: </label>
+		<input type="text" id="tb-third"/>
+		<br />
+		<a href="#" onclick="InCircle()">In circle ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function InCircle() {
+		var x = jsConsole.readInteger("#tb-first");
+		var y = jsConsole.readInteger("#tb-second");
+		var r = jsConsole.readInteger("#tb-third");
+
+		var pointDist = Math.sqrt(x*x + y*y);
+
+		if (pointDist > r) {
+			jsConsole.writeLine("The point is outside the circle!");
+		}
+		else {
+			jsConsole.writeLine("The point is in the circle!");
+		}
+			;
+		
+	}
+
+	</script>
+</body>
+</html>

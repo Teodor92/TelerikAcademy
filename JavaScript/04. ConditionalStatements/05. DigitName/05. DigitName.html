@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<label for="tb-first">Input a digit: </label>
+		<input type="text" id="tb-first"/>
+		<br />
+		<a href="#" onclick="DigitName()">Digit name ?</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+	
+	function DigitName() {
+		var digit = jsConsole.readInteger("#tb-first");
+		
+		if (digit >= 0 && digit < 10) {
+			switch (digit)
+			{
+				case 1: jsConsole.writeLine("One"); 
+				break;
+				case 2: jsConsole.writeLine("Two"); 
+				break;
+				case 3: jsConsole.writeLine("Three"); 
+				break;
+				case 4: jsConsole.writeLine("Four"); 
+				break;
+				case 5: jsConsole.writeLine("Five"); 
+				break;
+				case 6: jsConsole.writeLine("Six"); 
+				break;
+				case 7: jsConsole.writeLine("Seven"); 
+				break;
+				case 8: jsConsole.writeLine("Eight"); 
+				break;
+				case 9: jsConsole.writeLine("Nine"); 
+				break;
+				case 0: jsConsole.writeLine("Zero"); 
+				break;
+				default: jsConsole.writeLine("Huston we have a problem !"); 
+				break;
+			}
+		}
+		else {
+			jsConsole.writeLine("Out of Range!"); 
+		};
+	}
+
+	</script>
+</body>
+</html>

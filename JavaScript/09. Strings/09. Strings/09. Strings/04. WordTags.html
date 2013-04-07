@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>You are given a text. Write a function that changes the text in all regions.
+    </h3>
+    <label for="tb-first">Input text: </label>
+    <input type="text" id="tb-second" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        // Gets the user input
+
+        function getText() {
+            var text = document.getElementById('tb-second').value;
+            return text;
+        }
+
+        // Bracket checker
+        function tagReplace(text) {
+
+            var result = text.replace(/<upcase>(.*?)<\/upcase>/gi, function (match) { return match.toUpperCase() });
+            result = result.replace(/<lowcase>(.*?)<\/lowcase>/gi, function (match) { return match.toLowerCase() });
+            result = result.replace(/<mixcase>(.*?)<\/mixcase>/gi, generateMixCase);
+
+
+            return result;
+        }
+
+        // mix case generator
+        function generateMixCase(word) {
+            var outWord = "";
+
+            for (var i = 0; i < word.length; i++) {
+                if (Math.random() * 10 > 5) {
+                    outWord += word[i].toUpperCase();
+                }
+                else {
+                    outWord += word[i].toLowerCase();
+                }
+            }
+
+            return outWord;
+        }
+        //run program
+        function runProgram() {
+            var text = getText();
+            jsConsole.writeLine(tagReplace(text));
+        }
+    </script>
+</body>
+</html>

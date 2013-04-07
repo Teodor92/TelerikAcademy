@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="styles/main-styles.css">
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="wrapper">
+		<a href="#" onclick="LexiProp()">Lexi prop!</a>
+		<div id="console">
+		</div>
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>
+
+	function findSmallest (myObject) {
+		var smallest = "zzz";
+		for(var prop in myObject){
+			if (prop < smallest) {
+				smallest = prop;
+			};
+		}
+
+		jsConsole.writeLine("Smalest prop in " + myObject + " is " + smallest);
+	}
+
+	function findBiggest (myObject) {
+		var biggest = "aaa";
+		for(var prop in myObject){
+			if (prop > biggest) {
+				biggest = prop;
+			};
+		}
+
+		jsConsole.writeLine("Smalest prop in " + myObject + " is " + biggest);
+
+	}
+
+	function LexiProp() {
+		findBiggest(window);
+		findSmallest(window);
+
+		findBiggest(navigator);
+		findSmallest(navigator);
+
+		findBiggest(document);
+		findSmallest(document);
+	}
+
+</script>
+</body>
+</html>

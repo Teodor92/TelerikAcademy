@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Write a function that makes a deep copy of an object. The function should work for both primitive and reference types</h3>
+    <label for="tb-first">Input a integer number: </label>
+    <input type="text" id="tb-first" />
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Print last digit!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        var myTestObj = {
+            a: 11,
+            b: 23,
+            c: "Yoooo",
+            Show: function () {
+                return "Func Test";
+            }
+        }
+
+        var clone = Object.create(myTestObj);
+
+        for (var i in clone) {
+            jsConsole.writeLine(clone[i]);
+        }
+
+    </script>
+</body>
+</html>
