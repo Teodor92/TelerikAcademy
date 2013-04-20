@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. InClass", "01. InClass\01. InClass.csproj", "{438D62EB-1C25-4762-A556-357F2894A8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. HumanMaker", "02. HumanMaker\02. HumanMaker.csproj", "{38976543-FC6C-4D6D-B73E-32497DDF1A29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. ButtonEvent", "03. ButtonEvent\03. ButtonEvent.csproj", "{F407555E-5F8F-4727-A8CB-48E228E5CAA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Mines", "04. Mines\04. Mines.csproj", "{7777A35E-6614-44A5-861A-C84C0EB2E344}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{438D62EB-1C25-4762-A556-357F2894A8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{438D62EB-1C25-4762-A556-357F2894A8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{438D62EB-1C25-4762-A556-357F2894A8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{438D62EB-1C25-4762-A556-357F2894A8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38976543-FC6C-4D6D-B73E-32497DDF1A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38976543-FC6C-4D6D-B73E-32497DDF1A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38976543-FC6C-4D6D-B73E-32497DDF1A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38976543-FC6C-4D6D-B73E-32497DDF1A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F407555E-5F8F-4727-A8CB-48E228E5CAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F407555E-5F8F-4727-A8CB-48E228E5CAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F407555E-5F8F-4727-A8CB-48E228E5CAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F407555E-5F8F-4727-A8CB-48E228E5CAA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7777A35E-6614-44A5-861A-C84C0EB2E344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7777A35E-6614-44A5-861A-C84C0EB2E344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7777A35E-6614-44A5-861A-C84C0EB2E344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7777A35E-6614-44A5-861A-C84C0EB2E344}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

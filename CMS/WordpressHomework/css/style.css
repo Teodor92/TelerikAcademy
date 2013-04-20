@@ -1,0 +1,38 @@
+body {
+    background-color: #C2C2C2;
+}
+
+h2 {
+    text-align: center;
+}
+#content {
+    width: 100px;
+    margin: 0 auto;
+    color: #f00;
+    padding: 10px;
+    border: 2px solid #000;
+}
+
+table {
+    border: 2px solid #000;
+    margin: 10px auto;
+}
+td {
+    border: 1px solid black;
+}
+td:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+form {
+    border: 1px solid black;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+input {
+    margin: 5px;
+}
