@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. FolderView", "01. FolderView\01. FolderView.csproj", "{A87B6A24-A92F-4C71-A590-343B9F0B8555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "99. SimpleTests", "99. SimpleTests\99. SimpleTests.csproj", "{A83466B9-1A80-4300-8222-9FCDF2977873}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A87B6A24-A92F-4C71-A590-343B9F0B8555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87B6A24-A92F-4C71-A590-343B9F0B8555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87B6A24-A92F-4C71-A590-343B9F0B8555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87B6A24-A92F-4C71-A590-343B9F0B8555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83466B9-1A80-4300-8222-9FCDF2977873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83466B9-1A80-4300-8222-9FCDF2977873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83466B9-1A80-4300-8222-9FCDF2977873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83466B9-1A80-4300-8222-9FCDF2977873}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. MatrixWalk.Common", "01. MatrixWalk\01. MatrixWalk.Common.csproj", "{BBD7169E-0432-46D6-920F-3F77843DA3F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixWak.Test", "MatrixWak.Test\MatrixWak.Test.csproj", "{555FBEE0-3418-4FD4-A34F-2FDB21DE65BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBD7169E-0432-46D6-920F-3F77843DA3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD7169E-0432-46D6-920F-3F77843DA3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD7169E-0432-46D6-920F-3F77843DA3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD7169E-0432-46D6-920F-3F77843DA3F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555FBEE0-3418-4FD4-A34F-2FDB21DE65BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555FBEE0-3418-4FD4-A34F-2FDB21DE65BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555FBEE0-3418-4FD4-A34F-2FDB21DE65BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555FBEE0-3418-4FD4-A34F-2FDB21DE65BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

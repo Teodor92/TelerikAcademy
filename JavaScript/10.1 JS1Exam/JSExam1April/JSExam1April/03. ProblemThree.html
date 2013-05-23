@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>PROBLEM THREE!</h3>
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        // main logic
+        function Solve(args) {
+            var commands = args;
+            var funcsStack = [];
+
+            for (var i = 0; i < commands.length ; i++) {
+                jsConsole.writeLine(commands[i]);
+
+                var commandParts = commands[i].split(" ");
+                jsConsole.writeLine(commandParts);
+                if (commandParts[1] == "def") {
+                    funcsStack[commandParts[2]] = commandParts[3];
+                }
+            }
+
+        }
+
+        function Solve(args) {
+            return 0;
+        }
+
+        // run tests
+        function runProgram() {
+            var arr = ["(def func (+ 5 2))", "(def newFunc (+ func 2))", "(def sumFunc (+ func func newFunc 0 0 0))"];
+            jsConsole.writeLine(Solve(arr));
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿#ball {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: red;
+}
+
+#box {
+    border: 1px solid grey;
+    width: 700px;
+    height: 500px;
+}

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>03. QueryShims</title>
+</head>
+<body>
+    <h3>Write a script that shims querySelector and querySelectorAll in older browsers</h3>
+    <hr />
+    <div class="class-select-test">
+    	<div>
+    		<div>
+                Test div lvl 3
+            </div>
+            <ol>
+                <li class="class-select-test">Some test li</li>
+                <li>Some test li</li>
+                <li id="id-select-test">Some test li id target</li>
+                <li>Some test li</li>
+                <li class="class-select-test">Some test li</li>
+            </ol>
+            <span class="class-select-test"></span>
+        </div>
+    </div>
+
+    <div id="test-wrapper">
+
+    </div>
+    <script type="text/javascript" src="script/sizzle.min.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+</html>

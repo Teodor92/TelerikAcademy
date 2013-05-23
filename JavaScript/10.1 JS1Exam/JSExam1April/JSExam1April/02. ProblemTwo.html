@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>PROBLEM TWO!</h3>
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+	</script>
+    <script>
+
+        function newMultiArray(rows, cols) {
+            var matrix = [];
+            var i = 0;
+            var j = 0;
+
+            for (i = 0; i < rows; i++) {
+
+                matrix[i] = new Array(rows);
+
+                for (j = 0; j < cols; j++) {
+                    matrix[i][j] = 0;
+                }
+            }
+
+            return matrix;
+        }
+
+        function newMultiArrayBool(rows, cols) {
+            var matrix = [];
+            var i = 0;
+            var j = 0;
+
+            for (i = 0; i < rows; i++) {
+
+                matrix[i] = new Array(rows);
+
+                for (j = 0; j < cols; j++) {
+                    matrix[i][j] = false;
+                }
+            }
+
+            return matrix;
+        }
+
+        // main logic
+        function Solve(args) {
+            var firstLine = args[0].split(' ');
+            var n = parseInt(firstLine[0]);
+            var m = parseInt(firstLine[1]);
+            var j = parseInt(firstLine[2]);
+
+            var matrix = newMultiArray(n, m);
+
+            var fill = 1;
+            for (var rows = 0; rows < n; rows++) {
+                for (var cols = 0; cols < m; cols++) {
+                    matrix[rows][cols] = fill;
+                    fill++;
+                }
+            }
+
+            var visited = newMultiArrayBool(n, m);
+
+            var secondLine = args[1].split(' ');
+            var x = parseInt(secondLine[0]);
+            var y = parseInt(secondLine[1])
+            var startJump = { x: x, y: y };
+            
+            var jumps = [];
+
+            for (var i = 2; i < j + 2; i++) {
+                var line = args[i].split(' ');
+
+                x = parseInt(line[0]);
+                y = parseInt(line[1]);
+
+
+                var tempJump = { x: x, y: y };
+
+                jumps.push(tempJump);
+            }
+
+
+            var currPos = startJump;
+            var sumOfNumbers = 0;
+            var jumpCounter = 0;
+
+            sumOfNumbers += matrix[startJump.x][startJump.y];
+            visited[startJump.x][startJump.y] = true;
+            var ended = false;
+            while (!ended) {
+
+                for (var i = 0; i < jumps.length; i++) {
+                    jumpCounter++;
+                    currPos.x += jumps[i].x;
+                    currPos.y += jumps[i].y;
+                    
+                    
+
+                    if (isOut(n,m,currPos.x,currPos.y)) {
+                        return "escaped " + sumOfNumbers;
+                        ended = true;
+                        break;
+                    }
+
+                    if (visited[currPos.x][currPos.y] === true) {
+                        return "caught " + jumpCounter;
+                        ended = true;
+                        break;
+                    }
+
+                    sumOfNumbers += matrix[currPos.x][currPos.y];
+                    visited[currPos.x][currPos.y] = true;
+                }
+            }
+
+        }
+
+        function isOut(n, m, x, y) {
+            if (x > n - 1 || x < 0 || y < 0 || y > m - 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        // run tests
+        function runProgram() {
+            var arr = ["6 7 3","0 0","2 2","-2 2","3 -1"];
+            jsConsole.writeLine(Solve(arr));
+        }
+	</script>
+</body>
+</html>

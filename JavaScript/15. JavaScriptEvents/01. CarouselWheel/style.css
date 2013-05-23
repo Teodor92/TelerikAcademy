@@ -1,0 +1,8 @@
+﻿#left-arrow, #right-arrow, #slider {
+    float: left;
+}
+
+#slider-wrapper {
+    margin: auto;
+    width: 700px;
+}

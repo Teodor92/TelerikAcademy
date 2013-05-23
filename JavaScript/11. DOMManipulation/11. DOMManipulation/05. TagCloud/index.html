@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>05. Tag Cloud</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h3>05. Create a tag cloud:</h3>
+    <ul>
+    	<li>Visualize a string of tags (strings) in a given container.</li>
+    	<li>By given minFontSize and maxFontSize, generate the tags with different font-size, depending on the number of occurrences</li>
+    </ul>
+    <hr />
+    <p>Enter tags here</p>
+    <textarea id="tags"></textarea>
+    <form method="post" action="#">
+        <label for="max-font-size">Enter max font size:</label>
+        <input type="number" id="max-font-size"/>
+        <label for="min-font-size">Enter min font size:</label>
+        <input type="number" id="min-font-size"/>
+    </form>
+    <button onclick="generateCloud()">Generate Tag Cloud</button>
+    <h3>Cloud</h3>
+    <div id="cloud-wrapper"></div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

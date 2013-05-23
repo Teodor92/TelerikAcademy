@@ -4,7 +4,7 @@
 
     public class Program
     {
-        public static Figure GetRotatedSize(Figure shape, double rotatingAngle)
+        public static Figure GetRotatedFigure(Figure shape, double rotatingAngle)
         {
             double cosOfAngle = Math.Cos(rotatingAngle);
             double sinOfAngle = Math.Sin(rotatingAngle);
@@ -16,6 +16,8 @@
 
         public static void Main()
         {
+            Figure testFigure = GetRotatedFigure(new Figure(2,2),20);
+            Console.WriteLine(testFigure.Height);
         }
     }
 }

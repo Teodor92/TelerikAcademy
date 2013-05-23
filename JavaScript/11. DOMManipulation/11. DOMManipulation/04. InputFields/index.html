@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>04. Input Fields</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <h3>Create a text area and two inputs with type="color".</h3>
+    <ul>
+    	<li>Make the font color of the text area as the value of the first color input.</li>
+    	<li>Make the background color of the text area as the value of the second input.</li>
+    </ul>
+    <h2>Note: Color input is only supported in Chrome and Opera so far. Be sure to use them for tests :)</h2>
+    <hr />
+    <script type="text/javascript" src="script.js"></script>
+    <form action="/" method="post">
+        <label for="font-color">Select Font Color</label>
+        <input type="color" id="font-color" onchange="setTextarea()"/>
+        <label for="background-color">Select Background Color</label>
+        <input type="color" id="background-color" onchange="setTextarea()"/>
+        <textarea id="textarea">
+
+        </textarea>
+    </form>
+</body>
+</html>

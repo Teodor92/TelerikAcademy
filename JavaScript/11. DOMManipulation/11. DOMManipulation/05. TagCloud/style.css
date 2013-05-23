@@ -1,0 +1,15 @@
+﻿textarea {
+    height: 200px;
+    width: 500px;
+}
+
+input {
+    display: block;
+    margin: 5px 0;
+}
+
+#cloud-wrapper {
+    width: 300px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}

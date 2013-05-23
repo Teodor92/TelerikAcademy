@@ -1,0 +1,19 @@
+﻿body {
+    background-color: #e6e6e6;
+}
+
+#circle-stage {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+#rect-stage {
+    position: absolute;
+    top: 100px;
+    left: 500px;
+    width: 200px;
+    height: 200px;
+}

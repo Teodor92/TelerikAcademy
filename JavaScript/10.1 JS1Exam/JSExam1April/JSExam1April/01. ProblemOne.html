@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="Console/styles/main-styles.css" />
+    <link href="Console/styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>PROBLEM ONE!</h3>
+    <div id="wrapper">
+        <br />
+        <a href="#" onclick="runProgram()">Run program!</a>
+        <div id="console">
+        </div>
+    </div>
+    <script src="Console/scripts/js-console.js">	  
+    </script>
+    <script>
+
+        // main logic
+        function Solve(args) {
+            var n = parseInt(args[0]);
+            var numbers = [];
+            var counter = 0;
+            var i = 0;
+            var seq = [];
+
+            for (i = 0; i < n; i++) {
+                numbers[i] = parseInt(args[i + 1]);
+            }
+
+            for (var i = 0; i < numbers.length; i++) {
+                if (numbers[i] <= numbers[i + 1]) {
+                    
+                }
+                else {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+        // run tests
+        function runProgram() {
+            //var arr = [5, 1, -1, 1, -1, 1];
+            //var arr = [6, 1, 3, -5, 8, 7, -6];
+            //var arr = [9, 1, 8, 8, 7, 6, 5, 7, 7, 6];
+            //var arr = [7, 1, 2, -3, 4, 4, 0, 1];
+            var arr = [4, -1, 2, 2 , 1 ];
+            jsConsole.writeLine(Solve(arr));
+        }
+    </script>
+</body>
+</html>
+
+
+<!--var index = i + 1;
+                if (numbers[i] <= numbers[index]) {
+                    inSeq = true;
+                }
+                else if(inSeq) {   
+                    counter++;
+                    inSeq = false;
+                    continue;
+                }
+
+                if (!inSeq) {
+                    counter++;
+                }-->
+
+<!--function Solve(args) {
+            var n = parseInt(args[0]);
+            var numbers = [];
+            var i = 0;
+            var j = 0;
+
+            for (i = 1; i < n + 1; i++) {
+                numbers.push(args[i]);
+            }
+
+            var seq = [];
+            var counter = 0;
+
+            //for (var i = 0; i < numbers.length; i++) {
+            //    if (numbers[i] < numbers[i + 1]) {
+            //        seq.push(numbers[j]);
+            //    }
+            //    else {
+            //        i++;
+            //        break;
+            //    }
+            //}
+
+            var inSeq = false;
+
+            for (i = 0; i < numbers.length; i++) {
+                for (var j = i; j < numbers.length; j++) {
+                        if (numbers[j] <= numbers[j + 1]) {
+                            seq.push(numbers[j]);
+                            inSeq = true;
+                        }
+                        else if (!inSeq) {
+                            counter++;
+                        }
+                        else {
+                            i = j;
+                            inSeq = false;
+                            break;
+                        }
+
+                        if (j == numbers.length) {
+                            break;
+                        }
+                }
+
+                if (seq.length > 0) {
+                    counter++;
+                    seq = [];
+                }
+            }
+
+            return counter;
+        }-->

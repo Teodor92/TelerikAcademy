@@ -1,0 +1,7 @@
+﻿#wrapper {
+    position: relative;
+    border: 2px solid #000;
+    display: block;
+    width: 520px;
+    height: 520px;
+}

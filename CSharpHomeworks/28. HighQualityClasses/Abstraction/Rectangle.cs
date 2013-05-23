@@ -1,21 +1,18 @@
-﻿namespace FigureRotator
+﻿namespace Abstraction
 {
     using System;
 
-    public class Figure
+    public class Rectangle : Figure
     {
-        // fileds
         private double width;
         private double height;
 
-        // constructors
-        public Figure(double width, double height)
+        public Rectangle(double width, double height)
         {
             this.Width = width;
             this.Height = height;
         }
 
-        // properties
         public double Width
         {
             get
@@ -27,7 +24,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Width can not be a negative number");
+                    throw new ArgumentException("Width cannot be negative!");    
                 }
 
                 this.width = value;
@@ -45,11 +42,23 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Height can not be a negative number");
+                    throw new ArgumentException("Height cannot be negative!");
                 }
 
                 this.height = value;
             }
+        }
+
+        public override double CalcPerimeter()
+        {
+            double perimeter = 2 * (this.Width + this.Height);
+            return perimeter;
+        }
+
+        public override double CalcSurface()
+        {
+            double surface = this.Width * this.Height;
+            return surface;
         }
     }
 }
