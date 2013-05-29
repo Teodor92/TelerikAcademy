@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. ElementCount", "01. ElementCount\01. ElementCount.csproj", "{A1224002-EEC4-4D6E-A46E-A04B6E3A3D4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. WordExtract", "02. WordExtract\02. WordExtract.csproj", "{959BF802-F895-4DDF-A9E6-AD45DEB2F2CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. WordsCount", "03. WordsCount\03. WordsCount.csproj", "{036565E7-3005-4A09-BA09-A0D0D7A95808}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1224002-EEC4-4D6E-A46E-A04B6E3A3D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1224002-EEC4-4D6E-A46E-A04B6E3A3D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1224002-EEC4-4D6E-A46E-A04B6E3A3D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1224002-EEC4-4D6E-A46E-A04B6E3A3D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959BF802-F895-4DDF-A9E6-AD45DEB2F2CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959BF802-F895-4DDF-A9E6-AD45DEB2F2CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959BF802-F895-4DDF-A9E6-AD45DEB2F2CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959BF802-F895-4DDF-A9E6-AD45DEB2F2CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{036565E7-3005-4A09-BA09-A0D0D7A95808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{036565E7-3005-4A09-BA09-A0D0D7A95808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{036565E7-3005-4A09-BA09-A0D0D7A95808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{036565E7-3005-4A09-BA09-A0D0D7A95808}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

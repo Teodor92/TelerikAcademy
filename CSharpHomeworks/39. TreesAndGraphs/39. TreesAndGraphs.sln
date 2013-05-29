@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. DirectorySearch", "01. DirectorySearch\01. DirectorySearch.csproj", "{DD5BB076-1865-4B65-9525-10FC2F65CC4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. FileTree", "02. FileTree\02. FileTree.csproj", "{23D29484-B94B-424B-B686-9738EB6F2C38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD5BB076-1865-4B65-9525-10FC2F65CC4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5BB076-1865-4B65-9525-10FC2F65CC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5BB076-1865-4B65-9525-10FC2F65CC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5BB076-1865-4B65-9525-10FC2F65CC4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D29484-B94B-424B-B686-9738EB6F2C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D29484-B94B-424B-B686-9738EB6F2C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D29484-B94B-424B-B686-9738EB6F2C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D29484-B94B-424B-B686-9738EB6F2C38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
