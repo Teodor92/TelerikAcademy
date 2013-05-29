@@ -21,8 +21,15 @@
                 }
                 else
                 {
-                    int parsedNumber = int.Parse(inputLine);
-                    inputNumbers.Add(parsedNumber);
+                    int parsedNumber = 0;
+                    if (int.TryParse(inputLine, out parsedNumber))
+                    {
+                        inputNumbers.Add(parsedNumber);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ivalid number format! Try again!");
+                    }
                 }
             }
 
