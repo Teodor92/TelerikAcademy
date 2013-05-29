@@ -7,20 +7,20 @@
 
     public struct Point
     {
-        public int row;
-        public int col;
+        public int Row;
+        public int Col;
     }
 
     public class Program
     {
         private static string[,] labyrinth = 
         {
-            {"0","0","0","X","0","X",},
-            {"0","X","0","X","0","X",},
-            {"0","*","X","0","X","0",},
-            {"0","X","0","0","0","0",},
-            {"0","0","0","X","X","0",},
-            {"0","0","0","X","0","X",}
+            { "0", "0", "0", "X", "0", "X" },
+            { "0", "X", "0", "X", "0", "X" },
+            { "0", "*", "X", "0", "X", "0" },
+            { "0", "X", "0", "0", "0", "0" },
+            { "0", "0", "0", "X", "X", "0" },
+            { "0", "0", "0", "X", "0", "X" }
         };
 
         private static int[,] directions = 
@@ -40,22 +40,22 @@
             return isPassable;
         }
 
-        //public static void DepthFirstSearch(string[,] labyrinth, int row, int col, int currentCount = 0)
-        //{
-        //    currentCount++;
+        ////public static void DepthFirstSearch(string[,] labyrinth, int row, int col, int currentCount = 0)
+        ////{
+        ////    currentCount++;
 
-        //    for (int i = 0; i < directions.GetLength(0); i++)
-        //    {
-        //        int newRow = row + directions[i, 0];
-        //        int newCol = col + directions[i, 1];
+        ////    for (int i = 0; i < directions.GetLength(0); i++)
+        ////    {
+        ////        int newRow = row + directions[i, 0];
+        ////        int newCol = col + directions[i, 1];
 
-        //        if (CheckIfPassable(labyrinth, newRow, newCol))
-        //        {
-        //            labyrinth[newRow, newCol] = currentCount.ToString();
-        //            DepthFirstSearch(labyrinth, newRow, newCol, currentCount);
-        //        }
-        //    }
-        //}
+        ////        if (CheckIfPassable(labyrinth, newRow, newCol))
+        ////        {
+        ////            labyrinth[newRow, newCol] = currentCount.ToString();
+        ////            DepthFirstSearch(labyrinth, newRow, newCol, currentCount);
+        ////        }
+        ////    }
+        ////}
 
         public static void BreathFirstSearch(string[,] labyrinth, Point startingPoint)
         {
@@ -68,18 +68,19 @@
 
                 for (int i = 0; i < directions.GetLength(0); i++)
                 {
-                    int newRow = currentPoint.row + directions[i, 0];
-                    int newCol = currentPoint.col + directions[i, 1];
+                    int newRow = currentPoint.Row + directions[i, 0];
+                    int newCol = currentPoint.Col + directions[i, 1];
 
                     if (CheckIfPassable(labyrinth, newRow, newCol))
                     {
                         Point child = new Point();
-                        child.row = newRow;
-                        child.col = newCol;
-                        labyrinth[child.row, child.col] = currentCount.ToString();
+                        child.Row = newRow;
+                        child.Col = newCol;
+                        labyrinth[child.Row, child.Col] = currentCount.ToString();
                         queue.Enqueue(child);
                     }
                 }
+
                 currentCount++;
             }
         }
@@ -96,8 +97,8 @@
                 {
                     if (labyrinth[row, col] == "*")
                     {
-                        startingPoint.row = row;
-                        startingPoint.col = col;
+                        startingPoint.Row = row;
+                        startingPoint.Col = col;
                         return startingPoint;
                     }
                 }
@@ -125,10 +126,10 @@
         public static void Main()
         {
             Point startingPoint = GetStartingPoint(labyrinth);
-            Console.WriteLine(startingPoint.row);
-            Console.WriteLine(startingPoint.col);
+            Console.WriteLine(startingPoint.Row);
+            Console.WriteLine(startingPoint.Col);
 
-            //DepthFirstSearch(labyrinth, startingPoint.row, startingPoint.col);
+            ////DepthFirstSearch(labyrinth, startingPoint.row, startingPoint.col);
             BreathFirstSearch(labyrinth, startingPoint);
 
             PrintLabyirinth(labyrinth);
