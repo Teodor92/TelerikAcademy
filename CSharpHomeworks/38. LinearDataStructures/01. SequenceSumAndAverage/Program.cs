@@ -21,8 +21,8 @@
                 }
                 else
                 {
-                    int parsedNumber = 0;
-                    if (int.TryParse(inputLine, out parsedNumber))
+                    int parsedNumber = int.MinValue;
+                    if (int.TryParse(inputLine, out parsedNumber) && parsedNumber > 0)
                     {
                         inputNumbers.Add(parsedNumber);
                     }
