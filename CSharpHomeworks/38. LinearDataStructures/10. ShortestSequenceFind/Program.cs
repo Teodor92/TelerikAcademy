@@ -11,6 +11,9 @@
         {
             Queue<int> queue = new Queue<int>();
             StringBuilder output = new StringBuilder();
+
+            int?[] test = new int?[4];
+            Console.WriteLine(test[2]);
         }
     }
 }
