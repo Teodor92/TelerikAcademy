@@ -1,5 +1,19 @@
 ﻿namespace WordsCount
 {
+    /* 
+     * Write a program that counts how many times each 
+     * word from given text file words.txt appears in it.
+     * The character casing differences should be ignored.
+     * The result words should be ordered by their number 
+     * of occurrences in the text. 
+     * 
+     * Example:
+     * is  2
+     * the  2
+     * this  3
+     * text  6 
+     */
+
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -8,7 +22,7 @@
 
     public class Program
     {
-        public static Dictionary<string, int> CountElements(string path)
+        public static IDictionary<string, int> CountElements(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
             {
@@ -24,7 +38,7 @@
 
             string[] words = input.Split(new char[] { ' ', ',', '-', '.', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
 
-            Dictionary<string, int> elementCounter = new Dictionary<string, int>();
+            IDictionary<string, int> elementCounter = new Dictionary<string, int>();
             int wordsCount = words.Length;
 
             for (int i = 0; i < wordsCount; i++)
@@ -61,7 +75,7 @@
 
         public static void Main()
         {
-            Dictionary<string, int> wordsCount = CountElements(@"../../input.txt");
+            IDictionary<string, int> wordsCount = CountElements(@"../../input.txt");
 
             PrintDictonary(wordsCount);
         }

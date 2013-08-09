@@ -6,25 +6,11 @@
 
     public class ExeFilePrinter
     {
-        private void ShowExes(string path)
-        {
-            StringBuilder output = new StringBuilder();
-
-            string[] exes = Directory.GetFiles(path, @"*.exe");
-
-            for (int i = 0; i < exes.Length; i++)
-            {
-                output.AppendLine(exes[i]);
-            }
-
-            Console.Write(output.ToString());
-        }
-
         public void GetSubDirs(string path)
         {
             try
             {
-                ShowExes(path);
+                this.ShowExes(path);
 
                 string[] dirs = Directory.GetDirectories(path);
 
@@ -32,7 +18,7 @@
                 {
                     for (int i = 0; i < dirs.Length; i++)
                     {
-                        GetSubDirs(dirs[i]);
+                        this.GetSubDirs(dirs[i]);
                     }
                 }
                 else
@@ -45,6 +31,20 @@
                 Console.WriteLine("Directory: {0}, CAN NOT be accessed!", path);
                 return;
             }
+        }
+
+        private void ShowExes(string path)
+        {
+            StringBuilder output = new StringBuilder();
+
+            string[] exes = Directory.GetFiles(path, @"*.exe");
+
+            for (int i = 0; i < exes.Length; i++)
+            {
+                output.AppendLine(exes[i]);
+            }
+
+            Console.Write(output.ToString());
         }
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>PoliteCaptcha</id>
+    <version>0.4.0.1</version>
+    <title>PoliteCaptcha</title>
+    <authors>The NuGet Team</authors>
+    <owners>The NuGet Team</owners>
+    <licenseUrl>https://github.com/NuGet/PoliteCaptcha/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/NuGet/PoliteCaptcha</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PoliteCaptcha is a spam prevention library for use with ASP.NET MVC that attempts polite spam prevention before rudely presenting the user with a CAPTCHA.</description>
+    <releaseNotes>0.4.0.1 Bugfix release.
+0.4.0.0 Added way to configure ReCaptcha API Keys using dependency injection of the new IConfigurationSource interface, instead of using web.config.</releaseNotes>
+    <copyright />
+    <language />
+    <dependencies>
+      <dependency id="jQuery" />
+      <dependency id="recaptcha" />
+    </dependencies>
+  </metadata>
+</package>

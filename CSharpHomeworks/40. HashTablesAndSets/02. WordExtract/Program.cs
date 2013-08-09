@@ -1,20 +1,25 @@
 ﻿namespace WordExtract
 {
+    /*
+     * Write a program that extracts from a given sequence of strings 
+     * all elements that present in it odd number of times. 
+     * Example:{C#, SQL, PHP, PHP, SQL, SQL }  {C#, SQL}
+     */
+
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
 
     public class Program
     {
-        public static Dictionary<string, int> CountElements(IList<string> sequence)
+        public static IDictionary<string, int> CountElements(IList<string> sequence)
         {
             if (sequence == null || sequence.Count == 0)
             {
                 throw new ArgumentNullException("Sequance must not be empty!");
             }
 
-            Dictionary<string, int> elementCounter = new Dictionary<string, int>();
+            IDictionary<string, int> elementCounter = new Dictionary<string, int>();
             int sequenceLength = sequence.Count;
 
             for (int i = 0; i < sequenceLength; i++)
@@ -36,7 +41,7 @@
         {
             string[] sequence = new string[] { "C#", "SQL", "PHP", "PHP", "SQL", "SQL" };
 
-            Dictionary<string, int> countedElements = CountElements(sequence);
+            IDictionary<string, int> countedElements = CountElements(sequence);
 
             foreach (var element in countedElements)
             {

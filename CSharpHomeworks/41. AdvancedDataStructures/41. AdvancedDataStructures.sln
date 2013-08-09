@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. PayQueue", "01. PayQueue\11. PayQueue.csproj", "{E362BC38-BAFE-4805-BE24-914B744342D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. PriorityQueueWithBinaryHeap", "01. PriorityQueueWithBinaryHeap\01. PriorityQueueWithBinaryHeap.csproj", "{EF8F30C5-3E48-44FA-9320-914A36360233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. PriceRangeSearch", "02. PriceRangeSearch\02. PriceRangeSearch.csproj", "{E8FAC4A5-23D0-46D0-B729-9FFB9FEF21C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. WordFinder", "03. WordFinder\03. WordFinder.csproj", "{A15CA2AE-12E1-4AD8-9C94-865B047E8E4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E362BC38-BAFE-4805-BE24-914B744342D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E362BC38-BAFE-4805-BE24-914B744342D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E362BC38-BAFE-4805-BE24-914B744342D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E362BC38-BAFE-4805-BE24-914B744342D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8F30C5-3E48-44FA-9320-914A36360233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8F30C5-3E48-44FA-9320-914A36360233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8F30C5-3E48-44FA-9320-914A36360233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8F30C5-3E48-44FA-9320-914A36360233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8FAC4A5-23D0-46D0-B729-9FFB9FEF21C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8FAC4A5-23D0-46D0-B729-9FFB9FEF21C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8FAC4A5-23D0-46D0-B729-9FFB9FEF21C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8FAC4A5-23D0-46D0-B729-9FFB9FEF21C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A15CA2AE-12E1-4AD8-9C94-865B047E8E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A15CA2AE-12E1-4AD8-9C94-865B047E8E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A15CA2AE-12E1-4AD8-9C94-865B047E8E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A15CA2AE-12E1-4AD8-9C94-865B047E8E4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

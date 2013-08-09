@@ -2,54 +2,66 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+    using System.Numerics;
 
     public class Folder : SystemObject
     {
-        private List<Folder> folder;
-        private List<TreeFile> file;
-        private StringBuilder output = new StringBuilder();
+        private readonly List<Folder> folders;
+        private readonly List<File> files;
 
         public Folder()
         {
-            this.folder = new List<Folder>();
-            this.file = new List<TreeFile>();
+            this.folders = new List<Folder>();
+            this.files = new List<File>();
         }
 
         public Folder(string name)
         {
             this.Name = name;
-            this.folder = new List<Folder>();
-            this.file = new List<TreeFile>();
+            this.folders = new List<Folder>();
+            this.files = new List<File>();
+        }
+
+        public List<Folder> Folders
+        {
+            get
+            {
+                return this.folders;
+            }
+        }
+
+        public List<File> Files
+        {
+            get
+            {
+                return this.files;
+            }
         }
 
         public void AddFolder(Folder currentFolder)
         {
-            this.folder.Add(currentFolder);
+            this.folders.Add(currentFolder);
         }
 
-        public void AddFiles(List<TreeFile> currentFiles)
+        public void AddFiles(List<File> currentFiles)
         {
-            this.file.AddRange(currentFiles);
+            this.files.AddRange(currentFiles);
         }
 
-        public void GenerateStringRepresentation(Folder currentFolder)
+        public BigInteger GetFolderSize(BigInteger size)
         {
-            for (int i = 0; i < folder.Count; i++)
+            for (int i = 0; i < this.files.Count; i++)
             {
-                GenerateStringRepresentation(folder[i]);
+                size += this.files[i].Size;
             }
 
-            for (int i = 0; i < file.Count; i++)
+            for (int i = 0; i < this.folders.Count; i++)
             {
-                output.AppendLine(file[i].ToString());
-            }  
+                size += this.folders[i].GetFolderSize(size);
+            }
+
+            return size;
         }
 
-        public override string ToString()
-        {
-            return base.ToString();  
-        }
     }
 }
