@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5aa17109-35e2-4d4f-98fa-d4bc4e223fc0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:24801/DayGetService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DayGetService.disco" MetadataType="Disco" ID="08820ade-aaf6-4dd9-957c-811fec8b4076" SourceId="1" SourceUrl="http://localhost:24801/DayGetService.svc?disco" />
+    <MetadataFile FileName="DayGetService.xsd" MetadataType="Schema" ID="299e8543-0e54-44c3-8480-0b57b2f869be" SourceId="1" SourceUrl="http://localhost:24801/DayGetService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DayGetService1.xsd" MetadataType="Schema" ID="97ae853b-d0b5-4f7d-b29c-2ba62e47c0e8" SourceId="1" SourceUrl="http://localhost:24801/DayGetService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DayGetService2.xsd" MetadataType="Schema" ID="f530fc00-184f-4f1d-a477-cd3c1f9d4c66" SourceId="1" SourceUrl="http://localhost:24801/DayGetService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DayGetService.wsdl" MetadataType="Wsdl" ID="6474e43b-3306-45ed-bf00-531183378fa0" SourceId="1" SourceUrl="http://localhost:24801/DayGetService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

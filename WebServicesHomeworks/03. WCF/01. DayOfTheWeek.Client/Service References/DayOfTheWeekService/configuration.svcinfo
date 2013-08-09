@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BasicHttpBinding_IServiceDayGetter&quot; /&gt;" bindingType="basicHttpBinding" name="BasicHttpBinding_IServiceDayGetter" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:24801/DayGetService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IServiceDayGetter&quot; contract=&quot;DayOfTheWeekService.IServiceDayGetter&quot; name=&quot;BasicHttpBinding_IServiceDayGetter&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://localhost:24801/DayGetService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IServiceDayGetter&quot; contract=&quot;DayOfTheWeekService.IServiceDayGetter&quot; name=&quot;BasicHttpBinding_IServiceDayGetter&quot; /&gt;" contractName="DayOfTheWeekService.IServiceDayGetter" name="BasicHttpBinding_IServiceDayGetter" />
+  </endpoints>
+</configurationSnapshot>

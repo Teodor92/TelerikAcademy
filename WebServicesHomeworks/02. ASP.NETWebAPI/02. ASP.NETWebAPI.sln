@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicCatalog.Api", "MusicCatalog.Api\MusicCatalog.Api.csproj", "{5D3AE93C-38D0-4FF9-8855-9FC39C3AE16C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicCatalog.Models", "MusicCatalog.Models\MusicCatalog.Models.csproj", "{D8E066C1-FA85-4963-B2A2-B0A88867A0D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicCatalog.Client", "MusicCatalog.Client\MusicCatalog.Client.csproj", "{71B9D7C1-6886-41D3-A6AA-E221CD024122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicCatalog.Data", "MusicCatalog.Data\MusicCatalog.Data.csproj", "{9344B3ED-6C50-48BF-B3AE-5F74151B83B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicCatalog.Client.Web", "MusicCatalog.Client.Web\MusicCatalog.Client.Web.csproj", "{278EB150-96F1-46DB-93D5-EB09232DCDE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicCatalog.Repos", "MusicCatalog.Repos\MusicCatalog.Repos.csproj", "{9BF1F803-CB5C-401E-AAA2-F037DA2E0EC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D3AE93C-38D0-4FF9-8855-9FC39C3AE16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3AE93C-38D0-4FF9-8855-9FC39C3AE16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3AE93C-38D0-4FF9-8855-9FC39C3AE16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3AE93C-38D0-4FF9-8855-9FC39C3AE16C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E066C1-FA85-4963-B2A2-B0A88867A0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E066C1-FA85-4963-B2A2-B0A88867A0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E066C1-FA85-4963-B2A2-B0A88867A0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E066C1-FA85-4963-B2A2-B0A88867A0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B9D7C1-6886-41D3-A6AA-E221CD024122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B9D7C1-6886-41D3-A6AA-E221CD024122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B9D7C1-6886-41D3-A6AA-E221CD024122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B9D7C1-6886-41D3-A6AA-E221CD024122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9344B3ED-6C50-48BF-B3AE-5F74151B83B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9344B3ED-6C50-48BF-B3AE-5F74151B83B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9344B3ED-6C50-48BF-B3AE-5F74151B83B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9344B3ED-6C50-48BF-B3AE-5F74151B83B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{278EB150-96F1-46DB-93D5-EB09232DCDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{278EB150-96F1-46DB-93D5-EB09232DCDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{278EB150-96F1-46DB-93D5-EB09232DCDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{278EB150-96F1-46DB-93D5-EB09232DCDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF1F803-CB5C-401E-AAA2-F037DA2E0EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF1F803-CB5C-401E-AAA2-F037DA2E0EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF1F803-CB5C-401E-AAA2-F037DA2E0EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF1F803-CB5C-401E-AAA2-F037DA2E0EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
