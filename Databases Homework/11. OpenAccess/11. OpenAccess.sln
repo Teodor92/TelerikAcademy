@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. PleaseWork", "01. PleaseWork\01. PleaseWork.csproj", "{73782133-349C-46E5-BE6F-B4A561E13B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. PleaseNorhtwindWork", "02. PleaseNorhtwindWork\02. PleaseNorhtwindWork.csproj", "{04DE13E1-2DD6-451D-9ADA-6A8038535E66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73782133-349C-46E5-BE6F-B4A561E13B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73782133-349C-46E5-BE6F-B4A561E13B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73782133-349C-46E5-BE6F-B4A561E13B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73782133-349C-46E5-BE6F-B4A561E13B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DE13E1-2DD6-451D-9ADA-6A8038535E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DE13E1-2DD6-451D-9ADA-6A8038535E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DE13E1-2DD6-451D-9ADA-6A8038535E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DE13E1-2DD6-451D-9ADA-6A8038535E66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

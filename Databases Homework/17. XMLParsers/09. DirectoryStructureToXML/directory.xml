@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<directories>
+	<directory name="09. DirectoryStructureToXML">
+		<file>09. DirectoryStructureToXML.csproj</file>
+		<file>App.config</file>
+		<file>directory.xml</file>
+		<file>Program.cs</file>
+		<directory name="bin">
+			<directory name="Debug">
+				<file>_09.DirectoryStructureToXML.exe</file>
+				<file>_09.DirectoryStructureToXML.exe.config</file>
+				<file>_09.DirectoryStructureToXML.pdb</file>
+				<file>_09.DirectoryStructureToXML.vshost.exe</file>
+				<file>_09.DirectoryStructureToXML.vshost.exe.config</file>
+				<file>_09.DirectoryStructureToXML.vshost.exe.manifest</file>
+			</directory>
+		</directory>
+		<directory name="obj">
+			<directory name="Debug">
+				<file>09. DirectoryStructureToXML.csproj.FileListAbsolute.txt</file>
+				<file>DesignTimeResolveAssemblyReferencesInput.cache</file>
+				<file>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</file>
+				<file>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</file>
+				<file>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</file>
+				<file>_09.DirectoryStructureToXML.exe</file>
+				<file>_09.DirectoryStructureToXML.pdb</file>
+			</directory>
+		</directory>
+		<directory name="Properties">
+			<file>AssemblyInfo.cs</file>
+		</directory>
+	</directory>
+</directories>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person>
+    <name>Gosho</name>
+    <address>32 Mandja str., Ruen</address>
+    <phone>08881112334</phone>
+  </person>
+  <person>
+    <name>Ivan</name>
+    <address>12 Mladost str., Sofia</address>
+    <phone>088822232334</phone>
+  </person>
+  <person>
+    <name>Petkan</name>
+    <address>12 Gorno nadolnishte, Plovdiv</address>
+    <phone>08888900000</phone>
+  </person>
+  <person>
+    <name>Minka</name>
+    <address>Homeless shelter, Pernik</address>
+    <phone>08111341451515</phone>
+  </person>
+  <person>
+    <name>Mila</name>
+    <address>12 Busmantci str., Sofia</address>
+    <phone>08881112334</phone>
+  </person>
+</people>

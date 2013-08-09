@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" ?>
+<bookmarks>
+  <bookmark>
+    <username>peter</username>
+    <title>Nakov's books</title>
+    <url>http://www.nakov.com/books/</url>
+    <tags>nakov, programming, book</tags>
+  </bookmark>
+  <bookmark>
+    <username>todor</username>
+    <title>HTML 5 Demos and Examples</title>
+    <url>http://html5demos.com</url>
+    <tags>HTML, HTML5, CSS, CSS3, Web development, web</tags>
+  </bookmark>
+  <bookmark>
+    <title>Telerik Academy</title>
+    <url>http://academy.telerik.com</url>
+    <username>maria</username>
+  </bookmark>
+  <bookmark>
+    <username>peter</username>
+    <title>Intro C# Book</title>
+    <notes>Fundamental book of programming. A must read!</notes>
+    <url>http://www.introprogramming.info/intro-csharp-book/</url>
+    <tags>programming, C#, algorithms, data-structures, nakov, book</tags>
+  </bookmark>
+  <bookmark>
+    <tags>SQL, dummy</tags>
+    <username>maria</username>
+    <title>SQL for Dummies</title>
+    <url>http://www.amazon.com/SQL-For-Dummies-Allen-Taylor/dp/0470557419</url>
+  </bookmark>
+  <bookmark>
+    <url>http://forums.academy.telerik.com</url>
+    <title>Telerik Academy Forums</title>
+    <notes>The official forum of Telerik Academy: ask your questions and you will be answered soon.</notes>
+    <username>peter</username>
+  </bookmark>
+</bookmarks>

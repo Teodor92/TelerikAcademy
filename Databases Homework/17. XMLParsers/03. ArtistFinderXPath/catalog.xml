@@ -1,0 +1,197 @@
+﻿<catalogue>
+  <artist name="Prodigy" type="artist">
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+  </artist>
+  <artist name="Korn" type="artist">
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+  </artist>
+  <artist name="Nirvana" type="artist">
+    <album name="Tralala">
+      <year>1998</year>
+      <producer>Ba li go</producer>
+      <price>100,0</price>
+      <songs>
+        <song>
+          <title>Udriii</title>
+          <duration>3</duration>
+        </song>
+        <song>
+          <title>Udriii1</title>
+          <duration>3,34</duration>
+        </song>
+        <song>
+          <title>Udriii2</title>
+          <duration>3,56</duration>
+        </song>
+        <song>
+          <title>Udriii3</title>
+          <duration>5,32</duration>
+        </song>
+        <song>
+          <title>Udriii4</title>
+          <duration>3</duration>
+        </song>
+      </songs>
+    </album>
+  </artist>
+</catalogue>

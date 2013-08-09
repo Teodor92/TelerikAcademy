@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalog>
+  <album>
+    <name>Empire Burlesque</name>
+    <artist>Bob Dylan</artist>
+    <producer>Columbia</producer>
+    <price>10.90</price>
+    <year>1985</year>
+    <song>
+      <title>Some Bob song 1</title>
+      <duration>2.45</duration>
+    </song>
+    <song>
+      <title>Some Bob song 2</title>
+      <duration>3.25</duration>
+    </song>
+  </album>
+  <album>
+    <name>Hide your heart</name>
+    <artist>Bonnie Tyler</artist>
+    <producer>CBS Records</producer>
+    <price>9.90</price>
+    <year>1988</year>
+    <song>
+      <title>Some Bonnie heart song 1</title>
+      <duration>4.25</duration>
+    </song>
+  </album>
+  <album>
+    <name>Still got the blues</name>
+    <artist>Gary Moore</artist>
+    <producer>Virgin records</producer>
+    <price>10.20</price>
+    <year>1990</year>
+    <song>
+      <title>Gary Mooret song 1</title>
+      <duration>7.13</duration>
+    </song>
+    <song>
+      <title>Gary Mooret song 4</title>
+      <duration>4.22</duration>
+    </song>
+  </album>
+</catalog>

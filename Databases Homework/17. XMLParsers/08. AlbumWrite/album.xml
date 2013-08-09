@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<albums>
+	<album>
+		<name>Empire Burlesque</name>
+		<artist>Bob Dylan</artist>
+	</album>
+	<album>
+		<name>Hide your heart</name>
+		<artist>Bonnie Tyler</artist>
+	</album>
+	<album>
+		<name>Greatest Hits</name>
+		<artist>Dolly Parton</artist>
+	</album>
+	<album>
+		<name>Still got the blues</name>
+		<artist>Gary Moore</artist>
+	</album>
+	<album>
+		<name>Eros</name>
+		<artist>Eros Ramazzotti</artist>
+	</album>
+</albums>
