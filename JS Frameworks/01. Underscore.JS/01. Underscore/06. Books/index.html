@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Books</title>
+    <script src="scripts/libs/class.js"></script>
+    <script src="scripts/libs/underscore.js"></script>
+    <script src="scripts/books.js"></script>
+</head>
+<body>
+    <script>
+        var books = [
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "Ivan"),
+            new Book("To hell and back", "Ivanov"),
+            new Book("To hell and back", "Ivan"),
+            new Book("To hell and back", "John Doe"),
+            new Book("To hell and back", "John"),
+        ];
+
+        // 06.
+        console.log("Task 6.");
+
+        var mostFamousAuthor = booksUtils.findMostFamousAuthor(books);
+        console.log(mostFamousAuthor);
+    </script>
+</body>
+</html>

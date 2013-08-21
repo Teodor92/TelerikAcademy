@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Animals</title>
+    <script src="scripts/libs/class.js"></script>
+    <script src="scripts/libs/underscore.js"></script>
+    <script src="scripts/animals.js"></script>
+</head>
+<body>
+    <script>
+        var animals = [
+            new Animal("John", "Fish", 3),
+            new Animal("Dan", "Fish", 1),
+            new Animal("Lan", "Dog", 4),
+            new Animal("Ban", "Dog", 5),
+            new Animal("Han", "Rabit", 1),
+            new Animal("Baran", "Rabit", 1)
+        ];
+
+        // 04.
+        console.log("Task 4.");
+
+        var sorted = animalsUtils.groupAndOrderAnimals(animals);
+
+        _.forEach(sorted, animal => console.log(animal));
+        
+        // 05.
+        console.log("Task 5.");
+        console.log(animalsUtils.findAllLegs(animals));
+
+
+    </script>
+</body>
+</html>

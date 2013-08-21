@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Students</title>
+    <script src="scripts/libs/class.js"></script>
+    <script src="scripts/libs/underscore.js"></script>
+    <script src="scripts/students.js"></script>
+</head>
+<body>
+    <script>
+        var students = [
+            new Student("Pesho", "Petrov", 18, [3, 3, 3, 4, 5, 6]),
+            new Student("Jero", "Gerov", 29, [2, 3, 1, 4, 5, 6]),
+            new Student("Quan", "Aran", 22, [3, 6, 6, 6, 6, 6, 6]),
+            new Student("Adrian", "Aaan", 111, [6, 6, 6, 6, 6, 6, 6])
+        ];
+
+        // 01.
+        console.log("Task 1.");
+        var sorted = studentUtils.findStudentsByName(students);
+
+        _.forEach(sorted, function (student) {
+            console.log(student.toString());
+        });
+
+        // 02.
+        console.log("Task 2.");
+        var filtered = studentUtils.findStudentsByAge(students);
+
+        _.forEach(filtered, function (student) {
+            console.log(student.toString());
+        });
+
+        // 03.
+        console.log("Task 3.");
+
+        var bestStudent = studentUtils.findStudentsByHeighestMarks(students);
+        console.log(bestStudent.toString());
+
+    </script>
+</body>
+</html>

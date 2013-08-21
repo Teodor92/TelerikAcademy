@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>People</title>
+    <script src="scripts/libs/class.js"></script>
+    <script src="scripts/libs/underscore.js"></script>
+    <script src="scripts/people.js"></script>
+</head>
+<body>
+    <script>
+        var people = [
+            new Person("Ivan", "Ivanov"),
+            new Person("Ivan", "Georgive"),
+            new Person("John", "Ivanov"),
+            new Person("Ivan", "Ivanov"),
+            new Person("Ivan", "Ivanov"),
+            new Person("Ivan", "Ivanov"),
+            new Person("Ivan", "Ivanov"),
+        ];
+
+        // 06.
+        console.log("Task 7.");
+        console.log("Most common first name:");
+        console.log(peopleUtils.findMostCommonFirstName(people));
+        console.log("Most common first name:");
+        console.log(peopleUtils.findMostCommonLastName(people));
+    </script>
+</body>
+</html>
