@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A73F689-5EAA-475E-801B-EF6E9090477F}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JustWeather</RootNamespace>
+    <AssemblyName>JustWeather</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>JustWeather_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>135DBDD18728CFD186BD1BF76748B1D984F5FC7D</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behavor\DelegateCommand.cs" />
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Data\DataPersister.cs" />
+    <Compile Include="Models\Alert.cs" />
+    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Models\Currently.cs" />
+    <Compile Include="Models\Daily.cs" />
+    <Compile Include="Models\DailyForecast.cs" />
+    <Compile Include="Models\Extends.cs" />
+    <Compile Include="Models\Flags.cs" />
+    <Compile Include="Models\ForecastIOResponse.cs" />
+    <Compile Include="Models\Helpers.cs" />
+    <Compile Include="Models\HourForecast.cs" />
+    <Compile Include="Models\Hourly.cs" />
+    <Compile Include="Models\MinuteForecast.cs" />
+    <Compile Include="Models\Minutely.cs" />
+    <Compile Include="Data\HttpRequester.cs" />
+    <Compile Include="Models\Coordinate.cs" />
+    <Compile Include="Pages\CurrentWeatherPage.xaml.cs">
+      <DependentUpon>CurrentWeatherPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HourWeatherDetails.xaml.cs">
+      <DependentUpon>HourWeatherDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LocationsPage.xaml.cs">
+      <DependentUpon>LocationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WeatherByHourPage.xaml.cs">
+      <DependentUpon>WeatherByHourPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WeekWeather.xaml.cs">
+      <DependentUpon>WeekWeather.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WeekWeatherDetailsPage.xaml.cs">
+      <DependentUpon>WeekWeatherDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AppViewModel.cs" />
+    <Compile Include="ViewModels\AsyncCatcher.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CurrentWeatherViewModel.cs" />
+    <Compile Include="ViewModels\Helpers.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\HourWeatherViewModel.cs" />
+    <Compile Include="ViewModels\WeekWeatherViewModel.cs" />
+    <Compile Include="Views\AppCustomSettings.xaml.cs">
+      <DependentUpon>AppCustomSettings.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="JustWeather_StoreKey.pfx" />
+    <None Include="JustWeather_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appicon.png" />
+    <Content Include="Assets\Background.jpg" />
+    <Content Include="Assets\GreenTile.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
+    <Content Include="Assets\Logos\Logo120.png" />
+    <Content Include="Assets\Logos\Logo.png" />
+    <Content Include="Assets\Logos\Logo210.png" />
+    <Content Include="Assets\Logos\Logo270.png" />
+    <Content Include="Assets\Logos\WideLogo100.png" />
+    <Content Include="Assets\Logos\WideLogo140.png" />
+    <Content Include="Assets\Logos\WideLogo180.png" />
+    <Content Include="Assets\Logos\WideLogo80.scale-100.png" />
+    <Content Include="Assets\Logos\WideLogo80.scale-140.png" />
+    <Content Include="Assets\Logos\WideLogo80.scale-180.png" />
+    <Content Include="Assets\Logos\WideLogo80.scale-80.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\WeatherIcons\clear-day.png" />
+    <Content Include="Assets\WeatherIcons\clear-night.png" />
+    <Content Include="Assets\WeatherIcons\cloudy.png" />
+    <Content Include="Assets\WeatherIcons\fog.png" />
+    <Content Include="Assets\WeatherIcons\na.png" />
+    <Content Include="Assets\WeatherIcons\partly-cloudy-day.png" />
+    <Content Include="Assets\WeatherIcons\partly-cloudy-night.png" />
+    <Content Include="Assets\WeatherIcons\rain.png" />
+    <Content Include="Assets\WeatherIcons\sleet.png" />
+    <Content Include="Assets\WeatherIcons\snow.png" />
+    <Content Include="Assets\WeatherIcons\thunderstorm.png" />
+    <Content Include="Assets\WeatherIcons\wind.png" />
+    <Content Include="Common\ReadMe.txt" />
+    <Content Include="Data\ExportFileStyles\styles.txt" />
+    <Content Include="metadata.xml" />
+    <None Include="Package.StoreAssociation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\CurrentWeatherPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HourWeatherDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LocationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WeatherByHourPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WeekWeather.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WeekWeatherDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AppCustomSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Bing.Maps.Xaml, Version=1.113.0601.2">
+      <Name>Bing Maps for C#, C++, or Visual Basic</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.VCLibs, version=11.0">
+      <Name>Microsoft Visual C++ Runtime Package</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

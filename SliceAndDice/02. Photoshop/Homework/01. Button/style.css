@@ -1,0 +1,41 @@
+body {
+  background-color: grey;
+  font-family: sans-serif; }
+
+.left {
+  display: block;
+  height: 55px;
+  width: 24px;
+  background-image: url("imgs/left.png");
+  float: left; }
+
+.center {
+  line-height: 40px;
+  height: 55px;
+  padding: 0 5px;
+  text-align: center;
+  cursor: pointer;
+  background-image: url("imgs/middle.png");
+  float: left; }
+
+.center a {
+  color: #000;
+  text-decoration: none;
+}
+
+.right {
+  height: 55px;
+  width: 30px;
+  background-image: url("imgs/right.png");
+  float: left; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }

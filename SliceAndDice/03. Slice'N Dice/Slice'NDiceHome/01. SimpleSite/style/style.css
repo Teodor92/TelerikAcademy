@@ -1,0 +1,114 @@
+.clearfix, header, section article div, section {
+  zoom: 1; }
+  .clearfix:before, header:before, section article div:before, section:before, .clearfix:after, header:after, section article div:after, section:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after, header:after, section article div:after, section:after {
+    clear: both; }
+
+p, ul, li, h3 {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #E1EBF7;
+  font-family: sans-serif; }
+
+#original {
+  display: block;
+  width: 100px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid black;
+  padding: 6px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #FFF; }
+  #original:hover {
+    background-color: #000;
+    color: #fff; }
+
+a {
+  text-decoration: none; }
+
+#outer-wrapper {
+  width: 780px;
+  margin: 0 auto; }
+
+header #header-content {
+  display: block;
+  width: 656px;
+  height: 47px;
+  float: right;
+  background: url("../imgs/header.png"); }
+
+section {
+  height: 308px;
+  width: 780px;
+  font-size: 12px; }
+  section nav {
+    float: left;
+    width: 120px;
+    height: 99%;
+    background-color: #F2F3F7; }
+    section nav h3 {
+      margin: 5px 10px; }
+    section nav ul {
+      margin-left: 30px; }
+  section article {
+    float: left;
+    height: 99%;
+    background-color: #F9F4FD;
+    margin: 1px; }
+    section article header {
+      background-color: #E6DEF5; }
+      section article header img {
+        margin: 0 10px; }
+      section article header ul {
+        list-style-type: none;
+        margin: 10px 10px; }
+        section article header ul li {
+          display: inline-block; }
+    section article div img {
+      float: left;
+      border: 1px solid black;
+      margin: 20px; }
+    section article div div {
+      float: left;
+      width: 281px;
+      margin: 20px 0; }
+      section article div div h4 {
+        color: #C41E89; }
+    section article .bottom-text {
+      margin: 0 20px;
+      width: 300px; }
+    section article ul {
+      margin: 10px 35px; }
+  section aside {
+    float: left;
+    width: 202px;
+    height: 99%;
+    margin: 1px;
+    background-color: #F9F4FD;
+    font-size: 10px; }
+    section aside img {
+      float: left;
+      border: 1px solid black;
+      margin: 5px; }
+    section aside div {
+      margin: 5px;
+      width: 90px;
+      float: left; }
+    section aside ul {
+      float: left;
+      margin-left: 30px; }
+
+footer {
+  background-color: #59518C;
+  height: 32px;
+  text-align: center; }
+  footer p {
+    color: #fff;
+    line-height: 32px; }

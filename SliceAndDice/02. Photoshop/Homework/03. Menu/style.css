@@ -1,0 +1,39 @@
+body {
+  background-color: #fff;
+  font-family: sans-serif; }
+
+.menu {
+  padding: 0 10px;
+  height: 46px;
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  border-right: 1px solid #cfcfcf;
+  border-left: 1px solid white;
+  text-align: center;
+  cursor: pointer;
+  background-image: url("imgs/menu-gradient.png");
+  float: left; }
+
+.menu span {
+  line-height: 46px;
+  color: #A7162E;
+  text-transform: uppercase;
+}
+
+#first {
+  border-left: 1px solid #cfcfcf;
+  border-radius: 5px 0 0 5px; }
+
+#last {
+  border-radius: 0 5px 5px 0; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }

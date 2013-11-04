@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="JustWeather.Views.AppCustomSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:JustWeather.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Border BorderBrush="#000" BorderThickness="1,0,0,0">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- HEADER -->
+                <Grid Background="#5C5C5C" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="0" Margin="40, 32, 17, 13">
+                        <Button x:Name="BackButton" Margin="0,3,0,0" Style="{StaticResource BackButtonStyle}" Click="BackButton_Click"/>
+                        <TextBlock Margin="10,10,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="24.6667" Text="Customizations" Foreground="White"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- CONTENT AREA -->
+                <ScrollViewer 
+                    Background="#FFF"
+                    VerticalScrollBarVisibility="Auto" 
+                    Grid.Row="1">
+                    <Grid
+                        Margin="40,33,40,39" 
+                        VerticalAlignment="Top" 
+                        Grid.RowSpan="3">
+                        <StackPanel>
+                            <TextBlock
+                                Foreground="#000"
+                                FontSize="20"
+                                Margin="0 0 0 20"
+                                Text="App unit type:" />
+                            <ComboBox
+                                Background="#5C5C5C"
+                                x:Name="AppUnitDropbox"
+                                Margin="0 0 0 20"
+                                HorizontalAlignment="Left"
+                                Width="200">
+                                <ComboBoxItem Background="#5C5C5C" Foreground="#FFF" Content="US"></ComboBoxItem>
+                                <ComboBoxItem Background="#5C5C5C" Foreground="#FFF" Content="SI"></ComboBoxItem>
+                                <ComboBoxItem Background="#5C5C5C" Foreground="#FFF" Content="CA"></ComboBoxItem>
+                                <ComboBoxItem Background="#5C5C5C" Foreground="#FFF" Content="UK"></ComboBoxItem>
+                                <ComboBoxItem Background="#5C5C5C" Foreground="#FFF" Content="Auto"></ComboBoxItem>
+                            </ComboBox>
+
+                            <Button 
+                                Foreground="#000"
+                                Background="#5C5C5C"
+                                Click="Button_Click"
+                                Width="200"
+                                Content="Save">
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

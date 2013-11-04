@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>02.GeoLocation</title>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="modernizr.geolocation.js"></script>
+        <script type="text/javascript" src="js-webshim/minified/polyfiller.js"></script>
+    <![endif]-->
+
+    <!-- API key from W3Schools coz I'm too lazy to get my own :D -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=true"> 
+</script>
+</head>
+
+<body>
+    <p>
+        Note: For some reason this will not work if not started on a server.
+         So if you are having problems with this just open it through MS Visual Studio and it should be fine. (Disregard the errors :) )
+   
+    </p>
+    <button onclick="showMap()">Show map</button>
+
+    <!--[if lt IE 9]>
+        <script>
+        $.webshims.polyfill('geolocation'); //set polyfill with geolocation
+        </script>
+    <![endif]-->
+    <script>
+
+        function showMap() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(setMapSettings);
+            }
+            else {
+                alert("Geolocation is NOT supported!");
+            }
+        }
+
+        function setMapSettings(position) {
+
+            // making a map properties object
+            var mapProperties = {
+                center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), // set the center on the current position
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+
+            // initializeing the map
+            var map = new google.maps.Map(document.getElementById("map-canvas")
+              , mapProperties);
+
+            var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            var marker = new google.maps.Marker({
+                position: coords
+            });
+
+            marker.setMap(map);
+
+        }
+
+        google.maps.event.addDomListener(window, 'load', setMapSettings);
+    </script>
+
+    <div id="map-canvas" style="width: 100%; height: 500px;">
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+@media only screen and (max-width: 480px) {
+	body #wrapper {
+		width: 99%;
+	}
+		body #wrapper header {
+			position: static;
+			margin: 0;
+			padding: 0;
+			width: 99%;
+		}
+			body #wrapper header h1{
+				margin: 0;
+				text-align: center;
+			}
+		body #wrapper header nav {
+			width: 99%;
+		}	
+		body #wrapper header nav ul {
+			width: 99%;
+		}
+			body #wrapper header nav ul li {
+				margin: 10px 0;
+				display: block;
+				width: 99%;
+				position: static;
+				text-align: center;
+			}
+
+		body #wrapper  section{
+			width: 98%;
+		}
+			body #wrapper section header .slider {
+			display: none;
+			}
+
+			body #wrapper > section article {
+				margin: 0;
+				border: none;
+				width: 98%;
+				border-radius: 0;
+				border-top: 1px solid black;
+			}
+				body #wrapper > section article:nth-child(2) {
+					border: none;
+				}
+
+				body #wrapper > section article header {
+					font-size: 1.8em;
+				}
+
+		body #wrapper > footer {
+			position: static;
+		}
+}

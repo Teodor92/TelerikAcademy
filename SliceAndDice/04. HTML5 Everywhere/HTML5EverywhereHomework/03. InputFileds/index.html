@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>03.Inputs</title>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="shims/fd-slider.min.js"></script>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="http://www.frequency-decoder.com/demo/fd-slider/css/fd-slider.mhtml.min.css" />
+    <![endif]-->
+
+    <script type="text/javascript" src="shims/shared/js/modernizr.com/Modernizr-2.5.3.forms.js">
+    </script>
+
+    <script type="text/javascript" src="shims/shared/js/html5Forms.js" data-webforms2-support="date, color, validation, range" data-webforms2-force-js-validation="false" data-lang="en">
+    </script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <p>
+            Note: Validtion messages are a bit messed up, but the validation itself works :)
+        </p>
+        <form action="index.html" method="POST">
+            <fieldset>
+                <legend>All input types. </legend>
+                <label for="range">Range: </label>
+                <input name="html5shim-1" id="html5shim-1" type="range" min="-10" max="10" step="0.20" title="Range: -10 to 10 in steps of 0.2" value="8.2" /><br />
+
+                <label for="number">Number: </label>
+                <input name="number" type="number" id="number" required="required" /><br />
+
+                <label for="email">Email: </label>
+                <input name="email" type="email" id="email" required="required" /><br />
+
+                <label for="date">Date: </label>
+                <input name="date" type="date" id="date" /><br />
+
+                <label for="color">Color: </label>
+                <input name="color" type="color" id="color" /><br />
+
+                <label for="datetime">DateTime: </label>
+                <input name="datetime" type="datetime" id="datetime" /><br />
+
+                <label for="month">Month: </label>
+                <input name="month" type="month" id="month" /><br />
+
+                <label for="week">Week: </label>
+                <input name="week" type="week" id="week" /><br />
+
+                <label for="search">Search: </label>
+                <input name="search" type="search" id="search" /><br />
+
+                <label for="tel">Tel: </label>
+                <input name="tel" type="tel" id="tel" required="required" /><br />
+
+                <label for="time">Time: </label>
+                <input name="time" type="time" id="time" /><br />
+
+                <label for="url">URL: </label>
+                <input name="url" type="url" id="url" required="required" /><br />
+
+                <input type="submit" value="Send" /><br />
+
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+</html>

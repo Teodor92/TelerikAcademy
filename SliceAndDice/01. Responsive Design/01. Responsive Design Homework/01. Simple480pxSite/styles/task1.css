@@ -1,0 +1,216 @@
+body, div, header, h1, h2, h3, h4, h5, h6, footer, section, article, span, a, li, ul, img, p {
+	margin: 0;
+	padding: 0;
+}
+
+html, body, #wrapper {
+	height: 100%;
+	min-height: 100%;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body #wrapper {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+	body #wrapper > header {
+		padding: 25px;
+		border-bottom: 1px solid black;
+	}
+
+		body #wrapper > header h1 {
+			margin-left: 55px;
+			font-size: 2.5em;
+		}
+
+			body #wrapper > header h1 a {
+				text-decoration: none;
+				color: #999;
+			}
+
+		body #wrapper > header nav {
+			float: right;
+			margin-top: 5px;
+			zoom: 1;
+		}
+
+			body #wrapper > header nav:after {
+				content: "";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+
+			body #wrapper > header nav ul li {
+				display: inline-block;
+				position: relative;
+				margin-left: 10px;
+				font-size: 1.3em;
+				border: 1px solid black;
+				border-radius: 15px;
+				background: #fff;
+			}
+
+				body #wrapper > header nav ul li a {
+					display: inline-block;
+					padding: 5px 15px;
+					color: black;
+					text-decoration: none;
+				}
+
+				body #wrapper > header nav ul li:hover {
+					background: #aaa;
+				}
+
+					body #wrapper > header nav ul li:hover > a {
+						text-decoration: underline;
+					}
+
+	body #wrapper > section {
+		margin: 0 auto;
+	}
+
+		body #wrapper > section header .slider {
+			padding: 25px;
+		}
+
+			body #wrapper > section header .slider ul {
+				width: 90%;
+				margin: 0 auto;
+			}
+
+				body #wrapper > section header .slider ul li {
+					display: none;
+				}
+
+					body #wrapper > section header .slider ul li h2 {
+						font-size: 1.5em;
+					}
+
+					body #wrapper > section header .slider ul li p {
+						text-align: justify;
+					}
+
+					body #wrapper > section header .slider ul li.slider-current {
+						display: block;
+					}
+
+			body #wrapper > section header .slider .slider-controls {
+				float: right;
+				margin-right: 50px;
+			}
+
+				body #wrapper > section header .slider .slider-controls a {
+					text-decoration: none;
+					color: black;
+				}
+
+					body #wrapper > section header .slider .slider-controls a:hover {
+						text-decoration: underline;
+					}
+
+		body #wrapper > section article {
+			margin: 0 auto;
+			width: 80%;
+			border: 1px solid black;
+			border-radius: 15px;
+			margin-bottom: 15px;
+			zoom: 1;
+		}
+
+			body #wrapper > section article:after {
+				content: "";
+				display: block;
+				height: 0;
+				clear: both;
+			}
+
+			body #wrapper > section article header {
+				padding-top: 5px;
+				padding-left: 5px;
+			}
+
+			body #wrapper > section article .article-content img {
+				width: 70px;
+				float: left;
+				margin: 5px;
+			}
+
+			body #wrapper > section article .article-content p {
+				text-align: justify;
+				padding: 5px 15px;
+			}
+
+	body #wrapper > footer {
+		bottom: 0;
+		width: 100%;
+		height: 60px;
+		margin: 0 auto;
+		padding-top: 15px;
+		border-top: 1px solid black;
+		text-align: center;
+	}
+
+		body #wrapper > footer h2 {
+			font-size: 1.7em;
+		}
+
+@media only screen and (max-width: 480px) {
+	body #wrapper {
+		width: 99%;
+	}
+		body #wrapper header {
+			position: static;
+			margin: 0;
+			padding: 0;
+			width: 99%;
+		}
+			body #wrapper header h1{
+				margin: 0;
+				text-align: center;
+			}
+		body #wrapper header nav {
+			width: 99%;
+		}	
+		body #wrapper header nav ul {
+			width: 99%;
+		}
+			body #wrapper header nav ul li {
+				margin: 10px 0;
+				display: block;
+				width: 99%;
+				position: static;
+				text-align: center;
+			}
+
+		body #wrapper  section{
+			width: 98%;
+		}
+			body #wrapper section header .slider {
+			display: none;
+			}
+
+			body #wrapper > section article {
+				margin: 0;
+				border: none;
+				width: 98%;
+				border-radius: 0;
+				border-top: 1px solid black;
+			}
+				body #wrapper > section article:nth-child(2) {
+					border: none;
+				}
+
+				body #wrapper > section article header {
+					font-size: 1.8em;
+				}
+
+		body #wrapper > footer {
+			position: static;
+		}
+}

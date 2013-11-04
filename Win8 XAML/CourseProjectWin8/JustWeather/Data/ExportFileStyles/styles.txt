@@ -1,0 +1,14 @@
+﻿html {
+    font-family: 'Segoe UI';
+}
+
+section {
+    border: 1px solid #00a000;
+    margin: 10px auto;
+    padding: 10px;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+}

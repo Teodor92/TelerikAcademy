@@ -1,0 +1,191 @@
+.clearfix, #outer-wrapper, aside #news, section #futured-article, section article {
+  zoom: 1; }
+  .clearfix:before, #outer-wrapper:before, aside #news:before, section #futured-article:before, section article:before, .clearfix:after, #outer-wrapper:after, aside #news:after, section #futured-article:after, section article:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .clearfix:after, #outer-wrapper:after, aside #news:after, section #futured-article:after, section article:after {
+    clear: both; }
+
+h1, h3, ul, li, p {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #ffffff;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZmQzYjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, white 0%, #dfd3b5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #dfd3b5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #dfd3b5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #dfd3b5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #dfd3b5 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, white 0%, #dfd3b5 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dfd3b5',GradientType=0 );
+  /* IE6-8 */ }
+
+#original {
+  text-decoration: none;
+  color: #000;
+  border: 1px solid black;
+  padding: 6px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #FFF; }
+  #original:hover {
+    background-color: #000;
+    color: #fff; }
+
+#outer-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 778px;
+  color: #74653D;
+  font: 11px verdana, arial, sans-serif;
+  background-image: url("../imgs/body-bg.gif"); }
+
+header {
+  position: absolute;
+  background-image: url("../imgs/header-img.jpg");
+  height: 279px;
+  width: 535px;
+  top: 0;
+  left: 243px; }
+
+aside {
+  float: left;
+  width: 243px; }
+  aside #logo {
+    height: 152px;
+    background: url("../imgs/logo-header.jpg") no-repeat;
+    text-align: center; }
+    aside #logo h1 {
+      padding-top: 20px;
+      font-family: Tahoma; }
+    aside #logo h3 {
+      font-family: Tahoma;
+      width: 70%;
+      margin: 0 auto;
+      padding: 5px;
+      border-top: 1px solid #cdcdcd;
+      border-bottom: 1px solid #cdcdcd;
+      font-weight: bold; }
+  aside nav {
+    background: url("../imgs/nav-left-border.jpg"); }
+    aside nav ul {
+      list-style-type: none;
+      margin-left: 9px;
+      padding-bottom: 29px;
+      padding-left: 1px; }
+      aside nav ul li {
+        border-top: 1px solid #737373;
+        padding: 7px 0 0 31px;
+        background-color: #2A2A2A; }
+        aside nav ul li a {
+          background: url("../imgs/arrow.gif") no-repeat 166px 5px;
+          text-decoration: none;
+          display: block;
+          width: 90%;
+          padding: 2px 0 6px 8px;
+          color: #EBEBEB;
+          border-left: 1px solid #737373; }
+          aside nav ul li a:hover {
+            background: url("../imgs/hover-arrow.gif") no-repeat 166px 5px;
+            color: #CEAE6E;
+            text-decoration: underline; }
+  aside #news {
+    background: url("../imgs/news-bg.jpg");
+    padding: 20px; }
+    aside #news h3 {
+      padding: 10px 0; }
+    aside #news p {
+      border-bottom: 1px dotted #737373;
+      padding-bottom: 10px; }
+    aside #news a {
+      float: right;
+      color: #74653D;
+      font-weight: bold; }
+    aside #news a:hover {
+      color: #38311A; }
+  aside #support {
+    height: 200px;
+    background: url("../imgs/support-bg.jpg") no-repeat; }
+    aside #support p {
+      color: #000;
+      padding-left: 20px;
+      padding-top: 5px; }
+
+section {
+  padding-top: 301px;
+  width: 490px;
+  float: right; }
+  section h2 {
+    width: 90%;
+    border-bottom: 2px solid #cfbd93;
+    color: #BC880A; }
+  section #futured-article .wrapper {
+    display: inline-block;
+    float: left;
+    border: 10px solid #e7e0ce;
+    border-radius: 10px; }
+    section #futured-article .wrapper img {
+      margin: 5px; }
+  section #futured-article .text {
+    font-size: 16px;
+    width: 50%;
+    float: left;
+    margin-left: 20px; }
+  section h3 {
+    width: 90%;
+    margin: 20px 0;
+    border-bottom: 2px solid #cfbd93;
+    color: #BC880A; }
+  section article .wrapper {
+    display: inline-block;
+    float: left;
+    border: 10px solid #e7e0ce;
+    border-radius: 10px; }
+    section article .wrapper img {
+      margin: 5px; }
+    section article .wrapper p {
+      border-top: 1px solid #cdc6b4;
+      text-align: center;
+      font-weight: bold;
+      color: #A39160; }
+  section article .text {
+    width: 20%;
+    height: 110px;
+    float: left;
+    margin-left: 10px;
+    font-size: 10px; }
+  section a {
+    float: right;
+    margin-right: 45px;
+    color: #74653D;
+    font-weight: bold;
+    font-size: 11px; }
+    section a:hover {
+      color: #38311A; }
+
+#clearfix {
+  clear: both; }
+
+footer {
+  background: url("../imgs/footer-bg.gif"); }
+  footer p {
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold; }
+  footer:after {
+    content: "\0020";
+    display: block;
+    height: 10px;
+    background: url("../imgs/footerline.gif") bottom no-repeat; }

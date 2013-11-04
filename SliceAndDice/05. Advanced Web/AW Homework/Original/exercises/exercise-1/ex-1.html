@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="bg" xml:lang="bg" dir="ltr">
+<head>
+	<title>Упражнение 1 - оптимизация на HTML и CSS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+	body {font: 14px sans-serif}
+	a {text-decoration: none}
+	.tabs {
+		padding: 0 10px;
+		border-bottom: 1px solid #cccccc;
+		position: relative;
+		z-index: 1;
+		min-height: 0;
+		_zoom: 1;
+	}
+	.tabs:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+	.tabs ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.tabs ul .tab {
+		float: left;
+		display: inline;
+	}
+	.tabs ul .tab .tab-link {
+		margin-right: 10px;
+		border: 1px solid #cccccc;
+		display: block;
+		position: relative;
+		bottom: -1px;
+		z-index: 2;
+	}
+	.tabs ul .tab .tab-link .tab-text {
+		color: #888888;
+		background-color: #f0f0f0;
+		padding: 2px 10px;
+		display: block;
+	}
+	.tabs ul .tab .tab-link:hover .tab-text {
+		background-color: #fafafa;
+	}
+	.tabs ul .tab .current-tab {
+		border-bottom-color: #ffffff;
+	}
+	.tabs ul .tab .current-tab .tab-text {
+		color: #000000;
+		background-color: #ffffff;
+	}
+	</style>
+</head>
+<body>
+
+
+<div class="tabs">
+	<ul>
+		<li class="tab">
+			<a href="#" class="tab-link current-tab">
+				<span class="tab-text">
+					Link 1
+				</span>
+			</a>
+		</li>
+		<li class="tab">
+			<a href="#" class="tab-link">
+				<span class="tab-text">
+					Link 2
+				</span>
+			</a>
+		</li>
+		<li class="tab">
+			<a href="#" class="tab-link">
+				<span class="tab-text">
+					Link 3
+				</span>
+			</a>
+		</li>
+		<li class="tab">
+			<a href="#" class="tab-link">
+				<span class="tab-text">
+					Link 4
+				</span>
+			</a>
+		</li>
+		<li class="tab">
+			<a href="#" class="tab-link">
+				<span class="tab-text">
+					Link 5
+				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+
+</body>
+</html>

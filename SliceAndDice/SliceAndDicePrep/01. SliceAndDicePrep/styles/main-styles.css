@@ -1,0 +1,262 @@
+/* Helpers */
+.clearfix, #footer,
+#header,
+#main,
+#header-top,
+#navigation,
+nav,
+#posts,
+#bottom-text {
+    zoom: 1;
+}
+
+    .clearfix:before, #footer:before,
+    #header:before,
+    #main:before,
+    #header-top:before,
+    #navigation:before,
+    nav:before,
+    #posts:before,
+    #bottom-text:before, .clearfix:after, #footer:after,
+    #header:after,
+    #main:after,
+    #header-top:after,
+    #navigation:after,
+    nav:after,
+    #posts:after,
+    #bottom-text:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .clearfix:after, #footer:after,
+    #header:after,
+    #main:after,
+    #header-top:after,
+    #navigation:after,
+    nav:after,
+    #posts:after,
+    #bottom-text:after {
+        clear: both;
+    }
+
+/* Resets and clears */
+img {
+    max-width: 100%;
+}
+
+html, body, div, header, footer, section, article, h1, h2, h3, span,
+input, ul, li, nav {
+    margin: 0;
+    padding: 0;
+}
+
+/* Main styles */
+html {
+    background-color: #F3F3F3;
+    color: #656464;
+    font-family: SegoeUI, Arial, Verdana, sans-serif;
+    font-size: 17px;
+}
+
+body {
+    background-color: none;
+}
+
+#wrapper {
+    margin: auto;
+    width: 960px;
+}
+
+#main-content-wrapper {
+    background-color: #FFF;
+    box-shadow: 0 0 7px #bababa;
+    behavior: url(scripts/pie/PIE.htc);
+}
+
+#header #header-top {
+    height: 140px;
+}
+
+    #header #header-top h1 {
+        float: left;
+        margin-left: 60px;
+        line-height: 140px;
+    }
+
+        #header #header-top h1 span {
+            color: #549eb9;
+        }
+
+    #header #header-top input {
+        height: 32px;
+        width: 200px;
+        float: right;
+        border: 1px solid #efefef;
+        margin-top: 57px;
+        margin-right: 60px;
+    }
+
+#header nav {
+    border-top: 1px solid #EFEFEF;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+    #header nav ul {
+        list-style-type: none;
+        font-size: 12px;
+        color: #c6c6c6;
+        float: left;
+    }
+
+        #header nav ul li {
+            padding: 17px 15px;
+            float: left;
+            text-transform: uppercase;
+            border-right: 1px dotted #DCDCDC;
+        }
+
+        #header nav ul .selected {
+            color: #656464;
+        }
+
+    #header nav #social {
+        float: right;
+    }
+
+        #header nav #social span {
+            background-image: url(../images/social-sprite.png);
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-top: 12%;
+        }
+
+        #header nav #social .feed {
+            background-position: 53px 0;
+        }
+
+        #header nav #social .facebook {
+            background-position: 24px 0;
+        }
+
+#main {
+    border-bottom: 1px solid #EFEFEF;
+}
+
+#posts {
+    width: 70%;
+    float: left;
+    border-right: 1px solid #EFEFEF;
+}
+
+    #posts .location {
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-bottom: 40px;
+        color: #e5e5e5;
+        font-style: italic;
+        font-size: 14px;
+    }
+
+        #posts .location .current-pos {
+            color: #656464;
+        }
+
+    #posts .date {
+        float: left;
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+        background-color: #549eb9;
+        border-radius: 50%;
+        behavior: url(scripts/pie/PIE.htc);
+        text-align: center;
+        line-height: 60px;
+    }
+
+    #posts article {
+        float: left;
+        width: 75%;
+        margin-left: 20px;
+    }
+
+        #posts article .post-date {
+            float: left;
+        }
+
+        #posts article .post {
+            width: 100%;
+            float: left;
+        }
+
+        #posts article button {
+            float: right;
+        }
+
+#aside {
+    float: left;
+    width: 29%;
+}
+
+    #aside .offer {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+        #aside .offer .offer-title {
+            font-size: 20px;
+        }
+
+        #aside .offer ul {
+            list-style-type: none;
+        }
+
+            #aside .offer ul li {
+                background-image: url(../images/menu-arrow.png);
+                background-repeat: no-repeat;
+                background-position: 0 5px;
+                padding-left: 20px;
+            }
+
+#bottom-text {
+    padding-top: 20px;
+    border-top: 3px solid #F7F7F7;
+}
+
+    #bottom-text .about {
+        width: 31%;
+        float: left;
+        padding-left: 2%;
+    }
+
+        #bottom-text .about .about-title {
+            font-size: 20px;
+        }
+
+#footer {
+    margin: 10px;
+    text-align: right;
+}
+
+@media only screen and (max-width: 960px) {
+    #wrapper {
+        width: 768px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #wrapper {
+        width: 480px;
+    }
+
+    #aside {
+        display: none;
+    }
+
+    #posts {
+        width: 100%;
+    }
+}

@@ -1,0 +1,259 @@
+/* Helpers */
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* Resets and clears */
+
+img {
+	max-width: 100%;
+}
+
+html, body, div, header, footer, section, article, h1, h2, h3, span,
+input, ul, li, nav {
+	margin: 0;
+	padding: 0;
+}
+
+#footer,
+#header,
+#main,
+#header-top,
+#navigation,
+nav,
+#posts,
+#bottom-text {
+	@extend .clearfix;
+}
+
+/* Main styles */
+
+html {
+	background-color: #F3F3F3;
+	color: #656464;
+	font-family: SegoeUI, Arial, Verdana, sans-serif;
+	font-size: 17px;
+}
+
+body {
+	background-color: none;
+}
+
+#wrapper {
+	margin: auto;
+	width: 960px;
+}
+
+#main-content-wrapper {
+	background-color: #FFF;
+	// Needs polifil!
+	box-shadow: 0 0 7px #bababa;
+	behavior: url(scripts/pie/PIE.htc);
+}
+
+#header {
+
+	#header-top{
+		height: 140px;
+
+		h1 {
+			float: left;
+			margin-left: 60px;
+			line-height: 140px;
+
+			span {
+				color: #549eb9;
+			}
+
+		}
+
+		input {
+			height: 32px;
+			width: 200px;
+			float: right;
+			border: 1px solid #efefef;
+			margin-top: 57px;
+			margin-right: 60px;
+		}
+			
+	}
+
+	nav {
+		border-top: 1px solid #EFEFEF;	
+		border-bottom: 1px solid #EFEFEF;
+
+		ul {
+			list-style-type: none;
+			font-size: 12px;
+			color: #c6c6c6;
+			float: left;
+
+			li {
+				padding: 17px 15px;
+				float: left;
+				text-transform: uppercase;
+				border-right: 1px dotted #DCDCDC;
+			}
+
+			.selected {
+				color: #656464;
+			}
+		}
+
+		#social {
+			float: right;
+			
+			span {
+				background-image: url(../images/social-sprite.png);
+				display: inline-block;
+				width: 24px;
+				height: 24px;
+				margin-top: 12%;
+			}
+
+			.tweet {
+				
+			}
+
+			.feed {
+				background-position: 53px 0;
+			}
+
+			.facebook {
+				background-position: 24px 0;
+			}
+
+		}
+	}
+
+}
+
+#main {
+	border-bottom: 1px solid #EFEFEF;
+}
+
+#posts{
+
+	width: 70%;
+	float: left;
+	border-right: 1px solid #EFEFEF;
+
+	.location {
+		margin-top: 40px;
+		margin-left: 40px;
+		margin-bottom: 40px;
+		color: #e5e5e5;
+		font-style: italic;
+		font-size: 14px;
+
+		.current-pos {
+			color: #656464;
+		}
+	}
+	
+	.date {
+		float: left;
+		width: 60px;
+		height: 60px;
+		margin-left: 20px;
+		background-color: #549eb9;
+		border-radius: 50%;
+		behavior: url(scripts/pie/PIE.htc);
+		text-align: center;
+		line-height: 60px;
+
+	}
+
+	article {
+		float: left;
+		width: 75%;
+		margin-left: 20px;
+
+		.post-date {
+			float: left;
+		}
+
+		.post {
+			width: 100%;	
+			float: left;
+		}
+
+		button {
+			float: right;
+		}
+	}
+}
+
+#aside {
+	float: left;
+	width: 29%;
+
+	.offer {
+		margin-top: 20px;
+		margin-left: 20px;
+
+		.offer-title {
+			font-size: 20px;
+		}
+
+		ul {
+			list-style-type: none;
+
+			li {
+				background-image: url(../images/menu-arrow.png);
+				background-repeat: no-repeat;
+				background-position: 0 5px;
+				padding-left: 20px;
+			}
+		}
+	}
+}
+
+#bottom-text {
+	padding-top: 20px;
+	border-top: 3px solid #F7F7F7;
+
+	.about {
+		width: 31%;
+		float: left;
+		padding-left: 2%;
+
+		.about-title {
+			font-size: 20px;
+		}
+	}
+}
+
+#footer {
+	margin: 10px;
+	text-align: right;
+}
+
+@media only screen and (max-width: 960px) {
+	#wrapper {
+		width: 768px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#wrapper {
+		width: 480px;
+	}
+
+	#aside{
+		display: none;
+	}
+
+	#posts {
+		width: 100%;
+	}
+}

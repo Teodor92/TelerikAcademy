@@ -1,0 +1,44 @@
+body {
+	background-color: #fff;
+	font-family: sans-serif;
+}
+
+
+.menu {
+	padding: 0 10px;
+	height: 46px;
+	border-top: 1px solid #CFCFCF;
+	border-bottom: 1px solid #CFCFCF;
+	border-right: 1px solid #CFCFCF;
+	border-left: 1px solid #FFF;
+	text-align: center;
+	line-height: 46px;
+	color: #A7162E;
+	text-transform: uppercase;
+	background-image: url('imgs/menu-gradient.png');
+	float: left;
+}
+
+#first //.menu:nth-child(1) using ids for IE7, 8 support
+{
+	border-left: 1px solid #CFCFCF;
+	border-radius: 5px 0 0 5px;
+}
+
+#last //.menu:nth-child(4)
+{
+	border-radius: 0 5px 5px 0;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
