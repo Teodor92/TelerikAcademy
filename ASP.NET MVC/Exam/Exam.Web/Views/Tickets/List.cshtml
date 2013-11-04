@@ -1,0 +1,86 @@
+﻿@model Exam.Web.Models.ListTicketViewModel
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<div class="row-fluid">
+    <div class="span12">
+        @using (Html.BeginForm("Filter", "Tickets", FormMethod.Post))
+        {
+
+            @(Html.Kendo()
+        .DropDownList()
+        .Name("categoryFilter")
+        .DataTextField("CategoryName")
+        .DataValueField("CategoryName")
+        .OptionLabel("All")
+        .DataSource(data =>
+        {
+            data.Read(read => read.Action("GetCategoryData", "Tickets"));
+            data.ServerFiltering(true);
+        }))
+            <div>
+                <input type="submit" value="Filter" class="btn" />
+            </div>
+
+        }
+    </div>
+    <div class="span12 list-view-header">
+        <div class="row-fluid">
+            <div class="span3">
+                <strong>Title</strong>
+            </div>
+            <div class="span3">
+                <strong>Category</strong>
+            </div>
+            <div class="span2">
+                <strong>Author</strong>
+            </div>
+            <div class="span2">
+                <strong>Priority</strong>
+            </div>
+            <div class="span2">
+                <strong>Action</strong>
+            </div>
+        </div>
+    </div>
+    <div class="span12">
+        @(Html.Kendo()
+    .ListView<Exam.Web.Models.ListTicketViewModel>()
+    .Name("tickets")
+    .TagName("div")
+    .ClientTemplateId("ticket-template")
+    .Pageable()
+    .DataSource(data =>
+    {
+        data.Read("GetTickets", "Tickets");
+        data.ServerOperation(true);
+        data.PageSize(5);
+    }))
+    </div>
+</div>
+
+
+<script id="ticket-template" type="text/x-kendo-template">
+    <div class="row-fluid">
+        <div class="span3">
+            <strong> #: Title # </strong>
+        </div>
+        <div class="span3">
+            <strong> #: Category # </strong>
+        </div>
+        <div class="span2">
+            <strong> #: Author # </strong>
+        </div>
+        <div class="span2">
+            <strong> #: Priority # </strong>
+        </div>
+        <div class="span2">
+            <a href="Details/#: Id #" class="btn">Details</a>
+        </div>
+    </div>
+</script>

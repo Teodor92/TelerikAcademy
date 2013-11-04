@@ -1,0 +1,58 @@
+﻿@model Exam.Models.Comment
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Comment</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        @*<div class="control-group">
+            @Html.LabelFor(model => model.PostedById, "PostedById", new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("PostedById", null, String.Empty, new { disabled = "disabled" })
+                @Html.ValidationMessageFor(model => model.PostedById, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.TicketId, "TicketId", new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("TicketId", String.Empty)
+                @Html.ValidationMessageFor(model => model.TicketId, null, new { @class = "help-inline" })
+            </div>
+        </div>*@
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Content, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Content)
+                @Html.ValidationMessageFor(model => model.Content, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

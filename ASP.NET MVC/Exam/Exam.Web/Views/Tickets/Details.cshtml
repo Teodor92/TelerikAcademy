@@ -1,0 +1,62 @@
+﻿@model Exam.Web.Models.DetailedTicketViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+<h3>Category: @Model.Category</h3>
+
+<div class="row-fluid">
+    <div class="span4">
+        <p><strong>Author: </strong>@Model.Author</p>
+        <p><strong>Priority: </strong>@Model.Priority</p>
+    </div>
+    <div class="span4">
+        @if (@Model.ScreenshotUrl != null)
+        {
+            <img src="@Model.ScreenshotUrl" alt="BugImage" width="300" height="300" />
+        }
+    </div>
+    <div class="span4">
+        @if (@Model.Description != null)
+        {
+            <p>
+                <strong>Description:</strong>
+                @Model.Description
+            </p>
+        }
+    </div>
+    <div id="comments" class="span12">
+        @foreach (var comment in Model.Comments)
+        {
+            @Html.Partial("_CommentPartial", comment)
+        }
+    </div>
+    <div class="span12">
+        @if (User.Identity.IsAuthenticated)
+        {
+            using (Ajax.BeginForm("PostComment", 
+                new AjaxOptions { 
+                    HttpMethod = "Post",
+                    InsertionMode = InsertionMode.InsertAfter,
+                    UpdateTargetId = "comments", 
+                    OnFailure = "commentPostFailure" }))
+            {
+                @Html.Hidden("TicketId", Model.Id)
+                @Html.TextArea("Content")
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Submit comment" />
+            }
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function commentPostFailure() {
+            alert("Error");
+        }
+    </script>
+}
