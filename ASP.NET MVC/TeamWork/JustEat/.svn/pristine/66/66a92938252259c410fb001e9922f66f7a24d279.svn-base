@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";  
+}
+
+@*@(Html.Kendo()
+    .Calendar()
+    .Name("calendar")
+    .Min(DateTime.Now.AddMonths(-3))
+    .Max(DateTime.Now.AddMonths(3)))*@
+<div id="home-carousel" class="carousel slide">
+    <ol class="carousel-indicators">
+        <li data-target="#home-carousel" data-slide-to="0"></li>
+        <li data-target="#home-carousel" data-slide-to="1"></li>
+        <li data-target="#home-carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="../../img/slide1.jpg" alt="Photo1"/>
+            <div class="carousel-caption">
+                <p>Item 1</p>
+            </div>    
+        </div>
+        <div class="item">
+            <img src="../../img/slide2.jpg" alt="Photo2" />
+            <div class="carousel-caption">
+                <p>Item 2</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../../img/slide3.jpg" alt="Photo3" />
+            <div class="carousel-caption">
+                <p>Item 3</p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#home-carousel" data-slide="next">
+        <span class="icon-prev"></span>
+    </a>
+</div>
+
+<script>
+    $(window).load(function () {
+        $("#home-carousel").carousel({
+            interval: 2500
+        });
+    });
+    //$(function() {
+       
+    //});
+</script>

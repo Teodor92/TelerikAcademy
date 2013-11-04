@@ -1,0 +1,16 @@
+﻿@model IEnumerable<JusTeeth.Models.ApplicationUser>
+@{
+    ViewBag.Title = "Home Page";  
+}
+
+@foreach (var user in Model)
+{
+    <div>@user.UserName</div>
+}
+
+
+@(Html.Kendo()
+    .Calendar()
+    .Name("calendar")
+    .Min(DateTime.Now.AddMonths(-3))
+    .Max(DateTime.Now.AddMonths(3)))

@@ -1,0 +1,123 @@
+﻿@model JusTeeth.App.ViewModels.CreateGroupViewModel
+@Scripts.Render("~/bundles/jqueryval") @*<- By Fert1 GOOD job !*@
+
+
+<div class="row-fluid" id="firstStepContainer">
+    <div id="createGroupMapcontainer">
+
+    </div>
+    <button value="Next Step" onclick="goToSecondStep()"></button>
+</div>
+
+<div class="row-fluid" id="createGroupContainer">
+    
+    @using (Ajax.BeginForm("CreateGroup", "Groups", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "groups-container" }))
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset class="form-horizontal">
+            <legend>Create Group</legend>
+
+            @*<div class="control-group">
+                @Html.LabelFor(model => model.Place, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.Place)
+                    @Html.ValidationMessageFor(model => model.Place, null, new { @class = "help-inline" })
+                </div>
+
+                @(Html.Kendo()
+                      .AutoComplete()
+                      .Name("place")
+                      .Filter("contains")
+                      .DataTextField("Name")
+                      .MinLength(3)
+                      .DataSource(data =>
+                      {
+                          data.Read(read =>
+                          {
+                              read.Action("GetAutocompleteData", "Groups").Data("onAdditionalData");
+                          })
+                              .ServerFiltering(true);
+                      }))
+            </div>*@
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.StartingTime, new { @class = "control-label" })
+                <div class="controls">
+                    @Html.EditorFor(model => model.StartingTime)
+                    @Html.ValidationMessageFor(model => model.StartingTime, null, new { @class = "help-inline" })
+                </div>
+            </div>
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Create" class="btn" />
+            </div>
+        </fieldset>
+    }
+</div>
+<div>
+    <button onclick="goToNextStep()">Back</button>
+    <button onclick="goToPreviosStep()">Next</button>
+</div>
+
+
+<script>
+    function onAdditionalData() {
+        return {
+            text: $("#place").val()
+        };
+    }
+    
+    function goToNextStep() {
+        $("#firstStepContainer").css("display", "none");
+        $("#createGroupContainer").css("display", "block");
+    }
+    
+    function goToPreviosStep() {
+        $("#firstStepContainer").css("display", "block");
+        $("#createGroupContainer").css("display", "none");
+    }
+    
+    function initialize() {
+        var placeName = '@(Model.Place)';
+        //TODO: get user coordinates
+        @*var latitude = '@(Model.Latitude)';
+        var longitude = '@(Model.Longitude)';*@
+
+        var latitude = "40.716948";
+        var longitude = "-74.003563";
+        var latlng = new google.maps.LatLng(latitude, longitude);
+        var options = {
+            zoom: 14, center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById
+            ("createGroupMapcontainer"), options);
+        
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: placeName
+        });
+
+        $.ajax({
+            url: "/places/getpushpins",
+            type: "GET",
+            dataType: "json",
+        }).then(function(data) {
+            console.log(data);
+        }, function(err) {
+            console.log(err);
+        });
+    }
+    
+    $(function () {
+        // map initializer
+        //var panelWidth = $("#left-panel").width();
+        ////var panelHeight = $("#left-panel").height();
+        //$("#map_canvas").width("width", "" + panelWidth + "px");
+        //$("#map_canvas").css("height", "500px");
+
+        initialize();
+    });
+</script>

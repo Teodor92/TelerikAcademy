@@ -1,0 +1,57 @@
+﻿@model JusTeeth.App.Areas.Administration.ViewModels.HungryGroupViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>HungryGroup</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.StartingTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.Kendo().DateTimePickerFor(model => model.StartingTime).Name("StartingTime")
+                @Html.ValidationMessageFor(model => model.StartingTime, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.EatTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("EatTime", Model.EatItemsDropdown)
+                @Html.ValidationMessageFor(model => model.EatTime, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.EatTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("PlaceId", Model.PlacesDropdown)
+                @Html.ValidationMessageFor(model => model.PlaceId, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

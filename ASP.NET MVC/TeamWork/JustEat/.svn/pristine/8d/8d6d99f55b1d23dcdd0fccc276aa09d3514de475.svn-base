@@ -1,0 +1,56 @@
+﻿@model IEnumerable<JusTeeth.App.ViewModels.HungryGroupViewModel>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span10">
+
+            @(Html.Kendo().ListView<JusTeeth.App.ViewModels.HungryGroupViewModel>(Model)
+                .Name("listView")
+                .TagName("div")
+                .ClientTemplateId("template")
+                .Pageable()
+            )
+        </div>
+        <div class="span2">
+            <p>Filters</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="group">
+        <p>
+            <strong>#:Place#</strong>
+        </p>
+        <p>
+            <strong>Eat Time: #:Place#</strong>
+        </p>
+        <p>
+            <a href="/Groups/Join/#: Id #" class="btn">JOIN</a>
+        </p>
+    </div>
+</script>
+
+
+<style scoped>
+    .group {
+        text-align: center;
+        display: inline-block;
+        border: 1px solid gray;
+        border-radius: 100px;
+        padding: 20px;
+    }
+</style>
+@*public string Creator { get; set; }
+
+    public string CreatorId { get; set; }
+
+    public string EatTime { get; set; }
+
+    public int Id { get; set; }
+
+    public string Place { get; set; }
+
+    public int PlaceId { get; set; }
+
+    public DateTime StartingTime { get; set; }*@

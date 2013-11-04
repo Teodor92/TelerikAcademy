@@ -1,0 +1,14 @@
+﻿@model JusTeeth.App.ViewModels.FeedbackViewModel
+
+<li>
+    <div class="feedback-user-photo">
+        <a href="/Users/@Model.User.UserName">
+            <img src="/Content/UserPhotos/@Model.User.Avatar" height="50" width="50" alt="@Model.User.DisplayName avatar" title="@Model.User.DisplayName" />
+        </a>
+    </div>
+    <div class="feedback-content">@Model.Content</div>
+    <br />
+    <span>Rating:</span><div class="feedback-inner feedback-rating" data-rating="@Model.Rating"></div>
+    <div class="feedback-inner">Eattime: <strong>@Model.EatTime</strong></div>
+    <div class="feedback-inner">Price:<strong>@Model.PriceType</strong></div>
+</li>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/kendo")
+    @Scripts.Render("~/bundles/kendo")
+</head>
+<body>
+    <div id="main-app-container" class="container container-fluid">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("JusTeeth", "Index", "Home", null, new { @class = "brand" })
+                    <div class="nav-collapse collapse">
+                        <ul class="nav nav-tabs">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Groups", "About", "Home")</li>
+                            }
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Administration", "Index", "Administration/Magic")</li>   
+                            }
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </div>
+
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

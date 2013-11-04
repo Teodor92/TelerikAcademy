@@ -1,0 +1,56 @@
+﻿@using Kendo.Mvc.UI;
+@model JusTeeth.App.Areas.Administration.ViewModels.HungryGroupViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>HungryGroup</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.StartingTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.Kendo().DateTimePicker().Name("StartingTime").Value(DateTime.Now.ToString())
+                @Html.ValidationMessageFor(model => model.StartingTime, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.EatTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("EatTime", Model.EatItemsDropdown)
+                @Html.ValidationMessageFor(model => model.EatTime, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.EatTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("PlaceId", Model.PlacesDropdown)
+                @Html.ValidationMessageFor(model => model.EatTime, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

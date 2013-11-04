@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using JusTeeth.App.ViewModels;
+using JusTeeth.Models;
+
+namespace JusTeeth.App.Controllers
+{
+    public class GroupsController : BaseController
+    {
+        //
+        // GET: /Groups/
+        public ActionResult Index()
+        {
+            var groups = this.Db.HungryGroupRepository.All().Select(HungryGroupViewModel.FromHungryGr   oup).ToList();
+            
+            //var groups = new List<HungryGroupViewModel>()
+            //{
+            //     new HungryGroupViewModel
+            //     {
+            //        Creator="Pesho1",
+            //        CreatorId="1244534-123246",
+            //        EatTime= EatTimeType.Medium.ToString(),
+            //        Id=1,
+            //        Place= "Play House",
+            //        PlaceId=1,
+            //        StartingTime = DateTime.Now
+            //     },
+            //     new HungryGroupViewModel
+            //     {
+            //        Creator="Pesho2",
+            //        CreatorId="1244534-123246",
+            //        EatTime= EatTimeType.Slow.ToString(),
+            //        Id=2,
+            //        Place= "Play House2",
+            //        PlaceId=1,
+            //        StartingTime = DateTime.Now
+            //     },
+            //     new HungryGroupViewModel
+            //     {
+            //        Creator="Pesho3",
+            //        CreatorId="1244534-123246",
+            //        EatTime= EatTimeType.Ultrafast.ToString(),
+            //        Id=3,
+            //        Place= "Play House1",
+            //        PlaceId=1,
+            //        StartingTime = DateTime.Now
+            //     }
+            //};
+            return View(groups);
+        }
+
+        public ActionResult GetGrpupEatTime(int id)
+        {
+
+            return Json("");
+        }
+
+        public ActionResult GroupDetail(int? id)
+        {
+            //if (id == null)
+            //{
+            //    return 
+            //}
+
+            return Content("");
+        }
+	}
+}

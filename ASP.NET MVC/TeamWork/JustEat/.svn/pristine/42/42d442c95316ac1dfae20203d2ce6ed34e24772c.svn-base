@@ -1,0 +1,32 @@
+﻿@model JusTeeth.App.ViewModels.LightUserViewModel
+@{
+    ViewBag.Title = "_UserPicture";
+}
+
+<div class="user-info">
+    <p>
+        <strong>@Model.DisplayName</strong>
+    </p>
+    <img src="/Content/UserPhotos/@Model.Avatar" id="user-picture" />
+    <p>
+        <strong>@Model.Company </strong>
+    </p>
+    <p>
+        <strong>@Model.Department </strong>
+    </p>
+</div>
+
+<style scoped>
+    .user-info {
+        margin: 10px;
+        text-align: center;
+    }
+
+        .user-info p {
+            margin-top: 5px;
+        }
+
+    /*#user-picture {
+        max-height:150px;
+    }*/
+</style>

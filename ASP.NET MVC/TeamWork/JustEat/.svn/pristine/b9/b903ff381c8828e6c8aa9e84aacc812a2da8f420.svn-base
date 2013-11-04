@@ -1,0 +1,212 @@
+﻿@model IEnumerable<JusTeeth.App.ViewModels.HungryGroupViewModel>
+@using JusTeeth.App.Helpers
+
+<div class="container-fluid">
+    <div class="row-fluid">
+
+        <div class="span9" id="groups-container">
+            @*@{Html.RenderAction("FilterBy", "Groups");}*@
+            @Html.Action("FilterBy", "Groups")
+        </div>
+        <div class="span3">
+            <div class="align-center">
+                @(Ajax.ActionLink("Create", "GetCreateGroupFormPartial",
+                    new AjaxOptions
+                    {
+                        HttpMethod = "GET",
+                        InsertionMode = InsertionMode.Replace,
+                        LoadingElementId = "loading",
+                        UpdateTargetId = "groups-container",
+                        OnBegin="clearGroupsContainer",
+                        OnFailure = "createError",
+                        OnSuccess = "createSuccess"
+                    })
+                )
+            </div>
+            <div class="align-center">
+                <p><strong>My Company</strong></p>
+                @Ajax.ImageActionLink(
+                "/img/company-filter.png",
+                "only from my company",
+                "FilterBy",
+                "Groups",
+                new { filterParam = "company" },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "groups-container"
+                },
+                new { @class = "filters" },
+                "nonactive medium")
+            </div>
+            <div class="align-center">
+                <p><strong>My Department</strong></p>
+                @Ajax.ImageActionLink(
+                "/img/department-filter.png",
+                "only from my company",
+                "FilterBy",
+                "Groups",
+                new { filterParam = "department" },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "groups-container"
+                },
+                new { @class = "filters" },
+                "nonactive medium")
+            </div>
+            <hr />
+            <div class="align-center">
+                <strong>Order by</strong>
+                <br />
+                <div>
+                    <span>Soonest</span>
+                    @Ajax.ImageActionLink(
+                        "/img/clock.png",
+                        "only from my company",
+                        "FilterBy",
+                        "Groups",
+                        new { filterParam = "startTime" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "groups-container"
+                        },
+                        new { @class = "filters" },
+                        "small nonactive")
+                </div>
+
+                <div>
+                    <span>Fastest</span>
+                    @Ajax.ImageActionLink(
+                        "/img/sand-clock.png",
+                        "only from my company",
+                        "FilterBy",
+                        "Groups",
+                        new { filterParam = "timeToEat" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "groups-container"
+                        },
+                        new { @class = "filters" },
+                        "small nonactive")
+
+                </div>
+
+                <div>
+                    <span>Cheapest</span>
+                    @Ajax.ImageActionLink(
+                        "/img/money.png",
+                        "only from my company",
+                        "FilterBy",
+                        "Groups",
+                        new { filterParam = "money" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "groups-container"
+                        },
+                        new { @class = "filters" },
+                        "small nonactive")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function requestStart(e) {
+        e.options.data = {
+            id: e.target.data("id")
+        }
+    }
+
+    $(".filters").on("click", "img", function () {
+        var allImgs = $(".filters img");
+        allImgs.addClass("nonactive").removeClass("active");
+        var target = $(this);
+        target.removeClass("nonactive").addClass("active");
+    })
+
+    function createSuccess() {
+    }
+
+    function createError() {
+    }
+
+    function clearGroupsContainer() {
+        $("#groups-container").html('<div id="loading" class="align-center">'+
+                                    '<img src="/img/ajax-loader.gif" />'+
+                                    '</div>');
+    }
+</script>
+
+
+<style>
+    .nonactive {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+        .nonactive:hover {
+            filter: none;
+            -webkit-filter: none;
+            -moz-filter: none;
+        }
+
+    .align-center {
+        text-align: center;
+    }
+
+    .small {
+        width: 60px;
+        height: 60px;
+    }
+
+    .medium {
+        width: 100px;
+    }
+
+    /*#loading {
+        display:block;
+        text-align:center;
+        display:none;
+        position: absolute;
+        top: 400px;
+        left: 400px;
+    }*/
+
+    #main-app-container #listView {
+        border: none;
+    }
+
+    .align-center {
+        text-align:center;
+    }
+</style>
+
+<script>
+$(function () {
+$.validator.addMethod("checkDateTimeRange", function (value, element) {
+    var pickedDate = value;
+    var now = new Date();
+    var maxDate = new Date();
+    maxDate.setDate(now.getDate()+3);
+
+    var result =pickedDate > now && pickedDate <= maxDate;
+    return result;
+});
+
+$.validator.unobtrusive.adapters.addBool("checkDateTimeRange");
+}(jQuery));
+</script>

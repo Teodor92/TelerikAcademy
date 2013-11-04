@@ -1,0 +1,80 @@
+﻿@model IEnumerable<JusTeeth.App.ViewModels.HungryGroupViewModel>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span10" id="groups-container">
+
+            @(Html.Kendo().ListView<JusTeeth.App.ViewModels.HungryGroupViewModel>(Model)
+                .Name("listView")
+                .TagName("div")
+                .ClientTemplateId("template")
+            )
+        </div>
+        <div class="span2">
+            <p>Filters</p>
+            <a href="/Groups/MyCompany">
+                <img src="~/img/company-filter.png" />
+            </a>
+        </div>
+    </div>
+</div>
+
+@(Html.Kendo().Tooltip()
+    .For("#groups-container")
+    .Filter(".group-creator")
+    .LoadContentFrom("GetUserPicture", "Users")
+    .Position(TooltipPosition.Top)
+    .Width(220)
+    .Height(280)
+    .Events(events => events.RequestStart("requestStart"))
+)
+
+<script type="text/javascript">
+    function requestStart(e) {
+        e.options.data = {
+            id: e.target.data("id")
+        }
+    }
+</script>
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="group">
+        <p>
+            Place:
+            <strong>#:Place#</strong>
+        </p>
+        <p>
+            Eat Time:
+            <strong>#:EatTime#</strong>
+        </p>
+        <p>
+            Starting Time:
+            <br />
+            <strong>#:StartingTime#</strong>
+        </p>
+        <p>
+            Creator:
+            <a href="/Users/#: UserName #" class="group-creator" data-id="#: CreatorId #">#:Creator#</a>
+        </p>
+        <p>
+            <a href="/Groups/Join/#: Id #" class="btn">JOIN</a>
+        </p>
+    </div>
+</script>
+
+
+<style scoped>
+    .group {
+        text-align: center;
+        display: inline-block;
+        border: 1px solid gray;
+        border-radius: 400px;
+        min-height: 130px;
+        min-width: 150px;
+        padding: 25px;
+        margin: 10px;
+    }
+        .group:hover {
+            background-color: rgba(168, 168, 168, 0.5)
+        }
+</style>

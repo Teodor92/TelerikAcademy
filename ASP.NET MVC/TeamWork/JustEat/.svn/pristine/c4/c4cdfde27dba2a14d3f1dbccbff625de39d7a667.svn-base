@@ -1,0 +1,92 @@
+﻿@model JusTeeth.Models.ApplicationUser
+
+@{
+    ViewBag.Title = @Model.UserName + " profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookProfile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FacebookProfile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPlaces)
+        </dt>
+        <dd>
+            <ul>
+                @foreach (var place in Model.LastPlaces)
+                {
+                    <li>@place.Name</li>
+                }
+            </ul>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Friends)
+        </dt>
+        <dd>
+            <ul>
+                @foreach (var user in Model.Friends)
+                {
+                    <li><a href="/Users/@user.UserName">@user.DisplayName</a></li>
+                }
+            </ul>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupHistory)
+        </dt>
+        <dd>
+            <ul>
+                @foreach (var group in Model.GroupHistory)
+                {
+                    <li>@group.StartingTime</li>
+                }
+            </ul>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Workplace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department.Workplace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+
+    </dl>
+    @Html.ActionLink("Change password", "Manage", "Account")
+</div>

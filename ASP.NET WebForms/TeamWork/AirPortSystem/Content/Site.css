@@ -1,0 +1,40 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+/* styles for removing the background from form */
+.no-color {
+  background-color: white;
+  border-style:none;
+}
+
+/* Manage.aspx CSS*/
+
+#MainContent_StatusLabel{
+
+    display:block;
+    font-weight:bold;
+    Font-size:16px;
+    margin-top:40px;
+}
+
+.avatar {
+
+    margin-top:20px;
+}
+
+#MainContent_profileImage {
+
+    width:180px;
+    height:180px;
+    border:1px solid black;
+    margin-top:50px;
+
+}
+.mini-image {
+
+    width:20px;
+    height:20px;
+    margin-left:10px;
+}

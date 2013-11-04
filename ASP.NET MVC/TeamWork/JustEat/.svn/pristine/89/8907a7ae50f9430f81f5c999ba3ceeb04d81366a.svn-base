@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace JusTeeth.Models
+{
+    public enum EatTimeType
+    {
+        Ultrafast,
+        Fast,
+        Medium,
+        Slow,
+        GameBreaker
+    }
+}

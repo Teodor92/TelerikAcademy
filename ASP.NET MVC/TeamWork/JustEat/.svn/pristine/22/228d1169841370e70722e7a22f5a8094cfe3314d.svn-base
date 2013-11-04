@@ -1,0 +1,90 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 10px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* styles for removing the background from form */
+.no-color {
+    background-color: white;
+    border-style: none;
+}
+
+div#home-carousel ol li {
+    border: 1px solid black;
+}
+
+#user-info, #user-avatar {
+    float: left;
+}
+
+#friend ul, #groups ul {
+    margin: 0;
+    padding: 0;
+}
+
+    #friend ul li, #groups ul li {
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+        #friend ul li a {
+            border-radius: 5px;
+            background-color: #e0ffff;
+            display: block;
+            text-align: center;
+            padding: 5px;
+        }
+
+            #friend ul li a:hover, #groups ul li a:hover {
+                text-decoration: none;
+                background-color: rgba(0, 206, 209, 0.5);
+            }
+
+    #groups ul li {
+        background-color: #e0ffff;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+#eatTimeChart {
+    width: 250px;
+    height: 250px;
+}
+
+.userInGroupItem {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#map_canvas {
+    height: 300px;
+    width: 600px;
+    margin-bottom: 15px;
+    /*height: 90%;
+    width: 90%;*/
+}

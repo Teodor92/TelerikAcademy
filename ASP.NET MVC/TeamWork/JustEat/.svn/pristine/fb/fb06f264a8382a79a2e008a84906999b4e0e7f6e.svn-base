@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using JusTeeth.App.ViewModels;
+using JusTeeth.Models;
+
+namespace JusTeeth.App.Controllers
+{
+    public class GroupsController : BaseController
+    {
+        //
+        // GET: /Groups/
+        public ActionResult Index()
+        {
+            var groups = this.Db.HungryGroupRepository
+                .All()
+                .ToList()
+                .Select(x => new HungryGroupViewModel
+                    {
+                        CreatorId = x.Creator.Id,
+                        Creator = x.Creator.DisplayName,
+                        EatTime = x.EatTime.ToString(),
+                        Id = x.Id,
+                        Place = x.Place.Name,
+                        PlaceId = x.Place.Id,
+                        StartingTime = x.StartingTime.ToString("H:mm:ss")
+                    })
+                .ToList();
+
+            return View(groups);
+        }
+
+        public ActionResult GetGrpupEatTime(int id)
+        {
+
+            return Json("");
+        }
+
+        public ActionResult GroupDetails(int? id)
+        {
+            if (id == null)
+            {
+                //TODO: some bad exception
+            }
+
+            var groupEntity = this.Db.HungryGroupRepository.All().FirstOrDefault(x => x.Id == id);
+            if (groupEntity == null)
+            {
+                //TODO: error handling
+            }
+
+            var model = new DetailedHungryGroupViewModel()
+            {
+                Creator = groupEntity.Creator.DisplayName,
+                CreatorId = groupEntity.Creator.Id,
+                EatTime = groupEntity.EatTime.ToString(),
+                Id = groupEntity.Id,
+                Place = groupEntity.Place.Name,
+                PlaceId = groupEntity.Place.Id,
+                StartingTime = groupEntity.StartingTime.ToString("MM/dd/yy H:mm:ss"),
+                Latitude = groupEntity.Place.Latitude,
+                Longitude = groupEntity.Place.Longitude,
+                Users = (from user in groupEntity.HungryUsers
+                         select new HungryUserViewModel()
+                         {
+                             Id = user.Id,
+                             DisplayName = user.DisplayName,
+                             Avatar = user.DisplayName
+                         }).ToList()
+            };
+
+            return View(model);
+        }
+    }
+}

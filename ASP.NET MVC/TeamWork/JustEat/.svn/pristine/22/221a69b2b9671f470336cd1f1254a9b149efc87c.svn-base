@@ -1,0 +1,111 @@
+﻿using System.Net;
+using JusTeeth.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace JusTeeth.App.Areas.Administration.Controllers
+{
+    public class AdminUsersController : BaseController
+    {
+        // GET: /Administration/Users/
+        public ActionResult Index()
+        {
+            var users = this.Db.UsersRepository.All();
+            return View(users);
+        }
+
+        //
+        // GET: /Administration/Users/Details/5
+        public ActionResult Details(string username)
+        {
+            return View();
+        }
+
+        //
+        // GET: /Administration/Users/Create
+        public ActionResult Create()
+        {
+            ApplicationUser userForm = new ApplicationUser();
+            return View(userForm);
+        }
+
+        //
+        // POST: /Administration/Users/Create
+        [HttpPost]
+        public ActionResult Create(ApplicationUser user)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Db.UsersRepository.Add(user);
+                Db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(user);
+        }
+
+        //
+        // GET: /Administration/Users/Edit/5
+        public ActionResult Edit(string username)
+        {
+            if (username == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var user = Db.UsersRepository.All().FirstOrDefault(x => x.UserName == username);
+
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(user);
+        }
+
+        //
+        // POST: /Administration/Users/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        //
+        // GET: /Administration/Users/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        //
+        // POST: /Administration/Users/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }
+}

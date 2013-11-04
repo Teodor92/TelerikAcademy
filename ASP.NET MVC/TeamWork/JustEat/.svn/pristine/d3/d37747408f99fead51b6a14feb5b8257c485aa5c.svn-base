@@ -1,0 +1,160 @@
+﻿@model IEnumerable<JusTeeth.App.ViewModels.HungryGroupViewModel>
+@using JusTeeth.App.Helpers
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span9" id="groups-container">
+            @{Html.RenderAction("FilterBy", "Groups");}
+        </div>
+        <div class="span3">
+
+            <div class="align-center">
+                <p><strong>My Company</strong></p>
+                @Ajax.ImageActionLink(
+                "/img/company-filter.png",
+                "only from my company",
+                "FilterBy",
+                "Groups",
+                new { filterParam = "company" },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "groups-container"
+                },
+                new { @class = "filters" },
+                "nonactive medium")
+            </div>
+
+            <div class="align-center">
+                <p><strong>My Department</strong></p>
+                @Ajax.ImageActionLink(
+                "/img/department-filter.png",
+                "only from my company",
+                "FilterBy",
+                "Groups",
+                new { filterParam = "department" },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "groups-container"
+                },
+                new { @class = "filters" },
+                "nonactive medium")
+            </div>
+
+            <hr />
+
+            <div class="align-center">
+                <strong>Order by</strong>
+                <br />
+                <div>
+                    <span>Soonest</span>
+                    @Ajax.ImageActionLink(
+                        "/img/clock.png",
+                        "only from my company",
+                        "FilterBy",
+                        "Groups",
+                        new { filterParam = "startTime" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "groups-container"
+                        },
+                        new { @class = "filters" },
+                        "small nonactive")
+                </div>
+
+                <div>
+                    <span>Fastest</span>
+                    @Ajax.ImageActionLink(
+                        "/img/sand-clock.png",
+                        "only from my company",
+                        "FilterBy",
+                        "Groups",
+                        new { filterParam = "timeToEat" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "groups-container"
+                        },
+                        new { @class = "filters" },
+                        "small nonactive")
+
+                </div>
+
+                <div>
+                    <span>Cheapest</span>
+                    @Ajax.ImageActionLink(
+                        "/img/money.png",
+                        "only from my company",
+                        "FilterBy",
+                        "Groups",
+                        new { filterParam = "money" },
+                        new AjaxOptions
+                        {
+                            HttpMethod = "GET",
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "groups-container"
+                        },
+                        new { @class = "filters" },
+                        "small nonactive")
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function requestStart(e) {
+        e.options.data = {
+            id: e.target.data("id")
+        }
+    }
+
+    $(".filters").on("click", "img", function () {
+        var allImgs = $(".filters img");
+        allImgs.addClass("nonactive").removeClass("active");
+        var target = $(this);
+        target.removeClass("nonactive").addClass("active");
+    })
+</script>
+
+
+<style>
+    .nonactive {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+        .nonactive:hover {
+            filter: none;
+            -webkit-filter: none;
+            -moz-filter: none;
+        }
+
+    .align-center {
+        text-align: center;
+    }
+
+    .small {
+        width: 60px;
+        height: 60px;
+    }
+
+    .medium {
+        width: 100px;
+    }
+
+    #main-app-container #listView {
+        border: none;
+    }
+</style>
+
+

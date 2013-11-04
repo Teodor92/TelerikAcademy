@@ -1,0 +1,70 @@
+﻿@model JusTeeth.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Administration/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Place</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookProfile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookProfile)
+        </dd>
+
+        <dt>
+            Departmet name
+        </dt>
+
+        <dd>
+            @if (Model.Department != null)
+            {
+                @Html.DisplayFor(model => model.Department.Name)
+            }
+            else
+            {
+                <span>N/A</span>
+            }
+        </dd>
+
+        <dt>
+            Workplace Name
+        </dt>
+
+        <dd>
+            @if (Model.Workplace != null)
+            {
+                @Html.DisplayFor(model => model.Workplace.Name)
+            }
+            else
+            {
+                <span>N/A</span>
+            }
+        </dd>
+    </dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

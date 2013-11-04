@@ -1,0 +1,22 @@
+﻿@model System.Collections.Generic.List<JusTeeth.Models.Place>
+
+@{
+    ViewBag.Title = "Places";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2>Places</h2>
+<div id="places">
+    <ul>
+        @foreach (var place in Model)
+        {
+            <li>
+                <div>@place.Name</div>
+                <div>@place.AlternativeName</div>
+                <div>@place.MonthRating</div>
+                <div>@place.PriceType</div>
+                <a href="/Places/Details/@place.Id">View more</a>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+﻿@model JusTeeth.Models.HungryGroup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>HungryGroup</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EatTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EatTime)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,8 @@
+﻿@model JusTeeth.App.ViewModels.DetailedHungryGroupViewModel
+
+@{
+    ViewBag.Title = "GroupDetails";
+}
+
+<h2>GroupDetails</h2>
+

@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Home Page";  
+}
+
+@(Html.Kendo()
+    .Calendar()
+    .Name("calendar")
+    .Min(DateTime.Now.AddMonths(-3))
+    .Max(DateTime.Now.AddMonths(3)))

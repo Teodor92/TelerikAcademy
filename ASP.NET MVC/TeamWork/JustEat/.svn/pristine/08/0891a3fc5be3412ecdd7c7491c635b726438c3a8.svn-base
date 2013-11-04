@@ -1,0 +1,131 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using JusTeeth.Models;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+using System;
+using JusTeeth.App.ViewModels;
+
+namespace JusTeeth.App.Controllers
+{
+    public class GroupsController : BaseController
+    {
+        //
+        // GET: /Groups/
+        public ActionResult Index()
+        {
+            var groups = this.Db.HungryGroupRepository
+                .All()
+                .ToList()
+                .Select(x => new HungryGroupViewModel
+                    {
+                        CreatorId = x.Creator.Id,
+                        Creator = x.Creator.DisplayName,
+                        EatTime = x.EatTime.ToString(),
+                        Id = x.Id,
+                        Place = x.Place.Name,
+                        PlaceId = x.Place.Id,
+                        StartingTime = x.StartingTime.ToString("H:mm:ss"),
+                        UserName = x.Creator.UserName
+                    })
+                .ToList();
+
+            return View(groups);
+        }
+
+        public ActionResult GetHungryGroups([DataSourceRequest] DataSourceRequest request)
+        {
+            var result = this.Db.HungryGroupRepository.All().Select(x => new HungryGroupViewModel
+                    {
+                        CreatorId = x.Creator.Id,
+                        Creator = x.Creator.DisplayName,
+                        EatTime = x.EatTime.ToString(),
+                        Id = x.Id,
+                        Place = x.Place.Name,
+                        PlaceId = x.Place.Id,
+                        StartingTime = x.StartingTime.ToString("H:mm:ss"),
+                        UserName = x.Creator.UserName
+                    });
+            return Json(result.ToDataSourceResult(request));
+        }
+
+        public ActionResult GetGrpupEatTime(int id)
+        {
+
+            return Json("");
+        }
+
+        public ActionResult GroupDetails(int? id)
+        {
+            if (id == null)
+            {
+                //TODO: some bad exception
+            }
+
+            var groupEntity = this.Db.HungryGroupRepository.All().FirstOrDefault(x => x.Id == id);
+            if (groupEntity == null)
+            {
+                //TODO: error handling
+            }
+
+            int piePercent = 10;
+            string color = "#37e800";
+            switch (groupEntity.EatTime)
+            {
+                case (EatTimeType)0:
+                    piePercent = 10;
+                    color = "#37e800";
+                    break;
+                case (EatTimeType)1:
+                    piePercent = 25;
+                    color = "#dae800";
+                    break;
+                case (EatTimeType)2:
+                    piePercent = 50;
+                    color = "#e8a400";
+                    break;
+                case (EatTimeType)3:
+                    piePercent = 70;
+                    color = "#dae800";
+                    break;
+                case (EatTimeType)4:
+                    piePercent = 90;
+                    color = "#e8a400";
+                    break;
+                default:
+                    piePercent = 10;
+                    color = "#37e800";
+                    break;
+            }
+            int remainingPercent = 100 - piePercent;
+
+            var model = new DetailedHungryGroupViewModel()
+            {
+                Creator = groupEntity.Creator.DisplayName,
+                CreatorUsername = groupEntity.Creator.UserName,
+                CreatorId = groupEntity.Creator.Id,
+                EatTime = groupEntity.EatTime.ToString(),
+                Id = groupEntity.Id,
+                Place = groupEntity.Place.Name,
+                Address = groupEntity.Place.Address,
+                PlaceId = groupEntity.Place.Id,
+                StartingTime = groupEntity.StartingTime.ToString("MM/dd/yy H:mm:ss"),
+                Latitude = groupEntity.Place.Latitude,
+                Longitude = groupEntity.Place.Longitude,
+                Color = color,
+                PiePercent = piePercent,
+                RemainingPercent = remainingPercent,
+                Users = (from user in groupEntity.HungryUsers
+                         select new HungryUserViewModel()
+                         {
+                             Id = user.Id,
+                             DisplayName = user.DisplayName,
+                             Avatar = user.Avatar
+                         }).ToList()
+            };
+
+            return View(model);
+        }
+    }
+}

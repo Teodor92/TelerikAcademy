@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using JusTeeth.App.ViewModels;
+using JusTeeth.Models;
+
+namespace JusTeeth.App.Controllers
+{
+    public class PlacesController : BaseController
+    {
+        public ActionResult Index()
+        {
+            var places = this.Db.PlaceRepository.All().ToList();
+
+            return View(places);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var place = this.Db.PlaceRepository.GetById(id);
+            if (id == null)
+            {
+                //TODO: some bad exception
+            }
+
+            if (place == null)
+            {
+                //TODO: error handling
+            }
+
+            int piePercent = 10;
+            string color = "#37e800";
+            switch (place.EatTime)
+            {
+                case (EatTimeType)1:
+                    piePercent = 10;
+                    color = "#37e800";
+                    break;
+                case (EatTimeType)2:
+                    piePercent = 25;
+                    color = "#dae800";
+                    break;
+                case (EatTimeType)3:
+                    piePercent = 50;
+                    color = "#e8a400";
+                    break;
+                case (EatTimeType)4:
+                    piePercent = 70;
+                    color = "#dae800";
+                    break;
+                case (EatTimeType)5:
+                    piePercent = 90;
+                    color = "#e8a400";
+                    break;
+                default:
+                    piePercent = 10;
+                    color = "#37e800";
+                    break;
+            }
+            int remainingPercent = 100 - piePercent;
+
+            int pricePiePercent = 10;
+            string priceColor = "#37e800";
+            switch (place.PriceType)
+            {
+                case (PriceType)1:
+                    pricePiePercent = 10;
+                    priceColor = "#37e800";
+                    break;
+                case (PriceType)2:
+                    pricePiePercent = 25;
+                    priceColor = "#dae800";
+                    break;
+                case (PriceType)3:
+                    pricePiePercent = 50;
+                    priceColor = "#e8a400";
+                    break;
+                case (PriceType)4:
+                    pricePiePercent = 70;
+                    priceColor = "#dae800";
+                    break;
+                case (PriceType)5:
+                    pricePiePercent = 90;
+                    priceColor = "#e8a400";
+                    break;
+                default:
+                    pricePiePercent = 10;
+                    priceColor = "#37e800";
+                    break;
+            }
+            int priceRemainingPercent = 100 - pricePiePercent;
+
+            var model = new DetailedPlaceViewModel()
+            {
+                Id = place.Id,
+                Name = place.Name,
+                AlternativeName = place.AlternativeName,
+                Address = place.Address,
+                Rating = place.Rating,
+                MonthRating = place.MonthRating,
+                Latitude = place.Latitude,
+                Longitude = place.Longitude,
+                EatColor = color,
+                Description = place.Description,
+                EatPiePercent = piePercent,
+                EatRemainingPercent = remainingPercent,
+                PriceColor = priceColor,
+                PricePiePercent = pricePiePercent,
+                PriceRemainingPercent = priceRemainingPercent,
+            };
+
+            return View(model);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+﻿namespace JusTeeth.Data
+{
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+    using JusTeeth.Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    public class ApplicationDbContext : IdentityDbContextWithCustomUser<ApplicationUser>
+    {
+        public IDbSet<Place> Places { get; set; }
+ 
+        public IDbSet<Feedback> Feedbacks { get; set; }
+ 
+        public IDbSet<HungryGroup> HungryGroups { get; set; }
+ 
+        public IDbSet<Department> Departments { get; set; } 
+
+        public IDbSet<Workplace> Workplaces { get; set; } 
+    }
+}

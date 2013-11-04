@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AirPortSystem.SiteMaster" %>
+
+<%@ Register TagPrefix="ajax" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" %>
+<%@ Register Src="~/Controls/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" 
+TagPrefix="AirPortSys" TagName="ErrorSuccessNotifier" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head runat="server">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%: Page.Title %> - My ASP.NET Application</title>
+
+        <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+        </asp:PlaceHolder>
+        <webopt:BundleReference runat="server" Path="~/Content/css" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    </head>
+    <body>
+        <form runat="server">
+            <ajaxToolkit:ToolkitScriptManager runat="server">
+                <Scripts>
+                    <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <%--<asp:ScriptReference Name="MsAjaxBundle" />--%>
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+                </Scripts>
+            </ajaxToolkit:ToolkitScriptManager>
+
+            <header>
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container">
+
+                            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="brand" runat="server" href="~/">Sphene Airport</a>
+
+                            <div class="nav-collapse collapse">
+                                <asp:Menu 
+                                    ID="NavigationMenu" 
+                                    runat="server" 
+                                    CssClass="menu-wrapper dropdown" 
+                                    SkipLinkText="" 
+                                    EnableViewState="False" 
+                                    IncludeStyleBlock="False" 
+                                    Orientation="Horizontal"
+                                    DataSourceID="SiteMapDataSource" 
+                                    OnMenuItemDataBound="NavigationMenu_MenuItemDataBound"
+                                    StaticDisplayLevels="2">
+                                </asp:Menu>
+
+                                <asp:LoginView runat="server" ViewStateMode="Disabled"  ID="LoginView">
+                                    <AnonymousTemplate>
+                                        <ul class="nav nav-pills nav-stacked pull-right">
+                                            <li class="navbar-text">
+                                                <a id="registerLink" runat="server" href="~/Account/Register">Register</a>
+                                            </li>
+                                            <li class="navbar-text">
+                                                <a id="loginLink" runat="server" href="~/Account/Login">Log in</a>
+                                            </li>
+                                        </ul>
+                                    </AnonymousTemplate>
+                                    <LoggedInTemplate>
+                                        <ul class="nav nav-pills nav-stacked pull-right">
+                                            <li class="navbar-text">
+                                                <a runat="server" href="~/Account/Manage" 
+                                                   title="Manage your account">
+                                                    Hello, <%: Context.User.Identity.GetUserName()  %>
+                                                    !<img src="~/DefaultImage/default.png" runat="server" class="mini-image" ID="MiniAvatar"/>
+                                                </a>
+                                            </li>
+                                            <li class="navbar-text">
+                                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                            </li>
+                                        </ul>
+                                    </LoggedInTemplate>
+
+                                </asp:LoginView>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
+                <asp:SiteMapPath
+                    CssClass="sitemap" 
+                    ID="SiteMapPathBreadcrump" 
+                    runat="server" />
+                <AirPortSys:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - Team Sphene Airport System</p>
+                </footer>
+            </div>
+            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+        </form>
+        <script>
+            // injecting css clas to the ul nav menu, cos FUCK asp:Menu!
+            $(".menu-wrapper ul").addClass("nav nav-pills nav-stacked");
+            console.log($(".nav-collapse div")[1]);
+            //$(".menu-wrapper ul li ul").addClass("nav navbar-nav");
+            //$(".menu-wrapper ul li ul li").addClass("dropdown");
+            //$(".menu-wrapper ul li ul li a").addClass("dropdown-toggle");
+        </script>
+    </body>
+</html>

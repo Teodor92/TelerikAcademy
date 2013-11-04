@@ -1,0 +1,31 @@
+﻿@model IEnumerable<JusTeeth.App.ViewModels.HungryGroupViewModel>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span10">
+
+            @(Html.Kendo().ListView<JusTeeth.App.ViewModels.HungryGroupViewModel>(Model)
+                .Name("listView")
+                .TagName("div")
+                .ClientTemplateId("template")
+                .DataSource(dataSource =>
+                {
+                    dataSource.Read(read => read.Action("Products_Read", "ListView"));
+                    dataSource.PageSize(15);
+                })
+                .Pageable()
+                    )
+        </div>
+        <div class="span2">
+            <p>Filters</p>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="product">
+        <img src="@Url.Content("~/content/web/foods/")#:ProductID#.jpg" alt="#:ProductName# image" />
+        <h3>#:ProductName#</h3>
+        <p>#:kendo.toString(UnitPrice, "c")#</p>
+    </div>
+</script>

@@ -1,0 +1,82 @@
+﻿@model JusTeeth.Models.ApplicationUser
+
+@{
+    ViewBag.Title = @Model.UserName + " profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookProfile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FacebookProfile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastPlaces)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastPlaces)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Friends)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Friends)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupHistory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GroupHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Workplace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Workplace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentPlace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrentPlace)
+        </dd>
+    </dl>
+    @Html.ActionLink("Change password", "Manage", "Account")
+</div>

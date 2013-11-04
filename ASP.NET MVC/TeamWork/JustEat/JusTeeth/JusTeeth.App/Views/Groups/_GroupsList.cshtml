@@ -1,0 +1,58 @@
+﻿@model IEnumerable<JusTeeth.App.ViewModels.HungryGroupViewModel>
+
+@(Html.Kendo().ListView<JusTeeth.App.ViewModels.HungryGroupViewModel>(Model)
+                .Name("listView")
+                .TagName("div")
+                .ClientTemplateId("template")
+)
+
+@(Html.Kendo().Tooltip()
+    .For("#groups-container")
+    .Filter(".group-creator")
+    .LoadContentFrom("GetUserPicture", "Users")
+    .Position(TooltipPosition.Top)
+    .Animation(true)
+    .Width(220)
+    .Height(270)
+    .Events(events => events.RequestStart("requestStart"))
+)
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="hungryGroup-container">
+
+        <div class="hungryGroup-bgr">
+        </div>
+        <div class="hungryGroup-content">
+            <p>
+                <strong>#:Place#</strong>
+            </p>
+            <p>
+                <strong>#:StartingTime#</strong>
+            </p>
+            <p>
+                Eat Time:
+                <strong>#:EatTime#</strong>
+            </p>
+            <p>
+                Price:
+                <strong>#:Price#</strong>
+            </p>
+            <p>
+                Creator:
+                <a href="/Users/#: UserName #" class="group-creator" data-id="#: UserName #"><strong>#:Creator#</strong></a>
+            </p>
+            <p>
+                <a href="/Groups/GroupDetails/#: Id #" class="btn">DETAILS</a>
+            </p>
+            <p>
+                # if(!IsCurrentUserJoint){#
+                    <a href="/Groups/JoinGroup/#: Id #" class="btn btn-primary">JOIN</a>
+                #}else{#
+                    <span class="btn btn-success disabled">JOINED</span>
+                #}#
+            </p>
+
+        </div>
+    </div>
+
+</script>

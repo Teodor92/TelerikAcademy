@@ -1,0 +1,79 @@
+﻿@model JusTeeth.Models.ApplicationUser
+
+@{
+    ViewBag.Title = @Model.UserName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div id="profile-information" class="clearfix">
+    <div id="user-avatar"><img src="/Content/UserPhotos/@(Model.Avatar)" width="120" alt="Alternate Text" /></div>
+    <div id="user-info">
+        <div class="info-row">
+            <span>@Html.DisplayNameFor(model => model.UserName):</span>
+            <strong>@Html.DisplayFor(model => model.UserName)</strong>
+        </div>
+        <div class="info-row">
+            <span>@Html.DisplayNameFor(model => model.DisplayName):</span>
+            <strong>@Html.DisplayFor(model => model.DisplayName)</strong>
+        </div>
+        <div class="info-row">
+            <a href="@Model.FacebookProfile"><img src="http://telerikacademy.com/Content/Users/Profiles/Images/facebook-icon.jpg" alt="Alternate Text" /></a>
+        </div>
+        <div class="info-row">
+            <span>@Html.DisplayNameFor(model => model.Department.Workplace):</span>
+            <a href="#"><strong>@Html.DisplayFor(model => model.Department.Workplace.Name)</strong></a>
+        </div>
+        <div class="info-row">
+            <span>@Html.DisplayNameFor(model => model.Department):</span>
+            <a href="#"><strong>@Html.DisplayFor(model => model.Department.Name)</strong></a>
+        </div>
+    </div>
+</div>
+<div id="friend">
+    <h2>Friends</h2>
+    <ul>
+        @foreach (var user in Model.Friends)
+        {
+            <li>
+                <a href="/Users/@user.UserName">
+                    <span>@user.DisplayName</span>
+                    <br/>
+                    <img src="/Content/UserPhotos/@(user.Avatar)" width="80" />
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+<div id="groups">
+    <h2>Groups</h2>
+    <ul>
+        @foreach (var group in Model.GroupHistory)
+        {
+            <li>
+                <div><span>Creator: </span><a href="/Users/@group.Creator.UserName"><strong>@group.Creator.UserName</strong></a></div>
+                <div><span>Start time: </span><strong>@group.StartingTime</strong></div>
+                <div><span>Eat time: </span><strong>@group.EatTime</strong></div>
+                <div><a href="/Groups/GroupDetails/@group.Id"><strong>View more</strong></a></div>
+            </li>
+        }
+    </ul>
+</div>
+<div id="places">
+    <h2>Last Places</h2>
+    <ul>
+        @foreach (var place in Model.LastPlaces)
+        {
+            <li>
+                <div>@place.Name</div>
+            </li>
+        }
+    </ul>
+</div>
+
+@if (@User.Identity.Name.ToLower() == @Model.UserName.ToLower())
+{
+    @Html.ActionLink("Edit profile", "EditProfile", "Users")
+    <br/>
+    @Html.ActionLink("Change password", "Manage", "Account")
+}

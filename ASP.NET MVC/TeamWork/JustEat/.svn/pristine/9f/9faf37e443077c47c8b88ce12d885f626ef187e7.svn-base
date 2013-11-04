@@ -1,0 +1,26 @@
+﻿using System.Web.Mvc;
+using JusTeeth.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace JusTeeth.App.Areas.Administration.ViewModels
+{
+    public class HungryGroupViewModel
+    {
+        public int Id { get; set; }
+
+        public virtual ApplicationUser Creator { get; set; }
+
+        public DateTime StartingTime { get; set; }
+
+        public EatTimeType EatTime { get; set; }
+
+        public virtual Place Place { get; set; }
+
+        public virtual ICollection<ApplicationUser> HungryUsers { get; set; }
+
+        public List<SelectListItem> EatItemsDropdown { get; set; }
+    }
+}

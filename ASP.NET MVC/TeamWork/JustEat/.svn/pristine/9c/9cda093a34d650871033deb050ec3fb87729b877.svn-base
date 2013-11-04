@@ -1,0 +1,102 @@
+﻿@using System.Security.Cryptography
+@model JusTeeth.App.ViewModels.DetailedHungryGroupViewModel
+
+@{
+    ViewBag.Title = "GroupDetails";
+
+    var eatTimePercent = 0;
+    dynamic piePiece;
+    switch (@Model.EatTime)
+    {
+        case "Ultrafast":
+            eatTimePercent = 10;
+            piePiece = new
+            {
+                category = @Model.EatTime,
+                value = eatTimePercent,
+                color = "#37e800"
+            };
+            break;
+        case "Fast":
+            eatTimePercent = 25;
+            piePiece = new
+            {
+                category = @Model.EatTime,
+                value = eatTimePercent,
+                color = "#dae800"
+            };
+            break;
+        case "Medium":
+            eatTimePercent = 50;
+            piePiece = new
+            {
+                category = @Model.EatTime,
+                value = eatTimePercent,
+                color = "#e8a400"
+            };
+            break;
+        case "Slow":
+            eatTimePercent = 70;
+            piePiece = new
+            {
+                category = @Model.EatTime,
+                value = eatTimePercent,
+                color = "e84200"
+            };
+            break;
+        case "GameBreaker":
+            eatTimePercent = 90;
+            piePiece = new
+            {
+                category = @Model.EatTime,
+                value = eatTimePercent,
+                color = "#e80000"
+            };
+            break;
+        default:
+            eatTimePercent = 10;
+            piePiece = new
+            {
+                category = @Model.EatTime,
+                value = eatTimePercent,
+                color = "#ec0000"
+            };
+            break;
+    }
+    
+    var remainingPercent = 100 - eatTimePercent;
+}
+
+<h2>GroupDetails</h2>
+
+<h5>EatTime: @Model.EatTime</h5>
+
+<div id="charts-container" class="container">
+    <h3>Creator: @Model.Creator</h3>
+    <div id="pie-charts">
+        <div id="eating-container">
+            @(Html.Kendo().Chart()
+          .Name("eatTimeChart")
+          .Title(title => title
+          .Text("Eating time chart")
+          .Position(ChartTitlePosition.Bottom))
+                  .Legend(legend => legend
+                                        .Visible(false)
+                  )
+          .Series(series =>
+          {
+              series.Pie(new dynamic[] {
+                  piePiece,
+                  new {category=@Model.EatTime,value=remainingPercent,color="grey"},
+              })
+              .Padding(30)
+              .Labels(labels => labels
+                  //.Background("transparent")
+              .Visible(false)
+          )
+          .StartAngle(90);
+          })
+            )
+        </div>
+    </div>
+</div>

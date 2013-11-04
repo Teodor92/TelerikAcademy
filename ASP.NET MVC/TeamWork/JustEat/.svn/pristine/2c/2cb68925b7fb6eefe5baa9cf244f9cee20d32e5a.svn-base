@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using JusTeeth.App.ViewModels;
+using JusTeeth.Data;
+using JusTeeth.Models;
+using Microsoft.AspNet.Identity;
+
+namespace JusTeeth.App.Controllers
+{
+    public class UsersController : BaseController
+    {
+        public UsersController() : base(new UnitOfWorkData())
+        {
+        }
+
+        [HttpGet]
+        public ActionResult Index(string username)
+        {
+            var user = this.Db.UsersRepository.All()
+                .Include(x => x.Department.Workplace)
+                .Include(x => x.LastPlaces)
+                .Include(x => x.GroupHistory)
+                .Include(x => x.Friends)
+                .FirstOrDefault(u => u.UserName == username);
+
+            return View(user);
+        }
+
+        [HttpGet]
+        public ActionResult EditProfile()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = this.Db.UsersRepository.All().FirstOrDefault(u => u.Id == userId);
+
+            return View(user);
+        }
+
+        [HttpPost]
+        public ActionResult EditProfile(EditUserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = this.Db.UsersRepository.All().FirstOrDefault(u => u.Id == model.Id);
+                user.DisplayName = model.DisplayName;
+                user.FacebookProfile = model.FacebookProfile;
+
+                if (model.Avatar.ContentLength > 0)
+                {
+                    var fileName = user.Id + ".jpg";
+                    var path = Path.Combine(Server.MapPath("~/Content/UserPhotos"), fileName);
+                    model.Avatar.SaveAs(path);
+                    user.Avatar = fileName;
+                }
+
+                this.Db.SaveChanges();
+            }
+
+            return RedirectToAction("EditProfile");
+        }
+    }
+}

@@ -1,0 +1,32 @@
+﻿@model JusTeeth.App.ViewModels.CreateGroupViewModel
+@Scripts.Render("~/bundles/jqueryval") @*<- By Fert1 GOOD job !*@
+
+
+@using (Ajax.BeginForm("CreateGroup", "Groups", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "groups-container" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Create Group</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Place, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Place)
+                @Html.ValidationMessageFor(model => model.Place, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.StartingTime, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.StartingTime)
+                @Html.ValidationMessageFor(model => model.StartingTime, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+        </div>
+    </fieldset>
+}

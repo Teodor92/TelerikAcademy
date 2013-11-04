@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Web;
+using JusTeeth.Models;
+
+namespace JusTeeth.App.ViewModels
+{
+    public class DetailedHungryGroupViewModel : HungryGroupViewModel
+    {
+        public static Expression<Func<HungryGroup, DetailedHungryGroupViewModel>> FromDetailedHungryGroup
+        {
+            get
+            {
+                return x =>
+                    new DetailedHungryGroupViewModel
+                    {
+                        Creator = x.Creator.DisplayName,
+                        CreatorId = x.Creator.Id,
+                        EatTime = x.EatTime.ToString(),
+                        Id = x.Id,
+                        Place = x.Place.Name,
+                        PlaceId = x.Place.Id,
+                        StartingTime = x.StartingTime.ToString("MM/dd/yy H:mm:ss")
+                    };
+            }
+        }
+    }
+}

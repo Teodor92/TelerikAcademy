@@ -1,0 +1,46 @@
+﻿@model JusTeeth.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Edit profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit profile</h2>
+@using (Html.BeginForm("EditProfile", "Users", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Movie</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.DisplayName, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.DisplayName)
+                @Html.ValidationMessageFor(model => model.DisplayName, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.FacebookProfile, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.FacebookProfile)
+                @Html.ValidationMessageFor(model => model.FacebookProfile, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Avatar, new { @class = "control-label" })
+            <div class="controls">
+                <input type="file" name="Avatar" id="file" />
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+        </div>
+    </fieldset>
+}

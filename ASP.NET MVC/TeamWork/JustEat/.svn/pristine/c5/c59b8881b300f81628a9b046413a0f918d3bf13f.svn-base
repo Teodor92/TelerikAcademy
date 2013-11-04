@@ -1,0 +1,9 @@
+﻿@model string
+@{
+    ViewBag.Title = "_UserPicture";
+}
+
+
+<div>
+    <img src="/Content/UserPhotos/@Model"/>
+</div>

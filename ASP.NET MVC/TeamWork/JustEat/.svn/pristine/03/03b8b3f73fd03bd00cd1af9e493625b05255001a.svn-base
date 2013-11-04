@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace JusTeeth.App.Controllers
+{
+    public class PlacesController : BaseController
+    {
+        public ActionResult Index()
+        {
+            var places = this.Db.PlaceRepository.All().ToList();
+
+            return View(places);
+        }
+
+        public ActionResult Details(int id)
+        {
+            //TODO: Implement Place details view.
+            return null;
+        }
+    }
+}

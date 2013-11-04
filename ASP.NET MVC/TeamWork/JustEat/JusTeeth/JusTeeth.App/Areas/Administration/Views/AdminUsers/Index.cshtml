@@ -1,0 +1,45 @@
+﻿@model IEnumerable<JusTeeth.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administration/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DisplayName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacebookProfile)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FacebookProfile)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { username = item.UserName }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { username = item.UserName }, new { @class = "btn btn-info" }) |
+            </td>
+        </tr>
+    }
+
+</table>
