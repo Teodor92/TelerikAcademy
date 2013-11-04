@@ -1,0 +1,146 @@
+/* 
+    Document   : responsive
+    Created on : 2013-7-5, 1:16:25
+    Author     : Teodor
+    Description:
+        A simple set of styles for responsive desgin.
+*/
+
+@media only screen and (max-width: 1200px) {
+    .\35 grid-layout {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 780px) {
+    /* Header */
+
+    #mobileUI-site-titlebar {
+        background: url(images/img02.png) repeat;
+    }
+
+    #mobileUI-site-title {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        text-transform: lowercase;
+        font-family: 'Allura', cursive;
+        font-size: 20pt;
+        font-weight: 200;
+        color: #FFFFFF;
+    }
+
+    #mobileUI-site-nav-opener {
+        width: 25px;
+        height: 25px;
+        background: url(images/img04.png) no-repeat left top;
+        top: 7px;
+        left: 10px;
+        text-indent: -999999em;
+    }
+
+    #mobileUI-site-nav-opener:active {
+    }
+
+    #mobileUI-site-nav {
+    }
+
+    #mobileUI-site-nav nav {
+    }
+
+    #mobileUI-site-nav nav a {
+        padding: 15px 0px 15px 20px;
+        background: url(images/img08.png) repeat-x left bottom;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Oswald', sans-serif;
+        font-size: 13pt;
+        font-weight: 200;
+        color: #FFFFFF;
+    }
+
+
+    /* Page Wrapper */
+
+    #page-wrapper {
+        overflow: hidden;
+        padding: 30px 0px;
+        background: #FFFFFF;
+    }
+
+    /* Banner */
+
+    #banner {
+        overflow: hidden;
+        padding: 0px 30px 30px 30px;
+    }
+
+    /* Content */
+
+    #content {
+        padding: 0px 0px 0px 0px;
+    }
+
+    #content h2 {
+        padding: 0px 0px 40px 0px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        font-size: 20pt;
+        color: #2A2A2A;
+    }
+
+    #content .post {
+        padding: 0px 0px 40px 0px;
+    }
+
+    #content section {
+        padding: 0px 30px;
+    }
+
+    /* Sidebar1 */
+
+    #sidebar1 {
+        display: none;
+    }
+
+    #sidebar2 {
+        display: none;
+    }
+
+
+    /** Footer Column Content */
+
+    #footer-content {
+        overflow: hidden;
+        padding: 50px 0px 0px 0px;
+        text-shadow: 1px 1px 0px rgba(0,0,0, .3);
+        color: #F3F1EE;
+    }
+
+    #footer-content h2 {
+        padding: 0px 0px 40px 0px;
+        text-transform: uppercase;
+        font-size: 20pt;
+        color: #FFF;
+    }
+
+    #footer-content section {
+        padding: 0px 30px 30px 30px;
+    }
+
+    /*****************************************************************/
+    /* 5grid 0.3.2 by n33.co | MIT+GPLv2 license licensed            */
+    /* core-mobile.css: Core (mobile) stylesheet                     */
+    /*****************************************************************/
+
+    body { -webkit-text-size-adjust: none; } 
+    .\35 grid .\31 u, .\35 grid .\32 u, .\35 grid .\33 u, .\35 grid .\34 u, .\35 grid .\35 u, .\35 grid .\36 u, .\35 grid .\37 u, .\35 grid .\38 u, .\35 grid .\39 u, .\35 grid .\31 0u, .\35 grid .\31 1u, .\35 grid .\31 2u { float: none !important; width: 100% !important; margin: 1% 0 1% 0 !important; } 
+    .\35 grid { width: 100%; margin: 0; }
+    .\35 grid .row:first-child > :first-child { margin-top: 0; } 
+    .\35 grid .row:last-child > :last-child { margin-bottom: 0; }
+    .do-5grid .do-1u, .do-5grid .do-2u, .do-5grid .do-3u, .do-5grid .do-4u, .do-5grid .do-5u, .do-5grid .do-6u, .do-5grid .do-7u, .do-5grid .do-8u, .do-5grid .do-9u, .do-5grid .do-10u, .do-5grid .do-11u, .do-5grid .do-12u { margin: 0.5% 0 0.5% 1%; }
+    .\35 grid-flush .\31 u, .\35 grid-flush .\32 u, .\35 grid-flush .\33 u, .\35 grid-flush .\34 u, .\35 grid-flush .\35 u, .\35 grid-flush .\36 u, .\35 grid-flush .\37 u, .\35 grid-flush .\38 u, .\35 grid-flush .\39 u, .\35 grid-flush .\31 0u, .\35 grid-flush .\31 1u, .\35 grid-flush .\31 2u { float: none !important; width: 100% !important; margin: 1% 0 1% 0 !important; } 
+
+}
+

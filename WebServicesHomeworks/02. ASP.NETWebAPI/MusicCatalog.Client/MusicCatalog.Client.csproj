@@ -50,16 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JSONUtils.cs" />
+    <Compile Include="JsonClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XMLUtils.cs" />
+    <Compile Include="XmlClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MusicCatalog.Api\MusicCatalog.Api.csproj">
+      <Project>{5d3ae93c-38d0-4ff9-8855-9fc39c3ae16c}</Project>
+      <Name>MusicCatalog.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MusicCatalog.Data\MusicCatalog.Data.csproj">
       <Project>{9344b3ed-6c50-48bf-b3ae-5f74151b83b9}</Project>
       <Name>MusicCatalog.Data</Name>

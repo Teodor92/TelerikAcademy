@@ -20,38 +20,39 @@
             /*-----------------------------------*/
 
             // GET api/Song
-            JSONUtils.SongUtils.GetAllSongs();
+            JsonClient.SongUtils.GetAllSongs();
 
             // GET api/Song/5
-            JSONUtils.SongUtils.GetSongByID(7);
+            //JsonClient.SongUtils.GetSongByID(7);
 
             // PUT api/Song/5
-            //JSONUtils.SongUtils.PutSong(10);
+            //JsonClient.SongUtils.PutSong(15);
 
             // POST api/Song
-            //JSONUtils.SongUtils.PostSong();
+            //JsonClient.SongUtils.PostSong();
 
             // DELETE api/Song/5
-            //JSONUtils.SongUtils.DeleteSongByID(3);
+            //JsonClient.SongUtils.DeleteSongByID(3);
 
             /*-----------------------------------*/
             /*------------ XML ----------------- */
             /*-----------------------------------*/
 
             // GET api/Song
-            //XMLUtils.SongUtils.GetAllSongs();
+            XmlClient.SongUtils.GetAllSongs();
 
             // GET api/Song/5
-            //XMLUtils.SongUtils.GetSongByID(7);
+            //XmlClient.SongUtils.GetSongByID(7);
 
             // PUT api/Song/5
-            //XMLUtils.SongUtils.PutSong(10);
+            //XmlClient.SongUtils.PutSong(10);
 
             // POST api/Song
-            //XMLUtils.SongUtils.PostSong();
+            //XmlClient.SongUtils.PostSong();
 
             // DELETE api/Song/5
-            //XMLUtils.SongUtils.DeleteSongByID(6);
+            //XmlClient.SongUtils.DeleteSongByID(6);
+
 
         }
     }

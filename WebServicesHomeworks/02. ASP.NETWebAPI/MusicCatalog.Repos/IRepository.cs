@@ -1,4 +1,4 @@
-﻿namespace PlacesDatabase.Repositories
+﻿namespace MusicCatalog.Repos
 {
     using System;
     using System.Linq;
@@ -7,11 +7,17 @@
     public interface IRepository<T>
     {
         T Add(T item);
+
         T Update(int id, T item);
-        void Delete(int id);
-        void Delete(T item);
+
+        bool Delete(int id);
+
+        bool Delete(T item);
+
         T Get(int id);
+
         IQueryable<T> All();
+
         IQueryable<T> Find(Expression<Func<T, int, bool>> predicate);
     }
 }

@@ -1,127 +1,96 @@
-﻿
+﻿/// <reference path="class.js" />
+/// <reference path="http-requester.js" />
+
 var persisters = (function () {
 
 	var MainPersister = Class.create({
 		init: function (rootUrl) {
 			this.rootUrl = rootUrl;
-			this.user = new UserPersister(this.rootUrl);
-			this.game = new GamePersister(this.rootUrl);
-			this.message = new MessagesPersister(this.rootUrl);
+			this.song = new SongPresister(this.rootUrl);
+			this.artist = new ArtistPresiter(this.rootUrl);
+			this.album = new AlbumPresister(this.rootUrl);
 		},
-		isUserLoggedIn: function () {
-			var isLoggedIn = nickname != null && sessionKey != null;
-			return isLoggedIn;
-		},
-		nickname: function () {
-			return nickname;
-		}
 	});
 
-	var UserPersister = Class.create({
-		init: function (rootUrl) {
-			//...api/user/
-			this.rootUrl = rootUrl + "user/";
-		},
-		login: function (user, success, error) {
-			var url = this.rootUrl + "login";
-			var userData = {
-				username: user.username,
-				authCode: CryptoJS.SHA1(user.username + user.password).toString()
-			};
+	var SongPresister = Class.create({
+	    init: function (rootUrl) {
+	        this.rootUrl = rootUrl + "Song/"
+	    },
 
-			httpRequester.postJSON(url, userData,
-				function (data) {
-					saveUserData(data);
-					success(data);
-				}, error);
-		},
-		register: function (user, success, error) {
-			var url = this.rootUrl + "register";
-			var userData = {
-				username: user.username,
-				nickname: user.nickname,
-				authCode: CryptoJS.SHA1(user.username + user.password).toString()
-			};
-			httpRequester.postJSON(url, userData,
-				function (data) {
-					saveUserData(data);
-					success(data);
-				}, error);
-		},
-		logout: function (success, error) {
-			var url = this.rootUrl + "logout/" + sessionKey;
-			httpRequester.getJSON(url, function (data) {
-				clearUserData();
-				success(data);
-			}, error)
-		},
-		scores: function (success, error) {
-		}
-	});
-	var GamePersister = Class.create({
-		init: function (url) {
-			this.rootUrl = url + "game/";
-		},
-		create: function (game, success, error) {
-			var gameData = {
-				title: game.title,
-				number: game.number
-			};
-			if (game.password) {
-				gameData.password = CryptoJS.SHA1(game.password).toString();
-			}
-			var url = this.rootUrl + "create/" + sessionKey;
-			httpRequester.postJSON(url, gameData, success, error);
-		},
-		join: function (game, success, error) {
-			var gameData = {
-				gameId: game.gameId,
-				number: game.number
-			};
-			if (game.password) {
-				gameData.password = CryptoJS.SHA1(game.password).toString();
-			}
-			var url = this.rootUrl + "join/" + sessionKey;
-			httpRequester.postJSON(url, gameData, success, error);
-		},
-		start: function (gameId, success, error) {
-			var url = this.rootUrl + gameId + "/start/" + sessionKey;
-			httpRequester.getJSON(url, success, error)
-		},
-		myActive: function (success, error) {
-			var url = this.rootUrl + "my-active/" + sessionKey;
-			httpRequester.getJSON(url, success, error);
-		},
-		open: function (success, error) {
-			var url = this.rootUrl + "open/" + sessionKey;
-			httpRequester.getJSON(url, success, error);
-		},
-		state: function (gameId, success, error) {
-			var url = this.rootUrl + gameId + "/state/" + sessionKey;
-			httpRequester.getJSON(url, success, error);
-		}
-	});
-	var GuessPersister = Class.create({
-		init: function () {
+	    getAllSongs: function (success, error) {
+	        httpRequester.getJson(this.rootUrl, success, error);
+	    },
 
-		},
-		make: function () {
+	    getSingleSong: function (songId, succes, error) {
+	        httpRequester.getJson(this.rootUrl + songId, succes, error);
+	    },
 
-		}
+	    addSong: function (data, sucess, error) {
+	        httpRequester.postJson(this.rootUrl, data, sucess, error);
+	    },
+
+	    updateSong: function (updateId, data, success, error) {
+	        httpRequester.putJson(this.baseUrl + updateId, data, success, error);
+	    },
+
+	    deleteSong: function (deleteId, success, error) {
+	        httpRequester.deleteJson(this.rootUrl + deleteId, success, error);
+	    }
+
 	});
-	var MessagesPersister = Class.create({
-		init: function (url) {
-			this.rootUrl = url + "messages/";
-		},
-		unread: function (success, error) {
-			var url = this.rootUrl + "unread/" + sessionKey;
-			httpRequester.getJSON(url, success, error);
-		},
-		all: function (success, error) {
-			var url = this.rootUrl + "all/" + sessionKey;
-			httpRequester.getJSON(url, success, error);
-		}
+
+	var ArtistPresiter = Class.create({
+	    init: function (rootUrl) {
+	        this.rootUrl = rootUrl + "Artist/"
+	    },
+
+	    getAllArtists: function (success, error) {
+	        httpRequester.getJson(this.rootUrl, success, error);
+	    },
+
+	    getSingleArtist: function (songId, succes, error) {
+	        httpRequester.getJson(this.rootUrl + songId, succes, error);
+	    },
+
+	    addArtist: function (data, sucess, error) {
+	        httpRequester.postJson(this.rootUrl, data, sucess, error);
+	    },
+
+	    updateArtist: function (updateId, data, success, error) {
+	        httpRequester.putJson(this.baseUrl + updateId, data, success, error);
+	    },
+
+	    deleteArtist: function (deleteId, success, error) {
+	        httpRequester.deleteJson(this.rootUrl + deleteId, success, error);
+	    }
 	});
+
+	var AlbumPresister = Class.create({
+	    init: function (rootUrl) {
+	        this.rootUrl = rootUrl + "Album/"
+	    },
+
+	    getAllAlbums: function (success, error) {
+	        httpRequester.getJson(this.rootUrl, success, error);
+	    },
+
+	    getSingleAlbum: function (songId, succes, error) {
+	        httpRequester.getJson(this.rootUrl + songId, succes, error);
+	    },
+
+	    addAlbum: function (data, sucess, error) {
+	        httpRequester.postJson(this.rootUrl, data, sucess, error);
+	    },
+
+	    updateAlbum: function (updateId, data, success, error) {
+	        httpRequester.putJson(this.baseUrl + updateId, data, success, error);
+	    },
+
+	    deleteAlbum: function (deleteId, success, error) {
+	        httpRequester.deleteJson(this.rootUrl + deleteId, success, error);
+	    }
+	});
+
 	return {
 		get: function (url) {
 			return new MainPersister(url);

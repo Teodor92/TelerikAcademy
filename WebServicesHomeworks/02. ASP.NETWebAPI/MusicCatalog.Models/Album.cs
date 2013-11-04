@@ -7,23 +7,18 @@ using System.Threading.Tasks;
 
 namespace MusicCatalog.Models
 {
-    [DataContract(IsReference = true)]
     public class Album
     {
-        [DataMember]
         private ICollection<Artist> artists;
-        [DataMember]
+
         private ICollection<Song> songs;
 
         public int Id { get; set; }
 
-        [DataMember]
         public string Title { get; set; }
 
-        [DataMember]
         public DateTime Year { get; set; }
 
-        [DataMember]
         public string Producer { get; set; }
 
         public Album()

@@ -10,108 +10,137 @@ using System.Web;
 using System.Web.Http;
 using MusicCatalog.Models;
 using MusicCatalog.Data;
+using MusicCatalog.Repos;
+using MusicCatalog.Api.Models;
 
 namespace MusicCatalog.Api.Controllers
 {
     public class ArtistController : ApiController
     {
-        private SongCatalogContext db = new SongCatalogContext();
+        private IRepository<Album> albumRepo;
+        private IRepository<Artist> artistRepo;
+        private IRepository<Song> songRepo;
 
-        public ArtistController()
+        public ArtistController(
+            IRepository<Album> albumRepository,
+            IRepository<Artist> artistRepository,
+            IRepository<Song> songRepository)
         {
-            db.Configuration.ProxyCreationEnabled = false;
+            this.albumRepo = albumRepository;
+            this.artistRepo = artistRepository;
+            this.songRepo = songRepository;
         }
 
         // GET api/Artist
-        public IQueryable<Artist> GetArtists()
+        public IQueryable<ArtistModelFull> GetArtists()
         {
-            return db.Artists.Include("Albums").Include("Albums.Songs").AsQueryable();
+            var allArtists = artistRepo.All();
+
+            var artistModels =
+                (from artist in allArtists
+                select new ArtistModelFull()
+                {
+                    Id = artist.Id,
+                    Name = artist.Name,
+                    Country = artist.Name,
+                    DateOfBirth = artist.DateOfBirth,
+
+                    ArtistAlbums =
+                    from album in artist.Albums
+                    select new AlbumModel()
+                    {
+                        Id = album.Id,
+                        Title = album.Title,
+                        Producer = album.Producer,
+                        Year = album.Year
+                    },
+
+                    ArtistSongs =
+                    from song in artist.Songs
+                    select new SongModel()
+                    {
+                        Id = song.Id,
+                        Title = song.Title,
+                        Genre = song.Genre,
+                        Year = song.Year
+                    }
+                }).ToList();
+
+            return artistModels.AsQueryable();
         }
 
         // GET api/Artist/5
-        public Artist GetArtist(int id)
+        public ArtistModelFull GetArtist(int id)
         {
-            Artist artist = db.Artists.Find(id);
-            if (artist == null)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-            }
+            var searchedArists = artistRepo.Get(id);
 
-            return artist;
+            var artistModel = new ArtistModelFull()
+                {
+                    Id = searchedArists.Id,
+                    Name = searchedArists.Name,
+                    Country = searchedArists.Name,
+                    DateOfBirth = searchedArists.DateOfBirth,
+
+                    ArtistAlbums =
+                    from album in searchedArists.Albums
+                    select new AlbumModel()
+                    {
+                        Id = album.Id,
+                        Title = album.Title,
+                        Producer = album.Producer,
+                        Year = album.Year
+                    },
+
+                    ArtistSongs =
+                    from song in searchedArists.Songs
+                    select new SongModel()
+                    {
+                        Id = song.Id,
+                        Title = song.Title,
+                        Genre = song.Genre,
+                        Year = song.Year
+                    }
+                };
+
+            return artistModel;
         }
 
         // PUT api/Artist/5
         public HttpResponseMessage PutArtist(int id, Artist artist)
         {
-            if (!ModelState.IsValid)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
-
-            if (id != artist.Id)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-
-            db.Entry(artist).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
-            }
-
+            artistRepo.Add(artist);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // POST api/Artist
         public HttpResponseMessage PostArtist(Artist artist)
         {
-            if (ModelState.IsValid)
-            {
-                db.Artists.Add(artist);
-                db.SaveChanges();
-
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, artist);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = artist.Id }));
-                return response;
-            }
-            else
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
+            artistRepo.Add(artist);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // DELETE api/Artist/5
+        //// DELETE api/Artist/5
         public HttpResponseMessage DeleteArtist(int id)
         {
-            Artist artist = db.Artists.Find(id);
-            if (artist == null)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
-
-            db.Artists.Remove(artist);
+            bool isOk;
 
             try
             {
-                db.SaveChanges();
+                isOk = artistRepo.Delete(id);
             }
             catch (DbUpdateConcurrencyException ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, artist);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
+            if (isOk)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicCatalog.Api.Resolvers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,12 +24,15 @@ namespace MusicCatalog.Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            var confing = GlobalConfiguration.Configuration;
+            confing.DependencyResolver = new DbDependencyResolver();
+
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
                 = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
-            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
-            json.SerializerSettings.PreserveReferencesHandling =
-                Newtonsoft.Json.PreserveReferencesHandling.All;
+            //var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            //json.SerializerSettings.PreserveReferencesHandling =
+            //    Newtonsoft.Json.PreserveReferencesHandling.All;
         }
     }
 }

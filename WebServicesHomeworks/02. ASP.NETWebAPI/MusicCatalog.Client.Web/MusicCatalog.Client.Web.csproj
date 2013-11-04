@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="scripts\class.js" />
+    <Content Include="scripts\controller.js" />
     <Content Include="scripts\http-requester.js" />
     <Content Include="index.html" />
     <Content Include="packages.config" />

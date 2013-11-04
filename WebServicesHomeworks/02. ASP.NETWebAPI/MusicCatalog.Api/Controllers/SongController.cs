@@ -10,34 +10,98 @@ using System.Web;
 using System.Web.Http;
 using MusicCatalog.Models;
 using MusicCatalog.Data;
+using MusicCatalog.Repos;
+using MusicCatalog.Api.Models;
 
 namespace MusicCatalog.Api.Controllers
 {
     public class SongController : ApiController
     {
-        private SongCatalogContext db = new SongCatalogContext();
+        private IRepository<Album> albumRepo;
+        private IRepository<Artist> artistRepo;
+        private IRepository<Song> songRepo;
 
-        public SongController()
+        public SongController(
+            IRepository<Album> albumRepository,
+            IRepository<Artist> artistRepository,
+            IRepository<Song> songRepository)
         {
-            db.Configuration.ProxyCreationEnabled = false;
+            this.albumRepo = albumRepository;
+            this.artistRepo = artistRepository;
+            this.songRepo = songRepository;
         }
 
         // GET api/Song
-        public IQueryable<Song> GetSongs()
+        public IQueryable<SongModelFull> GetSongs()
         {
-            return db.Songs.Include("Artists").Include("Artists.Albums").AsQueryable();
+            var allSongs = songRepo.All();
+
+            var songModels =
+                (from song in allSongs
+                 select new SongModelFull()
+                 {
+                     Id = song.Id,
+                     Title = song.Title,
+                     Genre = song.Genre,
+                     Year = song.Year,
+
+                     SongAlbums =
+                     from album in song.Albums
+                     select new AlbumModel()
+                     {
+                         Id = album.Id,
+                         Title = album.Title,
+                         Year = album.Year,
+                         Producer = album.Producer
+                     },
+
+                     SongArtists =
+                     from artists in song.Artists
+                     select new ArtistModel()
+                     {
+                         Id = artists.Id,
+                         Name = artists.Name,
+                         Country = artists.Country,
+                         DateOfBirth = artists.DateOfBirth
+                     }
+                 }).ToList();
+
+            return songModels.AsQueryable();
         }
 
         // GET api/Song/5
-        public Song GetSong(int id)
+        public SongModelFull GetSong(int id)
         {
-            Song song = db.Songs.Find(id);
-            if (song == null)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-            }
+            var searchedSong = songRepo.Get(id);
+            var resultModel = new SongModelFull()
+                {
+                    Id = searchedSong.Id,
+                    Title = searchedSong.Title,
+                    Genre = searchedSong.Genre,
+                    Year = searchedSong.Year,
 
-            return song;
+                    SongAlbums =
+                    from album in searchedSong.Albums
+                    select new AlbumModel()
+                    {
+                        Id = album.Id,
+                        Title = album.Title,
+                        Year = album.Year,
+                        Producer = album.Producer
+                    },
+
+                    SongArtists =
+                    from artists in searchedSong.Artists
+                    select new ArtistModel()
+                    {
+                        Id = artists.Id,
+                        Name = artists.Name,
+                        Country = artists.Country,
+                        DateOfBirth = artists.DateOfBirth
+                    }
+                };
+
+            return resultModel;
         }
 
         // PUT api/Song/5
@@ -53,11 +117,9 @@ namespace MusicCatalog.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
 
-            db.Entry(song).State = EntityState.Modified;
-
             try
             {
-                db.SaveChanges();
+                songRepo.Update(id, song);
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -67,51 +129,35 @@ namespace MusicCatalog.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        // POST api/Song
+        //// POST api/Song
         public HttpResponseMessage PostSong(Song song)
         {
-            if (ModelState.IsValid)
-            {
-                db.Songs.Add(song);
-                db.SaveChanges();
-
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, song);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = song.Id }));
-                return response;
-            }
-            else
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
+            songRepo.Add(song);
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         // DELETE api/Song/5
         public HttpResponseMessage DeleteSong(int id)
         {
-            Song song = db.Songs.Find(id);
-            if (song == null)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
-
-            db.Songs.Remove(song);
+            bool isOk;
 
             try
             {
-                db.SaveChanges();
+                isOk = songRepo.Delete(id);
             }
             catch (DbUpdateConcurrencyException ex)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound, ex);
             }
 
-            return Request.CreateResponse(HttpStatusCode.OK, song);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
+            if (isOk)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
         }
     }
 }
