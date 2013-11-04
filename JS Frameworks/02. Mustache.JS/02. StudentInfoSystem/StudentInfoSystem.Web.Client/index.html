@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/libs/jquery-2.0.3.js"></script>
+    <script src="scripts/libs/mustache.js"></script>
+    <script src="scripts/http-requester.js"></script>
+    <script src="scripts/libs/class.js"></script>
+    <script src="scripts/presister.js"></script>
+    <link href="style/main-style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="content">
+    </div>
+
+    <script type="x-mustache-template" id="student-template">	
+        {{#students}}
+        <ul>
+            <li>First Name: {{firstname}}</li>
+            <li>Last Name: {{lastname}}</li>
+            <li>Grade: {{grade}}</li>
+            <li>Age: {{age}}</li>
+            <li class="marks-wrapper">Marks: <ul class="marks-list">
+            {{#marks}}
+                <li>Value: {{subject}}</li>
+                <li>Value: {{value}}</li>
+            {{/marks}}
+            </ul></li>
+        </ul>
+        {{/students}}		
+    </script>
+
+    <script>
+        var baseUrl = "http://localhost:9678/api/";
+        var persister = persisters.get(baseUrl);
+        persister.student.getAll(function (data) {
+            console.log(data);
+
+            var view = {
+                students: data
+            };
+
+            var personTemplate = Mustache.render(document.getElementById("student-template").innerHTML, view);
+            document.getElementById('content').innerHTML = personTemplate;
+
+            $("#content").on("click", ".marks-wrapper", function (ev) {
+                $(this).find(".marks").toggle();
+            });
+
+        });
+    </script>
+</body>
+</html>

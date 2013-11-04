@@ -1,0 +1,12 @@
+﻿#comboBox {
+    border: 1px solid black;
+    width: 300px;
+}
+
+    #comboBox p {
+        display: inline;
+    }
+
+    #comboBox img {
+        display: inline;
+    }

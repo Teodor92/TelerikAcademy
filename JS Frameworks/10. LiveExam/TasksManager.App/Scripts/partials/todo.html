@@ -1,0 +1,31 @@
+﻿<h1>Single list</h1>
+<fieldset>
+    <legend>Add Todo</legend>
+
+    <label for="title">Enter todo text</label>
+    <input type="text" id="title" data-bind="value: contentText" /><br />
+
+    <button class="btn btn-success" data-bind="click: addTodo">Make Todo List</button>
+    <p data-bind="text: message"></p>
+</fieldset>
+<hr />
+<table class="table table-striped table-bordered">
+    <tbody data-template="appointment-template" data-bind="source: todo">
+    </tbody>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descripton</th>
+            <th>Is it done?</th>
+        </tr>
+    </thead>
+</table>
+
+
+<script type="text/x-kendo-template" id="appointment-template">
+                <tr>
+                    <td data-bind="text: id"></td>
+                    <td data-bind="text: text"></td>
+                    <td data-bind="text: isDone"></td>
+                </tr> 
+</script>

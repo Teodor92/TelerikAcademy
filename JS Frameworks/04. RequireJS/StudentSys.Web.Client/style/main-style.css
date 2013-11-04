@@ -1,0 +1,228 @@
+﻿/* RESETERS */
+
+body, html, div, td, tr, table, thead, tbody, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* CLEAR FIX */
+
+#open-games-container:after, #active-games-container:after,
+#game-state-wrapper:after, #top-menu:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+/* Main Syles */
+
+html {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    color: #C8C8C8;
+    background-color: #333333;
+}
+
+#current-user, #login-form-holder, #create-game-holder,
+#active-games-container, #messages-holder, #score-box, #error-console {
+    border: 1px solid #1E1E1F;
+}
+
+.error-msg {
+    color: red;
+}
+
+#current-user {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 200px;
+    height: 160px;
+    text-align: center;
+    background-color: #242424;
+    float: left;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #808080;
+}
+
+    #current-user #user-nickname {
+        display: block;
+        margin-top: 20px;
+        color: #C8C8C8;
+    }
+
+    #current-user button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+#login-form-holder {
+    width: 200px;
+    margin: 12% auto;
+    text-align: center;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #808080;
+}
+
+    #login-form-holder a {
+        text-decoration: none;
+        color: #C8C8C8;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+#create-game-holder {
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    height: 160px;
+    float: left;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #808080;
+}
+
+    #create-game-holder label {
+        display: block;
+    }
+
+#open-games-container {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #808080;
+}
+
+    #open-games-container a {
+        text-decoration: none;
+        color: #C8C8C8;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+#active-games-container {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #808080;
+}
+
+    #active-games-container a {
+        text-decoration: none;
+        color: #C8C8C8;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+    #active-games-container span, #active-games-container button {
+        display: block;
+    }
+
+#game-join-inputs {
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: 2px 2px 3px #808080;
+}
+
+#game-holder {
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 600px;
+    height: 600px;
+}
+
+    #game-holder table {
+        background-color: #242424;
+        border-radius: 3px;
+        box-shadow: 2px 2px 3px #808080;
+    }
+
+        #game-holder table td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+        }
+
+        #game-holder table th {
+            border: 1px solid black;
+        }
+
+        #game-holder table .red {
+            background-color: red;
+            cursor: pointer;
+        }
+
+        #game-holder table .blue {
+            background-color: blue;
+            cursor: pointer;
+        }
+
+        #game-holder table #clicked {
+            border: 3px solid green;
+        }
+
+#messages-holder {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 540px;
+    padding-left: 20px;
+    height: 33%;
+    overflow-y: scroll;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: -2px 0 3px #808080;
+}
+
+#score-box {
+    position: fixed;
+    right: 0;
+    bottom: 33%;
+    padding-left: 20px;
+    height: 33%;
+    width: 540px;
+    overflow-y: scroll;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: -2px 0 3px #808080;
+}
+
+#error-console {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-left: 20px;
+    height: 33%;
+    width: 540px;
+    overflow-y: scroll;
+    background-color: #242424;
+    border-radius: 3px;
+    box-shadow: -2px 0 3px #808080;
+}
+
+    #error-console p {
+        font-weight: bold;
+    }
+
+
+#guess-form {
+    width: 200px;
+    text-align: center;
+}

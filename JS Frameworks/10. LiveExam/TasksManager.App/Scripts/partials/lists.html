@@ -1,0 +1,38 @@
+﻿<h1>Todo lists</h1>
+<fieldset>
+    <legend>Add lists</legend>
+
+    <label for="title">Enter title</label>
+    <input type="text" id="title" data-bind="value: title"/>
+
+    <label for="todos">Enter todos with commas</label>
+    <input type="text" id="todos" data-bind="value: todos"/><br />
+    
+    <button class="btn btn-success" data-bind="click: postList">Make Todo List</button>
+</fieldset>
+<hr />
+<div data-template="appointment-template" data-bind="source: lists">
+</div>
+
+<script type="text/x-kendo-template" id="appointment-template">
+        <h4>#=title#</h4>
+        <a class="btn btn-info btn-small details" href="\\#/lists/#=id#/todos">See details</a>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Descripton</th>
+                    <th>Is it done?</th>
+                    <th>Change status</th>
+                </tr>
+            <thead>
+            <tbody>
+            # for (var i = 0; i < todos.length; i++) { #
+                <tr>
+                <td>#= todos[i].text # </td>
+                <td>#= todos[i].isDone # </td>
+                    <td><a class="btn btn-success" href="\\#/todos/#=todos[i].id#">Change status</a></td>
+                </tr> #
+            } #
+            </tbody>
+        </table>
+</script>

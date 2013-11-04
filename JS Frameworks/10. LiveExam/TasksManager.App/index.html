@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cilenet</title>
+    <link href="Scripts/styles/kendo.common.css" rel="stylesheet" />
+    <link href="Scripts/styles/kendo.default.css" rel="stylesheet" />
+    <link href="Scripts/styles/bootstrap.css" rel="stylesheet" />
+    <link href="Scripts/styles/main-styles.css" rel="stylesheet" />
+
+    <script src="Scripts/libs/jquery-2.0.3.js"></script>
+    <script src="Scripts/libs/httpRequester.js"></script>
+    <script src="Scripts/libs/kendo.web.min.js"></script>
+    <script src="Scripts/libs/class.js"></script>
+    <script src="Scripts/libs/q.js"></script>
+    <script src="Scripts/libs/cryptoJS.js"></script>
+    <script src="Scripts/app/persister.js"></script>
+    <script src="Scripts/app/viewModels.js"></script>
+    <script src="Scripts/app/views.js"></script>
+    <script src="Scripts/app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="k-content">
+                <ul id="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#/login">Login</a></li>
+                    <li><a href="#/register">Register</a></li>
+                    <li>Appointments
+                    <ul>
+                        <li><a href="#/appointments/add">Add Appointments</a></li>
+                        <li><a href="#/appointments/all">All Appointments</a></li>
+                        <li><a href="#/appointments/bydate">Get by date</a></li>
+                        <li><a href="#/appointments/current">Current Appointments</a></li>
+                        <li><a href="#/appointments/coming">Comming Appointments</a></li>
+                        <li><a href="#/appointments/today">Today Appointments</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#/lists">Todo Lists</a></li>
+                </ul>
+                <a href="#/logout" id="btn-logout" class="btn btn-danger">Logout</a>
+            </nav>
+        </header>
+        <div id="app">
+        </div>
+    </div>
+    <!--<div class="footer-holder">
+        <footer class="footer">
+            <h4>JavaScript frameworks exam 09/03/2013</h4>
+        </footer>
+    </div>-->
+    <script>
+        $(document).ready(function () {
+            $("#menu").kendoMenu();
+        });
+    </script>
+</body>
+</html>

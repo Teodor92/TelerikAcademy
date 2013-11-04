@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ComboBox</title>
+    <script src="scripts/libs/require.js" data-main="scripts/appConfig"></script>
+    <link href="styles/main-style.css" rel="stylesheet" />
+</head>
+<body>
+        <script type="x-mustache-template" id="person-template">
+        <div class="person-item" id="person-item-{{id}}">
+            <strong class="person-name">{{name}},</strong>
+            <p class="person-age">{{age}}</p>
+            <img src="{{avatarUrl}}" width="100px" />
+        </div>
+    </script>
+
+    <div id="comboBox"></div>
+
+    <div id="content">
+
+    </div>
+</body>
+</html>

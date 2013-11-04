@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="styles/kendo.default.min.css" rel="stylesheet" />
+
+    <script src="scripts/libs/jquery.min.js"></script>
+    <script src="scripts/libs/everlive.all.min.js"></script>
+    <script src="scripts/libs/kendo.web.min.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+    </div>
+
+    <script type="text/kendo-tmpl" id="game-template">
+        <div>
+        <p><span data-bind="text: game.name"></span></p>
+        <p><span data-bind="text: game.year"></span></p>
+        <p><span data-bind="text: game.price"></span></p>
+        </div>
+    </script>
+
+    <script>
+        var layout = new kendo.Layout('<div id="games"></div>');
+
+        var gameViewModel = kendo.observable({
+            game: {
+                name: "AoE",
+                year: 1992,
+                price: 23.22
+            },
+        });
+
+        var gameView = new kendo.View("game-template", { model: gameViewModel });
+
+        layout.render($('#wrapper'));
+        layout.showIn('#games', gameView);
+    </script>
+</body>
+</html>

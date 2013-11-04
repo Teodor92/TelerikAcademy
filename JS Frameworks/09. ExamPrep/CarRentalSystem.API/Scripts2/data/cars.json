@@ -1,0 +1,6 @@
+﻿[
+	{ make: 'Opel', model: 'Insignia', year: '2009', power: 200, },
+	{ make: 'Audi', model: 'A5', year: '2008', power: 255 },
+	{ make: 'BMW', model: 'M3', year: '2010', power: 411 },
+	{ make: 'Mercedes', model: 'CL', year: '2011', power: 320 }
+];

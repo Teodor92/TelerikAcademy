@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>TableView</title>
+    <script src="scripts/libs/class.js"></script>
+    <script src="scripts/libs/table-view.js"></script>
+    <script src="scripts/libs/mustache.js"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="person-template">	
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">{{fullname}}</th>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{#marks}} 
+            <tr>
+                <td>{{subject}}</td>
+                <td>{{score}}</td>
+            </tr>
+        {{/marks}}
+        {{^marks}}
+            <tr>
+                <td colspan="2">No info!</td>
+            </tr>
+        {{/marks}}
+        </tbody>
+    </table>
+
+
+    </script>
+
+    <div id="content"></div>
+    <script>
+        var Student = Class.create({
+            init: function (fname, lname, marks) {
+                this.fname = fname;
+                this.lname = lname
+                this.marks = marks;
+            },
+            fullname: function () {
+                return this.fname + " " + this.lname;
+            }
+        });
+
+        var Mark = Class.create({
+            init: function (subject, score) {
+                this.subject = subject;
+                this.score = score;
+            }
+        });
+
+        var people = [
+			new Student("Doncho", "Minkov", [new Mark("Math", 4), new Mark("JavaScript", 6)]),
+			new Student("Nikolay", "Kostov", [new Mark("MVC", 6), new Mark("JavaScript", 5)]),
+			new Student("Ivaylo", "Kendov", [new Mark("OOP", 4), new Mark("C#", 6)]),
+			new Student("Svetlin", "Nakov", [new Mark("Unit Testing", 5), new Mark("WPF", 6)]),
+			new Student("Asya", "Georgieva", [new Mark("Automation Testing", 6), new Mark("Manual Testing", 4)]),
+			new Student("Georgi", "Georgiev")
+        ];
+
+        var personTemplate = Mustache.compile(document.getElementById("person-template").innerHTML);
+        var tableView = controls.getTableView(people, 0, 2);
+
+        var tableViewHtml = tableView.render(personTemplate);
+
+        document.getElementById("content").innerHTML = tableViewHtml;
+    </script>
+</body>
+</html>

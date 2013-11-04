@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Date Picker Fix</title>
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="script/libs/modernizr.custom.27712.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        if (!Modernizr.inputtypes.date) {
+            $(function () {
+                $('input[type="date"]').datepicker();
+            });
+        }
+    </script>
+
+    <input type="date" />
+    <input type="date" />
+    <input type="date" />
+</body>
+</html>

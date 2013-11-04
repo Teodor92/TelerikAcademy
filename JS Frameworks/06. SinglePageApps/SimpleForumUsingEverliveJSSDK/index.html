@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Forum With SDK</title>
+    <script src="scripts/libs/reqwest.js"></script>
+    <script src="scripts/libs/jquery-2.0.3.js"></script>
+    <script src="scripts/libs/sammy-0.7.4.js"></script>
+    <script src="scripts/libs/rsvp.js"></script>
+    <script src="scripts/libs/everlive.all.js"></script>
+    <script src="scripts/libs/kendo.data.everlive.js"></script>
+    <script src="scripts/libs/oopClass.js"></script>
+    <script src="scripts/libs/mustache.js"></script>
+    <script src="scripts/persister.js"></script>
+    <script src="scripts/ui-control.js"></script>
+    <script src="scripts/controller.js"></script>
+    <script src="scripts/appControl.js"></script>
+</head>
+<body>
+    <div id="app-content"></div>
+    <script type="x-mustache-template" id="post-template">
+        <ul data-post-id="{{Id}}">
+        <li>Title:<a href="#/posts/{{{Id}}}"> {{Title}}</a></li>
+        <li>Content{{Content}}</li>
+        {{#Tags}}
+        <div>
+        <em><strong>{{TagName}}</strong></em>
+        <div>
+        {{/Tags}}
+        </ul>
+    </script>
+    <script type="x-mustache-template" id="single-post-template">
+        <ul>
+        <li>Title: {{Title}}</li>
+        <li>Content{{Content}}</li>
+        {{#Tags}}
+        <div>
+        <em><strong>{{TagName}}</strong></em>
+        <div>
+        {{/Tags}}
+        {{#Comments}}
+        <li></li>
+        {{/Comments}}
+        <button class="comment-toggle">Comment</button>
+        <div class="comment-box">
+            <textarea></textarea><br />
+            <button>Post</button>
+        </div>
+        </ul>
+    </script>
+</body>
+</html>

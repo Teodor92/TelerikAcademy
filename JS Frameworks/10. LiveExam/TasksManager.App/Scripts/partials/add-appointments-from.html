@@ -1,0 +1,17 @@
+﻿<fieldset>
+    <legend>Add appointment</legend>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" data-bind="value: subject"/>
+
+    <label for="desc">Description</label>
+    <input type="text" id="desc" data-bind="value: description"/>
+
+    <label for="appointment-date">Apointment date</label>
+    <input type="date" id="appointment-date" data-bind="value: appointmentDate"/>
+    
+    <label for="duration">Duration</label>
+    <input type="text" id="duration" data-bind="value: duration"/><br />
+
+    <button class="btn btn-info" data-bind="click: addAppointment">Add Apointment</button>
+</fieldset>

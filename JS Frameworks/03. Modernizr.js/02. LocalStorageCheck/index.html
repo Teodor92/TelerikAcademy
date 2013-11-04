@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>LocalStorage check</title>
+    <script src="script/libs/modernizr.custom.27712.js"></script>
+    <!--[if lt IE 9]>
+    <script type=text/javascript" src="script/flashcanvas.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <canvas id="myCanvas" style="border: 1px solid red; width: 200px; height: 100px;"></canvas>
+    <script type="text/javascript">
+        var drawRectangle = function () {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 150, 75);
+        };
+
+        Modernizr.load([{
+            test: Modernizr.canvas,
+            nope: 'script/flashcanvas.js',
+            complete: function () {
+                drawRectangle();
+            }
+        }
+        ]);
+
+        if (Modernizr.localstorage) {
+
+        } else {
+
+        }
+
+        localStorage.setItem("magic", "andshit");
+        console.log(localStorage.getItem("magic"));
+        localStorage.removeItem("magic");
+    </script>
+</body>
+</html>
