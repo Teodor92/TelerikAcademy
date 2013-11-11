@@ -6,8 +6,7 @@
 /// <reference path="app/views.js" />
 
 (function () {
-    var appLayout =
-		new kendo.Layout('<div id="main-content"></div>');
+    var appLayout = new kendo.Layout('<div id="main-content"></div>');
     var data = persisters.get("api/");
     viewModelFactory.setPersister(data);
 
@@ -15,8 +14,7 @@
     router.route("/", function () {
         viewsFactory.getHomeView().then(function (homeHtmlView) {
             var viewmodel = viewModelFactory.getHomeViewModel();
-            var view = new kendo.View(homeHtmlView,
-						{ model: viewmodel });
+            var view = new kendo.View(homeHtmlView, { model: viewmodel });
             appLayout.showIn("#main-content", view);
         })
     });
@@ -27,15 +25,14 @@
         }
         else {
             viewsFactory.getLoginView()
-				.then(function (loginViewHtml) {
-				    var loginVm = viewModelFactory.getLoginViewModel(
-						function () {
-						    router.navigate("/");
-						});
-				    var view = new kendo.View(loginViewHtml,
-						{ model: loginVm });
-				    appLayout.showIn("#main-content", view);
-				});
+                .then(function (loginViewHtml) {
+                    var loginVm = viewModelFactory.getLoginViewModel(function () {
+                        router.navigate("/");
+                    });
+                    var view = new kendo.View(loginViewHtml,
+                     { model: loginVm });
+                    appLayout.showIn("#main-content", view);
+                });
         }
     });
 
@@ -216,16 +213,15 @@
         };
     });
 
-    //router.route("/logout", function (id) {
-    //    if (!data.isUserLoggedIn()) {
-    //        router.navigate("/login");
-    //    } else {
-
-    //        data.users.logout().then(function () {
-    //            router.navigate("/login");
-    //        });
-    //    };
-    //});
+    router.route("/logout", function (id) {
+        if (!data.isUserLoggedIn()) {
+            router.navigate("/login");
+        } else {
+            data.users.logout().then(function () {
+                router.navigate("/login");
+            });
+        };
+    });
 
     $(function () {
         appLayout.render("#app");

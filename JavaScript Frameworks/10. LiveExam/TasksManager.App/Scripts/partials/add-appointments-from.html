@@ -1,6 +1,9 @@
 ﻿<fieldset>
     <legend>Add appointment</legend>
 
+    <p class="text-error" data-bind="text: message"></p>
+    <p class="text-success" data-bind="text: successMessage"></p>
+
     <label for="subject">Subject</label>
     <input type="text" id="subject" data-bind="value: subject"/>
 
@@ -8,10 +11,13 @@
     <input type="text" id="desc" data-bind="value: description"/>
 
     <label for="appointment-date">Apointment date</label>
-    <input type="date" id="appointment-date" data-bind="value: appointmentDate"/>
+    <input type="text" id="appointment-date" data-bind="value: appointmentDate"/>
     
     <label for="duration">Duration</label>
     <input type="text" id="duration" data-bind="value: duration"/><br />
 
     <button class="btn btn-info" data-bind="click: addAppointment">Add Apointment</button>
 </fieldset>
+<script type="text/javascript">
+    $("#appointment-date").datepicker({ minDate: new Date() });
+</script>

@@ -11,28 +11,37 @@ window.viewModelFactory = (function () {
         };
 
         return kendo.observable(viewModel);
-    };
+    }
 
     function getLoginViewModel(successCallback) {
         var viewModel = {
             username: "Teodor92",
             password: "123456",
+            message: "",
             login: function () {
+                var that = this;
                 var user = {
                     username: this.get("username"),
                     password: this.get("password")
                 };
-                data.users.login(user)
-					.then(function () {
-					    if (successCallback) {
-					        successCallback();
-					    }
-					});
+
+                if (_validateUsernameAndPassword(user.username, user.password)) {
+                    data.users.login(user).done(function () {
+                        if (successCallback) {
+                            successCallback();
+                        }
+                    }, function (error) {
+                        var parsedMessage = JSON.parse(error.responseText);
+                        that.set("message", parsedMessage.Message);
+                    });
+                } else {
+                    this.set("message", "Password and username must be atleast 6 characters and atmost 40.");
+                }
             }
         };
 
         return kendo.observable(viewModel);
-    };
+    }
 
     function getRegisterViewModel(successCallback) {
         var viewModel = {
@@ -40,22 +49,33 @@ window.viewModelFactory = (function () {
             password: "123456",
             email: "asd@as.bg",
             register: function () {
+                var that = this;
+
                 var user = {
                     username: this.get("username"),
                     password: this.get("password"),
                     email: this.get("email")
                 };
-                data.users.register(user)
-					.then(function () {
-					    if (successCallback) {
-					        successCallback();
-					    }
-					});
+
+                if (!_validateUsernameAndPassword(user.username, user.password)) {
+                    this.set("message", "Password and username must be atleast 6 characters and atmost 40.");
+                } else if (!_validateEmail(user.email)) {
+                    this.set("message", "Email is invalid!");
+                } else {
+                    data.users.register(user).then(function () {
+                        if (successCallback) {
+                            successCallback();
+                        }
+                    }, function (error) {
+                        var parsedMessage = JSON.parse(error.responseText);
+                        that.set("message", parsedMessage.Message);
+                    });
+                }
             }
         };
 
         return kendo.observable(viewModel);
-    };
+    }
 
     function getAddAppointmentsViewModel() {
         var viewModel = {
@@ -63,7 +83,10 @@ window.viewModelFactory = (function () {
             description: "overwhelming!",
             appointmentDate: "",
             duration: "9999",
+            message: "",
+            successMessage: "",
             addAppointment: function () {
+                var that = this;
                 var appData = {
                     subject: this.get("subject"),
                     description: this.get("description"),
@@ -71,14 +94,28 @@ window.viewModelFactory = (function () {
                     duration: this.get("duration")
                 }
 
-                data.appointments.create(appData).then(function () {
-                    location.reload();
-                })
+                var valData = _validateAppointmentData(appData);
+                if (valData.isValid) {
+                    data.appointments.create(appData).then(function () {
+                        //location.reload();
+                        that.set("message", "");
+                        that.set("successMessage", "Added!");
+                        setTimeout(function () {
+                            that.set("successMessage", "");
+                        }, 2000);
+                    }, function (error) {
+                        var parsedMessage = JSON.parse(error.responseText);
+                        that.set("message", parsedMessage.Message);
+                    });
+                } else {
+                    console.log(valData);
+                    that.set("message", valData.message);
+                }
             }
         };
 
         return kendo.observable(viewModel);
-    };
+    }
 
     /* TODO: Refactor - can be merged in one!*/
     function getAllAppointmentsViewModel() {
@@ -89,7 +126,7 @@ window.viewModelFactory = (function () {
 
             return kendo.observable(viewModel);
         });
-    };
+    }
 
     function getDateAppointmentsViewModel() {
         var viewModel = {
@@ -105,7 +142,7 @@ window.viewModelFactory = (function () {
         };
 
         return kendo.observable(viewModel);
-    };
+    }
 
     function getCurrentAppointmentsViewModel() {
         return data.appointments.getCurrent().then(function (data) {
@@ -115,7 +152,7 @@ window.viewModelFactory = (function () {
 
             return kendo.observable(viewModel);
         });
-    };
+    }
 
     function getComingAppointmentsViewModel() {
         return data.appointments.getComming().then(function (data) {
@@ -125,7 +162,7 @@ window.viewModelFactory = (function () {
 
             return kendo.observable(viewModel);
         });
-    };
+    }
 
     function getTodayAppointmentsViewModel() {
         return data.appointments.getToday().then(function (data) {
@@ -135,7 +172,7 @@ window.viewModelFactory = (function () {
 
             return kendo.observable(viewModel);
         });
-    };
+    }
 
     function getListsViewModel() {
         var transverData = data;
@@ -166,7 +203,7 @@ window.viewModelFactory = (function () {
 
             return kendo.observable(viewModel);
         })
-    };
+    }
 
     function getSingelTodoViewModel(id) {
         var transgerData = data;
@@ -179,16 +216,67 @@ window.viewModelFactory = (function () {
                     var todoData = {
                         text: this.get("contentText")
                     };
-                    transgerData.lists.createSingle(id, todoData).then(function () {
-                        //this.set("message", "Saved!");
-                        location.reload();
-                    });
+
+                    if (_validateToDoContent(todoData.text)) {
+                        transgerData.lists.createSingle(id, todoData).then(function () {
+                            //this.set("message", "Saved!");
+                            location.reload();
+                        });
+                    } else {
+                        this.set("message", "Todo content must be betwenn 3 and 100 characters!");
+                    }
                 }
             }
 
             return kendo.observable(viewModel);
         });
-    };
+    }
+
+    function _validateUsernameAndPassword(username, password) {
+        var passwordIsValid = true;
+        var usernameIsValid = true;
+
+        if (username.length < 6 || username.length > 40) {
+            usernameIsValid = false;
+        }
+
+        if (password.length < 6 || password.length > 40) {
+            passwordIsValid = false;
+        }
+
+        return passwordIsValid && usernameIsValid;
+    }
+
+    function _validateEmail(email) {
+        var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regEx.test(email);
+    }
+
+    function _validateAppointmentData(appData) {
+        var validationData = {
+            isValid: true,
+            message: ""
+        };
+
+        if (appData.subject.length < 3 || appData.subject.length > 100) {
+            validationData.isValid = false;
+            validationData.message = "Subject length must be between 3 and 100 characters.";
+            return validationData;
+        }
+
+        // more validation if needed here.
+
+        return validationData;
+    }
+
+    function _validateToDoContent(content) {
+
+        if (content.length < 3 || content.length > 100) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     return {
         getHomeViewModel: getHomeViewModel,

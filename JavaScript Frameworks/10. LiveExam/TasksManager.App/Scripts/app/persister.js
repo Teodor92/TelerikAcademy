@@ -11,11 +11,13 @@ window.persisters = (function () {
 
     function saveUserData(data) {
         authToken = data.accessToken;
+        headers = { "X-accessToken": data.accessToken };
         localStorage.setItem("authToken", data.accessToken);
     }
 
     function clearUserData() {
         authToken = null;
+        headers = null;
         localStorage.removeItem("authToken");
     }
 
@@ -74,7 +76,6 @@ window.persisters = (function () {
 
         getAll: function () {
             var url = this.rootUrl + "all/";
-            var headers = { "X-accessToken": authToken };
             return httpRequester.getJson(url, headers);
         },
 
@@ -120,7 +121,7 @@ window.persisters = (function () {
         },
 
         getSingle: function (listId) {
-            var url = this.rootUrl + listId + "/todos";
+            var url = this.rootUrl + "/single?id=" + listId;
             return httpRequester.getJson(url, headers);
         }
     });
