@@ -27,6 +27,8 @@ window.viewModelFactory = (function () {
 
                 if (_validateUsernameAndPassword(user.username, user.password)) {
                     data.users.login(user).done(function () {
+                        $("#login-btn").hide();
+                        $("#register-btn").hide();
                         if (successCallback) {
                             successCallback();
                         }
@@ -183,11 +185,12 @@ window.viewModelFactory = (function () {
                 title: "",
                 todos: "",
                 postList: function () {
+                    var that = this;
                     var allTodos = this.get("todos");
                     var splitedTodos = allTodos.split(',');
                     var transferTodos = [];
                     for (var i = 0; i < splitedTodos.length; i++) {
-                        transferTodos.push({ text: splitedTodos[i] });
+                        transferTodos.push({ text: splitedTodos[i].trim() });
                     }
 
                     var data = {
@@ -195,9 +198,17 @@ window.viewModelFactory = (function () {
                         todos: transferTodos
                     };
 
-                    transverData.lists.createMany(data).then(function () {
-                        alert("Saved to db.");
-                    });
+                    var valData = _validateToDoList(data);
+                    if (valData.isValid) {
+                        transverData.lists.createMany(data).then(function () {
+                            location.reload();
+                        }, function (error) {
+                            var parsedMessage = JSON.parse(error.responseText);
+                            that.set("message", parsedMessage.Message);
+                        });
+                    } else {
+                        this.set("message", valData.message);
+                    };
                 },
             };
 
@@ -231,6 +242,8 @@ window.viewModelFactory = (function () {
             return kendo.observable(viewModel);
         });
     }
+
+    /* Validation functions */
 
     function _validateUsernameAndPassword(username, password) {
         var passwordIsValid = true;
@@ -276,6 +289,33 @@ window.viewModelFactory = (function () {
         } else {
             return true;
         }
+    }
+
+    function _validateToDoList(data) {
+        var valData = {
+            isValid: true,
+            message: ""
+        };
+
+        console.log(data.todos);
+
+        if (data.title.length < 3 || data.title.length > 100) {
+            valData.isValid = false;
+            valData.message = "Title must be between 3 and 100 characters.";
+            return valData;
+        }
+
+
+        for (var i = 0; i < data.todos.length; i++) {
+            
+            if (!_validateToDoContent(data.todos[i].text)) {
+                valData.isValid = false;
+                valData.message = "Todo content must be between 3 and 100 characters.";
+                return valData;
+            }
+        }
+
+        return valData;
     }
 
     return {

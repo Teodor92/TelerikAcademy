@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksManager.App", "TasksManager.App\TasksManager.App.csproj", "{F7F69D94-DECE-455C-A51F-2B103DDDDB96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksManager.Models", "TasksManager.Models\TasksManager.Models.csproj", "{30271336-EA1E-46D8-97AE-D35E36353634}"

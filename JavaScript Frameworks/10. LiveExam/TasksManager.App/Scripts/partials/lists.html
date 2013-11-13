@@ -2,6 +2,8 @@
 <fieldset>
     <legend>Add lists</legend>
 
+    <p class="text-error" data-bind="text: message"></p>
+
     <label for="title">Enter title</label>
     <input type="text" id="title" data-bind="value: title"/>
 
@@ -15,7 +17,7 @@
 </div>
 
 <script type="text/x-kendo-template" id="appointment-template">
-        <h4>#=title#</h4>
+        <h4>#: title #</h4>
         <a class="btn btn-info btn-small details" href="\\#/lists/#=id#/todos">See details</a>
         <table class="table table-striped table-bordered">
             <thead>
@@ -28,8 +30,8 @@
             <tbody>
             # for (var i = 0; i < todos.length; i++) { #
                 <tr>
-                <td>#= todos[i].text # </td>
-                <td>#= todos[i].isDone # </td>
+                <td>#: todos[i].text # </td>
+                <td>#: todos[i].isDone # </td>
                     <td><a class="btn btn-success" href="\\#/todos/#=todos[i].id#">Change status</a></td>
                 </tr> #
             } #

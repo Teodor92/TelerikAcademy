@@ -218,6 +218,8 @@
             router.navigate("/login");
         } else {
             data.users.logout().then(function () {
+                $("#login-btn").show();
+                $("#register-btn").show();
                 router.navigate("/login");
             });
         };

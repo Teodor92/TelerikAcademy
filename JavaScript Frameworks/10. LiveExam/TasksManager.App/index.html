@@ -27,8 +27,8 @@
             <nav class="k-content">
                 <ul id="menu">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#/login">Login</a></li>
-                    <li><a href="#/register">Register</a></li>
+                    <li id="login-btn"><a href="#/login">Login</a></li>
+                    <li id="register-btn"><a href="#/register">Register</a></li>
                     <li>Appointments
                     <ul>
                         <li><a href="#/appointments/add">Add Appointments</a></li>
@@ -55,6 +55,11 @@
     <script>
         $(document).ready(function () {
             $("#menu").kendoMenu();
+
+            if (localStorage.getItem("authToken")) {
+                $("#login-btn").hide();
+                $("#register-btn").hide();
+            }
         });
     </script>
 </body>
