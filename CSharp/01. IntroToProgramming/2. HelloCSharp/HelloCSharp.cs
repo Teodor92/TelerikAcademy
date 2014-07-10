@@ -1,12 +1,15 @@
-﻿// 2. Create, compile and run a “Hello C#” console application.
+﻿namespace _2.HelloCSharp
+{
+    using System;
 
-using System;
-
-    class HelloCSharp
+    /// <summary>
+    /// 2. Create, compile and run a “Hello C#” console application.
+    /// </summary>
+    public class HelloCSharp
     {
-        static void Main()
+        public static void Main()
         {
             Console.WriteLine("Hello, C#!");
         }
     }
-
+}

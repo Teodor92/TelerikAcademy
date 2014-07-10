@@ -1,11 +1,15 @@
-﻿// 3. Modify the application to print your name.
-
-using System;
-
-class HelloMyName
+﻿namespace _3.HelloMyName
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// 3. Modify the application to print your name.
+    /// </summary>
+    public class HelloMyName
     {
-        Console.WriteLine("Hello, Teodor!");
+        public static void Main()
+        {
+            Console.WriteLine("Hello, Teodor!");
+        }
     }
 }

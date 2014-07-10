@@ -1,13 +1,16 @@
-﻿// 7. Create a console application that prints the current date and time.
-
-using System;
-
-class TimeAndDate
+﻿namespace _7.TimeAndDate
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// 7. Create a console application that prints the current date and time.
+    /// </summary>
+    public class TimeAndDate
     {
-        Console.WriteLine("The date and time are:");
-        Console.WriteLine(DateTime.Now);
+        public static void Main()
+        {
+            Console.WriteLine("The date and time are:");
+            Console.WriteLine(DateTime.Now);
+        }
     }
 }
-

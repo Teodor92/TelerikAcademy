@@ -1,22 +1,25 @@
-﻿//9. Write a program that prints the first 10 members of the sequence: 2, -3, 4, -5, 6, -7, ...
-
-using System;
-
-class NumebrSequenceTwo
+﻿namespace _9.NumberSequence
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// 9. Write a program that prints the first 10 members of the sequence: 2, -3, 4, -5, 6, -7, ...
+    /// </summary>
+    public class NumebrSequenceTwo
     {
-        for (int i = 2; i < 12; i++)
+        public static void Main()
         {
-            if (i % 2 == 0)
+            for (int i = 2; i < 12; i++)
             {
-                Console.WriteLine(i);
-            }
-            else
-            {
-                Console.WriteLine(-i);
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
+                else
+                {
+                    Console.WriteLine(-i);
+                }
             }
         }
     }
 }
-

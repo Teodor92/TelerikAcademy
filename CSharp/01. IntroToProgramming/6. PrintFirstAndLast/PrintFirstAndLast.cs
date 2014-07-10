@@ -1,11 +1,15 @@
-﻿//6. Create console application that prints your first and last name.
-
-using System;
-
-class PrintFirstAndLast
+﻿namespace _6.PrintFirstAndLast
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// Create console application that prints your first and last name.
+    /// </summary>
+    public class PrintFirstAndLast
     {
-        Console.WriteLine("Teodor Kurtev");
+        static void Main()
+        {
+            Console.WriteLine("Teodor Kurtev");
+        }
     }
 }
