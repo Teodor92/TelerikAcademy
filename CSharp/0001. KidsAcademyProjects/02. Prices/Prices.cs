@@ -1,13 +1,16 @@
-﻿using System;
-using System.Numerics;
-
-class Prices
+﻿namespace _02.Prices
 {
-    static void Main()
+    using System;
+    using System.Numerics;
+
+    public class Prices
     {
-        string[] input = Console.ReadLine().Split(' ');
-        BigInteger firstNumber = BigInteger.Parse(input[0]);
-        BigInteger secondNumber = BigInteger.Parse(input[1]);
-        Console.WriteLine(firstNumber - secondNumber);
+        internal static void Main()
+        {
+            var input = Console.ReadLine().Split(' ');
+            var firstNumber = BigInteger.Parse(input[0]);
+            var secondNumber = BigInteger.Parse(input[1]);
+            Console.WriteLine(firstNumber - secondNumber);
+        }
     }
 }

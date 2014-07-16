@@ -1,100 +1,106 @@
-﻿using System;
-
-class ZigZag
+﻿namespace _14.ZigZag
 {
-    static bool Begining( int position, int[] numbers)
+    using System;
+
+    public class ZigZag
     {
-        bool positive = true;
-        for (int i = position; i < numbers.Length-1; i++)
+        internal static void Main()
         {
-            if ((numbers[i + 1] - numbers[i]) > 0)
+            var n = int.Parse(Console.ReadLine());
+            var numbers = new int[n];
+            var stringNumeres = Console.ReadLine().Split(' ');
+            for (int i = 0; i < numbers.Length; i++)
             {
-                positive = true;
-                break;
+                numbers[i] = int.Parse(stringNumeres[i]);
             }
-            else if ((numbers[i + 1] - numbers[i]) < 0)
+
+            var sequnceCounter = 1;
+            var bestSequnceCounter = int.MinValue;
+            var cheker = Begining(1, numbers);
+            var positive = true;
+
+            for (int i = 0; i < numbers.Length - 1; i++)
             {
-                positive = false;
-                break;
+                if (n == 0)
+                {
+                    Console.WriteLine(0);
+                    break;
+                }
+
+                if ((numbers[i + 1] - numbers[i]) > 0)
+                {
+                    positive = true;
+                }
+                else if ((numbers[i + 1] - numbers[i]) < 0)
+                {
+                    positive = false;
+                }
+                else
+                {
+                    cheker = Begining(i, numbers);
+                    i = BeginingPostiton(i, numbers);
+                    continue;
+                }
+
+                if (cheker == positive)
+                {
+                    cheker = !cheker;
+                    sequnceCounter++;
+                }
+                else
+                {
+                    sequnceCounter = 1;
+                }
+
+                if (sequnceCounter > bestSequnceCounter)
+                {
+                    bestSequnceCounter = sequnceCounter;
+                }
             }
+
+            Console.WriteLine(bestSequnceCounter);
         }
-        return positive;
-    }
-    static int BeginingPostiton(int position, int[] numbers)
-    {
-        int postion = 0;
-        for (int i = position; i < numbers.Length-1; i++)
+
+        private static bool Begining(int position, int[] numbers)
         {
-            if ((numbers[i + 1] - numbers[i]) > 0)
+            bool positive = true;
+            for (int i = position; i < numbers.Length - 1; i++)
             {
-                postion = i;
-                break;
+                if ((numbers[i + 1] - numbers[i]) > 0)
+                {
+                    positive = true;
+                    break;
+                }
+
+                if ((numbers[i + 1] - numbers[i]) < 0)
+                {
+                    positive = false;
+                    break;
+                }
             }
-            else if ((numbers[i + 1] - numbers[i]) < 0)
-            {
-                postion = i;
-                break;
-            }
-            else
-            {
-                continue;
-            }
+
+            return positive;
         }
-        return position;
-    }
-    static void Main()
-    {
-        int n = int.Parse(Console.ReadLine());
-        int[] numbers = new int[n];
-        string[] stringNumeres = Console.ReadLine().Split(' ');
-        for (int i = 0; i < numbers.Length; i++)
+
+        private static int BeginingPostiton(int position, int[] numbers)
         {
-            numbers[i] = int.Parse(stringNumeres[i]);
+            int postion = 0;
+            for (int i = position; i < numbers.Length - 1; i++)
+            {
+                if ((numbers[i + 1] - numbers[i]) > 0)
+                {
+                    postion = i;
+                    break;
+                }
+
+                if ((numbers[i + 1] - numbers[i]) < 0)
+                {
+                    postion = i;
+                    break;
+                }
+            }
+
+            return position;
         }
-        int sequnceCounter = 1;
-        int bestSequnceCounter = int.MinValue;
-        bool cheker = Begining(1, numbers);
-        bool positive = true;
-
-        for (int i = 0; i < numbers.Length-1; i++)
-        {
-            if (n == 0)
-            {
-                Console.WriteLine(0);
-                break;
-            }
-            if ((numbers[i+1]-numbers[i]) > 0 )
-            {
-                positive = true;
-            }
-            else if ((numbers[i + 1] - numbers[i]) < 0)
-            {
-                positive = false;
-            }
-            else
-            {
-                cheker = Begining(i, numbers);
-                i = BeginingPostiton(i, numbers);
-                continue;
-            }
-
-            if (cheker == positive)
-            {
-                cheker = !cheker;
-                sequnceCounter++;
-            }
-            else
-            {
-                sequnceCounter = 1;
-            }
-
-            if (sequnceCounter > bestSequnceCounter)
-            {
-                bestSequnceCounter = sequnceCounter;
-            }
-
-
-        }
-        Console.WriteLine(bestSequnceCounter);
     }
 }

@@ -1,36 +1,43 @@
-﻿using System;
-
-class Program
+﻿namespace _07.Prize
 {
-    static void Main()
+    using System;
+
+    public class Program
     {
-        string[] input = Console.ReadLine().Split(' ');
-        int[] grades = new int[input.Length];
-        for (int i = 0; i < input.Length; i++)
+        internal static void Main()
         {
-            grades[i] = int.Parse(input[i]);
-        }
-        bool hasTwo = false;
-        int goodGradeCounter = 0;
-        for (int i = 0; i < grades.Length; i++)
-        {
-            if (grades[i] == 2)
+            var input = Console.ReadLine().Split(' ');
+            var grades = new int[input.Length];
+
+            for (int i = 0; i < input.Length; i++)
             {
-                hasTwo = true;
-                break;
+                grades[i] = int.Parse(input[i]);
             }
-            else if (grades[i] == 6)
+
+            var hasTwo = false;
+            var goodGradeCounter = 0;
+            for (int i = 0; i < grades.Length; i++)
             {
-                goodGradeCounter++;
+                if (grades[i] == 2)
+                {
+                    hasTwo = true;
+                    break;
+                }
+
+                if (grades[i] == 6)
+                {
+                    goodGradeCounter++;
+                }
             }
-        }
-        if (hasTwo || goodGradeCounter == 0)
-        {
-            Console.WriteLine("No");
-        }
-        else
-        {
-            Console.WriteLine(new string('*', goodGradeCounter));
+
+            if (hasTwo || goodGradeCounter == 0)
+            {
+                Console.WriteLine("No");
+            }
+            else
+            {
+                Console.WriteLine(new string('*', goodGradeCounter));
+            }
         }
     }
 }

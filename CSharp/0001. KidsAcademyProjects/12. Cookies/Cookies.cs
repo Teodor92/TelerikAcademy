@@ -1,19 +1,23 @@
-﻿using System;
-
-class Cookies
+﻿namespace _12.Cookies
 {
-    static void Main()
+    using System;
+
+    public class Cookies
     {
-        string[] input = Console.ReadLine().Split();
-        int allCookies = int.Parse(input[0]);
-        int hunterCookies = int.Parse(input[1]);
-        if (hunterCookies > allCookies/2)
+        internal static void Main()
         {
-            Console.WriteLine(allCookies/2);
-        }
-        else
-        {
-            Console.WriteLine(allCookies - hunterCookies);
+            var input = Console.ReadLine().Split();
+            var allCookies = int.Parse(input[0]);
+            var hunterCookies = int.Parse(input[1]);
+
+            if (hunterCookies > allCookies / 2)
+            {
+                Console.WriteLine(allCookies / 2);
+            }
+            else
+            {
+                Console.WriteLine(allCookies - hunterCookies);
+            }
         }
     }
 }

@@ -1,16 +1,19 @@
-﻿using System;
+﻿namespace _01.OnTheBeach
+{
+    using System;
 
-    class Program
+    public class Program
     {
-        static void Main()
+        internal static void Main()
         {
-            string[] result = Console.ReadLine().Split(' ');
-            int[] res1 = new int[8];
+            var result = Console.ReadLine().Split(' ');
+            var res1 = new int[8];
             for (int i = 0; i < 8; i++)
             {
                 res1[i] = int.Parse(result[i]);
             }
-            if (res1[4]-res1[1] > 0)
+
+            if (res1[4] - res1[1] > 0)
             {
                 Console.Write(res1[4]);
                 Console.Write(res1[5]);
@@ -20,6 +23,7 @@
                 Console.Write(res1[0]);
                 Console.Write(res1[1]);
             }
+
             if (res1[6] - res1[2] > 0)
             {
                 Console.Write(res1[2]);
@@ -32,3 +36,4 @@
             }
         }
     }
+}

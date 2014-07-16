@@ -1,17 +1,20 @@
-﻿using System;
-
-class Presents
+﻿namespace _10.Presents
 {
-    static void Main()
+    using System;
+
+    public class Presents
     {
-        string[] input = Console.ReadLine().Split(' ');
-        int tieMeters = int.Parse(input[0]);
-        int tieCentemeters = int.Parse(input[1]);
-        int numOfPresents = int.Parse(input[2]);
-        tieMeters = tieMeters * numOfPresents;
-        tieCentemeters = tieCentemeters * numOfPresents;
-        tieMeters = tieMeters + (tieCentemeters / 100);
-        tieCentemeters = tieCentemeters % 100;
-        Console.WriteLine("{0} {1}", tieMeters, tieCentemeters);
+        internal static void Main()
+        {
+            var input = Console.ReadLine().Split(' ');
+            var tieMeters = int.Parse(input[0]);
+            var tieCentemeters = int.Parse(input[1]);
+            var numOfPresents = int.Parse(input[2]);
+            tieMeters = tieMeters * numOfPresents;
+            tieCentemeters = tieCentemeters * numOfPresents;
+            tieMeters = tieMeters + (tieCentemeters / 100);
+            tieCentemeters = tieCentemeters % 100;
+            Console.WriteLine("{0} {1}", tieMeters, tieCentemeters);
+        }
     }
 }

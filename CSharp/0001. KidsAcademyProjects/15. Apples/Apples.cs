@@ -1,28 +1,33 @@
-﻿using System;
-
-class Apples
+﻿namespace _15.Apples
 {
-    static void Main()
-    {
-        string[] input = Console.ReadLine().Split();
-        int y = int.Parse(input[0]);
-        int k = int.Parse(input[1]);
-        int n = int.Parse(input[2]);
-        int rangeOfX = n - y;
-        int counter = 0;
-        for (int i = 1; i < rangeOfX + 1; i++)
-        {
-            if ((i+y)%k==0)
-            {
-                Console.Write("{0} ", i);
-                counter++;
-            }
-        }
-        if (counter == 0 || rangeOfX < 0)
-        {
-            Console.WriteLine(-1);
-        }
-        Console.WriteLine();
+    using System;
 
+    public class Apples
+    {
+        internal static void Main()
+        {
+            var input = Console.ReadLine().Split();
+            var y = int.Parse(input[0]);
+            var k = int.Parse(input[1]);
+            var n = int.Parse(input[2]);
+            var rangeOfX = n - y;
+            var counter = 0;
+
+            for (int i = 1; i < rangeOfX + 1; i++)
+            {
+                if ((i + y) % k == 0)
+                {
+                    Console.Write("{0} ", i);
+                    counter++;
+                }
+            }
+
+            if (counter == 0 || rangeOfX < 0)
+            {
+                Console.WriteLine(-1);
+            }
+
+            Console.WriteLine();
+        }
     }
 }

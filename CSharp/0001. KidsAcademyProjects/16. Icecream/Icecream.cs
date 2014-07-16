@@ -1,20 +1,25 @@
-﻿using System;
-
-class Icecream
+﻿namespace _16.Icecream
 {
-    static void Main()
+    using System;
+
+    public class Icecream
     {
-        string[] input = Console.ReadLine().Split(' ');
-        int numberOfElefants = int.Parse(input[0]);
-        string number = input[1];
-        int counter = 0;
-        for (int i = 0; i < number.Length; i++)
+        internal static void Main()
         {
-            if (number[i] != '0')
+            var input = Console.ReadLine().Split(' ');
+            var numberOfElefants = int.Parse(input[0]);
+            var number = input[1];
+            var counter = 0;
+
+            for (int i = 0; i < number.Length; i++)
             {
-                counter++;
+                if (number[i] != '0')
+                {
+                    counter++;
+                }
             }
+
+            Console.WriteLine(numberOfElefants - counter);
         }
-        Console.WriteLine(numberOfElefants - counter);
     }
 }

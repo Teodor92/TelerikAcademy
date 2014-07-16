@@ -1,16 +1,21 @@
-﻿using System;
-
-class Card
+﻿namespace _08.Card
 {
-    static void Main()
+    using System;
+
+    public class Card
     {
-        string[] input = Console.ReadLine().Split();
-        Console.WriteLine("  #*#  ");
-        Console.WriteLine("  ***  ");
-        Console.WriteLine("  #*#  ");
-        Console.WriteLine("   {0}   ", input[1]);
-        Console.WriteLine("{0}  {1}  {2}", input[0], input[1], input[0]);
-        Console.WriteLine(" {0} {1} {2} ", input[0], input[1], input[0]);
-        Console.WriteLine("  {0}{1}{2}  ", input[0], input[1], input[0]);
+        internal static void Main()
+        {
+            var input = Console.ReadLine().Split();
+            
+            Console.WriteLine("  #*#  ");
+            Console.WriteLine("  ***  ");
+            Console.WriteLine("  #*#  ");
+
+            Console.WriteLine("   {0}   ", input[1]);
+            Console.WriteLine("{0}  {1}  {2}", input[0], input[1], input[0]);
+            Console.WriteLine(" {0} {1} {2} ", input[0], input[1], input[0]);
+            Console.WriteLine("  {0}{1}{2}  ", input[0], input[1], input[0]);
+        }
     }
 }

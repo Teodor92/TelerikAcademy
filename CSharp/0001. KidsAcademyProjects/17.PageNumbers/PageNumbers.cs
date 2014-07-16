@@ -1,41 +1,46 @@
-﻿using System;
-
-class PageNumbers
+﻿namespace _17.PageNumbers
 {
-    static double NumberOfDigits(int n)
+    using System;
+
+    public class PageNumbers
     {
-        double counter = 0;
-        while(n!=0)
+        internal static void Main()
         {
-            n /= 10;
-            counter++;
-        }
-        return counter;
-    }
-    static void Main()
-    {
-       
-        int pages = int.Parse(Console.ReadLine());
-        int counter = 0;
+            var pages = int.Parse(Console.ReadLine());
+            var counter = 0;
 
-        for (int i = 1; i < NumberOfDigits(pages)+1; i++)
-        {
-            double pow = Math.Pow(10, NumberOfDigits(pages) - i);
-
-            int firstPage = pages / (int)pow;
-
-            int allPages = pages - ((int)pow * firstPage);
-
-            if (allPages / (int)pow == 0)
+            for (int i = 1; i < NumberOfDigits(pages) + 1; i++)
             {
-                firstPage *= 10;
+                var pow = Math.Pow(10, NumberOfDigits(pages) - i);
+
+                var firstPage = pages / (int)pow;
+
+                var allPages = pages - ((int)pow * firstPage);
+
+                if (allPages / (int)pow == 0)
+                {
+                    firstPage *= 10;
+                }
+
+                if (firstPage < allPages)
+                {
+                    counter++;
+                }
             }
 
-            if (firstPage<allPages)
+            Console.WriteLine(counter);
+        }
+
+        private static double NumberOfDigits(int n)
+        {
+            double counter = 0;
+            while (n != 0)
             {
+                n /= 10;
                 counter++;
             }
+
+            return counter;
         }
-        Console.WriteLine(counter);
     }
 }

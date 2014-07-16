@@ -1,44 +1,51 @@
-﻿using System;
-
-class Letter
+﻿namespace _13.Letter
 {
-    static void Main()
+    using System;
+
+    public class Letter
     {
-        string firstWord = Console.ReadLine();
-        string secondWord = Console.ReadLine();
-        int bestLetterCounter = 0;
-        char bestLetter = 'a';
-        int letterCounter = 0;
-        for (int i = 0; i < firstWord.Length; i++)
+        internal static void Main()
         {
-            for (int j = 0; j < secondWord.Length; j++)
+            var firstWord = Console.ReadLine();
+            var secondWord = Console.ReadLine();
+            var bestLetterCounter = 0;
+            var bestLetter = 'a';
+            var letterCounter = 0;
+
+            for (int i = 0; i < firstWord.Length; i++)
             {
-                if (firstWord[i] == secondWord[j])
+                for (int j = 0; j < secondWord.Length; j++)
                 {
-                    letterCounter++;
+                    if (firstWord[i] == secondWord[j])
+                    {
+                        letterCounter++;
+                    }
                 }
-            }
-            if (letterCounter == bestLetterCounter)
-            {
-                if (bestLetter > firstWord[i])
+
+                if (letterCounter == bestLetterCounter)
                 {
+                    if (bestLetter > firstWord[i])
+                    {
+                        bestLetter = firstWord[i];
+                    }
+                }
+                else if (letterCounter > bestLetterCounter)
+                {
+                    bestLetterCounter = letterCounter;
                     bestLetter = firstWord[i];
                 }
+
+                letterCounter = 0;
             }
-            else if (letterCounter > bestLetterCounter)
+
+            if (bestLetterCounter == 0)
             {
-                bestLetterCounter = letterCounter;
-                bestLetter = firstWord[i];
+                Console.WriteLine(0);
             }
-            letterCounter = 0;
-        }
-        if (bestLetterCounter == 0)
-        {
-            Console.WriteLine(0);
-        }
-        else
-        {
-            Console.WriteLine(bestLetter);
+            else
+            {
+                Console.WriteLine(bestLetter);
+            }
         }
     }
 }

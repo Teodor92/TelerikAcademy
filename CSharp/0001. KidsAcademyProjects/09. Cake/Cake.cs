@@ -1,12 +1,15 @@
-﻿using System;
-
-class Cake
+﻿namespace _09.Cake
 {
-    static void Main()
+    using System;
+
+    public class Cake
     {
-        string[] input = Console.ReadLine().Split();
-        double numGuests = double.Parse(input[0]);
-        double piecesOfCake = double.Parse(input[1]);
-        Console.WriteLine(Math.Ceiling(numGuests / piecesOfCake));
+        internal static void Main()
+        {
+            var input = Console.ReadLine().Split();
+            var numGuests = double.Parse(input[0]);
+            var piecesOfCake = double.Parse(input[1]);
+            Console.WriteLine(Math.Ceiling(numGuests / piecesOfCake));
+        }
     }
 }
