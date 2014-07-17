@@ -1,38 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-
-class LeastMajorityMultiple
+﻿namespace _02.Least_Majority_Multiple
 {
-    static void Main()
-    {
-        List<int> numbers = new List<int>();
+    using System;
+    using System.Collections.Generic;
 
-        for (int i = 0; i < 5; i++)
+    public class LeastMajorityMultiple
+    {
+        internal static void Main()
         {
-            int input = int.Parse(Console.ReadLine());
-            numbers.Add(input);
-        }
-        long bestSomething = 0;
-        long best = long.MaxValue;
-        for (int i = 0; i < numbers.Count; i++)
-        {
-            bestSomething = numbers[i];
-            for (int j = 0; j < numbers.Count; j++)
+            var numbers = new List<int>();
+
+            for (int i = 0; i < 5; i++)
             {
-                if (j == i)
-                {
-                    continue;
-                }
-                if (j >= 2)
-                {
-                    if (bestSomething < best)
-                    {
-                        best = bestSomething;
-                    }    
-                }
-                bestSomething = bestSomething * numbers[j];
+                int input = int.Parse(Console.ReadLine());
+                numbers.Add(input);
             }
+
+            var best = long.MaxValue;
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                var bestSomething = numbers[i];
+                for (int j = 0; j < numbers.Count; j++)
+                {
+                    if (j == i)
+                    {
+                        continue;
+                    }
+
+                    if (j >= 2)
+                    {
+                        if (bestSomething < best)
+                        {
+                            best = bestSomething;
+                        }    
+                    }
+
+                    bestSomething = bestSomething * numbers[j];
+                }
+            }
+
+            Console.WriteLine(best);
         }
-        Console.WriteLine(best);
     }
 }

@@ -1,53 +1,61 @@
-﻿using System;
-
-class FallDown
+﻿namespace _05.Fall_Down
 {
-    static void Main()
+    using System;
+
+    public class FallDown
     {
-        byte[,] allNumbers = new byte[8,8];
-        //input
-        for (int row = 0; row < allNumbers.GetLength(0); row++)
+        internal static void Main()
         {
-            byte number = byte.Parse(Console.ReadLine());
-            for (int col = allNumbers.GetLength(1)-1; col > -1; col--)
+            var allNumbers = new byte[8, 8];
+
+            // input
+            for (int row = 0; row < allNumbers.GetLength(0); row++)
             {
-                if (number % 2 != 0)
+                byte number = byte.Parse(Console.ReadLine());
+                for (int col = allNumbers.GetLength(1) - 1; col > -1; col--)
                 {
-                    allNumbers[row, col] = 1;
-                }
-                number = (byte)(number / 2);
-            }
-        }
-        // main logic
-        for (int i = 0; i < 10; i++)
-        {
-            for (int row = 0; row < allNumbers.GetLength(0) - 1; row++)
-            {
-                for (int col = 0; col < allNumbers.GetLength(1); col++)
-                {
-                    if (allNumbers[row, col] != 1)
+                    if (number % 2 != 0)
                     {
-                        if (allNumbers[row + 1, col] == 1)
+                        allNumbers[row, col] = 1;
+                    }
+
+                    number = (byte)(number / 2);
+                }
+            }
+
+            // main logic
+            for (int i = 0; i < 10; i++)
+            {
+                for (int row = 0; row < allNumbers.GetLength(0) - 1; row++)
+                {
+                    for (int col = 0; col < allNumbers.GetLength(1); col++)
+                    {
+                        if (allNumbers[row, col] != 1)
                         {
-                            allNumbers[row, col] = 1;
-                            allNumbers[row + 1, col] = 0;
+                            if (allNumbers[row + 1, col] == 1)
+                            {
+                                allNumbers[row, col] = 1;
+                                allNumbers[row + 1, col] = 0;
+                            }
                         }
                     }
                 }
             }
-        }
-        //output
-        for (int row = allNumbers.GetLength(0) - 1; row > - 1 ; row--)
-        {
-            int sum = 0;
-            for (int col = 0; col < allNumbers.GetLength(1); col++)
+
+            // output
+            for (int row = allNumbers.GetLength(0) - 1; row > -1; row--)
             {
-                if (allNumbers[row, col] == 1)
+                int sum = 0;
+                for (int col = 0; col < allNumbers.GetLength(1); col++)
                 {
-                    sum = sum + (int)Math.Pow(2, 7 - col);
+                    if (allNumbers[row, col] == 1)
+                    {
+                        sum = sum + (int)Math.Pow(2, 7 - col);
+                    }
                 }
+
+                Console.WriteLine(sum);
             }
-            Console.WriteLine(sum);
         }
     }
 }

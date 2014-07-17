@@ -1,19 +1,23 @@
-﻿using System;
-
-class OddNumber
+﻿namespace _04.Odd_Number
 {
-    static void Main()
+    using System;
+
+    public class OddNumber
     {
-            int lines = int.Parse(Console.ReadLine());
-            long number = 0;
-            long odd = 0;
- 
+        internal static void Main()
+        {
+            var lines = int.Parse(Console.ReadLine());
+            var number = 0L;
+            var odd = 0L;
+
             for (long i = 1; i <= lines; i++)
             {
                 number = long.Parse(Console.ReadLine());
- 
-                odd = number ^ odd;    
+
+                odd = number ^ odd;
             }
+
             Console.WriteLine(odd);
+        }
     }
 }
