@@ -1,31 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-
-class WeAllLoveBitsTwo
+﻿namespace _04a.WeAllLoveBitsTwo
 {
-    static void Main()
+    using System;
+    using System.Collections.Generic;
+
+    public class WeAllLoveBitsTwo
     {
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        internal static void Main()
         {
-            int input = int.Parse(Console.ReadLine());
-            List<int> bits = new List<int>();
-            while (true)
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
             {
-                if (input == 0)
+                int input = int.Parse(Console.ReadLine());
+                var bits = new List<int>();
+                while (true)
                 {
-                    break;
+                    if (input == 0)
+                    {
+                        break;
+                    }
+
+                    bits.Add(input % 2);
+                    input = input / 2;
                 }
-                bits.Add(input % 2);
-                input = input / 2;
+
+                bits.Reverse();
+                int sum = 0;
+
+                for (int j = 0; j < bits.Count; j++)
+                {
+                    sum = sum + (int)Math.Pow(2 * bits[j], j);
+                }
+
+                Console.WriteLine(sum);
             }
-            bits.Reverse();
-            int sum = 0;
-            for (int j = 0; j < bits.Count; j++)
-            {
-                sum = sum + (int)Math.Pow(2*bits[j] ,j);
-            }
-            Console.WriteLine(sum);
         }
     }
 }
