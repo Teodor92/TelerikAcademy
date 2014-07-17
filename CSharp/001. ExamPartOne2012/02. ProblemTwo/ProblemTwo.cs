@@ -1,39 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Numerics;
-
-class Tribonacci
+﻿namespace _02.ProblemTwo
 {
-    static void Main()
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+
+    public class Tribonacci
     {
-        BigInteger firstElement = BigInteger.Parse(Console.ReadLine());
-        BigInteger secondElement = BigInteger.Parse(Console.ReadLine());
-        BigInteger thirdElement = BigInteger.Parse(Console.ReadLine());
-        BigInteger fourthElement = BigInteger.Parse(Console.ReadLine());
-        int row = int.Parse(Console.ReadLine());
-        int col = int.Parse(Console.ReadLine());
-        List<BigInteger> allNums = new List<BigInteger>();
-        BigInteger sum = 0;
-        allNums.Add(firstElement);
-        allNums.Add(secondElement);
-        allNums.Add(thirdElement);
-        allNums.Add(fourthElement);
-        for (int i = 0; i < (col*row) - 4; i++)
+        internal static void Main()
         {
-            sum = firstElement + secondElement + thirdElement + fourthElement;
-            allNums.Add(sum);
-            firstElement = secondElement;
-            secondElement = thirdElement;
-            thirdElement = fourthElement;
-            fourthElement = sum;
-        }
-        for (int i = 0; i < allNums.Count; i++)
-        {
-            if (i % col == 0 && i != 0)
+            var firstElement = BigInteger.Parse(Console.ReadLine());
+            var secondElement = BigInteger.Parse(Console.ReadLine());
+            var thirdElement = BigInteger.Parse(Console.ReadLine());
+            var fourthElement = BigInteger.Parse(Console.ReadLine());
+            var row = int.Parse(Console.ReadLine());
+            var col = int.Parse(Console.ReadLine());
+
+            var allNums = new List<BigInteger>();
+            allNums.Add(firstElement);
+            allNums.Add(secondElement);
+            allNums.Add(thirdElement);
+            allNums.Add(fourthElement);
+
+            for (int i = 0; i < (col * row) - 4; i++)
             {
-                Console.WriteLine();
+                BigInteger sum = firstElement + secondElement + thirdElement + fourthElement;
+                allNums.Add(sum);
+                firstElement = secondElement;
+                secondElement = thirdElement;
+                thirdElement = fourthElement;
+                fourthElement = sum;
             }
-            Console.Write("{0} ",allNums[i]);
+
+            for (int i = 0; i < allNums.Count; i++)
+            {
+                if (i % col == 0 && i != 0)
+                {
+                    Console.WriteLine();
+                }
+
+                Console.Write("{0} ", allNums[i]);
+            }
         }
     }
 }
