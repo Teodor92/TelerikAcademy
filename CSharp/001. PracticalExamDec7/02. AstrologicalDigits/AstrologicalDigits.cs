@@ -1,33 +1,39 @@
-﻿using System;
-
-class AstrologicalDigits
+﻿namespace _02.AstrologicalDigits
 {
-    static void Main()
+    using System;
+
+    public class AstrologicalDigits
     {
-        string inputString = Console.ReadLine();
-        long result = 0;
-        bool stop = false;
-        int goodDigit = 0;
-        do
+        internal static void Main()
         {
-            result = 0;
-            foreach (var item in inputString)
+            string inputString = Console.ReadLine();
+            long result = 0;
+            bool stop = false;
+            int goodDigit = 0;
+
+            do
             {
-                if (int.TryParse(item.ToString(), out goodDigit))
+                result = 0;
+                foreach (var item in inputString)
                 {
-                    result = result + goodDigit;
+                    if (int.TryParse(item.ToString(), out goodDigit))
+                    {
+                        result = result + goodDigit;
+                    }
+                }
+
+                if (result < 10)
+                {
+                    stop = true;
+                }
+                else
+                {
+                    inputString = result.ToString();
                 }
             }
-            if (result < 10)
-            {
-                stop = true;
-            }
-            else
-            {
-                inputString = result.ToString();
-            }
-        } 
-        while (stop == false);
-        Console.WriteLine(result);
+            while (stop == false);
+
+            Console.WriteLine(result);
+        }
     }
 }
