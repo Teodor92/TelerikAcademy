@@ -1,36 +1,43 @@
-﻿using System;
-
-class SubSetSumBin
+﻿namespace _05.Subset_Sums
 {
-    static void Main()
+    using System;
+
+    public class SubSetSumBin
     {
-        long wantedSum = long.Parse(Console.ReadLine());
-        long numberOfElements = long.Parse(Console.ReadLine());
-        long[] elements = new long[numberOfElements];
-        int counter = 0;
-        for (int i = 0; i < elements.Length; i++)
+        internal static void Main()
         {
-            elements[i] = long.Parse(Console.ReadLine());
-        }
-        int maxSubsets = (int)Math.Pow(2, numberOfElements) - 1;
-        for (int i = 1; i <= maxSubsets; i++)
-        {
-            long checkingSum = 0;
-            for (int j = 0; j <= numberOfElements; j++)
+            var wantedSum = long.Parse(Console.ReadLine());
+            var numberOfElements = long.Parse(Console.ReadLine());
+            var elements = new long[numberOfElements];
+            int counter = 0;
+
+            for (int i = 0; i < elements.Length; i++)
             {
-                int mask = 1 << j;
-                int nAndMask = i & mask;
-                int bit = nAndMask >> j;
-                if (bit == 1)
+                elements[i] = long.Parse(Console.ReadLine());
+            }
+
+            int maxSubsets = (int)Math.Pow(2, numberOfElements) - 1;
+            for (int i = 1; i <= maxSubsets; i++)
+            {
+                long checkingSum = 0;
+                for (int j = 0; j <= numberOfElements; j++)
                 {
-                    checkingSum = checkingSum + elements[j];
+                    int mask = 1 << j;
+                    int andMaskForN = i & mask;
+                    int bit = andMaskForN >> j;
+                    if (bit == 1)
+                    {
+                        checkingSum = checkingSum + elements[j];
+                    }
+                }
+
+                if (checkingSum == wantedSum)
+                {
+                    counter++;
                 }
             }
-            if (checkingSum == wantedSum)
-            {
-                counter++;
-            }
+
+            Console.WriteLine(counter);
         }
-        Console.WriteLine(counter);
     }
 }

@@ -1,42 +1,49 @@
-﻿using System;
-
-class ForestRoad
+﻿namespace _03.ForestRoad
 {
-    static void Main()
+    using System;
+
+    public class ForestRoad
     {
-        int n = int.Parse(Console.ReadLine());
-        int position = 0;
-        for (int i = 1; i <= n; i++)
+        internal static void Main()
         {
-            position++;
-            for (int j = 1; j <= n; j++ )
+            var n = int.Parse(Console.ReadLine());
+            var position = 0;
+
+            for (int i = 1; i <= n; i++)
             {
-                if ( position == j)
+                position++;
+                for (int j = 1; j <= n; j++)
                 {
-                    Console.Write("*");               
+                    if (position == j)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
                 }
-                else
-                {
-                    Console.Write(".");
-                }
+
+                Console.WriteLine();
             }
-            Console.WriteLine();
-        }
-        for (int i = 1; i < n; i++)
-        {
-            position--;
-            for (int j = 1; j <= n; j++)
+
+            for (int i = 1; i < n; i++)
             {
-                if (position == j)
+                position--;
+                for (int j = 1; j <= n; j++)
                 {
-                    Console.Write("*");
+                    if (position == j)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
                 }
-                else
-                {
-                    Console.Write(".");
-                }
+
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
     }
 }
