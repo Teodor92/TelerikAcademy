@@ -1,19 +1,23 @@
-﻿/* Write a program that reads 3 integer 
- * numbers from the console and prints their sum.
- */
-
-using System;
-
-class SimpleSum
+﻿namespace _01.SimpleSum
 {
-    static void Main(string[] args)
+    using System;
+
+    /// <summary>
+    /// Write a program that reads 3 integer 
+    /// numbers from the console and prints their sum.
+    /// </summary>
+    public class SimpleSum
     {
-        int sum = 0;
-        for (int i = 0; i < 3; i++)
+        internal static void Main(string[] args)
         {
-            int number = int.Parse(Console.ReadLine());
-            sum += number;
+            int sum = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+                sum += number;
+            }
+
+            Console.WriteLine(sum);
         }
-        Console.WriteLine(sum);
     }
 }
