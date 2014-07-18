@@ -1,0 +1,36 @@
+﻿<div
+    data-role="view"
+    data-transition="overlay:up"
+    data-layout="main-layout"
+    data-title="Add note"
+    id="add-note-view"
+    data-id="add-note-view"
+    data-init="app.addNote.init">
+
+    <div class="wrapper">
+        <p class="error" data-bind="text: errorMsg"></p>
+        <div>
+            <label for="author" class="add-label">
+                Author
+            </label>
+            <input type="text" id="author" class="add-input" data-bind="value: author" />
+        </div>
+
+        <div>
+            <label for="title" class="add-label">
+                Title
+            </label>
+            <input type="text" id="title" class="add-input" data-bind="value: title" />
+        </div>
+
+        <div>
+            <label for="content" class="add-label">
+                Content
+            </label>
+            <textarea rows="4" cols="30" id="content" class="add-input" data-bind="value: content">
+        </textarea>
+        </div>
+
+        <a data-role="button" data-bind="click: addNewNote">Save note</a>
+    </div>
+</div>

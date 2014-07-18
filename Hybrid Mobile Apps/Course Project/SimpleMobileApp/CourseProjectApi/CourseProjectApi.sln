@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCookBook.Data", "SimpleCookBook.Data\SimpleCookBook.Data.csproj", "{B25BBD37-52BF-4DFE-B9AB-A6B86C36B770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCookBook.Models", "SimpleCookBook.Models\SimpleCookBook.Models.csproj", "{A5D5EBC0-8574-402B-AE48-4F96448F3468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCookBook.Api", "SimpleCookBook.Api\SimpleCookBook.Api.csproj", "{53B09F68-C06E-44E2-9080-D639F999F62C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B25BBD37-52BF-4DFE-B9AB-A6B86C36B770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25BBD37-52BF-4DFE-B9AB-A6B86C36B770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25BBD37-52BF-4DFE-B9AB-A6B86C36B770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25BBD37-52BF-4DFE-B9AB-A6B86C36B770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D5EBC0-8574-402B-AE48-4F96448F3468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D5EBC0-8574-402B-AE48-4F96448F3468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D5EBC0-8574-402B-AE48-4F96448F3468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D5EBC0-8574-402B-AE48-4F96448F3468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B09F68-C06E-44E2-9080-D639F999F62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B09F68-C06E-44E2-9080-D639F999F62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B09F68-C06E-44E2-9080-D639F999F62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B09F68-C06E-44E2-9080-D639F999F62C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

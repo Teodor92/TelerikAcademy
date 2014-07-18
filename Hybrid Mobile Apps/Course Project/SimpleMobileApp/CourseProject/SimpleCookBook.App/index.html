@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/app.css" rel="stylesheet" />
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="scripts/libs/rsvp.min.js"></script>
+    <script src="scripts/libs/httpRequester.js"></script>
+    <script src="scripts/data/dataPersister.js"></script>
+    <script src="scripts/data/customApiDataPersister.js"></script>
+    <script src="scripts/data/googleApiDataPersister.js"></script>
+    <script src="scripts/app/recipes.js"></script>
+    <script src="scripts/app/recipeDetails.js"></script>
+    <script src="scripts/app/notes.js"></script>
+    <script src="scripts/app/noteDetails.js"></script>
+    <script src="scripts/app/addNote.js"></script>
+    <script src="scripts/app/home.js"></script>
+    <script src="scripts/app.js"></script>
+</head>
+<body>
+    <div
+        data-show="app.home.init"
+        data-title="Home"
+        data-role="view"
+        id="home-view"
+        data-id="home-view"
+        data-layout="main-layout">
+
+        <h3>Welcome back</h3>
+        <div class="wrapper home-page">
+            Network status:
+            <span id="network-status" data-bind="text: status"></span>
+        </div>
+    </div>
+
+    <div data-role="layout" id="main-layout" class="main-layout" data-id="main-layout">
+        <header data-role="header">
+            <nav data-role="navbar">
+                <span data-role="view-title"></span>
+            </nav>
+        </header>
+
+        <footer data-role="footer">
+            <div data-role="tabstrip">
+                <a href="#home-view" data-icon="home" >Home</a>
+                <a href="views/recipes-view.html#recipe-view" data-icon="search">Recipes</a>
+                <a href="views/notes-view.html#notes-view" data-icon="info">Notes</a>
+                <a href="views/add-note-view.html#add-note-view" data-icon="add">Add note</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

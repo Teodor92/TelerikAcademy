@@ -1,0 +1,77 @@
+﻿html, .main-layout {
+    color: #fff !important;
+}
+
+/* Home */
+
+.home-page {
+    margin: 0 10px;
+    font-size: 2em;
+    background: #7e7e7e;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+/* Recipes */
+
+.recipes a, .recipes input {
+    display: block;
+}
+
+.recipes input {
+    width: 100%;
+    font-size: 20px;
+}
+
+/*Recipe details*/
+#recipe-container img {
+    width: 100%;
+}
+
+/* Add note page */
+.wrapper {
+    padding: 10px;
+}
+
+#content {
+    text-align: left;
+}
+
+.add-label, .add-input {
+    display: block;
+}
+
+.add-input {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+/* All notes page */
+.note {
+    border-bottom: 1px solid black;
+}
+
+    .note span {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .note h3 {
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .note a {
+        display: block;
+    }
+
+/* Single note */
+.single-note span {
+    display: block;
+    margin-left: 10px;
+}
+
+.single-note p {
+    margin-left: 10px;
+}
+
+

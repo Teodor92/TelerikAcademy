@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}") = "SimpleCookBook.App", "SimpleCookBook.App\SimpleCookBook.App.iceproj", "{8E739293-002A-4DDF-9A19-AC17CE8B6FAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E739293-002A-4DDF-9A19-AC17CE8B6FAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E739293-002A-4DDF-9A19-AC17CE8B6FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E739293-002A-4DDF-9A19-AC17CE8B6FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E739293-002A-4DDF-9A19-AC17CE8B6FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

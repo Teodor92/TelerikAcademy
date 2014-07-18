@@ -1,0 +1,22 @@
+﻿<div
+    data-role="view"
+    data-transition="overlay:up"
+    data-layout="main-layout"
+    data-title="Note Details"
+    id="detailed-note-view"
+    data-id="detailed-note-view"
+    data-show="app.noteDetails.init">
+
+    <div id="note-container">
+    </div>
+
+    <script id="note-template" type="text/x-kendo-template">   
+        <article class="wrapper single-note">
+        <h3>Title: #:data.title#</h3> 
+        <span><strong>Author:<strong> #:data.author#</span> 
+        <span>#:data.postDate#</span> 
+        <p>#:data.content#</p> 
+        <span>#:data.postAddress#</span> 
+        <article>
+    </script>
+</div>

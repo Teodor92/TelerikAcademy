@@ -1,0 +1,31 @@
+﻿<div
+    data-role="view"
+    data-transition="overlay:up"
+    data-layout="main-layout"
+    data-title="Details"
+    data-show="app.recipeDetails.init"
+    id="detailed-recipe-view"
+    class="
+    data-id="detailed-recipe-view">
+
+    <div id="recipe-container" class="recipes">
+    </div>
+
+    <script id="recipe-detail-template" type="text/x-kendo-template">   
+        <h3>#:data.name#</h3>
+        #if(data.images[0].hostedLargeUrl) { #
+        <img src="#= data.images[0].hostedLargeUrl #" alt="Recipe Image"/>
+        #} else {#
+        <img src="styles/images/no_image.gif" alt="Recipe Image"/>
+        #}#
+        <p>Ingredients</p>
+        <ul>        
+        # for (var i = 0, len = data.ingredientLines.length; i < len; i++) { #
+          <li>#:data.ingredientLines[i]#</li>
+          # } #
+        <ul>
+        <p>Number of servings: #: data.numberOfServings#</p>
+        <p>Rating: #: data.rating#/5</p>
+        <p>Total time: #: data.totalTime #</p>
+    </script>
+</div>

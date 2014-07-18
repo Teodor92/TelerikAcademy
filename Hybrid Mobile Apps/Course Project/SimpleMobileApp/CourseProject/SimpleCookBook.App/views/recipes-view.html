@@ -1,0 +1,28 @@
+﻿<div
+    data-transition="overlay:up"
+    data-layout="main-layout"
+    data-role="view"
+    id="recipe-view"
+    data-title="Recipes"
+    data-id="recipe-view"
+    data-show="app.recipes.init">
+
+    <div class="recipes wrapper">
+        <input id="search-word" type="search" data-bind="value: keyword" />
+
+        <a id="search-button" data-bind="click: search" data-role="button">Search</a>
+
+        <div>
+            <h4>Search results</h4>
+            <ul data-role="listview" id="recipe-results">
+            </ul>
+        </div>
+    </div>
+
+
+    <script id="recipe-template" type="text/x-kendo-template">
+          # for (var i = 0, len = data.length; i < len; i++) { #
+          <li><img src="#:data[i].smallImageUrls[0]#" /><a data-role="button" href="views/recipe-details.html\\#detailed-recipe-view?rId=#= data[i].id #">#= data[i].recipeName #</a></li>
+          # } #
+    </script>
+</div>

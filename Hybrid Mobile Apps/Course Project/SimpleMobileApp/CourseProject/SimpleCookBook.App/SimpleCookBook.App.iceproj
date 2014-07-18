@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>8e739293-002a-4ddf-9a19-ac17ce8b6fab</ProjectGuid>
+    <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
+    <AppIdentifier>com.telerik.SimpleCookBookApp</AppIdentifier>
+    <ProjectName>SimpleCookBook.App</ProjectName>
+    <IsRunnable>true</IsRunnable>
+    <FrameworkVersion>3.0.0</FrameworkVersion>
+    <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY</AndroidPermissions>
+    <CorePlugins>org.apache.cordova.core.device;org.apache.cordova.core.AudioHandler;org.apache.cordova.core.battery-status;org.apache.cordova.core.camera;org.apache.cordova.core.console;org.apache.cordova.core.contacts;org.apache.cordova.core.device;org.apache.cordova.core.device-motion;org.apache.cordova.core.device-orientation;org.apache.cordova.core.dialogs;org.apache.cordova.core.file;org.apache.cordova.core.file-transfer;org.apache.cordova.core.geolocation;org.apache.cordova.core.globalization;org.apache.cordova.core.inappbrowser;org.apache.cordova.core.media-capture;org.apache.cordova.core.network-information;org.apache.cordova.core.splashscreen;org.apache.cordova.core.vibration</CorePlugins>
+    <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
+    <iOSStatusBarStyle>Default</iOSStatusBarStyle>
+    <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <iOSDisplayName />
+    <iOSDeviceFamily>1;2</iOSDeviceFamily>
+    <iOSBackgroundMode />
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\$(DevicePlatform)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\$(DevicePlatform)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="App_Resources\iOS\icon.png" />
+    <Resource Include="App_Resources\iOS\icon@2x.png" />
+    <Resource Include="App_Resources\iOS\icon-72.png" />
+    <Resource Include="App_Resources\iOS\icon-72@2x.png" />
+    <Resource Include="App_Resources\iOS\Icon-Small.png" />
+    <Resource Include="App_Resources\iOS\Icon-Small@2x.png" />
+    <Resource Include="App_Resources\iOS\Icon-Small-50.png" />
+    <Resource Include="App_Resources\iOS\Icon-Small-50@2x.png" />
+    <Resource Include="App_Resources\iOS\Default.png" />
+    <Resource Include="App_Resources\iOS\Default@2x.png" />
+    <Resource Include="App_Resources\iOS\Default-568h@2x.png" />
+    <Resource Include="App_Resources\iOS\Default-Portrait.png" />
+    <Resource Include="App_Resources\iOS\Default-Landscape.png" />
+    <Resource Include="App_Resources\iOS\Default-Portrait@2x.png" />
+    <Resource Include="App_Resources\iOS\Default-Landscape@2x.png" />
+    <Resource Include="App_Resources\iOS\icon-40.png" />
+    <Resource Include="App_Resources\iOS\icon-40@2x.png" />
+    <Resource Include="App_Resources\iOS\icon-60.png" />
+    <Resource Include="App_Resources\iOS\icon-60@2x.png" />
+    <Resource Include="App_Resources\iOS\icon-76.png" />
+    <Resource Include="App_Resources\iOS\icon-76@2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App_Resources\Android\drawable-hdpi\icon.png" />
+    <Resource Include="App_Resources\Android\drawable-mdpi\icon.png" />
+    <Resource Include="App_Resources\Android\drawable-ldpi\icon.png" />
+    <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="kendo\js\jquery.min.js" />
+    <Content Include="kendo\js\kendo.mobile.min.js" />
+    <Content Include="kendo\styles\default\editor.png" />
+    <Content Include="kendo\styles\default\imagebrowser.png" />
+    <Content Include="kendo\styles\default\loading-image.gif" />
+    <Content Include="kendo\styles\default\loading.gif" />
+    <Content Include="kendo\styles\default\loading_2x.gif" />
+    <Content Include="kendo\styles\default\slider-h.gif" />
+    <Content Include="kendo\styles\default\slider-v.gif" />
+    <Content Include="kendo\styles\default\sprite.png" />
+    <Content Include="kendo\styles\default\sprite_2x.png" />
+    <Content Include="kendo\styles\images\back.png" />
+    <Content Include="kendo\styles\images\KendoUI.ttf" />
+    <Content Include="kendo\styles\images\KendoUI.woff" />
+    <Content Include="kendo\styles\images\wp8_icons.png" />
+    <Content Include="kendo\styles\images\wp8_inverseicons.png" />
+    <Content Include="kendo\styles\kendo.common.min.css" />
+    <Content Include="kendo\styles\kendo.default.min.css" />
+    <Content Include="kendo\styles\kendo.mobile.all.min.css" />
+    <Content Include="kendo\styles\textures\brushed-metal.png" />
+    <Content Include="kendo\styles\textures\dots1.png" />
+    <Content Include="kendo\styles\textures\dots10.png" />
+    <Content Include="kendo\styles\textures\dots11.png" />
+    <Content Include="kendo\styles\textures\dots12.png" />
+    <Content Include="kendo\styles\textures\dots13.png" />
+    <Content Include="kendo\styles\textures\dots2.png" />
+    <Content Include="kendo\styles\textures\dots3.png" />
+    <Content Include="kendo\styles\textures\dots4.png" />
+    <Content Include="kendo\styles\textures\dots5.png" />
+    <Content Include="kendo\styles\textures\dots6.png" />
+    <Content Include="kendo\styles\textures\dots7.png" />
+    <Content Include="kendo\styles\textures\dots8.png" />
+    <Content Include="kendo\styles\textures\dots9.png" />
+    <Content Include="kendo\styles\textures\glass-lighter.png" />
+    <Content Include="kendo\styles\textures\glass.png" />
+    <Content Include="kendo\styles\textures\highlight.png" />
+    <Content Include="kendo\styles\textures\hsv-gradient.png" />
+    <Content Include="kendo\styles\textures\hue.png" />
+    <Content Include="kendo\styles\textures\leather1.png" />
+    <Content Include="kendo\styles\textures\leather2.png" />
+    <Content Include="kendo\styles\textures\noise.png" />
+    <Content Include="kendo\styles\textures\stripe1.png" />
+    <Content Include="kendo\styles\textures\stripe2.png" />
+    <Content Include="kendo\styles\textures\stripe3.png" />
+    <Content Include="kendo\styles\textures\stripe4.png" />
+    <Content Include="kendo\styles\textures\stripe5.png" />
+    <Content Include="kendo\styles\textures\stripe6.png" />
+    <Content Include="kendo\styles\textures\transparency.png" />
+    <Content Include="kendo\styles\textures\transtexture.png" />
+    <Content Include="scripts\app.js" />
+    <Content Include="scripts\app\addNote.js" />
+    <Content Include="scripts\app\home.js" />
+    <Content Include="scripts\app\noteDetails.js" />
+    <Content Include="scripts\app\notes.js" />
+    <Content Include="scripts\app\recipeDetails.js" />
+    <Content Include="scripts\app\recipes.js" />
+    <Content Include="scripts\data\customApiDataPersister.js" />
+    <Content Include="scripts\data\dataPersister.js" />
+    <Content Include="scripts\data\googleApiDataPersister.js" />
+    <Content Include="scripts\libs\httpRequester.js" />
+    <Content Include="scripts\libs\rsvp.min.js" />
+    <Content Include="styles\app.css" />
+    <Content Include="styles\images\background.jpg" />
+    <Content Include="styles\images\icenium.png" />
+    <Content Include="styles\images\icenium2x.png" />
+    <Content Include="styles\images\location.png" />
+    <Content Include="styles\images\location2x.png" />
+    <Content Include="styles\images\location_active.png" />
+    <Content Include="styles\images\location_active2x.png" />
+    <Content Include="styles\images\logo.png" />
+    <Content Include="styles\images\logo2x.png" />
+    <Content Include="styles\images\no_image.gif" />
+    <Content Include="styles\images\search.png" />
+    <Content Include="styles\images\search2x.png" />
+    <Content Include="styles\images\search_active.png" />
+    <Content Include="styles\images\search_active2x.png" />
+    <Content Include="styles\images\sprite-weather.png" />
+    <Content Include="styles\images\sprite-weather2x.png" />
+    <Content Include="styles\main.css" />
+    <Content Include="cordova.ios.js">
+      <Platform>iOS</Platform>
+      <TargetName>cordova.js</TargetName>
+    </Content>
+    <Content Include="cordova.android.js">
+      <Platform>Android</Platform>
+      <TargetName>cordova.js</TargetName>
+    </Content>
+    <Content Include="views\add-note-view.html" />
+    <Content Include="views\note-details-view.html" />
+    <Content Include="views\notes-view.html" />
+    <Content Include="views\recipe-details.html" />
+    <Content Include="views\recipes-view.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Resources\" />
+    <Folder Include="App_Resources\Android\" />
+    <Folder Include="App_Resources\Android\drawable-hdpi\" />
+    <Folder Include="App_Resources\Android\drawable-ldpi\" />
+    <Folder Include="App_Resources\Android\drawable-mdpi\" />
+    <Folder Include="App_Resources\Android\drawable-nodpi\" />
+    <Folder Include="App_Resources\iOS\" />
+    <Folder Include="kendo\" />
+    <Folder Include="kendo\js\" />
+    <Folder Include="kendo\styles\" />
+    <Folder Include="kendo\styles\default\" />
+    <Folder Include="kendo\styles\images\" />
+    <Folder Include="kendo\styles\textures\" />
+    <Folder Include="scripts\app\" />
+    <Folder Include="scripts\libs\" />
+    <Folder Include="scripts\data\" />
+    <Folder Include="view-models\" />
+    <Folder Include="views\" />
+    <Folder Include="Plugins\" />
+    <Folder Include="scripts\" />
+    <Folder Include="styles\" />
+    <Folder Include="styles\images\" />
+  </ItemGroup>
+  <Import Project="$(IceniumTargets)Build.targets" />
+  <!--
+	TODO: Uncomment this code if you need to customize the build process.
+	<Target Name="BeforeBuild">
+		<Message Text="TODO: Implement BeforeBuild" Importance="high" />
+	</Target>
+
+	<Target Name="AfterBuild">
+		<Message Text="TODO: Implement AfterBuild" Importance="high" />
+	</Target>
+	-->
+</Project>
