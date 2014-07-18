@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreClasses", "StoreClasses\StoreClasses.csproj", "{38E78C39-5713-45C3-A262-2D5D95F8593E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProgram", "TestProgram\TestProgram.csproj", "{D40B429B-9282-4362-B786-7FD36C9561BF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://scratchy.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StoreClasses\\StoreClasses.csproj
+		SccProjectName1 = StoreClasses
+		SccLocalPath1 = StoreClasses
+		SccProjectUniqueName2 = TestProgram\\TestProgram.csproj
+		SccProjectName2 = TestProgram
+		SccLocalPath2 = TestProgram
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38E78C39-5713-45C3-A262-2D5D95F8593E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E78C39-5713-45C3-A262-2D5D95F8593E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E78C39-5713-45C3-A262-2D5D95F8593E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E78C39-5713-45C3-A262-2D5D95F8593E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D40B429B-9282-4362-B786-7FD36C9561BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D40B429B-9282-4362-B786-7FD36C9561BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D40B429B-9282-4362-B786-7FD36C9561BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D40B429B-9282-4362-B786-7FD36C9561BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
