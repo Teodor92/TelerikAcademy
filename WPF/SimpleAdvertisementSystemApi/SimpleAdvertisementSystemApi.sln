@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAdvertisementSystem.Api", "SimpleAdvertisementSystem.Api\SimpleAdvertisementSystem.Api.csproj", "{BD45A403-A2A8-43D0-9CD2-AEC496576ADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAdvertisementSystem.Model", "SimpleAdvertisementSystem.Model\SimpleAdvertisementSystem.Model.csproj", "{C68ED52A-C560-4BE7-B2EF-A59B28BB5188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleAdvertisementSystem.Data", "SimpleAdvertisementSystem.Data\SimpleAdvertisementSystem.Data.csproj", "{AC7F84D3-1F61-401A-B089-ED6A52429441}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD45A403-A2A8-43D0-9CD2-AEC496576ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD45A403-A2A8-43D0-9CD2-AEC496576ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD45A403-A2A8-43D0-9CD2-AEC496576ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD45A403-A2A8-43D0-9CD2-AEC496576ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68ED52A-C560-4BE7-B2EF-A59B28BB5188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68ED52A-C560-4BE7-B2EF-A59B28BB5188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68ED52A-C560-4BE7-B2EF-A59B28BB5188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68ED52A-C560-4BE7-B2EF-A59B28BB5188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC7F84D3-1F61-401A-B089-ED6A52429441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7F84D3-1F61-401A-B089-ED6A52429441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7F84D3-1F61-401A-B089-ED6A52429441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7F84D3-1F61-401A-B089-ED6A52429441}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
