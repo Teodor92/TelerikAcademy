@@ -1,17 +1,21 @@
-﻿// Declare  two integer variables and assign them with 5 and 10 and after that exchange their values.
-
-using System;
-
-class ChangeingValues
+﻿namespace _11.ChangeingValues
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// Declare  two integer variables and assign them with 5 and 10 and after that exchange their values.
+    /// </summary>
+    public class ChangeingValues
     {
-        int a = 5;
-        int b = 10;
-        int c;
-        c = a;
-        a = b;
-        b = c;
-        Console.WriteLine("The value of \" a \" is {0} and the value of \" b \" is {1}", a, b);
+        internal static void Main()
+        {
+            int firstValue = 5;
+            int secondValue = 10;
+
+            int oldValue = firstValue;
+            firstValue = secondValue;
+            secondValue = oldValue;
+            Console.WriteLine("The value of \" a \" is {0} and the value of \" b \" is {1}", firstValue, secondValue);
+        }
     }
 }

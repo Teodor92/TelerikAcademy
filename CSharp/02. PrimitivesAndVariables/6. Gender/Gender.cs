@@ -1,13 +1,14 @@
-﻿/* Declare a boolean variable called isFemale 
- * and assign an appropriate value corresponding to your gender.
- */
-
-using System;
-
-class Gender
+﻿namespace _6.Gender
 {
-    static void Main()
+    /// <summary>
+    /// Declare a boolean variable called isFemale 
+    /// and assign an appropriate value corresponding to your gender.
+    /// </summary>
+    public class Gender
     {
-        bool isFemale = false;
+        internal static void Main()
+        {
+            bool isFemale = false;
+        }
     }
 }

@@ -1,13 +1,14 @@
-﻿//Declare an integer variable and assign it with the value 254 in hexadecimal 
-//format. Use Windows Calculator to find its hexadecimal representation.
-
-
-using System;
-
-class HexValue
+﻿namespace _4.HexValue
 {
-    static void Main()
+    /// <summary>
+    /// Declare an integer variable and assign it with the value 254 in hexadecimal 
+    /// format. Use Windows Calculator to find its hexadecimal representation.
+    /// </summary>
+    public class HexValue
     {
-        int hexValue = 0xFE;
+        internal static void Main()
+        {
+            int hexValue = 0xFE;
+        }
     }
 }

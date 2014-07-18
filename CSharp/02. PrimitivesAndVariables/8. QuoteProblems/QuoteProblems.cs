@@ -1,15 +1,18 @@
-﻿// Declare two string variables and assign them with following value:
-// The "use" of quotations causes difficulties.
-//	Do the above in two different ways: with and without using quoted strings.
-
-
-using System;
-
-class QuoteProblems
+﻿namespace _8.QuoteProblems
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// Declare two string variables and assign them with following value:
+    /// The "use" of quotations causes difficulties.
+    /// Do the above in two different ways: with and without using quoted strings.
+    /// </summary>
+    public class QuoteProblems
     {
-        Console.WriteLine("The \"use\" of quotations causes difficulties.");
-        Console.WriteLine(@"The ""use"" of quotations causes difficulties.");
+        internal static void Main()
+        {
+            Console.WriteLine("The \"use\" of quotations causes difficulties.");
+            Console.WriteLine(@"The ""use"" of quotations causes difficulties.");
+        }
     }
 }
