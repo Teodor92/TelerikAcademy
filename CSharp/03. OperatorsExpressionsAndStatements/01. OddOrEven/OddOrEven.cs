@@ -1,31 +1,39 @@
-﻿/*
- * Write an expression that checks if given integer is odd or even.
- */
-
-using System;
-
-class OddOrEven
+﻿namespace _01.OddOrEven
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// Write an expression that checks if given integer is odd or even.
+    /// </summary>
+    public class OddOrEven
     {
-        int number;
-        Console.WriteLine("Enter an intiger nummber:");
-        bool ValidNumber = int.TryParse(Console.ReadLine(), out number);
-        if (ValidNumber == true)
+        internal static void Main()
         {
-            if (number % 2 == 0)
+            while (true)
             {
-                Console.WriteLine("The number is even!");
+                int number;
+                Console.WriteLine("Enter an intiger nummber:");
+                bool validNumber = int.TryParse(Console.ReadLine(), out number);
+
+                if (validNumber)
+                {
+                    if (number % 2 == 0)
+                    {
+                        Console.WriteLine("The number is even!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The number is odd!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Wrong Number!");
+                    continue;
+                }
+
+                break;
             }
-            else
-            {
-                Console.WriteLine("The number is odd!");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Wrong Number!");
-            Main();
         }
     }
 }

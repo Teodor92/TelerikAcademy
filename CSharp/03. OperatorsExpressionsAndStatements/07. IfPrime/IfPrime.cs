@@ -1,29 +1,33 @@
-﻿/* Write an expression that checks if given positive 
- * integer number n (n ≤ 100) is prime. E.g. 37 is prime.
- */
-
-using System;
-
-class IfPrime
+﻿namespace _07.IfPrime
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// Write an expression that checks if given positive 
+    /// integer number n (n ≤ 100) is prime. E.g. 37 is prime.
+    /// </summary>
+    public class IfPrime
     {
-        int number = 13;
-        int counter = 0;
-        for (int i = 1; i <= number; i++)
+        internal static void Main()
         {
-            if (number % i == 0)
+            int number = 13;
+            int counter = 0;
+            for (int i = 1; i <= number; i++)
             {
-                counter++;
+                if (number % i == 0)
+                {
+                    counter++;
+                }
             }
-        }
-        if (counter == 2)
-        {
-            Console.WriteLine("The number is prime");
-        }
-        else
-        {
-            Console.WriteLine("The number is NOT prime");
+
+            if (counter == 2)
+            {
+                Console.WriteLine("The number is prime");
+            }
+            else
+            {
+                Console.WriteLine("The number is NOT prime");
+            }
         }
     }
 }

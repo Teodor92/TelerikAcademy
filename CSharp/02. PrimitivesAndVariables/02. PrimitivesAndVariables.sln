@@ -1,23 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. SimpleDeclaration", "1. SimpleDeclaration\1. SimpleDeclaration.csproj", "{65E2F7FD-D1A0-40A9-BA8D-435914341CBC}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. SimpleDeclaration", "1. SimpleDeclaration\01. SimpleDeclaration.csproj", "{65E2F7FD-D1A0-40A9-BA8D-435914341CBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. DoublesAndFloats", "2. DoublesAndFloats\2. DoublesAndFloats.csproj", "{5A87EFB6-9AB4-4F44-9F89-0A25896CDEFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. DoublesAndFloats", "2. DoublesAndFloats\02. DoublesAndFloats.csproj", "{5A87EFB6-9AB4-4F44-9F89-0A25896CDEFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. FloatPointComparison", "3. FloatPointComparison\3. FloatPointComparison.csproj", "{EE0939CA-8D19-4E67-A850-1516AA421BD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. FloatPointComparison", "3. FloatPointComparison\03. FloatPointComparison.csproj", "{EE0939CA-8D19-4E67-A850-1516AA421BD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. HexValue", "4. HexValue\4. HexValue.csproj", "{21594CFF-2FD2-416A-BB2B-12E438773164}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. HexValue", "4. HexValue\04. HexValue.csproj", "{21594CFF-2FD2-416A-BB2B-12E438773164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. UniCodeSimbyl", "5. UniCodeSimbyl\5. UniCodeSimbyl.csproj", "{8FB88FFD-E9C3-4ABF-8C5F-AF1841112211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. UniCodeSimbyl", "5. UniCodeSimbyl\05. UniCodeSimbyl.csproj", "{8FB88FFD-E9C3-4ABF-8C5F-AF1841112211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6. Gender", "6. Gender\6. Gender.csproj", "{1531148C-999C-4FEC-90BF-28B6090DF037}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Gender", "6. Gender\06. Gender.csproj", "{1531148C-999C-4FEC-90BF-28B6090DF037}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7. ConcatenationAndCasting", "7. ConcatenationAndCasting\7. ConcatenationAndCasting.csproj", "{0BB8AEFF-FC84-4567-8C29-F39FB0C2BDB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. ConcatenationAndCasting", "7. ConcatenationAndCasting\07. ConcatenationAndCasting.csproj", "{0BB8AEFF-FC84-4567-8C29-F39FB0C2BDB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8. QuoteProblems", "8. QuoteProblems\8. QuoteProblems.csproj", "{49D78E02-5BEC-41A9-A17E-6C72C5F0E2F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. QuoteProblems", "8. QuoteProblems\08. QuoteProblems.csproj", "{49D78E02-5BEC-41A9-A17E-6C72C5F0E2F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9. CopyRight", "9. CopyRight\9. CopyRight.csproj", "{8C4646B0-7747-4775-9105-C2684E5A77C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. CopyRight", "9. CopyRight\09. CopyRight.csproj", "{8C4646B0-7747-4775-9105-C2684E5A77C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10. MarketingFirmInfo", "10. MarketingFirmInfo\10. MarketingFirmInfo.csproj", "{74D8F1C1-3BC1-47E9-9EB5-C0ACEB453BA2}"
 EndProject
