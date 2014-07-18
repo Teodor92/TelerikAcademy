@@ -7,7 +7,7 @@
     /// </summary>
     public class PrintFirstAndLast
     {
-        static void Main()
+        internal static void Main()
         {
             Console.WriteLine("Teodor Kurtev");
         }

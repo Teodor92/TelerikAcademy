@@ -7,7 +7,7 @@
     /// </summary>
     public class HelloCSharp
     {
-        public static void Main()
+        internal static void Main()
         {
             Console.WriteLine("Hello, C#!");
         }

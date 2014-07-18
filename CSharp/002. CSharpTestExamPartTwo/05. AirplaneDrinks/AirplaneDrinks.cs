@@ -1,84 +1,57 @@
-﻿using System;
-
-class Flask
+﻿namespace _05.AirplaneDrinks
 {
-    public int amountOfDrink { get; set; }
-    public int typeOfDrink { get; set; }
-}
+    using System;
 
-class AirplaneDrinks
-{
-    static void Main()
+    public class AirplaneDrinks
     {
-        Flask newFlask = new Flask();
-        int numberOfPassengers = int.Parse(Console.ReadLine());
-        int[] passengers = new int[numberOfPassengers - 1];
-
-        int numberOfCoffie = int.Parse(Console.ReadLine());
-
-        for (int i = 0; i < numberOfCoffie; i++)
+        internal static void Main()
         {
-            int coffie = int.Parse(Console.ReadLine());
-            passengers[coffie - 1] = 1;
-        }
+            var newFlask = new Flask();
+            var numberOfPassengers = int.Parse(Console.ReadLine());
+            var passengers = new int[numberOfPassengers - 1];
+            var numberOfCoffie = int.Parse(Console.ReadLine());
 
-        int totalTime = 0;
-        if (passengers[0] == 1)
-        {
-            newFlask.typeOfDrink = 1;
-            newFlask.amountOfDrink = 7;
-            totalTime += 47;
-        }
-        else
-        {
-            newFlask.typeOfDrink = 0;
-            newFlask.amountOfDrink = 7;
-            totalTime += 47;
-        }
-
-        for (int tea = 0; tea < 2; tea++)
-        {
-            for (int i = 0; i < passengers.Length; i++)
+            for (int i = 0; i < numberOfCoffie; i++)
             {
-                if (newFlask.amountOfDrink == 0)
-                {
-                    totalTime += (i + 1) * 2;
-                    totalTime += 47;
-                }
+                int coffie = int.Parse(Console.ReadLine());
+                passengers[coffie - 1] = 1;
+            }
 
-                totalTime++;
+            int totalTime = 0;
+            if (passengers[0] == 1)
+            {
+                newFlask.TypeOfDrink = 1;
+                newFlask.AmountOfDrink = 7;
+                totalTime += 47;
+            }
+            else
+            {
+                newFlask.TypeOfDrink = 0;
+                newFlask.AmountOfDrink = 7;
+                totalTime += 47;
+            }
 
-                if (newFlask.typeOfDrink == passengers[i])
+            for (int tea = 0; tea < 2; tea++)
+            {
+                for (int i = 0; i < passengers.Length; i++)
                 {
-                    totalTime += 4;
-                    newFlask.amountOfDrink--;
+                    if (newFlask.AmountOfDrink == 0)
+                    {
+                        totalTime += (i + 1) * 2;
+                        totalTime += 47;
+                    }
+
+                    totalTime++;
+
+                    if (newFlask.TypeOfDrink == passengers[i])
+                    {
+                        totalTime += 4;
+                        newFlask.AmountOfDrink--;
+                    }
                 }
             }
-        }
-        //for (int i = 0; i < passengers.Length; i++)
-        //{
-        //    if (newFlask.amountOfDrink == 0)
-        //    {
-        //        totalTime += (i + 1) * 2;
-        //        totalTime += 47;
-        //    }
-        //    totalTime++;
-        //    if (passengers[i] == newFlask.typeOfDrink)
-        //    {
-        //        newFlask.amountOfDrink--;
-        //        totalTime += 4;
-        //    }
-        //    else
-        //    {
-        //        totalTime += (i + 1) * 2;
-        //        totalTime += 47;
-        //        newFlask.typeOfDrink = passengers[i];
-        //        newFlask.amountOfDrink = 7;
-        //        totalTime += 4;
-        //        newFlask.amountOfDrink--;
-        //    }
-        //}
 
-        Console.WriteLine(totalTime);
+            Console.WriteLine(totalTime);
+        }
     }
 }

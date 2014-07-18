@@ -7,7 +7,7 @@
     /// </summary>
     public class PrintNumbers
     {
-        public static void Main()
+        internal static void Main()
         {
             Console.WriteLine(1);
             Console.WriteLine(101);

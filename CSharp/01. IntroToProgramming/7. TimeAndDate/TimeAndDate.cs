@@ -7,7 +7,7 @@
     /// </summary>
     public class TimeAndDate
     {
-        public static void Main()
+        internal static void Main()
         {
             Console.WriteLine("The date and time are:");
             Console.WriteLine(DateTime.Now);

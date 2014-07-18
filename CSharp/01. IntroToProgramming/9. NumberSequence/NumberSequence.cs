@@ -7,7 +7,7 @@
     /// </summary>
     public class NumebrSequenceTwo
     {
-        public static void Main()
+        internal static void Main()
         {
             for (int i = 2; i < 12; i++)
             {

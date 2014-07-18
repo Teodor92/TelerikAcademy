@@ -47,7 +47,7 @@
             }
 
             // printing
-            Console.WriteLine("{0}%",dmgSum);
+            Console.WriteLine("{0}%", dmgSum);
         }
     }
 }

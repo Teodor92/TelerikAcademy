@@ -1,94 +1,96 @@
-﻿using System;
-using System.IO;
-using System.Text;
-
-
-// CSharpCleanCode - 40/100
-class CSharpCleanCode
+﻿// CSharpCleanCode - 40/100
+namespace _03.CSharpCleanCode
 {
-    static void Main()
+    using System;
+    using System.IO;
+    using System.Text;
+
+    public class CSharpCleanCode
     {
-        // input 
-        int numOfLines = int.Parse(Console.ReadLine());
-
-        // flags
-        bool inString = false;
-        bool multilineCom = false;
-        bool multiLineString = false;
-
-        // main logic
-
-
-        StringBuilder endText = new StringBuilder();
-
-        for (int i = 0; i < numOfLines; i++)
+        internal static void Main()
         {
-            string line = Console.ReadLine();
-            int currentLineLen = line.Length;
+            // input 
+            int numOfLines = int.Parse(Console.ReadLine());
 
-            for (int j = 0; j < currentLineLen; j++)
+            // flags
+            bool inString = false;
+            bool multilineCom = false;
+            bool multiLineString = false;
+
+            // main logic
+            var endText = new StringBuilder();
+
+            for (int i = 0; i < numOfLines; i++)
             {
-                if (line[j] == '"' && j != 0 && line[j - 1] != '\\' && multiLineString == false)
+                string line = Console.ReadLine();
+                int currentLineLen = line.Length;
+
+                for (int j = 0; j < currentLineLen; j++)
                 {
-                    inString = !inString;
-                }
-                if (line[j] == '@' && j + 1 < currentLineLen && line[j + 1] != '"')
-                {
-                    multiLineString = true;
-                }
-                if (line[j] == '"' && j != 0 && line[j - 1] != '\\' && multiLineString == true)
-                {
-                    multiLineString = false;
-                }
-                if (inString == false && multiLineString == false)
-                {
-                    if (line[j] == '/' && j + 1 < currentLineLen && line[j + 1] == '/' && multilineCom == false)
+                    if (line[j] == '"' && j != 0 && line[j - 1] != '\\' && multiLineString == false)
                     {
-                        if (j + 2 >= line.Length || line[j + 2] != '/')
+                        inString = !inString;
+                    }
+
+                    if (line[j] == '@' && j + 1 < currentLineLen && line[j + 1] != '"')
+                    {
+                        multiLineString = true;
+                    }
+
+                    if (line[j] == '"' && j != 0 && line[j - 1] != '\\' && multiLineString == true)
+                    {
+                        multiLineString = false;
+                    }
+
+                    if (inString == false && multiLineString == false)
+                    {
+                        if (line[j] == '/' && j + 1 < currentLineLen && line[j + 1] == '/' && multilineCom == false)
                         {
-                            break;
-                        }
-                        else
-                        {
+                            if (j + 2 >= line.Length || line[j + 2] != '/')
+                            {
+                                break;
+                            }
+
                             // Inline documentation (///)
                             endText.Append("///");
                             j += 2;
                             continue;
                         }
+
+                        if (line[j] == '/' && j + 1 < currentLineLen && line[j + 1] == '*')
+                        {
+                            multilineCom = true;
+                            continue;
+                        }
+
+                        if (line[j] == '*' && j + 1 < currentLineLen && line[j + 1] == '/')
+                        {
+                            multilineCom = false;
+                            j++;
+                            continue;
+                        }
                     }
-                    if (line[j] == '/' && j + 1 < currentLineLen && line[j + 1] == '*')
+
+                    if (multilineCom == false)
                     {
-                        multilineCom = true;
-                        continue;
-                    }
-                    if (line[j] == '*' && j + 1 < currentLineLen && line[j + 1] == '/')
-                    {
-                        multilineCom = false;
-                        j++;
-                        continue;
+                        endText.Append(line[j]);
                     }
                 }
 
                 if (multilineCom == false)
                 {
-                    endText.Append(line[j]);
+                    endText.AppendLine();
                 }
             }
 
-            if (multilineCom == false)
+            var sr = new StringReader(endText.ToString());
+            string lineToPrint = null;
+            while ((lineToPrint = sr.ReadLine()) != null)
             {
-                endText.AppendLine();
-            }
-        }
-
-
-        StringReader sr = new StringReader(endText.ToString());
-        string lineToPrint = null;
-        while ((lineToPrint = sr.ReadLine()) != null)
-        {
-            if (!string.IsNullOrWhiteSpace(lineToPrint))
-            {
-                Console.WriteLine(lineToPrint);
+                if (!string.IsNullOrWhiteSpace(lineToPrint))
+                {
+                    Console.WriteLine(lineToPrint);
+                }
             }
         }
     }

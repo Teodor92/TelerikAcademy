@@ -7,7 +7,7 @@
     /// </summary>
     public class Square
     {
-        public static void Main()
+        internal static void Main()
         {
             Console.WriteLine("The square of 12345 is:");
             Console.WriteLine(Math.Pow(12345, 2));

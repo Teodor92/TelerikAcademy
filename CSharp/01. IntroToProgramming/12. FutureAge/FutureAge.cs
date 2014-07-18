@@ -7,7 +7,7 @@
     /// </summary>
     public class FutureAge
     {
-        public static void Main()
+        internal static void Main()
         {
             int yearBorn;
             while (true)

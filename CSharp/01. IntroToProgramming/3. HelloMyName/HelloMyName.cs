@@ -7,7 +7,7 @@
     /// </summary>
     public class HelloMyName
     {
-        public static void Main()
+        internal static void Main()
         {
             Console.WriteLine("Hello, Teodor!");
         }

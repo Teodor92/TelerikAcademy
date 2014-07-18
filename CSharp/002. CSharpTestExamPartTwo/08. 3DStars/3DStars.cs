@@ -1,78 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-class Stars3D
+﻿namespace _08._3DStars
 {
-    static int width, height, depth;
-    static int numberOfStars;
-    static Dictionary<char, int> starTypes = new Dictionary<char, int>();
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-    static char[, ,] ReadInput()
+    public class Stars3D
     {
-        string[] dimentions = Console.ReadLine().Split();
-        width = int.Parse(dimentions[0]);
-        height = int.Parse(dimentions[1]);
-        depth = int.Parse(dimentions[2]);
-        char[, ,] cube = new char[width, height, depth];
-        for (int h = 0; h < height; h++)
+        private static readonly Dictionary<char, int> StarTypes = new Dictionary<char, int>();
+
+        private static int width;
+        private static int height;
+        private static int depth;
+        private static int numberOfStars;
+
+        internal static void Main()
         {
-            string[] line = Console.ReadLine().Split();
-            for (int d = 0; d < depth; d++)
+            char[,,] cube = ReadInput();
+
+            for (int w = 1; w < width - 1; w++)
             {
-                for (int w = 0; w < width; w++)
+                for (int h = 1; h < height - 1; h++)
                 {
-                    cube[w, h, d] = line[d][w];
+                    for (int d = 1; d < depth - 1; d++)
+                    {
+                        StarFinder(cube, w, h, d);
+                    }
                 }
             }
-        }
 
-        return cube;
-    }
-
-    static void StarFinder(char[, ,] cube, int w, int h, int d)
-    {
-        bool isStar = true;
-        char curChar = cube[w, h, d];
-
-        isStar = (cube[w + 1, h, d] == curChar) && (cube[w - 1, h, d] == curChar) &&
-            (cube[w, h + 1, d] == curChar) && (cube[w, h - 1, d] == curChar) &&
-            (cube[w, h, d + 1] == curChar) && (cube[w, h, d - 1] == curChar);
-
-        if (isStar)
-        {
-            numberOfStars++;
-            if (starTypes.ContainsKey(curChar))
+            Console.WriteLine(numberOfStars);
+            var sortedStars = StarTypes.OrderBy(x => x.Key);
+            foreach (var star in sortedStars)
             {
-                starTypes[curChar]++;
-            }
-            else
-            {
-                starTypes.Add(curChar, 1);
+                Console.WriteLine("{0} {1}", star.Key, star.Value);
             }
         }
-    }
 
-    static void Main()
-    {
-        char[, ,] cube = ReadInput();
-
-        for (int w = 1; w < width - 1; w++)
+        private static char[,,] ReadInput()
         {
-            for (int h = 1; h < height - 1; h++)
+            string[] dimentions = Console.ReadLine().Split();
+            width = int.Parse(dimentions[0]);
+            height = int.Parse(dimentions[1]);
+            depth = int.Parse(dimentions[2]);
+            var cube = new char[width, height, depth];
+            for (int h = 0; h < height; h++)
             {
-                for (int d = 1; d < depth - 1; d++)
+                string[] line = Console.ReadLine().Split();
+                for (int d = 0; d < depth; d++)
                 {
-                    StarFinder(cube, w, h, d);
+                    for (int w = 0; w < width; w++)
+                    {
+                        cube[w, h, d] = line[d][w];
+                    }
                 }
             }
+
+            return cube;
         }
 
-        Console.WriteLine(numberOfStars);
-        var sortedStars = starTypes.OrderBy(x => x.Key);
-        foreach (var star in sortedStars)
+        private static void StarFinder(char[,,] cube, int w, int h, int d)
         {
-            Console.WriteLine("{0} {1}", star.Key, star.Value);
+            bool isStar = true;
+            char curChar = cube[w, h, d];
+
+            isStar = (cube[w + 1, h, d] == curChar) && (cube[w - 1, h, d] == curChar) &&
+                     (cube[w, h + 1, d] == curChar) && (cube[w, h - 1, d] == curChar) &&
+                     (cube[w, h, d + 1] == curChar) && (cube[w, h, d - 1] == curChar);
+
+            if (isStar)
+            {
+                numberOfStars++;
+                if (StarTypes.ContainsKey(curChar))
+                {
+                    StarTypes[curChar]++;
+                }
+                else
+                {
+                    StarTypes.Add(curChar, 1);
+                }
+            }
         }
     }
 }

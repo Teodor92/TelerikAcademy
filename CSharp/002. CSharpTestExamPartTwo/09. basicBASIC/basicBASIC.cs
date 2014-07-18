@@ -1,42 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-
-class basicBASIC
+﻿namespace _09.BasicBASIC
 {
-    static Dictionary<string, string> lines = new Dictionary<string, string>();
+    using System;
+    using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
-    static void ReadInput()
+    public class BasicBasic
     {
-        while (true)
+        private static readonly Dictionary<string, string> Lines = new Dictionary<string, string>();
+
+        internal static void Main()
         {
-            string input = Console.ReadLine();
-
-            if (input == "RUN")
+            ReadCube();
+            foreach (var item in Lines)
             {
-                break;
-            }
-            else
-            {
-                string lineNum = Regex.Match(input, @"^\d+").ToString();
-                input = Regex.Replace(input, @"^\d+",string.Empty).ToString();
-                input = input.Replace(" ", string.Empty);
-
-                if (!lines.ContainsKey(lineNum))
-                {
-                    lines.Add(lineNum, input);
-                }
+                Console.WriteLine(item);
             }
         }
-    }
 
-    static void Main()
-    {
-        ReadInput();
-        foreach (var item in lines)
+        private static void ReadCube()
         {
-            Console.WriteLine(item);
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (input == "RUN")
+                {
+                    break;
+                }
+
+                string lineNum = Regex.Match(input, @"^\d+").ToString();
+                input = Regex.Replace(input, @"^\d+", string.Empty);
+                input = input.Replace(" ", string.Empty);
+
+                if (!Lines.ContainsKey(lineNum))
+                {
+                    Lines.Add(lineNum, input);
+                }
+            }
         }
     }
 }
