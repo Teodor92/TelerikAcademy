@@ -1,60 +1,21 @@
-﻿using System;
-using System.Linq;
-
-public class Call
+﻿namespace _11.PriceCalc
 {
-    private DateTime dateAndTime;
-    private string dialedNumber;
-    private int duration;
+    using System;
 
-    // constructors
-
-
-
-    // properties
-
-    public Call(DateTime dateAndTime, string dialedNumber, int duration)
+    public class Call
     {
-        this.dateAndTime = dateAndTime;
-        this.dialedNumber = dialedNumber;
-        this.duration = duration;
-    }
-
-    public DateTime DateAndTime
-    {
-        get
+        // properties
+        public Call(DateTime dateAndTime, string dialedNumber, int duration)
         {
-            return this.dateAndTime;
+            this.DateAndTime = dateAndTime;
+            this.DialedNumber = dialedNumber;
+            this.Duration = duration;
         }
 
-        set 
-        {
-            this.dateAndTime = value;
-        }
-    }
+        public DateTime DateAndTime { get; set; }
 
-    public string DialedNumber
-    {
-        get 
-        {
-            return this.dialedNumber;
-        }
+        public string DialedNumber { get; set; }
 
-        set
-        {
-            this.dialedNumber = value;
-        }
-    }
-
-    public int Duration
-    {
-        get
-        {
-            return this.duration;
-        }
-        set
-        {
-            this.duration = value;
-        }
+        public int Duration { get; set; }
     }
 }
