@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. IsGreater", "01. IsGreater\01. IsGreater.csproj", "{438D62EB-1C25-4762-A556-357F2894A8E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. PositiveOrNegative", "02. PositiveOrNegative\02. PositiveOrNegative.csproj", "{07A24A40-DF03-411E-ADF9-3BD98B2FAB04}"
