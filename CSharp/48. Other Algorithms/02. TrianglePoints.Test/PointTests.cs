@@ -1,7 +1,7 @@
-﻿namespace TrianglePoints.Test
+﻿namespace _02.TrianglePoints.Test
 {
-    using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     using TrianglePoints;
 
     [TestClass]
@@ -10,7 +10,7 @@
         [TestMethod]
         public void Point_InitTest()
         {
-            Point myPoint = new Point(2, 3);
+            var myPoint = new Point(2, 3);
             Assert.AreEqual(myPoint, new Point(2, 3));
         }
     }

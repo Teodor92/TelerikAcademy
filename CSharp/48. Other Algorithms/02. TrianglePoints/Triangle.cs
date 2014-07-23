@@ -1,6 +1,5 @@
-namespace TrianglePoints
+namespace _02.TrianglePoints
 {
-
     public class Triangle
     {
         public Triangle(Point a, Point b, Point c)
@@ -19,16 +18,16 @@ namespace TrianglePoints
         public bool CheckIfPointIsInTriangle(Point x)
         {
             double alpha =
-                          ((this.B.PointY - this.C.PointY) * (x.PointX - this.C.PointX) +
-                          (this.C.PointX - this.B.PointX) * (x.PointY - this.C.PointY)) /
-                          ((this.B.PointY - this.C.PointY) * (this.A.PointX - this.C.PointX) +
-                          (this.C.PointX - this.B.PointX) * (this.A.PointY - this.C.PointY));
+                          (((this.B.PointY - this.C.PointY) * (x.PointX - this.C.PointX)) +
+                          ((this.C.PointX - this.B.PointX) * (x.PointY - this.C.PointY))) /
+                          (((this.B.PointY - this.C.PointY) * (this.A.PointX - this.C.PointX)) +
+                          ((this.C.PointX - this.B.PointX) * (this.A.PointY - this.C.PointY)));
 
             double beta =
-                         ((this.C.PointY - this.A.PointY) * (x.PointX - this.C.PointX) +
-                         (this.A.PointX - this.C.PointX) * (x.PointY - this.C.PointY)) /
-                         ((this.B.PointY - this.C.PointY) * (this.A.PointX - this.C.PointX) +
-                         (this.C.PointX - this.B.PointX) * (this.A.PointY - this.C.PointY));
+                         (((this.C.PointY - this.A.PointY) * (x.PointX - this.C.PointX)) +
+                         ((this.A.PointX - this.C.PointX) * (x.PointY - this.C.PointY))) /
+                         (((this.B.PointY - this.C.PointY) * (this.A.PointX - this.C.PointX)) +
+                         ((this.C.PointX - this.B.PointX) * (this.A.PointY - this.C.PointY)));
 
             double gamma = 1.0 - alpha - beta;
 
@@ -36,10 +35,8 @@ namespace TrianglePoints
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
     }
 }

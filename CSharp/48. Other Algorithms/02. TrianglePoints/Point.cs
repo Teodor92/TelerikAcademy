@@ -1,4 +1,4 @@
-namespace TrianglePoints
+namespace _02.TrianglePoints
 {
     public struct Point
     {
