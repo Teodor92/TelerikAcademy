@@ -1,36 +1,38 @@
-﻿using System;
-
-public class Matrix
+﻿namespace _01._1.Matrix
 {
-    public static void PrintMatrix(int[,] matrix)
+    using System;
+
+    public class Matrix
     {
-        for (int row = 0; row < matrix.GetLength(0); row++)
+        public static void Main()
         {
-            for (int col = 0; col < matrix.GetLength(1); col++)
+            int n = int.Parse(Console.ReadLine());
+            int[,] myMatrix = new int[n, n];
+            int counter = 1;
+            for (int col = 0; col < n; col++)
             {
-                Console.Write("{0,4}", matrix[row, col]);
+                for (int row = 0; row < n; row++)
+                {
+                    myMatrix[row, col] = counter;
+                    counter++;
+                }
             }
 
-            Console.WriteLine();
-            Console.WriteLine();
+            PrintMatrix(myMatrix);
         }
-    }
 
-    public static void Main()
-    {
-        int n = int.Parse(Console.ReadLine());
-        int[,] myMatrix = new int[n, n];
-        int counter = 1;
-        for (int col = 0; col < n; col++)
+        private static void PrintMatrix(int[,] matrix)
         {
-            for (int row = 0; row < n; row++)
+            for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                myMatrix[row, col] = counter;
-                counter++;
-                //// matrix[i, j] = i + 1 + size*j;  
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write("{0,4}", matrix[row, col]);
+                }
+
+                Console.WriteLine();
+                Console.WriteLine();
             }
         }
-
-        PrintMatrix(myMatrix);
     }
 }

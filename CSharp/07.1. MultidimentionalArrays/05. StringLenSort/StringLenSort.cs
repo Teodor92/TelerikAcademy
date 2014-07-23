@@ -1,17 +1,19 @@
-﻿using System;
-using System.Linq;
-
-public class StringLenSort
+﻿namespace _05.StringLenSort
 {
-    public static void Main()
-    {
-        string[] unsortedStrings = { "a", "aaaaa", "aaaawasdawd", "a", "12355asdf", "wdasdwe" };
+    using System;
+    using System.Linq;
 
-        // TODO Try with Linq !
-        var sortedArray = unsortedStrings.OrderBy(uStrings => uStrings.Length);
-        foreach (var item in sortedArray)
+    public class StringLenSort
+    {
+        public static void Main()
         {
-            Console.WriteLine(item);
+            string[] unsortedStrings = { "a", "aaaaa", "aaaawasdawd", "a", "12355asdf", "wdasdwe" };
+
+            var sortedArray = unsortedStrings.OrderBy(uStrings => uStrings.Length);
+            foreach (var item in sortedArray)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

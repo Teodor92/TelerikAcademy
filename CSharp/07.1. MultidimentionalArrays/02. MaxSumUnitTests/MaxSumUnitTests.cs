@@ -1,6 +1,7 @@
 ﻿namespace _02.MaxSumUnitTests
 {
-    using System;
+    using _02.MaxSumArea;
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
@@ -10,12 +11,13 @@
         public void TestOne()
         {
             // check data
-            int[,] matrix = 
-        {
-            { 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 1 },
-            { 1, 1, 1, 1, 2 }
-        };
+            int[,] matrix =
+            {
+                { 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 2 }
+            };
+
             var inTest = MaxSumArea.MaxSum(matrix);
 
             Assert.AreEqual(10, inTest);
@@ -25,12 +27,13 @@
         public void TestTwo()
         {
             // check data
-            int[,] matrix = 
+            int[,] matrix =
             {
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 2 }
             };
+
             var inTest = MaxSumArea.MaxSum(matrix);
 
             Assert.AreEqual(2, inTest);

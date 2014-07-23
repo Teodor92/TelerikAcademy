@@ -1,46 +1,49 @@
-﻿using System;
-
-public class MatrixTwo
+﻿namespace _01._2.MatrixTwo
 {
-    public static void PrintMatrix(int[,] matrix)
-    {
-        for (int row = 0; row < matrix.GetLength(0); row++)
-        {
-            for (int col = 0; col < matrix.GetLength(1); col++)
-            {
-                Console.Write("{0,4}", matrix[row, col]);
-            }
+    using System;
 
-            Console.WriteLine();
-            Console.WriteLine();
-        }
-    }
-
-    public static void Main()
+    public class MatrixTwo
     {
-        int size = int.Parse(Console.ReadLine());
-        int[,] matrix = new int[size, size];
-        int counter = 1;
-        for (int col = 0; col < matrix.GetLength(0); col++)
+        public static void Main()
         {
-            if (col % 2 == 0)
+            int size = int.Parse(Console.ReadLine());
+            var matrix = new int[size, size];
+            int counter = 1;
+            for (int col = 0; col < matrix.GetLength(0); col++)
             {
-                for (int row = 0; row < matrix.GetLength(1); row++)
+                if (col % 2 == 0)
                 {
-                    matrix[row, col] = counter;
-                    counter++;
+                    for (int row = 0; row < matrix.GetLength(1); row++)
+                    {
+                        matrix[row, col] = counter;
+                        counter++;
+                    }
+                }
+                else
+                {
+                    for (int row = matrix.GetLength(1) - 1; row > -1; row--)
+                    {
+                        matrix[row, col] = counter;
+                        counter++;
+                    }
                 }
             }
-            else
-            {
-                for (int row = matrix.GetLength(1) - 1; row > -1; row--)
-                {
-                    matrix[row, col] = counter;
-                    counter++;
-                }
-            }
+
+            PrintMatrix(matrix);
         }
 
-        PrintMatrix(matrix);
+        private static void PrintMatrix(int[,] matrix)
+        {
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    Console.Write("{0,4}", matrix[row, col]);
+                }
+
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+        }
     }
 }
