@@ -1,41 +1,44 @@
-﻿/* Write a program that finds the index of 
- * given element in a sorted array of integers 
- * by using the binary search algorithm (find it in Wikipedia).
- */
-
-using System;
-
-public class BinarySearch
+﻿namespace _11.BinarySearch
 {
-    public static int BinSearch(int[] array, int key)
+    using System;
+
+    /// <summary>
+    /// Write a program that finds the index of 
+    /// given element in a sorted array of integers 
+    /// by using the binary search algorithm (find it in Wikipedia).
+    /// </summary>
+    public class BinarySearch
     {
-        Array.Sort(array);
-        int iMax = array.Length - 1;
-        int iMin = 0;
-        while (iMax >= iMin)
+        internal static void Main()
         {
-            int iMidpoint = (iMin + iMax) / 2;
-            if (array[iMidpoint] < key)
-            {
-                iMin = iMidpoint + 1;
-            }
-            else if (array[iMidpoint] > key)
-            {
-                iMax = iMidpoint - 1;
-            }
-            else
-            {
-                return iMidpoint;
-            }
+            int[] myArray = { 4, 3, 1, 4, 2, 5, 8, 21, 13, 180 };
+            int key = 4;
+            Console.WriteLine(BinSearch(myArray, key));
         }
 
-        return -1;
-    }
+        private static int BinSearch(int[] array, int key)
+        {
+            Array.Sort(array);
+            int indexMax = array.Length - 1;
+            int indexMin = 0;
+            while (indexMax >= indexMin)
+            {
+                int indexMidpoint = (indexMin + indexMax) / 2;
+                if (array[indexMidpoint] < key)
+                {
+                    indexMin = indexMidpoint + 1;
+                }
+                else if (array[indexMidpoint] > key)
+                {
+                    indexMax = indexMidpoint - 1;
+                }
+                else
+                {
+                    return indexMidpoint;
+                }
+            }
 
-    public static void Main()
-    {
-        int[] myArray = { 4, 3, 1, 4, 2, 5, 8, 21, 13, 180 };
-        int key = 4;
-        Console.WriteLine(BinSearch(myArray, key));
+            return -1;
+        }
     }
 }

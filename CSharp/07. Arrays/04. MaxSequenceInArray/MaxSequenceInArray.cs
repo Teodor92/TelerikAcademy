@@ -1,43 +1,46 @@
-﻿/* Write a program that finds the maximal 
- * sequence of equal elements in an array.
- * Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1}  {2, 2, 2}.
- */
-
-using System;
-
-public class MaxSequenceInArray
+﻿namespace _04.MaxSequenceInArray
 {
-    public static void Main()
+    using System;
+
+    /// <summary>
+    /// Write a program that finds the maximal 
+    /// sequence of equal elements in an array.
+    /// Example: {2, 1, 1, 2, 3, 3, 2, 2, 2, 1}  {2, 2, 2}.
+    /// </summary>
+    public class MaxSequenceInArray
     {
-        int[] myArray = { 2, 1, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-        int len = 1;
-        int bestLen = 0;
-        int bestLenElement = 0;
-        for (int i = 0; i < myArray.Length - 1; i++)
+        internal static void Main()
         {
-            if (myArray[i] == myArray[i + 1])
+            int[] myArray = { 2, 1, 1, 2, 3, 3, 3, 3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+            int len = 1;
+            int bestLen = 0;
+            int bestLenElement = 0;
+            for (int i = 0; i < myArray.Length - 1; i++)
             {
-                len++;
-            }
-            else
-            {
-                if (len > bestLen)
+                if (myArray[i] == myArray[i + 1])
                 {
-                    bestLen = len;
-                    bestLenElement = myArray[i];
+                    len++;
                 }
+                else
+                {
+                    if (len > bestLen)
+                    {
+                        bestLen = len;
+                        bestLenElement = myArray[i];
+                    }
 
-                len = 1;
+                    len = 1;
+                }
             }
-        }
 
-        // Special case
-        if (len > bestLen)
-        {
-            bestLen = len;
-            bestLenElement = myArray[myArray.Length - 1];
-        }
+            // Special case
+            if (len > bestLen)
+            {
+                bestLen = len;
+                bestLenElement = myArray[myArray.Length - 1];
+            }
 
-        Console.WriteLine("The longest sequence if form {0} elements of type \"{1}\" .", bestLen, bestLenElement);
+            Console.WriteLine("The longest sequence if form {0} elements of type \"{1}\" .", bestLen, bestLenElement);
+        }
     }
 }

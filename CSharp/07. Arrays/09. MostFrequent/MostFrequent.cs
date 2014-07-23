@@ -1,51 +1,44 @@
-﻿/* Write a program that finds the most frequent number in an array. 
- * Example:
- * {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3}  4 (5 times)
- */
-
-using System;
-using System.Collections.Generic;
-
-public class MostFrequent
+﻿namespace _09.MostFrequent
 {
-    public static void Main()
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Write a program that finds the most frequent number in an array.
+    /// Example:
+    /// {4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3}  4 (5 times)
+    /// </summary>
+    public class MostFrequent
     {
-        int[] myArray = { 4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3 };
-        Dictionary<int, int> mostFrequnet = new Dictionary<int, int>();
-        int bestElement = 0;
-        int bestFrequnecy = int.MinValue;
-        for (int i = 0; i < myArray.Length; i++)
+        public static void Main()
         {
-            //// NOTE: Im using double inline comments to ignore some StyleCop warnings! 
-            ////if (mostFrequnet.ContainsKey(myArray[i]))
-            ////{
-            ////    mostFrequnet[myArray[i]]++;
-            ////}
-            ////else
-            ////{
-            ////    mostFrequnet.Add(myArray[i], 1);
-            ////}
+            int[] myArray = { 4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3 };
+            var mostFrequnet = new Dictionary<int, int>();
+            int bestElement = 0;
+            int bestFrequnecy = int.MinValue;
+            for (int i = 0; i < myArray.Length; i++)
+            {
+                int tempValue;
+                if (mostFrequnet.TryGetValue(myArray[i], out tempValue))
+                {
+                    mostFrequnet[myArray[i]] = tempValue + 1;
+                }
+                else
+                {
+                    mostFrequnet.Add(myArray[i], 1);
+                }
+            }
 
-            int tempValue;
-            if (mostFrequnet.TryGetValue(myArray[i], out tempValue))
+            foreach (var item in mostFrequnet)
             {
-                mostFrequnet[myArray[i]] = tempValue + 1;
+                if (item.Value > bestFrequnecy)
+                {
+                    bestElement = item.Key;
+                    bestFrequnecy = item.Value;
+                }
             }
-            else
-            {
-                mostFrequnet.Add(myArray[i], 1);
-            }
+
+            Console.WriteLine("The number {0} shows {1} times", bestElement, bestFrequnecy);
         }
-
-        foreach (var item in mostFrequnet)
-        {
-            if (item.Value > bestFrequnecy)
-            {
-                bestElement = item.Key;
-                bestFrequnecy = item.Value;
-            }
-        }
-
-        Console.WriteLine("The number {0} shows {1} times", bestElement, bestFrequnecy);
     }
 }

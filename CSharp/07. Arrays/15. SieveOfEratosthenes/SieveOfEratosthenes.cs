@@ -1,34 +1,37 @@
-﻿/* Write a program that finds all prime numbers 
- * in the range [1...10 000 000]. Use the sieve 
- * of Eratosthenes algorithm (find it in Wikipedia).
- */
-
-using System;
-
-public class SieveOfEratosthenes
+﻿namespace _15.SieveOfEratosthenes
 {
-    public static void Main()
+    using System;
+
+    /// <summary>
+    /// Write a program that finds all prime numbers 
+    /// in the range [1...10 000 000]. Use the sieve 
+    /// of Eratosthenes algorithm (find it in Wikipedia).
+    /// </summary>
+    public class SieveOfEratosthenes
     {
-        bool[] allNums = new bool[10000000];
-        for (int i = 2; i < Math.Sqrt(allNums.Length); i++)
+        internal static void Main()
         {
-            if (allNums[i] == false)
+            var allNumbers = new bool[10000000];
+            for (int i = 2; i < Math.Sqrt(allNumbers.Length); i++)
             {
-                for (int j = i * i; j < allNums.Length; j = j + i)
+                if (allNumbers[i] == false)
                 {
-                    allNums[j] = true;
+                    for (int j = i * i; j < allNumbers.Length; j = j + i)
+                    {
+                        allNumbers[j] = true;
+                    }
                 }
             }
-        }
 
-        for (int i = 2; i < allNums.Length; i++)
-        {
-            if (allNums[i] == false)
+            for (int i = 2; i < allNumbers.Length; i++)
             {
-                Console.Write("{0} ", i);
+                if (allNumbers[i] == false)
+                {
+                    Console.Write("{0} ", i);
+                }
             }
-        }
 
-        Console.WriteLine();
+            Console.WriteLine();
+        }
     }
 }

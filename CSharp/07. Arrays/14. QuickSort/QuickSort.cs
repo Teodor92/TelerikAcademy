@@ -1,53 +1,56 @@
-﻿/* Write a program that sorts an array 
- * of strings using the quick sort 
- * algorithm (find it in Wikipedia).
- */
-
-using System;
-using System.Collections.Generic;
-
-public class QuickSort
+﻿namespace _14.QuickSort
 {
-    public static List<string> QuickSortEmpement(List<string> unsortedList)
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Write a program that sorts an array 
+    /// of strings using the quick sort 
+    /// algorithm (find it in Wikipedia).
+    /// </summary>
+    public class QuickSort
     {
-        if (unsortedList.Count <= 1)
+        internal static void Main()
         {
-            return unsortedList;
-        }
-
-        int pivot = unsortedList.Count / 2;
-        string pivotValue = unsortedList[pivot];
-        unsortedList.RemoveAt(pivot);
-        List<string> lesser = new List<string>();
-        List<string> greater = new List<string>();
-        foreach (string element in unsortedList)
-        {
-            if (String.Compare(element, pivotValue) < 0)
+            var array = new List<string> { "a", "j", "d", "s", "c", "w", "l", "b", "f" };
+            var sortedArray = QuickSortEmpement(array);
+            foreach (var item in sortedArray)
             {
-                lesser.Add(element);
+                Console.Write("{0} ", item);
             }
-            else
-            {
-                greater.Add(element);
-            }
+
+            Console.WriteLine();
         }
 
-        List<string> result = new List<string>();
-        result.AddRange(QuickSortEmpement(lesser));
-        result.Add(pivotValue);
-        result.AddRange(QuickSortEmpement(greater));
-        return result;
-    }
-
-    public static void Main()
-    {
-        List<string> array = new List<string> { "a", "j", "d", "s", "c", "w", "l", "b", "f" };
-        List<string> sortedArray = QuickSortEmpement(array);
-        foreach (var item in sortedArray)
+        private static IEnumerable<string> QuickSortEmpement(List<string> unsortedList)
         {
-            Console.Write("{0} ", item);
-        }
+            if (unsortedList.Count <= 1)
+            {
+                return unsortedList;
+            }
 
-        Console.WriteLine();
+            int pivot = unsortedList.Count / 2;
+            string pivotValue = unsortedList[pivot];
+            unsortedList.RemoveAt(pivot);
+            var lesser = new List<string>();
+            var greater = new List<string>();
+            foreach (string element in unsortedList)
+            {
+                if (string.CompareOrdinal(element, pivotValue) < 0)
+                {
+                    lesser.Add(element);
+                }
+                else
+                {
+                    greater.Add(element);
+                }
+            }
+
+            var result = new List<string>();
+            result.AddRange(QuickSortEmpement(lesser));
+            result.Add(pivotValue);
+            result.AddRange(QuickSortEmpement(greater));
+            return result;
+        }
     }
 }

@@ -1,34 +1,37 @@
-﻿/* Write a program that compares 
- * two char arrays lexicographically (letter by letter).
- */
-
-using System;
-
-public class CharCompare
+﻿namespace _03.CharCompare
 {
-    public static void Main()
+    using System;
+
+    /// <summary>
+    /// Write a program that compares 
+    /// two char arrays lexicographically (letter by letter).
+    /// </summary>
+    public class CharCompare
     {
-        char[] firstArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'r' };
-        char[] secondArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
-        bool areLexiEqual = true;
-
-        // to do len check
-        if (firstArray.Length == secondArray.Length)
+        internal static void Main()
         {
-            for (int i = 0; i < firstArray.Length; i++)
+            char[] firstArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'r' };
+            char[] secondArray = { 'a', 'b', 'c', 'd', 'e', 'f', 'g' };
+            bool areLexiEqual = true;
+
+            // to do len check
+            if (firstArray.Length == secondArray.Length)
             {
-                if (firstArray[i] != secondArray[i])
+                for (int i = 0; i < firstArray.Length; i++)
                 {
-                    areLexiEqual = false;
+                    if (firstArray[i] != secondArray[i])
+                    {
+                        areLexiEqual = false;
+                    }
                 }
-            }
 
-            Console.WriteLine("The arrays are equal: {0} .", areLexiEqual);
-        }
-        else
-        {
-            areLexiEqual = false;
-            Console.WriteLine("The arrays are equal: {0} .", areLexiEqual);
+                Console.WriteLine("The arrays are equal: {0} .", areLexiEqual);
+            }
+            else
+            {
+                areLexiEqual = false;
+                Console.WriteLine("The arrays are equal: {0} .", areLexiEqual);
+            }
         }
     }
 }

@@ -1,44 +1,47 @@
-﻿/* Sorting an array means to arrange 
- * its elements in increasing order. 
- * Write a program to sort an array. 
- * Use the "selection sort" algorithm: 
- * Find the smallest element, move it at the
- * first position, find the smallest from the
- * rest, move it at the second position, etc.
- */
-
-using System;
-
-public class SelectSort
+﻿namespace _07.SelectSort
 {
-    public static void Main()
+    using System;
+
+    /// <summary>
+    /// Sorting an array means to arrange 
+    /// its elements in increasing order. 
+    /// Write a program to sort an array. 
+    /// Use the "selection sort" algorithm: 
+    /// Find the smallest element, move it at the
+    /// first position, find the smallest from the
+    /// rest, move it at the second position, etc.
+    /// </summary>
+    public class SelectSort
     {
-        int[] myArray = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 132, 45, -2, 333 };
-        for (int i = 0; i < myArray.Length - 1; i++)
+        public static void Main()
         {
-            int elmMin = i;
-            for (int j = i + 1; j < myArray.Length; j++)
+            int[] myArray = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 132, 45, -2, 333 };
+            for (int i = 0; i < myArray.Length - 1; i++)
             {
-                if (myArray[j] < myArray[elmMin])
+                int elmMin = i;
+                for (int j = i + 1; j < myArray.Length; j++)
                 {
-                    elmMin = j;
+                    if (myArray[j] < myArray[elmMin])
+                    {
+                        elmMin = j;
+                    }
+                }
+
+                if (elmMin != i)
+                {
+                    int temp = 0;
+                    temp = myArray[i];
+                    myArray[i] = myArray[elmMin];
+                    myArray[elmMin] = temp;
                 }
             }
 
-            if (elmMin != i)
+            for (int i = 0; i < myArray.Length; i++)
             {
-                int temp = 0;
-                temp = myArray[i];
-                myArray[i] = myArray[elmMin];
-                myArray[elmMin] = temp;
+                Console.Write("{0}, ", i);
             }
-        }
 
-        for (int i = 0; i < myArray.Length; i++)
-        {
-            Console.Write("{0}, ", myArray[i]);
+            Console.WriteLine();
         }
-
-        Console.WriteLine();
     }
 }

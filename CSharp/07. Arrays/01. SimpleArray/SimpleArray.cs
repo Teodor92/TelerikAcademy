@@ -1,26 +1,29 @@
-﻿/* Write a program that allocates array of 
- * 20 integers and initializes each element 
- * by its index multiplied by 5. Print the
- * obtained array on the console.
- */
-
-using System;
-
-public class SimpleArray
+﻿namespace _01.SimpleArray
 {
-    public static void Main()
+    using System;
+
+    /// <summary>
+    /// Write a program that allocates array of 
+    /// 20 integers and initializes each element
+    /// by its index multiplied by 5. Print the
+    /// obtained array on the console.
+    /// </summary>
+    public class SimpleArray
     {
-        int[] indexArray = new int[20];
-        for (int i = 0; i < indexArray.Length; i++)
+        internal static void Main()
         {
-            indexArray[i] = i * 5;
-        }
+            var indexArray = new int[20];
+            for (int i = 0; i < indexArray.Length; i++)
+            {
+                indexArray[i] = i * 5;
+            }
 
-        for (int i = 0; i < indexArray.Length; i++)
-        {
-            Console.Write(indexArray[i]);
-        }
+            for (int i = 0; i < indexArray.Length; i++)
+            {
+                Console.Write(indexArray[i]);
+            }
 
-        Console.WriteLine();
+            Console.WriteLine();
+        }
     }
 }
