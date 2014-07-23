@@ -1,21 +1,25 @@
-﻿using System;
-
-class CatalanNumbers
+﻿namespace _09.CatalanNumbers
 {
-    static decimal FactorialCalc(decimal number)
+    using System;
+
+    public class CatalanNumbers
     {
-        decimal sum = 1;
-        for (int i = 1; i <= number; i++)
+        internal static void Main()
         {
-            sum = sum * i;
+            decimal n = decimal.Parse(Console.ReadLine());
+            decimal catalanSum = FactorialCalc(2 * n) / FactorialCalc(n + 1) * FactorialCalc(n);
+            Console.WriteLine(catalanSum);
         }
-        return sum;
-    }
-    static void Main()
-    {
-        decimal n = decimal.Parse(Console.ReadLine());
-        decimal CatalanSum = 0;
-        CatalanSum = FactorialCalc(2 * n) / FactorialCalc(n + 1) * FactorialCalc(n);
-        Console.WriteLine(CatalanSum);
+
+        private static decimal FactorialCalc(decimal number)
+        {
+            decimal sum = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                sum = sum * i;
+            }
+
+            return sum;
+        }
     }
 }

@@ -1,22 +1,24 @@
-﻿using System;
-
-class GreatestCommonDivisor
+﻿namespace _08.GreatestCommonDivisor
 {
-    static int gcd(int a, int b)
+    using System;
+
+    internal class GreatestCommonDivisor
     {
-        if (b == 0)
+        internal static void Main()
         {
-            return a;
+            int firstNum = int.Parse(Console.ReadLine());
+            int secondNum = int.Parse(Console.ReadLine());
+            Console.WriteLine(GetGreatestCommonDivisor(firstNum, secondNum));
         }
-        else
+
+        private static int GetGreatestCommonDivisor(int a, int b)
         {
-            return gcd(b, a%b);
+            if (b == 0)
+            {
+                return a;
+            }
+
+            return GetGreatestCommonDivisor(b, a % b);
         }
-    }
-    static void Main()
-    {
-        int firstNum = int.Parse(Console.ReadLine());
-        int secondNum = int.Parse(Console.ReadLine());
-        Console.WriteLine(gcd(firstNum, secondNum)); 
     }
 }

@@ -1,28 +1,33 @@
-﻿using System;
-
-class SimpleMatrix
+﻿namespace _11.SimpleMatrix
 {
-    static void Main()
+    using System;
+
+    public class SimpleMatrix
     {
-        Console.WriteLine("Enter a Number:");
-        int size = int.Parse(Console.ReadLine());
-        int[,] matrix = new int[size, size];
-        for (int row = 0; row < matrix.GetLength(0); row++)
+        internal void Main()
         {
-            int start = row + 1;
-            for (int col = 0; col < matrix.GetLength(1); col++)
+            Console.WriteLine("Enter a Number:");
+            int size = int.Parse(Console.ReadLine());
+            int[,] matrix = new int[size, size];
+            for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                matrix[row, col] = start;
-                start++;
+                int start = row + 1;
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    matrix[row, col] = start;
+                    start++;
+                }
             }
-        }
-        for (int i = 0; i < matrix.GetLength(0); i++)
-        {
-            for (int j = 0; j < matrix.GetLength(1); j++)
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                Console.Write("{0,4}", matrix[i, j]);
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write("{0,4}", matrix[i, j]);
+                }
+
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
     }
 }

@@ -1,21 +1,24 @@
-﻿/* Write a program that prints all the numbers from 1 to N, 
- * that are not divisible by 3 and 7 at the same time.
- */
-
-using System;
-
-class ConditionalPrint
+﻿namespace _02.ConditionalPrint
 {
-    static void Main()
+    using System;
+
+    /// <summary>
+    /// Write a program that prints all the numbers from 1 to N, 
+    /// that are not divisible by 3 and 7 at the same time.
+    /// </summary>
+    public class ConditionalPrint
     {
-        uint n = uint.Parse(Console.ReadLine());
-        for (int i = 0; i <= n; i++)
+        internal static void Main()
         {
-            if (i % 21 != 0)
+            uint n = uint.Parse(Console.ReadLine());
+
+            for (int i = 0; i <= n; i++)
             {
-                Console.WriteLine(i);
+                if (i % 21 != 0)
+                {
+                    Console.WriteLine(i);
+                }
             }
-            
         }
     }
 }
