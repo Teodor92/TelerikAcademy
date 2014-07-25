@@ -1,68 +1,71 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-public class NnumeralSystem
+﻿namespace _07._1.NnumeralSystemCharTest
 {
-    public static void Main()
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    public class NnumeralSystem
     {
-        string number = Console.ReadLine();
-        int baseS = 10;
-        int baseB = 36;
-
-        // reversing the string
-        StringBuilder reverser = new StringBuilder();
-        for (int i = number.Length - 1; i >= 0; i--)
+        internal static void Main()
         {
-            reverser.Append(number[i]);
-        }
+            string number = Console.ReadLine();
+            const int BaseS = 10;
+            const int BaseB = 36;
 
-        number = reverser.ToString();
-
-        // to middle decimal
-        int decNum = 0;
-        for (int i = 0; i < number.Length; i++)
-        {
-            Console.WriteLine(number[i]);
-            if (number[i] < 64)
+            // reversing the string
+            var reverser = new StringBuilder();
+            for (int i = number.Length - 1; i >= 0; i--)
             {
-                decNum = decNum + (int.Parse(number[i].ToString()) * (int)Math.Pow(baseS, i));
+                reverser.Append(number[i]);
+            }
+
+            number = reverser.ToString();
+
+            // to middle decimal
+            int decNum = 0;
+            for (int i = 0; i < number.Length; i++)
+            {
+                Console.WriteLine(number[i]);
+                if (number[i] < 64)
+                {
+                    decNum = decNum + (int.Parse(number[i].ToString()) * (int)Math.Pow(BaseS, i));
+                }
+                else
+                {
+                    decNum = decNum + ((number[i] - 55) * (int)Math.Pow(BaseS, i));
+                }
+            }
+
+            if (BaseB == 10)
+            {
+                Console.WriteLine(decNum);
             }
             else
             {
-                decNum = decNum + (((number[i] - 55)) * (int)Math.Pow(baseS, i));
+                var endNum = new List<string>();
+                while (decNum > 0)
+                {
+                    int modulo = decNum % BaseB;
+                    if (modulo < 10)
+                    {
+                        endNum.Add(modulo.ToString());
+                    }
+                    else
+                    {
+                        endNum.Add(((char)((modulo - 10) + 65)).ToString());
+                    }
+
+                    decNum = decNum / BaseB;
+                }
+
+                endNum.Reverse();
+                foreach (var item in endNum)
+                {
+                    Console.Write(item);
+                }
+
+                Console.WriteLine();
             }
-        }
-
-        if (baseB == 10)
-        {
-            Console.WriteLine(decNum);
-        }
-        else
-        {
-            List<string> endNum = new List<string>();
-            while (decNum > 0)
-            {
-                int modulo = decNum % baseB;
-                if (modulo < 10)
-	            {
-                    endNum.Add(modulo.ToString());
-	            }
-                else
-	            {
-                    endNum.Add(((char)((modulo - 10)+65)).ToString());
-	            }
-
-                decNum = decNum / baseB;
-            }
-
-            endNum.Reverse();
-            foreach (var item in endNum)
-            {
-                Console.Write(item);
-            }
-
-            Console.WriteLine();
         }
     }
 }

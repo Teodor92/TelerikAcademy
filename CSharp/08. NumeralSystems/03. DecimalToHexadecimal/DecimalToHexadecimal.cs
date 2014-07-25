@@ -1,49 +1,51 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-
-public class DecimalToHexadecimal
+﻿namespace _03.DecimalToHexadecimal
 {
-    public static void Main()
+    using System;
+    using System.Text;
+
+    public class DecimalToHexadecimal
     {
-        int decNum = int.Parse(Console.ReadLine());
-        StringBuilder hexNum = new StringBuilder();
-        while (decNum > 0)
+        public static void Main()
         {
-            switch (decNum % 16)
+            int decNum = int.Parse(Console.ReadLine());
+            var hexNum = new StringBuilder();
+            while (decNum > 0)
             {
-                case 10:
-                    hexNum.Append('A');
-                    break;
-                case 11:
-                    hexNum.Append('B');
-                    break;
-                case 12:
-                    hexNum.Append('C');
-                    break;
-                case 13:
-                    hexNum.Append('D');
-                    break;
-                case 14:
-                    hexNum.Append('E');
-                    break;
-                case 15:
-                    hexNum.Append('F');
-                    break;
-                default:
-                    hexNum.Append(decNum % 16);
-                    break;
+                switch (decNum % 16)
+                {
+                    case 10:
+                        hexNum.Append('A');
+                        break;
+                    case 11:
+                        hexNum.Append('B');
+                        break;
+                    case 12:
+                        hexNum.Append('C');
+                        break;
+                    case 13:
+                        hexNum.Append('D');
+                        break;
+                    case 14:
+                        hexNum.Append('E');
+                        break;
+                    case 15:
+                        hexNum.Append('F');
+                        break;
+                    default:
+                        hexNum.Append(decNum % 16);
+                        break;
+                }
+
+                decNum = decNum / 16;
             }
 
-            decNum = decNum / 16;
-        }
+            string endNum = hexNum.ToString();
+            for (int i = endNum.Length - 1; i > -1; i--)
+            {
+                Console.Write(endNum[i]);
+            }
 
-        string endNum = hexNum.ToString();
-        for (int i = endNum.Length - 1; i > -1; i--)
-        {
-            Console.Write(endNum[i]);
+            Console.WriteLine();
         }
-
-        Console.WriteLine();
     }
 }
