@@ -8,12 +8,12 @@ namespace Singleton.Example
     /// </summary>
     public class LoadBalancer
     {
+        // Lock synchronization object
+        private static readonly object SyncLock = new object();
+
         private static LoadBalancer instance;
         private readonly List<string> servers = new List<string>();
         private readonly Random random = new Random();
-
-        // Lock synchronization object
-        private static readonly object SyncLock = new object();
 
         // Constructor (protected)
         protected LoadBalancer()
@@ -24,6 +24,16 @@ namespace Singleton.Example
             this.servers.Add("ServerIII");
             this.servers.Add("ServerIV");
             this.servers.Add("ServerV");
+        }
+
+        // Simple, but effective random load balancer
+        public string Server
+        {
+            get
+            {
+                int randomInt = this.random.Next(this.servers.Count);
+                return this.servers[randomInt].ToString();
+            }
         }
 
         public static LoadBalancer GetLoadBalancer()
@@ -44,16 +54,6 @@ namespace Singleton.Example
             }
 
             return instance;
-        }
-
-        // Simple, but effective random load balancer
-        public string Server
-        {
-            get
-            {
-                int randomInt = this.random.Next(this.servers.Count);
-                return this.servers[randomInt].ToString();
-            }
         }
     }
 }

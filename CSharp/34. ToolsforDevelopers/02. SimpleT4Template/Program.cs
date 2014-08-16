@@ -1,10 +1,8 @@
-﻿namespace SimpleT4Template
+﻿namespace _02.SimpleT4Template
 {
-    using System;
-
-    class Program
+    public class Program
     {
-        static void Main()
+        internal static void Main()
         {
         }
     }

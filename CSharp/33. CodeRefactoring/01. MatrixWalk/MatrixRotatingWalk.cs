@@ -7,10 +7,9 @@
     public class MatrixRotatingWalk
     {
         private const int DirectionsCount = 8;
-        private int dimentions = 3;
-
         private readonly int[,] matrix;
 
+        private int dimentions = 3;
         private int row = 0;
         private int col = 0;
 
@@ -40,6 +39,23 @@
 
                 this.dimentions = value;
             }
+        }
+
+        public override string ToString()
+        {
+            var matrixAsStirng = new StringBuilder();
+
+            for (int row = 0; row < this.dimentions; row++)
+            {
+                for (int col = 0; col < this.dimentions; col++)
+                {
+                    matrixAsStirng.AppendFormat("{0,3}", this.matrix[row, col]);
+                }
+
+                matrixAsStirng.Append(Environment.NewLine);
+            }
+
+            return matrixAsStirng.ToString();
         }
 
         private void GetNewDirection(ref int dirRow, ref int dirCol)
@@ -157,23 +173,6 @@
                 this.col = nextCol;
                 number++;
             }
-        }
-
-        public override string ToString()
-        {
-            StringBuilder matrixAsStirng = new StringBuilder();
-
-            for (int row = 0; row < this.dimentions; row++)
-            {
-                for (int col = 0; col < this.dimentions; col++)
-                {
-                    matrixAsStirng.AppendFormat("{0,3}", this.matrix[row, col]);
-                }
-
-                matrixAsStirng.Append(Environment.NewLine);
-            }
-
-            return matrixAsStirng.ToString();
         }
 
         private bool CheckIfNextCellIsEmpty(int row, int col, int[] directionRow, int[] directionCol)
