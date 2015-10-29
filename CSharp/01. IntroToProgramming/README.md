@@ -20,17 +20,20 @@ You should submit a separate project Visual Studio project holding the PrintMyNa
 
 You should submit in your homework the Visual Studio project holding the source code of the PrintNumbers program.
 
-### Problem 5.	Print First and Last Name
+### Problem 6.	Print First and Last Name
 *	Create console application that prints your first and last name, each at a separate line.
 
-### Problem 6.	Square Root
+### Problem 7.	Print the current date and time
+*	Create console application that prints the current date and time.
+
+### Problem 8.	Square Root
 *	Create a console application that calculates and prints the square root of the number `12345`.
 *	Find in Internet “how to calculate square root in C#”.
 
-### Problem 7.	Print a Sequence
+### Problem 9.	Print a Sequence
 *	Write a program that prints the first 10 members of the sequence: `2, -3, 4, -5, 6, -7, ...`
 
-### Problem 8.*	Age after 10 Years
+### Problem 12.*	Age after 10 Years
 *	Write a program to read your birthday from the console and print how old you are now and how old you will be after 10 years.
 
 
