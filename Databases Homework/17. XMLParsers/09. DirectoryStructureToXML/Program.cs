@@ -31,7 +31,8 @@ namespace _09.DirectoryStructureToXML
 
         private static void BuildXml(XmlTextWriter writer, DirectoryInfo sourceDir)
         {
-            if (sourceDir.GetFiles().Count() == 0 && sourceDir.GetDirectories().Count() == 0)
+            if (sourceDir.GetFiles().Length == 0 
+                && sourceDir.GetDirectories().Length == 0)
             {
                 return;
             }
