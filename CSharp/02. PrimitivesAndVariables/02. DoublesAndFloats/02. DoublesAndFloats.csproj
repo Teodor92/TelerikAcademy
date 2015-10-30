@@ -7,8 +7,8 @@
     <ProjectGuid>{5A87EFB6-9AB4-4F44-9F89-0A25896CDEFC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_2.DoublesAndFloats</RootNamespace>
-    <AssemblyName>_2.DoublesAndFloats</AssemblyName>
+    <RootNamespace>_02.DoublesAndFloats</RootNamespace>
+    <AssemblyName>_02.DoublesAndFloats</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

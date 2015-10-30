@@ -1,4 +1,4 @@
-﻿namespace _2.DoublesAndFloats
+﻿namespace _02.DoublesAndFloats
 {
     /// <summary>
     /// Which of the following values can be assigned to a variable of type float and which to 
@@ -6,7 +6,7 @@
     /// </summary>
     public class DoublesAndFloats
     {
-        internal static void Main()
+        public static void Main()
         {
             double firstDouble = 34.567839023;
             float firstFloat = 12.345f;

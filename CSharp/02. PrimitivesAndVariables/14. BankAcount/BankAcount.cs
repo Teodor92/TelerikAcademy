@@ -8,11 +8,11 @@
     /// </summary>
     public class DoublesAndFloats
     {
-        internal static void Main()
+        public static void Main()
         {
-            string firstName = "Teodor";
-            string middleName = "Ivanov";
-            string lastName = "Kurtev";
+            string firstName = "John";
+            string middleName = "Doe";
+            string lastName = "Doe";
             decimal balance = 1000;
             string bankName = "BNB";
             string iban = string.Empty;

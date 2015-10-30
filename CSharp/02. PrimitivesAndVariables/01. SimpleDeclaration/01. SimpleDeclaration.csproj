@@ -7,8 +7,8 @@
     <ProjectGuid>{65E2F7FD-D1A0-40A9-BA8D-435914341CBC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_1.SimpleDeclaration</RootNamespace>
-    <AssemblyName>_1.SimpleDeclaration</AssemblyName>
+    <RootNamespace>_01.SimpleDeclaration</RootNamespace>
+    <AssemblyName>_01.SimpleDeclaration</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

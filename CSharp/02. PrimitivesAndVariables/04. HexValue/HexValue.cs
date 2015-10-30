@@ -1,4 +1,4 @@
-﻿namespace _4.HexValue
+﻿namespace _04.HexValue
 {
     /// <summary>
     /// Declare an integer variable and assign it with the value 254 in hexadecimal 
@@ -6,7 +6,7 @@
     /// </summary>
     public class HexValue
     {
-        internal static void Main()
+        public static void Main()
         {
             int hexValue = 0xFE;
         }

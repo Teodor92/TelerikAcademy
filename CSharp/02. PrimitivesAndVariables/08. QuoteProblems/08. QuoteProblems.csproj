@@ -7,8 +7,8 @@
     <ProjectGuid>{49D78E02-5BEC-41A9-A17E-6C72C5F0E2F3}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_8.QuoteProblems</RootNamespace>
-    <AssemblyName>_8.QuoteProblems</AssemblyName>
+    <RootNamespace>_08.QuoteProblems</RootNamespace>
+    <AssemblyName>_08.QuoteProblems</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

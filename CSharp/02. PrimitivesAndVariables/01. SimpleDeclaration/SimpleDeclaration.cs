@@ -1,4 +1,4 @@
-﻿namespace _1.SimpleDeclaration
+﻿namespace _01.SimpleDeclaration
 {
     /// <summary>
     /// Declare five variables choosing for each of them the most appropriate of the 
@@ -7,7 +7,7 @@
     /// </summary>
     public class SimpleDeclaration
     {
-        internal static void Main()
+        public static void Main()
         {
             ushort unsignedShort = 52130;
             sbyte simpleByte = -115;

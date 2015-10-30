@@ -7,8 +7,8 @@
     <ProjectGuid>{EE0939CA-8D19-4E67-A850-1516AA421BD8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_3.FloatPointComparison</RootNamespace>
-    <AssemblyName>_3.FloatPointComparison</AssemblyName>
+    <RootNamespace>_03.FloatPointComparison</RootNamespace>
+    <AssemblyName>_03.FloatPointComparison</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿namespace _7.ConcatenationAndCasting
+﻿namespace _07.ConcatenationAndCasting
 {
     /// <summary>
     /// Declare two string variables and assign them with “Hello” and “World”. 
@@ -8,7 +8,7 @@
     /// </summary>
     public class ConcatenationAndCasting
     {
-        internal static void Main()
+        public static void Main()
         {
             string firstPart = "Hello ";
             string secondPart = "World";

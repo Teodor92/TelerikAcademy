@@ -7,8 +7,8 @@
     <ProjectGuid>{8FB88FFD-E9C3-4ABF-8C5F-AF1841112211}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_5.UniCodeSimbyl</RootNamespace>
-    <AssemblyName>_5.UniCodeSimbyl</AssemblyName>
+    <RootNamespace>_05.UniCodeSimbyl</RootNamespace>
+    <AssemblyName>_05.UniCodeSimbyl</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

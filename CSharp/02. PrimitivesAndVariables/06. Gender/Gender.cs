@@ -1,4 +1,4 @@
-﻿namespace _6.Gender
+﻿namespace _06.Gender
 {
     /// <summary>
     /// Declare a boolean variable called isFemale 
@@ -6,7 +6,7 @@
     /// </summary>
     public class Gender
     {
-        internal static void Main()
+        public static void Main()
         {
             bool isFemale = false;
         }

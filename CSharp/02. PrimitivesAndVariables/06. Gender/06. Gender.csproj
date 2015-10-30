@@ -7,8 +7,8 @@
     <ProjectGuid>{1531148C-999C-4FEC-90BF-28B6090DF037}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_6.Gender</RootNamespace>
-    <AssemblyName>_6.Gender</AssemblyName>
+    <RootNamespace>_06.Gender</RootNamespace>
+    <AssemblyName>_06.Gender</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

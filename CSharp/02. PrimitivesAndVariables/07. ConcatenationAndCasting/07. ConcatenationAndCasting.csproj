@@ -7,8 +7,8 @@
     <ProjectGuid>{0BB8AEFF-FC84-4567-8C29-F39FB0C2BDB0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_7.ConcatenationAndCasting</RootNamespace>
-    <AssemblyName>_7.ConcatenationAndCasting</AssemblyName>
+    <RootNamespace>_07.ConcatenationAndCasting</RootNamespace>
+    <AssemblyName>_07.ConcatenationAndCasting</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

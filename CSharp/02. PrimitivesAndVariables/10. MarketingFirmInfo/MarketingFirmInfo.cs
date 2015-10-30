@@ -8,7 +8,7 @@
     /// </summary>
     public class MarketingFirmInfo
     {
-        internal static void Main()
+        public static void Main()
         {
             string firstName = "Ivan";
             string lastName = "Ivanov";

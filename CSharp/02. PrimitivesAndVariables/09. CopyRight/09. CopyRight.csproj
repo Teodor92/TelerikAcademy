@@ -7,8 +7,8 @@
     <ProjectGuid>{8C4646B0-7747-4775-9105-C2684E5A77C1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_9.TradeMark</RootNamespace>
-    <AssemblyName>_9.TradeMark</AssemblyName>
+    <RootNamespace>_09.TradeMark</RootNamespace>
+    <AssemblyName>_09.TradeMark</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

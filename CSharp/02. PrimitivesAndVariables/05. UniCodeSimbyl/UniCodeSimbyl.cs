@@ -1,6 +1,9 @@
-﻿namespace _5.UniCodeSimbyl
+﻿namespace _05.UniCodeSimbyl
 {
     using System;
+    using System.Globalization;
+    using System.Text;
+    using System.Threading;
 
     /// <summary>
     /// Declare a character variable and assign it with the symbol that has Unicode 
@@ -8,8 +11,12 @@
     /// </summary>
     public class UniCodeSimbyl
     {
-        internal static void Main(string[] args)
+        public static void Main()
         {
+            // Reset console encoding and current culture in order to prevent IO problems
+            Console.OutputEncoding = Encoding.Unicode;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
             char symbol = '\u0048';
             Console.WriteLine(symbol);
         }

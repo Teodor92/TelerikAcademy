@@ -7,8 +7,8 @@
     <ProjectGuid>{21594CFF-2FD2-416A-BB2B-12E438773164}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_4.HexValue</RootNamespace>
-    <AssemblyName>_4.HexValue</AssemblyName>
+    <RootNamespace>_04.HexValue</RootNamespace>
+    <AssemblyName>_04.HexValue</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
