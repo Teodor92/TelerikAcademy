@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40EAD0A8-BA63-4DA6-BF8C-0E96E59B20B6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectMindMap.Web</RootNamespace>
+    <AssemblyName>ProjectMindMap.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\main_styles.css" />
+    <Content Include="css\mindmap-preview.css" />
+    <Content Include="images\team_100_console_chapter_4.png" />
+    <Content Include="images\team_102_console_chapter_4.png" />
+    <Content Include="images\team_104_console_chapter_4.png" />
+    <Content Include="images\team_106_conditionals_chapter_5.jpg" />
+    <Content Include="images\team_108_conditionals_chapter_5.png" />
+    <Content Include="images\team_10_recursion_chapter_10.png" />
+    <Content Include="images\team_110_loops_chapter_6.png" />
+    <Content Include="images\team_112_loops_chapter_6.png" />
+    <Content Include="images\team_114_arrays_chapter_7.png" />
+    <Content Include="images\team_116_arrays_chapter_7.png" />
+    <Content Include="images\team_120_numSystems_chapter_8.png" />
+    <Content Include="images\team_122_numSystems_chapter_8.png" />
+    <Content Include="images\team_124_methods_chapter_9.png" />
+    <Content Include="images\team_126_methods_chapter_9.jpg" />
+    <Content Include="images\team_128_bookSum_chapter_00.png" />
+    <Content Include="images\team_12_recursion_chapter_10.png" />
+    <Content Include="images\team_130_bookSum_chapter_00.png" />
+    <Content Include="images\team_14_recursion_chapter_10.png" />
+    <Content Include="images\team_16_usingObjects_chapter_11.png" />
+    <Content Include="images\team_18_usingObjects_chapter_11.png" />
+    <Content Include="images\team_20_Exceptions_chapter_12.png" />
+    <Content Include="images\team_22_Exceptions_chapter_12.png" />
+    <Content Include="images\team_24_strings_chapter_13.png" />
+    <Content Include="images\team_26_strings_chapter_13.png" />
+    <Content Include="images\team_28_Classes_chapter_14.1.png" />
+    <Content Include="images\team_30_Classes_chapter_14.1.png" />
+    <Content Include="images\team_32_Classes_chapter_14.1.png" />
+    <Content Include="images\team_34_Classes_chapter_14.2.png" />
+    <Content Include="images\team_36_Classes_chapter_14.2.png" />
+    <Content Include="images\team_38_textFiles_chapter_15.png" />
+    <Content Include="images\team_40_textFiles_chapter_15.png" />
+    <Content Include="images\team_42_dataStruct_chapter_16.png" />
+    <Content Include="images\team_44_dataStruct_chapter_16.png" />
+    <Content Include="images\team_46_dataStruct_chapter_16.png" />
+    <Content Include="images\team_48_graphs_chapter_16.png" />
+    <Content Include="images\team_4_preface_chapter_0.png" />
+    <Content Include="images\team_50_graphs_chapter_16.png" />
+    <Content Include="images\team_52_dicts_chapter_18.png" />
+    <Content Include="images\team_54_dicts_chapter_18.png" />
+    <Content Include="images\team_56_algo1_chapter_19.png" />
+    <Content Include="images\team_58_algo1_chapter_19.jpg" />
+    <Content Include="images\team_60_variables_chapter_2.png" />
+    <Content Include="images\team_62_variables_chapter_2.png" />
+    <Content Include="images\team_66_oop_chapter_20.png" />
+    <Content Include="images\team_68_oop_chapter_20.png" />
+    <Content Include="images\team_6_introToPrograming_chapter_1.png" />
+    <Content Include="images\team_70_quality_chapter_21.jpg" />
+    <Content Include="images\team_72_quality_chapter_21.png" />
+    <Content Include="images\team_74_linq_chapter_22.png" />
+    <Content Include="images\team_76_linq_chapter_22.png" />
+    <Content Include="images\team_78_problemSolving_chapter_23.png" />
+    <Content Include="images\team_80_problemSolving_chapter_23.png" />
+    <Content Include="images\team_84_sampleExam_chapter_24.png" />
+    <Content Include="images\team_86_sampleExam_chapter_24.png" />
+    <Content Include="images\team_88_sampleExam_chapter_25.png" />
+    <Content Include="images\team_8_introToPrograming_chapter_1.png" />
+    <Content Include="images\team_90_sampleExam_chapter_25.png" />
+    <Content Include="images\team_92_sampleExam_chapter_26.png" />
+    <Content Include="images\team_94_sampleExam_chapter_26.jpg" />
+    <Content Include="images\team_96_operators_chapter_3.png" />
+    <Content Include="images\team_98_operators_chapter_3.jpg" />
+    <Content Include="img\bg-map.png" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="index.html" />
+    <Content Include="js\jquery-1.9.0.js" />
+    <Content Include="js\jquery.ba-hashchange.min.js" />
+    <Content Include="js\jquery.easytabs.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\linkScript.js" />
+    <Content Include="js\mindmap-preview.js" />
+    <Content Include="js\script.js" />
+    <Content Include="mindmap-preview.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\config.rb" />
+    <Content Include="css\main_styles.scss" />
+    <Content Include="css\mindmap-preview.scss" />
+    <Content Include="css\_elementColors.scss" />
+    <Content Include="css\_elementPostions.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>22337</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:22337/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

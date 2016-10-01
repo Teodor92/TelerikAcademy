@@ -1,0 +1,373 @@
+@import "elementColors.scss";
+
+@mixin elemPositions() {
+	&#loops1 {
+		position: absolute;
+		top: 35px;
+		left: 900px;
+	}
+	&#loops2 {
+		position: absolute;
+		top: 80px;
+		left: 940px;
+	}
+	&#arrays1 {
+		position: absolute;
+		top: 49px;
+		left: 770px;
+	}
+
+	&#arrays2 {
+		position: absolute;
+		top: 98px;
+		left: 783px;
+	}
+
+	&#exception1 {
+		position: absolute;
+		top: 134px;
+		left: 840px;
+	}
+
+	&#exception2 {
+		position: absolute;
+		top: 180px;
+		left: 848px;
+	}
+
+	&#algo1 {
+		position: absolute;
+		top: 188px;
+		left: 948px;
+	}
+
+	&#algo2 {
+		position: absolute;
+		top: 230px;
+		left: 948px;
+	}
+
+	&#preface {
+		position: absolute;
+		top: 275px;
+		left: 815px;
+	}
+
+	&#introProgramming1 {
+		position: absolute;
+		top: 288px;
+		left: 915px;
+	}
+
+	&#introProgramming2 {
+		position: absolute;
+		top: 325px;
+		left: 915px;
+	}
+
+	&#strings1 {
+		position: absolute;
+		top: 356px;
+		left: 880px;
+	}
+
+	&#strings2 {
+		position: absolute;
+		top: 387px;
+		left: 938px;
+	}
+
+	&#dictionaries1 {
+		position: absolute;
+		top: 419px;
+		left: 945px;
+	}
+
+	&#dictionaries2 {
+		position: absolute;
+		top: 470px;
+		left: 945px;
+	}
+
+	&#recursion1 {
+		position: absolute;
+		top: 477px;
+		left: 832px;
+	}
+
+	&#recursion2 {
+		position: absolute;
+		top: 525px;
+		left: 885px;
+	}
+
+	&#recursion3 {
+		position: absolute;
+		top: 570px;
+		left: 910px;
+	}
+
+	&#conditional1 {
+		position: absolute;
+		top: 610px;
+		left: 930px;
+	}
+
+	&#conditional2 {
+		position: absolute;
+		top: 660px;
+		left: 930px;
+	}
+
+	&#objects1 {
+		position: absolute;
+		top: 610px;
+		left: 750px;
+	}
+
+	&#objects2 {
+		position: absolute;
+		top: 659px;
+		left: 785px;
+	}
+
+	&#dataStructures1 {
+		position: absolute;
+		top: 665px;
+		left: 670px;
+	}
+
+	&#dataStructures2 {
+		position: absolute;
+		top: 700px;
+		left: 584px;
+	}
+
+	&#dataStructures3 {
+		position: absolute;
+		top: 653px;
+		left: 562px;
+	}
+
+	&#methods1 {
+		position: absolute;
+		top: 722px;
+		left: 490px;
+	}
+
+	&#methods2 {
+		position: absolute;
+		top: 670px;
+		left: 464px;
+	}
+
+	&#problemSolving1 {
+		position: absolute;
+		top: 757px;
+		left: 436px;
+	}
+
+	&#problemSolving2 {
+		position: absolute;
+		top: 757px;
+		left: 338px;
+	}
+
+	&#numeralSystems1 {
+		position: absolute;
+		top: 678px;
+		left: 347px;
+	}
+
+	&#numeralSystems2 {
+		position: absolute;
+		top: 711px;
+		left: 307px;
+	}
+
+	&#quality1 {
+		position: absolute;
+		top: 745px;
+		left: 232px;
+	}
+
+	&#quality2 {
+		position: absolute;
+		top: 690px;
+		left: 203px;
+	}
+
+	&#sampleExams1 {
+		position: absolute;
+		top: 735px;
+		left: 119px;
+	}
+
+	&#sampleExams2 {
+		position: absolute;
+		top: 700px;
+		left: 39px;
+	}
+
+	&#sampleExams3 {
+		position: absolute;
+		top: 652px;
+		left: 40px;
+	}
+
+	&#sampleExams4 {
+		position: absolute;
+		top: 610px;
+		left: 30px;
+	}
+
+	&#sampleExams5 {
+		position: absolute;
+		top: 570px;
+		left: 15px;
+	}
+
+	&#sampleExams6 {
+		position: absolute;
+		top: 532px;
+		left: 10px;
+	}
+
+	&#sampleExams7 {
+		position: absolute;
+		top: 510px;
+		left: 120px;
+	}
+
+	&#variables1 {
+		position: absolute;
+		top: 470px;
+		left: 9px;
+	}
+
+	&#variables2 {
+		position: absolute;
+		top: 420px;
+		left: 15px;
+	}
+
+	&#oop1 {
+		position: absolute;
+		top: 380px;
+		left: 5px;
+	}
+
+	&#oop2 {
+		position: absolute;
+		top: 340px;
+		left: 25px;
+	}
+
+	&#operators1 {
+		position: absolute;
+		top: 295px;
+		left: 5px;
+	}
+
+	&#operators2 {
+		position: absolute;
+		top: 255px;
+		left: 16px;
+	}
+
+	&#console1 {
+		position: absolute;
+		top: 220px;
+		left: 35px;
+	}
+
+	&#console2 {
+		position: absolute;
+		top: 170px;
+		left: 20px;
+	}
+
+	&#console3 {
+		position: absolute;
+		top: 165px;
+		left: 125px;
+	}
+
+	&#classes1-1 {
+		position: absolute;
+		top: 110px;
+		left: 70px;
+	}
+
+	&#classes1-2 {
+		position: absolute;
+		top: 66px;
+		left: 100px;
+	}
+
+	&#classes1-3 {
+		position: absolute;
+		top: 60px;
+		left: 200px;
+	}
+
+	&#classes2-1 {
+		position: absolute;
+		top: 112px;
+		left: 225px;
+	}
+
+	&#classes2-2 {
+		position: absolute;
+		top: 170px;
+		left: 295px;
+	}
+
+	&#linq1 {
+		position: absolute;
+		top: 17px;
+		left: 220px;
+	}
+
+	&#linq2 {
+		position: absolute;
+		top: 16px;
+		left: 320px;
+	}
+
+	&#summary1 {
+		position: absolute;
+		top: 50px;
+		left: 357px;
+	}
+
+	&#summary2 {
+		position: absolute;
+		top: 77px;
+		left: 416px;
+	}
+
+	&#graphs1 {
+		position: absolute;
+		top: 10px;
+		left: 500px;
+	}
+
+	&#graphs2 {
+		position: absolute;
+		top: 42px;
+		left: 533px;
+	}
+
+	&#textFiles1 {
+		position: absolute;
+		top: 55px;
+		left: 635px;
+	}
+
+	&#textFiles2 {
+		position: absolute;
+		top: 90px;
+		left: 620px;
+	}
+}

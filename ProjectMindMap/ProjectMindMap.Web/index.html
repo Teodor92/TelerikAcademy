@@ -1,0 +1,599 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Project Mind Map</title>
+    <meta name="description" content="" />
+    <meta name="author" content="Teodor" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.easytabs.min.js" type="text/javascript"></script>
+    <script src="js/jquery.ba-hashchange.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/main_styles.css">
+
+</head>
+
+<body onload="SetLinks()">
+    <div id="wrapper">
+        <header>
+            <a href="index.html"><h1>Mind Map Presentation Project</h1></a>
+        </header>
+        <div id="tab-container" class="tab-container">
+
+            <!-- Nav tabs -->
+            <ul class='etabs'>
+                <li class='tab current'>
+                    <a href="#tabs1-home" class="tab-link">Home</a>
+                </li>
+                <li class='tab'>
+                    <a href="#tabs1-tree" class="tab-link">Map Tree</a>
+                </li>
+                <li class='tab'>
+                    <a href="#tabs1-cSharpOne" class="tab-link">C# Part One</a>
+                </li>
+                <li class='tab'>
+                    <a href="#tabs1-cSharpTwo" class="tab-link">C# Part Two</a>
+                </li>
+                <li class='tab'>
+                    <a href="#tabs1-cSharpThree" class="tab-link">C# Part Three</a>
+                </li>
+                <li class='tab'>
+                    <a href="#tabs1-about">About</a>
+                </li>
+            </ul>
+
+            <!-- Home Tab Content -->
+            <div id="tabs1-home" class="content">
+                <h2>What is a Mind Map ?</h2>
+                <p><em>From Wikipedia:</em></p>
+                <blockquote cite="http://en.wikipedia.org/wiki/Mind_map">
+                    <p>
+                        A <strong>mind map</strong> is a diagram used to visually outline information. A mind map is often created around a single word or text, placed in the center, to which <strong>associated ideas, words and concepts</strong> are added. Major categories radiate from a central node, and lesser categories are sub-branches of larger branches. Categories can represent words, ideas, tasks, or other items related to a central key word or idea.
+                    </p>
+                    <p>
+                        Mindmaps can be drawn by hand, either as "rough notes" during a lecture or meeting, for example, or as higher quality pictures when more time is available.
+                    </p>
+                    <p>
+                        Other terms for this diagramming style are: "spider diagrams," "spidergrams," "spidergraphs," "webs", "mind webs", or "webbing", and "idea sun bursting". (A "spider diagram" used in mathematics and logic is different.)
+                    </p>
+                </blockquote>
+            </div>
+
+            <!-- Tree Tab Content -->
+            <div id="tabs1-tree" class="content">
+
+                <!-- Background Map -->
+                <img src="img/bg-map.png" alt="mainMindMap">
+
+                <!-- Tree Nodes -->
+
+                <a href="" id="arrays1" name="arrays1">
+                    <div class="element green">View Map 1</div>
+                </a>
+
+                <a href="" id="arrays2" name="arrays2">
+                    <div class="element green">View Map 2</div>
+                </a>
+                <a href="" id="exception1" name="exception1">
+                    <div class="element orange">View Map 1</div>
+                </a>
+                <a href="" id="exception2" name="exception2">
+                    <div class="element orange">View Map 2</div>
+                </a>
+                <a href="" id="algo1" name="algo1">
+                    <div class="element purple">View Map 1</div>
+                </a>
+                <a href="" id="algo2" name="algo2">
+                    <div class="element purple">View Map 2</div>
+                </a>
+                <a href="" id="preface" name="preface">
+                    <div class="element blue">View Map</div>
+                </a>
+                <a href="" id="introProgramming1" name="introProgramming1">
+                    <div class="element lightGreen">View Map 1</div>
+                </a>
+                <a href="" id="introProgramming2" name="introProgramming2">
+                    <div class="element lightGreen">View Map 2</div>
+                </a>
+                <a href="" id="strings1" name="strings1">
+                    <div class="element darkPurple">View Map 1</div>
+                </a>
+                <a href="" id="strings2" name="strings2">
+                    <div class="element darkPurple">View Map 2</div>
+                </a>
+                <a href="" id="dictionaries1" name="dictionaries1">
+                    <div class="element orange">View Map 1</div>
+                </a>
+                <a href="" id="dictionaries2" name="dictionaries2">
+                    <div class="element orange">View Map 2</div>
+                </a>
+                <a href="" id="recursion1" name="recursion1">
+                    <div class="element green">View Map 1</div>
+                </a>
+                <a href="" id="recursion2" name="recursion2">
+                    <div class="element green">View Map 2</div>
+                </a>
+                <a href="" id="recursion3" name="recursion3">
+                    <div class="element green">View Map 3</div>
+                </a>
+                <a href="" id="conditional1" name="conditional1">
+                    <div class="element blue">View Map 1</div>
+                </a>
+                <a href="" id="conditional2" name="conditional2">
+                    <div class="element blue">View Map 2</div>
+                </a>
+                <a href="" id="objects1" name="objects1">
+                    <div class="element orange">View Map 1</div>
+                </a>
+                <a href="" id="objects2" name="objects2">
+                    <div class="element orange">View Map 2</div>
+                </a>
+                <a href="" id="dataStructures1" name="dataStructures1">
+                    <div class="element lightBlue">View Map 1</div>
+                </a>
+                <a href="" id="dataStructures2" name="dataStructures2">
+                    <div class="element lightBlue">View Map 2</div>
+                </a>
+                <a href="" id="dataStructures3" name="dataStructures3">
+                    <div class="element lightBlue">View Map 3</div>
+                </a>
+                <a href="" id="methods1" name="methods1">
+                    <div class="element red">View Map 1</div>
+                </a>
+                <a href="" id="methods2" name="methods2">
+                    <div class="element red">View Map 2</div>
+                </a>
+                <a href="" id="problemSolving1" name="problemSolving1">
+                    <div class="element lightBlue">View Map 1</div>
+                </a>
+                <a href="" id="problemSolving2" name="problemSolving2">
+                    <div class="element lightBlue">View Map 2</div>
+                </a>
+                <a href="" id="quality1" name="quality1">
+                    <div class="element red">View Map 1</div>
+                </a>
+                <a href="" id="quality2" name="quality2">
+                    <div class="element red">View Map 2</div>
+                </a>
+                <a href="" id="numeralSystems1" name="numeralSystems1">
+                    <div class="element darkPurple">View Map 1</div>
+                </a>
+                <a href="" id="numeralSystems2" name="numeralSystems2">
+                    <div class="element darkPurple">View Map 2</div>
+                </a>
+                <a href="" id="sampleExams1" name="sampleExams1">
+                    <div class="element lightGreen">View Map 1</div>
+                </a>
+                <a href="" id="sampleExams2" name="sampleExams2">
+                    <div class="element lightGreen">View Map 2</div>
+                </a>
+                <a href="" id="sampleExams3" name="sampleExams3">
+                    <div class="element lightGreen">View Map 1</div>
+                </a>
+                <a href="" id="sampleExams4" name="sampleExams4">
+                    <div class="element lightGreen">View Map 2</div>
+                </a>
+                <a href="" id="sampleExams5" name="sampleExams5">
+                    <div class="element lightGreen">View Map 1</div>
+                </a>
+                <a href="" id="sampleExams6" name="sampleExams6">
+                    <div class="element lightGreen">View Map 2</div>
+                </a>
+                <a href="" id="variables1" name="variables1">
+                    <div class="element blue">View Map 1</div>
+                </a>
+                <a href="" id="variables2" name="variables2">
+                    <div class="element blue">View Map 2</div>
+                </a>
+                <a href="" id="oop1" name="oop1">
+                    <div class="element green">View Map 1</div>
+                </a>
+                <a href="" id="oop2" name="oop2">
+                    <div class="element green">View Map 2</div>
+                </a>
+                <a href="" id="operators1" name="operators1">
+                    <div class="element orange">View Map 1</div>
+                </a>
+                <a href="" id="operators2" name="operators2">
+                    <div class="element orange">View Map 2</div>
+                </a>
+                <a href="" id="console1" name="console1">
+                    <div class="element purple">View Map 1</div>
+                </a>
+                <a href="" id="console2" name="console2">
+                    <div class="element purple">View Map 2</div>
+                </a>
+                <a href="" id="console3" name="console3">
+                    <div class="element purple">View Map 3</div>
+                </a>
+                <a href="" id="classes1-1" name="classes1-1">
+                    <div class="element lightBlue">View Map 1</div>
+                </a>
+                <a href="" id="classes1-2" name="classes1-2">
+                    <div class="element lightBlue">View Map 2</div>
+                </a>
+                <a href="" id="classes1-3" name="classes1-3">
+                    <div class="element lightBlue">View Map 3</div>
+                </a>
+                <a href="" id="classes2-1" name="classes2-1">
+                    <div class="element lightBlue">View Map 1</div>
+                </a>
+                <a href="" id="classes2-2" name="classes2-2">
+                    <div class="element lightBlue">View Map 2</div>
+                </a>
+                <a href="" id="linq1" name="linq1">
+                    <div class="element lightGreen">View Map 1</div>
+                </a>
+                <a href="" id="linq2" name="linq2">
+                    <div class="element lightGreen">View Map 2</div>
+                </a>
+                <a href="" id="summary1" name="summary1">
+                    <div class="element darkPurple">View Map 1</div>
+                </a>
+                <a href="" id="summary2" name="summary2">
+                    <div class="element darkPurple">View Map 2</div>
+                </a>
+                <a href="" id="graphs1" name="graphs1">
+                    <div class="element purple">View Map 1</div>
+                </a>
+                <a href="" id="graphs2" name="graphs2">
+                    <div class="element purple">View Map 2</div>
+                </a>
+                <a href="" id="textFiles1" name="textFiles1">
+                    <div class="element blue">View Map 1</div>
+                </a>
+                <a href="" id="textFiles2" name="textFiles2">
+                    <div class="element blue">View Map 2</div>
+                </a>
+                <a href="" id="loops1" name="loops1">
+                    <div class="element darkPurple">View Map 1</div>
+                </a>
+                <a href="" id="loops2" name="loops2">
+                    <div class="element darkPurple">View Map 2</div>
+                </a>
+            </div>
+            <!-- MindMap Tree end -->
+            <!-- Tabs with chapters start -->
+            <!-- Tab C# Part 3 -->
+            <div id="tabs1-cSharpOne" class="content">
+                <a href="" name="preface">
+                    <div class="chapters blue">
+                        Preface
+                    </div>
+                </a>
+                <a href="" name="introProgramming1">
+                    <div class="chapters lightGreen">
+                        Intro to Programming Map 1
+                    </div>
+                </a>
+                <a href="" name="introProgramming2">
+                    <div class="chapters lightGreen">
+                        Intro to Programming Map 2
+                    </div>
+                </a>
+                <a href="" name="variables1">
+                    <div class="chapters blue">
+                        Types and Variables Map 1
+                    </div>
+                </a>
+                <a href="" name="variables2">
+                    <div class="chapters blue">
+                        Types and Variables Map 2
+                    </div>
+                </a>
+                <a href="" name="operators1">
+                    <div class="chapters orange">
+                        Operators and Expressions Map 1
+                    </div>
+                </a>
+                <a href="" name="operators2">
+                    <div class="chapters orange">
+                        Operators and Expressions Map 2
+                    </div>
+                </a>
+                <a href="" name="console1">
+                    <div class="chapters purple">
+                        Console I\O Map 1
+                    </div>
+                </a>
+                <a href="" name="console2">
+                    <div class="chapters purple">
+                        Console I\O Map 2
+                    </div>
+                </a>
+                <a href="" name="console3">
+                    <div class="chapters purple">
+                        Console I\O Map 3
+                    </div>
+                </a>
+                <a href="" name="conditional1">
+                    <div class="chapters blue">
+                        Conditional Statements Map 1
+                    </div>
+                </a>
+                <a href="" name="conditional2">
+                    <div class="chapters blue">
+                        Conditional Statements Map 2
+                    </div>
+                </a>
+                <a href="" name="loops1">
+                    <div class="chapters darkPurple">
+                        Loops Map 1
+                    </div>
+                </a>
+                <a href="" name="loops2">
+                    <div class="chapters darkPurple">
+                        Loops Map 2
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tab C# Part 2 -->
+            <div id="tabs1-cSharpTwo" class="content">
+                <a href="" name="arrays1">
+                    <div class="chapters green">
+                        Arrays Map 1
+                    </div>
+                </a>
+                <a href="" name="arrays2">
+                    <div class="chapters green">
+                        Arrays Map 2
+                    </div>
+                </a>
+                <a href="" name="numeralSystems1">
+                    <div class="chapters darkPurple">
+                        Numeral Systems Map 1
+                    </div>
+                </a>
+                <a href="" name="numeralSystems2">
+                    <div class="chapters darkPurple">
+                        Numeral Systems Map 2
+                    </div>
+                </a>
+                <a href="" name="methods1">
+                    <div class="chapters red">
+                        Methods Map 1
+                    </div>
+                </a>
+                <a href="" name="methods2">
+                    <div class="chapters red">
+                        Methods Map 2
+                    </div>
+                </a>
+                <a href="" name="recursion1">
+                    <div class="chapters green">
+                        Recursion Map 1
+                    </div>
+                </a>
+                <a href="" name="recursion2">
+                    <div class="chapters green">
+                        Recursion Map 2
+                    </div>
+                </a>
+                <a href="" name="recursion3">
+                    <div class="chapters green">
+                        Recursion Map 3
+                    </div>
+                </a>
+                <a href="" name="objects1">
+                    <div class="chapters orange">
+                        Using Objects Map 1
+                    </div>
+                </a>
+                <a href="" name="objects2">
+                    <div class="chapters orange">
+                        Using Objects Map 2
+                    </div>
+                </a>
+                <a href="" name="exception1">
+                    <div class="chapters orange">
+                        Exception Handling Map 1
+                    </div>
+                </a>
+                <a href="" name="exception2">
+                    <div class="chapters orange">
+                        Exception Handling Map 2
+                    </div>
+                </a>
+                <a href="" name="strings1">
+                    <div class="chapters darkPurple">
+                        Strings and Text Processing Map 1
+                    </div>
+                </a>
+                <a href="" name="strings2">
+                    <div class="chapters darkPurple">
+                        Strings and Text Processing Map 2
+                    </div>
+                </a>
+                <a href="" name="classes1-1">
+                    <div class="chapters lightBlue">
+                        Defining Classes Part 1 Map 1
+                    </div>
+                </a>
+                <a href="" name="classes1-2">
+                    <div class="chapters lightBlue">
+                        Defining Classes Part 1 Map 2
+                    </div>
+                </a>
+                <a href="" name="classes1-3">
+                    <div class="chapters lightBlue">
+                        Defining Classes Part 1 Map 3
+                    </div>
+                </a>
+                <a href="" name="classes2-1">
+                    <div class="chapters lightBlue">
+                        Defining Classes Part 2 Map 1
+                    </div>
+                </a>
+                <a href="" name="classes2-2">
+                    <div class="chapters lightBlue">
+                        Defining Classes Part 2 Map 2
+                    </div>
+                </a>
+                <a href="" name="textFiles1">
+                    <div class="chapters blue">
+                        Text Files Map 1
+                    </div>
+                </a>
+                <a href="" name="textFiles2">
+                    <div class="chapters blue">
+                        Text Files Map 2
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tab C# Part 3 -->
+            <div id="tabs1-cSharpThree" class="content">
+                <a href="" name="dataStructures1">
+                    <div class="chapters lightBlue">
+                        Linear Data Structures Map 1
+                    </div>
+                </a>
+                <a href="" name="dataStructures2">
+                    <div class="chapters lightBlue">
+                        Linear Data Structures Map 2
+                    </div>
+                </a>
+                <a href="" name="dataStructures3">
+                    <div class="chapters lightBlue">
+                        Linear Data Structures Map 3
+                    </div>
+                </a>
+                <a href="" name="graphs1">
+                    <div class="chapters purple">
+                        Trees and Graphs Map 1
+                    </div>
+                </a>
+                <a href="" name="graphs2">
+                    <div class="chapters purple">
+                        Trees and Graphs Map 2
+                    </div>
+                </a>
+                <a href="" name="dictionaries1">
+                    <div class="chapters orange">
+                        Dict. , Hash-Tables and Sets Map 1
+                    </div>
+                </a>
+                <a href="" name="dictionaries2">
+                    <div class="chapters orange">
+                        Dict. , Hash-Tables and Sets Map 2
+                    </div>
+                </a>
+                <a href="" name="algo1">
+                    <div class="chapters purple">
+                        Data Str. and Alg. Complex. Map 1
+                    </div>
+                </a>
+                <a href="" name="algo2">
+                    <div class="chapters purple">
+                        Data Str. and Alg. Complex. Map 2
+                    </div>
+                </a>
+                <a href="" name="oop1">
+                    <div class="chapters green">
+                        OOP Principles Map 1
+                    </div>
+                </a>
+                <a href="" name="oop2">
+                    <div class="chapters green">
+                        OOP Principles Map 2
+                    </div>
+                </a>
+                <a href="" name="quality1">
+                    <div class="chapters red">
+                        High-Quality Prog. Code Map 1
+                    </div>
+                </a>
+                <a href="" name="quality2">
+                    <div class="chapters red">
+                        High-Quality Prog. Code Map 2
+                    </div>
+                </a>
+                <a href="" name="linq1">
+                    <div class="chapters lightGreen">
+                        Lambdas and LINQ Queries Map 1
+                    </div>
+                </a>
+                <a href="" name="linq2">
+                    <div class="chapters lightGreen">
+                        Lambdas and LINQ Queries Map 2
+                    </div>
+                </a>
+                <a href="" name="problemSolving1">
+                    <div class="chapters lightBlue">
+                        Prob. Solving Methodology Map 1
+                    </div>
+                </a>
+                <a href="" name="problemSolving2">
+                    <div class="chapters lightBlue">
+                        Prob. Solving Methodology Map 2
+                    </div>
+                </a>
+                <a href="" name="sampleExams1">
+                    <div class="chapters lightGreen">
+                        Sample Exam – Topic #1, Map 1
+                    </div>
+                </a>
+                <a href="" name="sampleExams2">
+                    <div class="chapters lightGreen">
+                        Sample Exam – Topic #1, Map 2
+                    </div>
+                </a>
+                <a href="" name="sampleExams3">
+                    <div class="chapters lightGreen">
+                        Sample Exam – Topic #2, Map 1
+                    </div>
+                </a>
+                <a href="" name="sampleExams4">
+                    <div class="chapters lightGreen">
+                        Sample Exam – Topic #2, Map 2
+                    </div>
+                </a>
+                <a href="" name="sampleExams5">
+                    <div class="chapters lightGreen">
+                        Sample Exam – Topic #3, Map 1
+                    </div>
+                </a>
+                <a href="" name="sampleExams6">
+                    <div class="chapters lightGreen">
+                        Sample Exam – Topic #3, Map 2
+                    </div>
+                </a>
+                <a href="" name="summary1">
+                    <div class="chapters darkPurple">
+                        Book Summary Map 1
+                    </div>
+                </a>
+                <a href="" name="summary2">
+                    <div class="chapters darkPurple">
+                        Book Summary Map 2
+                    </div>
+                </a>
+            </div>
+            <!-- Tabs with chapters End -->
+            <!-- About Tab -->
+            <div id="tabs1-about" class="content">
+                <h2>What is this site ?</h2>
+                <p>
+                    This is a simple web site build for visualizing Mind Maps for our course "Teamwork and knowledge sharing" in Telerik Academy.
+                </p>
+
+                <h2>What technologies were used in this project ?</h2>
+                <p>We used <strong>HTML5, CSS, JS, JQuery</strong> and a JQuery plugin for our tabs - <strong>Easy Tabs</strong></p>
+
+                <h2>Who made this ?</h2>
+                <p>Here is a list of the people responsible for this project:</p>
+                <ol>
+                    <li>Teodor Kurtev</li>
+                    <li>Dani Georgieva</li>
+                    <li>Vladislav Karamfilov</li>
+                    <li>Bojidar Ivanov</li>
+                </ol>
+            </div>
+        </div>
+        <footer></footer>
+    </div>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/linkScript.js" type="text/javascript"></script>
+</body>
+</html>
