@@ -1,6 +1,4 @@
-MyTelerikProjectsAndHomeworks
-=============================
+# Telerik Academy projects and homework
 
-My Telerik Academy Projects And Homeworks
 
-This is a public repo of all my homeworks and projects done for Telerik Academy. 
+This is a public repo of all my homework and projects done for Telerik Academy 1 year code bootcamp in 2013. 
